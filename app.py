@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from datetime import datetime
+from dotenv import load_dotenv
 import re
 import base64
 import requests
@@ -11,6 +12,7 @@ from shared_flow import handle_sso_token_response
 
 app = Flask(__name__)
 
+load_dotenv()
 app.secret_key = os.environ.get("ESI_API_SECRET_KEY")
 client_id = os.environ.get("ESI_CLIENT_ID")
 
