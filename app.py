@@ -54,15 +54,24 @@ def callback():
     data = handle_sso_token_response(res)
 
     print(data)
-
+    # get alliance data
     allianceQuery = ("https://esi.evetech.net/latest/alliances/{}"
                      "/".format(data['alliance_id']))
-
     res = requests.get(allianceQuery)
     alliance = res.json()
     print(alliance)
 
+    # get corp data
+    corpQuery = ("https://esi.evetech.net/latest/corporations/{}"
+                 "/".format(data['corporation_id']))
+    res = requests.get(corpQuery)
+    corp = res.json()
+    print(corp)
+
     context['name'] = data['name']
     context['alliance_name'] = alliance['name']
+    context['corporation_name'] = corp['name']
+
+    # let user click on alliance and corp name and be directed to pages
 
     return render_template("callback.html", context=context)
