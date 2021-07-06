@@ -17,6 +17,7 @@ client_id = os.environ.get("ESI_CLIENT_ID")
 
 @app.route("/")
 def home():
+    print(client_id)
     return render_template("home.html", value=client_id)
 
 
