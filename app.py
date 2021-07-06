@@ -33,8 +33,10 @@ def contact():
     return render_template("contact.html")
 
 
-@app.route("/callback/", methods=['GET', 'POST'])
+@app.route("/callback/")
 def callback():
+    context = {}
+
     code = request.args.get('code')
 
     user_pass = "{}:{}".format(client_id, app.secret_key)
@@ -52,4 +54,15 @@ def callback():
     data = handle_sso_token_response(res)
 
     print(data)
-    return render_template("callback.html", data=data)
+
+    allianceQuery = ("https://esi.evetech.net/latest/alliances/{}"
+                     "/".format(data['alliance_id']))
+
+    res = requests.get(allianceQuery)
+    alliance = res.json()
+    print(alliance)
+
+    context['name'] = data['name']
+    context['alliance_name'] = alliance['name']
+
+    return render_template("callback.html", context=context)
