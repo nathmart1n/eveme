@@ -30,7 +30,7 @@ def contact():
     return render_template("contact.html")
 
 
-@app.route("/callback/", methods=['GET', 'POST'])
+@app.route("/callback/")
 def callback():
     code = request.args.get('code')
 
