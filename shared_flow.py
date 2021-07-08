@@ -58,25 +58,23 @@ def handle_sso_token_response(sso_response):
         print("\nVerifying access token JWT...")
 
         jwt = validate_eve_jwt(access_token)
+        print(jwt)
         character_id = jwt["sub"].split(":")[2]
         character_name = jwt["name"]
         publicData_path = ("https://esi.evetech.net/latest/characters/{}"
                            "/".format(character_id))
-
-        print("\nSuccess! Here is the payload received from the EVE SSO: {}"
-              "\nYou can use the access_token to make an authenticated "
-              "request to {}".format(data, publicData_path))
 
         headers = {
             "Authorization": "Bearer {}".format(access_token)
         }
 
         res = requests.get(publicData_path, headers=headers)
-        print("\nMade request to {} with headers: "
-              "{}".format(publicData_path, res.request.headers))
+
         res.raise_for_status()
 
         data = res.json()
+        data["id"] = character_id
+
         return data
     else:
         print("\nSomething went wrong! Re read the comment at the top of this "
