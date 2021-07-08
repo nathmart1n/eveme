@@ -3,7 +3,8 @@
 User Details
 {% endblock %}
 {% block content %}
-<p>Character Name: {{ context.name }} Picture: <img src="{{ context.portrait }}" alt="{{ context.name }} Portrait"></p>
+<img src="{{ context.portrait }}" alt="{{ context.name }} Portrait">
+<p>Character Name: {{ context.name }}</p>
 <p>Alliance: {{ context.alliance_name}}</p>
 <p>Corporation: {{ context.corp_name}}</p>
 {% endblock %}
