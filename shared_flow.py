@@ -36,8 +36,6 @@ def send_token_request(form_values, add_headers={}):
         headers=headers,
     )
 
-    print("Request sent to URL {} with headers {} and form values: "
-          "{}\n".format(res.url, headers, form_values))
     res.raise_for_status()
 
     return res
@@ -55,10 +53,10 @@ def handle_sso_token_response(sso_response):
         data = sso_response.json()
         access_token = data["access_token"]
 
-        print("\nVerifying access token JWT...")
+        # print("\nVerifying access token JWT...")
 
         jwt = validate_eve_jwt(access_token)
-        print(jwt)
+        # print(jwt)
         character_id = jwt["sub"].split(":")[2]
         character_name = jwt["name"]
         publicData_path = ("https://esi.evetech.net/latest/characters/{}"

@@ -39,6 +39,15 @@ def contact():
     return render_template("contact.html")
 
 
+@app.route("/login/")
+def login():
+    request_uri = 'https://login.eveonline.com/v2/oauth/authorize/?response' +\
+                  '_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2F' +\
+                  'callback%2F&client_id=' + ESI_CLIENT_ID + '&scope=public' +\
+                  'Data&state=ohd9912dn102dn012'
+    return redirect(request_uri)
+
+
 @app.route("/success/<char_id>")
 def success(char_id):
 
@@ -47,6 +56,12 @@ def success(char_id):
 
     res = requests.get(tempQuery)
     public = res.json()
+
+    tempQuery = ("https://esi.evetech.net/latest/characters/{}"
+                 "/portrait/".format(char_id))
+
+    res = requests.get(tempQuery)
+    portrait = res.json()
 
     tempQuery = ("https://esi.evetech.net/latest/alliances/{}"
                  "/".format(public['alliance_id']))
@@ -65,6 +80,7 @@ def success(char_id):
     output['name'] = public['name']
     output['alliance_name'] = alliance['name']
     output['corp_name'] = corporation['name']
+    output['portrait'] = portrait['px64x64']
 
     return render_template("success.html", context=output)
 
@@ -89,7 +105,6 @@ def callback():
 
     data = handle_sso_token_response(res)
 
-    print(data)
     char_id = data['id']
 
     return redirect(url_for("success", char_id=char_id))
