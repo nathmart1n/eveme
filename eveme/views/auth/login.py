@@ -34,8 +34,8 @@ def login():
     return redirect(request_uri)
 
 
-@eveme.app.route("/success/<char_id>")
-def success(char_id):
+@eveme.app.route("/character/<char_id>")
+def character(char_id):
 
     tempQuery = ("https://esi.evetech.net/latest/characters/{}"
                  "/".format(char_id))
@@ -64,7 +64,7 @@ def success(char_id):
     output['corp_name'] = corporation['name']
     # output['portrait'] =
 
-    return render_template("success.html", context=output)
+    return render_template("character.html", context=output)
 
 
 @eveme.app.route("/callback/")
@@ -109,5 +109,5 @@ def callback():
     # Begin user session by logging the user in
     login_user(user)
 
-    return redirect(url_for("success", char_id=char_id))
+    return redirect(url_for("character", char_id=char_id))
     # return render_template("callback.html", context=data)

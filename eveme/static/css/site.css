@@ -25,6 +25,13 @@
     margin-left: 30px;
 }
 
+.navbar-brand-right {
+    font-size: 1.2em;
+    font-weight: 600;
+    float: right;
+    margin-right: 5px;
+}
+
 .body-content {
     padding: 5px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
