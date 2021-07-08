@@ -1,73 +1,40 @@
-import re
-import base64
-import requests
-import os
-import json
-import sqlite3
-from flask import Flask, render_template, request, redirect, url_for
-from datetime import datetime
-from dotenv import load_dotenv
-from flask_login import (
-    LoginManager,
-    current_user,
-    login_required,
-    login_user,
-    logout_user,
+"""
+EVEME index (login) view.
+
+URLs include:
+/login/
+/success/<char_id>
+/callback/
+"""
+from flask import (
+    Flask,
+    current_app,
+    redirect,
+    render_template,
+    request,
+    url_for,
 )
-from user import User
-from db import init_db_command
-
-from shared_flow import send_token_request
-from shared_flow import handle_sso_token_response
-
-app = Flask(__name__)
-
-login_manager = LoginManager()
-login_manager.init_app(app)
-
-# Naive database setup
-try:
-    init_db_command()
-except sqlite3.OperationalError:
-    # Assume it's already been created
-    pass
-
-load_dotenv()
-ESI_SECRET_KEY = os.environ.get("ESI_API_SECRET_KEY", None)
-ESI_CLIENT_ID = os.environ.get("ESI_CLIENT_ID", None)
-app.secret_key = os.environ.get("FLASK_SECRET_KEY", None)
+from flask_login import login_user
+from eveme.shared_flow import send_token_request, handle_sso_token_response
+from eveme.user import User
+import eveme
+import requests
+import base64
 
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.get(user_id)
-
-
-@app.route("/")
-def home():
-    return render_template("home.html", value=ESI_CLIENT_ID)
-
-
-@app.route("/about/")
-def about():
-    return render_template("about.html")
-
-
-@app.route("/contact/")
-def contact():
-    return render_template("contact.html")
-
-
-@app.route("/login/")
+@eveme.app.route("/login/")
 def login():
+    """First step in ESI OAuth."""
+    print(current_app.config['ESI_CLIENT_ID'])
     request_uri = 'https://login.eveonline.com/v2/oauth/authorize/?response' +\
                   '_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2F' +\
-                  'callback%2F&client_id=' + ESI_CLIENT_ID + '&scope=public' +\
+                  'callback%2F&client_id=' +\
+                  current_app.config['ESI_CLIENT_ID'] + '&scope=public' +\
                   'Data&state=ohd9912dn102dn012'
     return redirect(request_uri)
 
 
-@app.route("/success/<char_id>")
+@eveme.app.route("/success/<char_id>")
 def success(char_id):
 
     tempQuery = ("https://esi.evetech.net/latest/characters/{}"
@@ -100,20 +67,14 @@ def success(char_id):
     return render_template("success.html", context=output)
 
 
-@app.route("/logout")
-@login_required
-def logout():
-    logout_user()
-    return redirect(url_for("home"))
-
-
-@app.route("/callback/")
+@eveme.app.route("/callback/")
 def callback():
     context = {}
 
     code = request.args.get('code')
 
-    user_pass = "{}:{}".format(ESI_CLIENT_ID, ESI_SECRET_KEY)
+    user_pass = "{}:{}".format(current_app.config['ESI_CLIENT_ID'],
+                               current_app.config['ESI_SECRET_KEY'])
     basic_auth = base64.urlsafe_b64encode(user_pass.encode('utf-8')).decode()
     auth_header = "Basic {}".format(basic_auth)
 
