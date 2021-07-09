@@ -14,7 +14,7 @@ from flask import (
     request,
     url_for,
 )
-from flask_login import login_user
+from flask_login import login_user, current_user
 from eveme.shared_flow import send_token_request, handle_sso_token_response
 from eveme.user import User
 import eveme
@@ -25,7 +25,6 @@ import base64
 @eveme.app.route("/login/")
 def login():
     """First step in ESI OAuth."""
-    print(current_app.config['ESI_CLIENT_ID'])
     request_uri = 'https://login.eveonline.com/v2/oauth/authorize/?response' +\
                   '_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2F' +\
                   'callback%2F&client_id=' +\
@@ -36,6 +35,8 @@ def login():
 
 @eveme.app.route("/character/<char_id>")
 def character(char_id):
+    output = {}
+    inAlliance = False
 
     tempQuery = ("https://esi.evetech.net/latest/characters/{}"
                  "/".format(char_id))
@@ -43,26 +44,37 @@ def character(char_id):
     res = requests.get(tempQuery)
     public = res.json()
 
-    # pull profile pic from user db entry?
-
-    tempQuery = ("https://esi.evetech.net/latest/alliances/{}"
-                 "/".format(public['alliance_id']))
-
-    res = requests.get(tempQuery)
-    alliance = res.json()
-
     tempQuery = ("https://esi.evetech.net/latest/corporations/{}"
                  "/".format(public['corporation_id']))
 
     res = requests.get(tempQuery)
     corporation = res.json()
 
-    output = {}
+    if 'alliance_id' in public.keys():
+        tempQuery = ("https://esi.evetech.net/latest/alliances/{}"
+                     "/".format(public['alliance_id']))
 
-    output['name'] = public['name']
-    output['alliance_name'] = alliance['name']
+        res = requests.get(tempQuery)
+        alliance = res.json()
+        inAlliance = True
+
     output['corp_name'] = corporation['name']
-    # output['portrait'] =
+    if inAlliance:
+        output['alliance_name'] = alliance['name']
+
+    if current_user.is_authenticated and char_id == current_user.id:
+        output['name'] = current_user.name
+        output['profile_pic'] = current_user.profile_pic
+
+    else:
+        tempQuery = ("https://esi.evetech.net/latest/characters/{}"
+                     "/portrait/".format(char_id))
+
+        res = requests.get(tempQuery)
+        portrait = res.json()
+
+        output['name'] = public['name']
+        output['profile_pic'] = portrait['px64x64']
 
     return render_template("character.html", context=output)
 

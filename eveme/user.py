@@ -1,6 +1,6 @@
 from flask_login import UserMixin
 
-from db import get_db
+import eveme
 
 
 class User(UserMixin):
@@ -11,24 +11,24 @@ class User(UserMixin):
 
     @staticmethod
     def get(user_id):
-        db = get_db()
-        user = db.execute(
-            "SELECT * FROM user WHERE id = ?", (user_id,)
+        connection = eveme.model.get_db()
+
+        user = connection.execute(
+            "SELECT * FROM users WHERE id = ?", (user_id,)
         ).fetchone()
         if not user:
             return None
-
         user = User(
-            id_=user[0], name=user[1], profile_pic=user[2]
+            id_=user['id'], name=user['name'], profile_pic=user['profile_pic']
         )
         return user
 
     @staticmethod
     def create(id_, name, profile_pic):
-        db = get_db()
-        db.execute(
-            "INSERT INTO user (id, name, profile_pic) "
+        connection = eveme.model.get_db()
+        connection.execute(
+            "INSERT INTO users (id, name, profile_pic) "
             "VALUES (?, ?, ?)",
             (id_, name, profile_pic),
         )
-        db.commit()
+        connection.commit()
