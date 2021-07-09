@@ -117,6 +117,9 @@ def callback():
     # Doesn't exist? Add it to the database.
     if not User.get(char_id):
         User.create(char_id, data['name'], picture)
+    # Exists but changed name or profile picture
+    elif (User.get(char_id).name != data['name'] or User.get(char_id).profile_pic != picture):
+        User.update(char_id, data['name'], picture)
 
     # Begin user session by logging the user in
     login_user(user)

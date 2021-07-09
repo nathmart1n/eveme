@@ -24,6 +24,17 @@ class User(UserMixin):
         return user
 
     @staticmethod
+    def update(id_, name, profile_pic):
+        connection = eveme.model.get_db()
+        sql = ''' UPDATE users
+                  SET name = ? ,
+                      profile_pic = ?
+                  WHERE id = ?'''
+        cur = connection.cursor()
+        cur.execute(sql, (name, profile_pic, id_))
+        connection.commit()
+
+    @staticmethod
     def create(id_, name, profile_pic):
         connection = eveme.model.get_db()
         connection.execute(
