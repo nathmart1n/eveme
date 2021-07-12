@@ -19,7 +19,7 @@ class User(UserMixin):
         if not user:
             return None
         user = User(
-            id_=user['id'], name=user['name'], profile_pic=user['profile_pic']
+            id_=user['id'], name=user['name'], profile_pic=user['profile_pic'],
         )
         return user
 

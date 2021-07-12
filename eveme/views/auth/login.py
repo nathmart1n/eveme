@@ -20,6 +20,7 @@ from eveme.user import User
 import eveme
 import requests
 import base64
+import json
 
 
 @eveme.app.route("/login/")
@@ -106,7 +107,8 @@ def callback():
     char_id = data['id']
 
     # print(data['orders'])
-    userOrders = []
+    userBuyOrders = []
+    userSellOrders = []
 
     for order in data['orders']:
         itemName = ("https://esi.evetech.net/latest/universe/types"
@@ -115,9 +117,11 @@ def callback():
         res = requests.get(itemName)
         item = res.json()
         if 'is_buy_order' in order.keys():
-            print('Buy:', item['name'])
+            order['name'] = item['name']
+            userBuyOrders.append(order)
         else:
-            print('Sell:', item['name'])
+            order['name'] = item['name']
+            userSellOrders.append(order)
 
     portraitQuery = ("https://esi.evetech.net/latest/characters/{}"
                      "/portrait/".format(char_id))
@@ -128,19 +132,55 @@ def callback():
 
     # Create a user in your db with the information provided
     # by ESI
+
+    # print(userSellOrders, userBuyOrders)
+
     user = User(
-        id_=char_id, name=data['name'], profile_pic=picture
+        id_=char_id, name=data['name'], profile_pic=picture,
     )
 
     # Doesn't exist? Add it to the database.
     if not User.get(char_id):
-        User.create(char_id, data['name'], picture)
+        User.create(
+            char_id, data['name'], picture,
+        )
     # Exists but changed name or profile picture
-    elif (User.get(char_id).name != data['name'] or User.get(char_id).profile_pic != picture):
-        User.update(char_id, data['name'], picture)
+    else:
+        User.update(
+            char_id, data['name'], picture,
+        )
+
+    tempQuery = ("https://esi.evetech.net/latest/characters/{}"
+                 "/".format(char_id))
+
+    res = requests.get(tempQuery)
+    public = res.json()
+
+    tempQuery = ("https://esi.evetech.net/latest/corporations/{}"
+                 "/".format(public['corporation_id']))
+
+    res = requests.get(tempQuery)
+    corporation = res.json()
+
+    if 'alliance_id' in public.keys():
+        tempQuery = ("https://esi.evetech.net/latest/alliances/{}"
+                     "/".format(public['alliance_id']))
+
+        res = requests.get(tempQuery)
+        alliance = res.json()
+        inAlliance = True
 
     # Begin user session by logging the user in
     login_user(user)
-
-    return redirect(url_for("character", char_id=char_id))
+    context = {
+        'buyOrders': userBuyOrders,
+        'sellOrders': userSellOrders,
+        'name': public['name'],
+        'corp_name': corporation['name'],
+        'profile_pic': picture,
+    }
+    if inAlliance:
+        context['alliance_name'] = alliance['name']
+    print(context['buyOrders'])
+    return render_template("profile.html", context=context)
     # return render_template("callback.html", context=data)
