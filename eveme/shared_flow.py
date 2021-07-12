@@ -66,12 +66,19 @@ def handle_sso_token_response(sso_response):
             "Authorization": "Bearer {}".format(access_token)
         }
 
-        res = requests.get(publicData_path, headers=headers)
+        res = requests.get(publicData_path)
 
         res.raise_for_status()
 
         data = res.json()
         data["id"] = character_id
+
+        ordersQuery = ("https://esi.evetech.net/latest/characters/{}"
+                       "/orders/".format(character_id))
+
+        res = requests.get(ordersQuery, headers=headers)
+        orders = res.json()
+        data['orders'] = orders
 
         return data
     else:

@@ -28,8 +28,12 @@ def login():
     request_uri = 'https://login.eveonline.com/v2/oauth/authorize/?response' +\
                   '_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2F' +\
                   'callback%2F&client_id=' +\
-                  current_app.config['ESI_CLIENT_ID'] + '&scope=public' +\
-                  'Data&state=ohd9912dn102dn012'
+                  current_app.config['ESI_CLIENT_ID'] +\
+                  '&scope=esi-markets.read_character_orders.v1+' +\
+                  'esi-markets.structure_markets.v1+' +\
+                  'esi-universe.read_structures.v1+' +\
+                  'esi-assets.read_assets.v1' +\
+                  '&state=ohd9912dn102dn012'
     return redirect(request_uri)
 
 
@@ -101,10 +105,24 @@ def callback():
     data = handle_sso_token_response(res)
     char_id = data['id']
 
-    tempQuery = ("https://esi.evetech.net/latest/characters/{}"
-                 "/portrait/".format(char_id))
+    # print(data['orders'])
+    userOrders = []
 
-    res = requests.get(tempQuery)
+    for order in data['orders']:
+        itemName = ("https://esi.evetech.net/latest/universe/types"
+                    "/{}/".format(order['type_id']))
+
+        res = requests.get(itemName)
+        item = res.json()
+        if 'is_buy_order' in order.keys():
+            print('Buy:', item['name'])
+        else:
+            print('Sell:', item['name'])
+
+    portraitQuery = ("https://esi.evetech.net/latest/characters/{}"
+                     "/portrait/".format(char_id))
+
+    res = requests.get(portraitQuery)
     portrait = res.json()
     picture = portrait['px64x64']
 
