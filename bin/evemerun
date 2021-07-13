@@ -14,7 +14,7 @@ set -x
 
 # Clean
 if [[ ! -d "var/uploads" ]]
-then ./bin/insta485db create
+then ./bin/evemedb create
 fi ;
 
 
