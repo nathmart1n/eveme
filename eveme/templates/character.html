@@ -9,4 +9,36 @@ User Details
     {% if context.alliance_name %}
         <p>Alliance: {{ context.alliance_name}}</p>
     {% endif %}
+    {% if context.isLoggedInUser %}
+        <p>Buy Orders</p>
+        <table style="width:100%">
+            <tr>
+                <th>Item</th>
+                <th>Volume Remaining</th>
+                <th>Initial Volume</th>
+            </tr>
+        {% for order in context.buyOrders %}
+            <tr>
+                <td>{{order.name}}</td>
+                <td>{{order.volume_remain}}</td>
+                <td>{{order.volume_total}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        <p>Sell Orders</p>
+        <table style="width:100%">
+            <tr>
+                <th>Item</th>
+                <th>Volume Remaining</th>
+                <th>Initial Volume</th>
+            </tr>
+        {% for order in context.sellOrders %}
+            <tr>
+                <td>{{order.name}}</td>
+                <td>{{order.volume_remain}}</td>
+                <td>{{order.volume_total}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    {% endif %}
 {% endblock %}

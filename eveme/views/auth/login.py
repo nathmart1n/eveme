@@ -67,9 +67,37 @@ def character(char_id):
     if inAlliance:
         output['alliance_name'] = alliance['name']
 
+    output['isLoggedInUser'] = False
+
     if current_user.is_authenticated and char_id == current_user.id:
+        buyOrders = current_user.buyOrders.split('},{')
+        sellOrders = current_user.sellOrders.split('},{')
+        buyOrdersDicts = []
+        sellOrdersDicts = []
+        for i in range(len(buyOrders)):
+            if i == 0:
+                buyOrders[i] = buyOrders[i]+'}'
+            elif i == len(buyOrders) - 1:
+                buyOrders[i] = '{'+buyOrders[i]
+            else:
+                buyOrders[i] = '{'+buyOrders[i]+'}'
+            # print(buyOrders[i])
+            buyOrdersDicts.append(json.loads(buyOrders[i]))
+        for i in range(len(sellOrders)):
+            if i == 0:
+                sellOrders[i] = sellOrders[i]+'}'
+            elif i == len(sellOrders) - 1:
+                sellOrders[i] = '{'+sellOrders[i]
+            else:
+                sellOrders[i] = '{'+sellOrders[i]+'}'
+            # print(sellOrders[i])
+            sellOrdersDicts.append(json.loads(sellOrders[i]))
+        # print(buyOrders[0])
         output['name'] = current_user.name
         output['profile_pic'] = current_user.profile_pic
+        output['buyOrders'] = buyOrdersDicts
+        output['sellOrders'] = sellOrdersDicts
+        output['isLoggedInUser'] = True
 
     else:
         tempQuery = ("https://esi.evetech.net/latest/characters/{}"
@@ -134,14 +162,14 @@ def callback():
     # by ESI
 
     # print(userSellOrders, userBuyOrders)
-    buyOrders = ','.join(userSellOrders)
-    sellOrders = ','.join(userBuyOrders)
-    
+    buyOrders = ','.join(userBuyOrders)
+    sellOrders = ','.join(userSellOrders)
     user = User(
         id_=char_id, name=data['name'], profile_pic=picture,
         buyOrders=buyOrders, sellOrders=sellOrders,
     )
-
+    # print(user.buyOrders)
+    login_user(user)
     # Doesn't exist? Add it to the database.
     if not User.get(char_id):
         User.create(

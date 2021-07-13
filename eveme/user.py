@@ -36,7 +36,7 @@ class User(UserMixin):
                       sellOrders = ?
                   WHERE id = ?'''
         cur = connection.cursor()
-        cur.execute(sql, (name, profile_pic, id_, buyOrders, sellOrders))
+        cur.execute(sql, (name, profile_pic, buyOrders, sellOrders, id_))
         connection.commit()
 
     @staticmethod
