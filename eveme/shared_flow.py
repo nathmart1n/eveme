@@ -80,6 +80,13 @@ def handle_sso_token_response(sso_response):
         orders = res.json()
         data['orders'] = orders
 
+        for order in data['orders']:
+            structureName = ("https://esi.evetech.net/latest/universe/structures"
+                             "/{}/".format(order['location_id']))
+            res = requests.get(structureName, headers=headers)
+            structure = res.json()
+            order['structure_name'] = structure['name']
+
         return data
     else:
         print("\nSomething went wrong! Re read the comment at the top of this "

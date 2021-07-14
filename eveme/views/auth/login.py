@@ -27,7 +27,7 @@ import json
 def login():
     """First step in ESI OAuth."""
     request_uri = 'https://login.eveonline.com/v2/oauth/authorize/?response' +\
-                  '_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2F' +\
+                  '_type=code&redirect_uri=http%3A%2F%2F172.24.37.35%3A5000%2F' +\
                   'callback%2F&client_id=' +\
                   current_app.config['ESI_CLIENT_ID'] +\
                   '&scope=esi-markets.read_character_orders.v1+' +\
@@ -145,10 +145,14 @@ def callback():
         res = requests.get(itemName)
         item = res.json()
         if 'is_buy_order' in order.keys():
-            order['name'] = item['name']
+            order['itemName'] = item['name']
+            order.pop('type_id', None)
+            order.pop('location_id', None)
             userBuyOrders.append(json.dumps(order))
         else:
-            order['name'] = item['name']
+            order['itemName'] = item['name']
+            order.pop('type_id', None)
+            order.pop('location_id', None)
             userSellOrders.append(json.dumps(order))
 
     portraitQuery = ("https://esi.evetech.net/latest/characters/{}"

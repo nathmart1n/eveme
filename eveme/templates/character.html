@@ -16,12 +16,14 @@ User Details
                 <th>Item</th>
                 <th>Volume Remaining</th>
                 <th>Initial Volume</th>
+                <th>Location</th>
             </tr>
         {% for order in context.buyOrders %}
             <tr>
                 <td>{{order.name}}</td>
                 <td>{{order.volume_remain}}</td>
                 <td>{{order.volume_total}}</td>
+                <td>{{order.structure_name}}</td>
             </tr>
         {% endfor %}
         </table>
@@ -31,12 +33,14 @@ User Details
                 <th>Item</th>
                 <th>Volume Remaining</th>
                 <th>Initial Volume</th>
+                <th>Location</th>
             </tr>
         {% for order in context.sellOrders %}
             <tr>
                 <td>{{order.name}}</td>
                 <td>{{order.volume_remain}}</td>
                 <td>{{order.volume_total}}</td>
+                <td>{{order.structure_name}}</td>
             </tr>
         {% endfor %}
         </table>
