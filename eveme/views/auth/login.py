@@ -70,6 +70,8 @@ def character(char_id):
     output['isLoggedInUser'] = False
 
     if current_user.is_authenticated and char_id == current_user.id:
+
+        
         buyOrders = current_user.buyOrders.split('},{')
         sellOrders = current_user.sellOrders.split('},{')
         buyOrdersDicts = []
@@ -133,7 +135,7 @@ def callback():
 
     data = handle_sso_token_response(res)
     char_id = data['id']
-
+    print(data.keys())
     # print(data['orders'])
     userBuyOrders = []
     userSellOrders = []
@@ -169,20 +171,20 @@ def callback():
     buyOrders = ','.join(userBuyOrders)
     sellOrders = ','.join(userSellOrders)
     user = User(
-        id_=char_id, name=data['name'], profile_pic=picture,
-        buyOrders=buyOrders, sellOrders=sellOrders,
+        id_=char_id, name_=data['name'], profile_pic_=picture,
+        buyOrders_=buyOrders, sellOrders_=sellOrders, access_token_=data['access_token']
     )
     # print(user.buyOrders)
     login_user(user)
     # Doesn't exist? Add it to the database.
     if not User.get(char_id):
         User.create(
-            char_id, data['name'], picture, buyOrders, sellOrders
+            char_id, data['name'], picture, buyOrders, sellOrders, data['access_token']
         )
     # Exists but changed name or profile picture
     else:
         User.update(
-            char_id, data['name'], picture, buyOrders, sellOrders
+            char_id, data['name'], picture, buyOrders, sellOrders, data['access_token']
         )
 
     return redirect(url_for('character', char_id=char_id))
