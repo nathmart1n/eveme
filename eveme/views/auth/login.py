@@ -70,8 +70,6 @@ def character(char_id):
     output['isLoggedInUser'] = False
 
     if current_user.is_authenticated and char_id == current_user.id:
-
-        
         buyOrders = current_user.buyOrders.split('},{')
         sellOrders = current_user.sellOrders.split('},{')
         buyOrdersDicts = []

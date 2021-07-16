@@ -5,7 +5,7 @@ flows recommended for web based and mobile/desktop applications. The functions
 found here are used by the OAuth 2.0 examples contained in this project.
 """
 import urllib
-
+import eveme.helper
 import requests
 
 from eveme.validate_jwt import validate_eve_jwt
@@ -61,16 +61,14 @@ def handle_sso_token_response(sso_response):
         character_name = jwt["name"]
         publicData_path = ("https://esi.evetech.net/latest/characters/{}"
                            "/".format(character_id))
-
-        headers = {
-            "Authorization": "Bearer {}".format(access_token)
-        }
+        headers = eveme.helper.createHeaders(access_token)
 
         res = requests.get(publicData_path)
 
         res.raise_for_status()
 
         data = res.json()
+        data['access_token'] = access_token
         data["id"] = character_id
 
         ordersQuery = ("https://esi.evetech.net/latest/characters/{}"
