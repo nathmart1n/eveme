@@ -54,7 +54,6 @@ def handle_sso_token_response(sso_response):
         access_token = data["access_token"]
 
         # print("\nVerifying access token JWT...")
-
         jwt = validate_eve_jwt(access_token)
         # print(jwt)
         character_id = int(jwt["sub"].split(":")[2])
@@ -70,21 +69,23 @@ def handle_sso_token_response(sso_response):
         data = res.json()
         data['access_token'] = access_token
         data["id"] = character_id
-
         ordersQuery = ("https://esi.evetech.net/latest/characters/{}"
                        "/orders/".format(character_id))
 
         res = requests.get(ordersQuery, headers=headers)
         orders = res.json()
         data['orders'] = orders
-
+        structNames = {}
         for order in data['orders']:
-            structureName = ("https://esi.evetech.net/latest/universe/structures"
-                             "/{}/".format(order['location_id']))
-            res = requests.get(structureName, headers=headers)
-            structure = res.json()
-            order['structure_name'] = structure['name']
-
+            if order['location_id'] in structNames.keys():
+                order['structure_name'] = structNames[order['location_id']]
+            else:
+                structureName = ("https://esi.evetech.net/latest/universe/structures"
+                                 "/{}/".format(order['location_id']))
+                res = requests.get(structureName, headers=headers)
+                structure = res.json()
+                order['structure_name'] = structure['name']
+                structNames[order['location_id']] = structure['name']
         return data
     else:
         print("\nSomething went wrong! Re read the comment at the top of this "

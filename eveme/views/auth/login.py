@@ -70,9 +70,9 @@ def character(char_id):
         output['alliance_name'] = alliance['name']
 
     output['isLoggedInUser'] = False
-    print(char_id == current_user.id)
+
     if current_user.is_authenticated and char_id == current_user.id:
-        print('dog1')
+        headers = eveme.helper.createHeaders(current_user.access_token)
         buyOrders = current_user.buyOrders.split('},{')
         sellOrders = current_user.sellOrders.split('},{')
         buyOrdersDicts = []
@@ -100,11 +100,18 @@ def character(char_id):
         output['profile_pic'] = current_user.profile_pic
         output['buyOrders'] = buyOrdersDicts
         output['sellOrders'] = sellOrdersDicts
-        output['structures'] = eveme.helper.getStructures(char_id)
+        accessibleStructures = eveme.helper.getStructures(char_id)
+
+        for i in range(len(accessibleStructures)):
+            structureName = ("https://esi.evetech.net/latest/universe/structures"
+                             "/{}/".format(accessibleStructures[i]))
+            res = requests.get(structureName, headers=headers)
+            structure = res.json()
+            accessibleStructures[i] = structure['name']
+        output['structures'] = accessibleStructures
         output['isLoggedInUser'] = True
 
     else:
-        print('dog')
         tempQuery = ("https://esi.evetech.net/latest/characters/{}"
                      "/portrait/".format(char_id))
 
@@ -127,7 +134,6 @@ def callback():
                                current_app.config['ESI_SECRET_KEY'])
     basic_auth = base64.urlsafe_b64encode(user_pass.encode('utf-8')).decode()
     auth_header = "Basic {}".format(basic_auth)
-
     form_values = {
         "grant_type": "authorization_code",
         "code": code,
@@ -135,8 +141,8 @@ def callback():
 
     headers = {"Authorization": auth_header}
     res = send_token_request(form_values, add_headers=headers)
-
     data = handle_sso_token_response(res)
+    print('bad')
     char_id = data['id']
     userBuyOrders = []
     userSellOrders = []
@@ -158,7 +164,7 @@ def callback():
             order.pop('type_id', None)
             order.pop('location_id', None)
             userSellOrders.append(json.dumps(order))
-
+    print('boy')
     portraitQuery = ("https://esi.evetech.net/latest/characters/{}"
                      "/portrait/".format(char_id))
 
@@ -188,5 +194,4 @@ def callback():
         User.update(
             char_id, data['name'], picture, buyOrders, sellOrders, data['access_token']
         )
-
     return redirect(url_for('character', char_id=char_id))
