@@ -25,7 +25,7 @@ User Details
             </tr>
         {% for order in context.buyOrders %}
             <tr>
-                <td>{{order.name}}</td>
+                <td>{{order.itemName}}</td>
                 <td>{{order.volume_remain}}</td>
                 <td>{{order.volume_total}}</td>
                 <td>{{order.structure_name}}</td>
@@ -43,7 +43,7 @@ User Details
             </tr>
         {% for order in context.sellOrders %}
             <tr>
-                <td>{{order.name}}</td>
+                <td>{{order.itemName}}</td>
                 <td>{{order.volume_remain}}</td>
                 <td>{{order.volume_total}}</td>
                 <td>{{order.structure_name}}</td>

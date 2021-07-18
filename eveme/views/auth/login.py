@@ -8,6 +8,7 @@ URLs include:
 """
 from flask import (
     Flask,
+    config,
     current_app,
     redirect,
     render_template,
@@ -22,6 +23,8 @@ import eveme
 import requests
 import base64
 import json
+import os
+import pathlib
 
 
 @eveme.app.route("/login/")
@@ -127,7 +130,9 @@ def character(char_id):
 @eveme.app.route("/callback/")
 def callback():
     context = {}
-
+    json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "invTypes.json")
+    invTypes = dict(json.load(open(json_url)))
+    # print(invTypes['11971'])
     code = request.args.get('code')
 
     user_pass = "{}:{}".format(current_app.config['ESI_CLIENT_ID'],
@@ -142,32 +147,24 @@ def callback():
     headers = {"Authorization": auth_header}
     res = send_token_request(form_values, add_headers=headers)
     data = handle_sso_token_response(res)
-    print('bad')
     char_id = data['id']
     userBuyOrders = []
     userSellOrders = []
 
     for order in data['orders']:
-        itemName = ("https://esi.evetech.net/latest/universe/types"
-                    "/{}/".format(order['type_id']))
-
-        res = requests.get(itemName)
-        item = res.json()
         eveme.helper.insertStructure(char_id, order['location_id'])
         if 'is_buy_order' in order.keys():
-            order['itemName'] = item['name']
+            order['itemName'] = invTypes[str(order['type_id'])]
             order.pop('type_id', None)
             order.pop('location_id', None)
             userBuyOrders.append(json.dumps(order))
         else:
-            order['itemName'] = item['name']
+            order['itemName'] = invTypes[str(order['type_id'])]
             order.pop('type_id', None)
             order.pop('location_id', None)
             userSellOrders.append(json.dumps(order))
-    print('boy')
     portraitQuery = ("https://esi.evetech.net/latest/characters/{}"
                      "/portrait/".format(char_id))
-
     res = requests.get(portraitQuery)
     portrait = res.json()
     picture = portrait['px64x64']
