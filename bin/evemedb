@@ -38,6 +38,7 @@ case $1 in
 
   "dump")
 	sqlite3 -batch -line var/eveme.sqlite3 'SELECT * FROM users'
+  sqlite3 -batch -line var/eveme.sqlite3 'SELECT * FROM structureAccess'
   printf "\n"
     ;;
   *)

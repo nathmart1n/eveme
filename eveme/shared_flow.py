@@ -57,7 +57,7 @@ def handle_sso_token_response(sso_response):
 
         jwt = validate_eve_jwt(access_token)
         # print(jwt)
-        character_id = jwt["sub"].split(":")[2]
+        character_id = int(jwt["sub"].split(":")[2])
         character_name = jwt["name"]
         publicData_path = ("https://esi.evetech.net/latest/characters/{}"
                            "/".format(character_id))

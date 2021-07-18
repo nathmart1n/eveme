@@ -1,5 +1,5 @@
 CREATE TABLE users (
-  id TEXT PRIMARY KEY,
+  id INTEGER PRIMARY KEY,
   name TEXT NOT NULL,
   profile_pic TEXT NOT NULL,
   buyOrders TEXT,
@@ -7,7 +7,8 @@ CREATE TABLE users (
   access_token TEXT NOT NULL
 );
 
-CREATE TABLE structures (
-  id TEXT NOT NULL,
-  structure_id TEXT NOT NULL
+CREATE TABLE structureAccess (
+  id INTEGER NOT NULL,
+  structure_id INTEGER NOT NULL,
+  UNIQUE(id, structure_id)
 );

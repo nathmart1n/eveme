@@ -17,6 +17,7 @@ from flask import (
 from flask_login import login_user, current_user
 from eveme.shared_flow import send_token_request, handle_sso_token_response
 from eveme.user import User
+import eveme.helper
 import eveme
 import requests
 import base64
@@ -40,6 +41,7 @@ def login():
 
 @eveme.app.route("/character/<char_id>")
 def character(char_id):
+    char_id = int(char_id)
     output = {}
     inAlliance = False
 
@@ -68,8 +70,9 @@ def character(char_id):
         output['alliance_name'] = alliance['name']
 
     output['isLoggedInUser'] = False
-
+    print(char_id == current_user.id)
     if current_user.is_authenticated and char_id == current_user.id:
+        print('dog1')
         buyOrders = current_user.buyOrders.split('},{')
         sellOrders = current_user.sellOrders.split('},{')
         buyOrdersDicts = []
@@ -97,9 +100,11 @@ def character(char_id):
         output['profile_pic'] = current_user.profile_pic
         output['buyOrders'] = buyOrdersDicts
         output['sellOrders'] = sellOrdersDicts
+        output['structures'] = eveme.helper.getStructures(char_id)
         output['isLoggedInUser'] = True
 
     else:
+        print('dog')
         tempQuery = ("https://esi.evetech.net/latest/characters/{}"
                      "/portrait/".format(char_id))
 
@@ -133,8 +138,6 @@ def callback():
 
     data = handle_sso_token_response(res)
     char_id = data['id']
-    print(data.keys())
-    # print(data['orders'])
     userBuyOrders = []
     userSellOrders = []
 
@@ -144,6 +147,7 @@ def callback():
 
         res = requests.get(itemName)
         item = res.json()
+        eveme.helper.insertStructure(char_id, order['location_id'])
         if 'is_buy_order' in order.keys():
             order['itemName'] = item['name']
             order.pop('type_id', None)
