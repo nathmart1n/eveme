@@ -10,7 +10,7 @@ User Details
         <p>Alliance: {{ context.alliance_name}}</p>
     {% endif %}
     {% if context.isLoggedInUser %}
-        <p>Structures with Orders</p>
+        <p>Structures with Access</p>
         {% for structure in context.structures %}
             {{structure}}
         {% endfor %}
@@ -29,6 +29,7 @@ User Details
                 <td>{{order.volume_remain}}</td>
                 <td>{{order.volume_total}}</td>
                 <td>{{order.structure_name}}</td>
+                <td>{{order.structureHighest}}</td>
             </tr>
         {% endfor %}
         </table>
@@ -47,6 +48,7 @@ User Details
                 <td>{{order.volume_remain}}</td>
                 <td>{{order.volume_total}}</td>
                 <td>{{order.structure_name}}</td>
+                <td>{{order.structureLowest}}</td>
             </tr>
         {% endfor %}
         </table>
