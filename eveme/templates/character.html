@@ -14,43 +14,68 @@ User Details
         {% for structure in context.structures %}
             {{structure}}
         {% endfor %}
-        <p>Buy Orders</p>
-        <table style="width:100%">
-            <tr>
-                <th>Item</th>
-                <th>Volume Remaining</th>
-                <th>Initial Volume</th>
-                <th>Location</th>
-                <th>Structure Max</th>
-            </tr>
-        {% for order in context.buyOrders %}
-            <tr>
-                <td>{{order.itemName}}</td>
-                <td>{{order.volume_remain}}</td>
-                <td>{{order.volume_total}}</td>
-                <td>{{order.structure_name}}</td>
-                <td>{{order.structureHighest}}</td>
-            </tr>
-        {% endfor %}
-        </table>
         <p>Sell Orders</p>
-        <table style="width:100%">
-            <tr>
-                <th>Item</th>
-                <th>Volume Remaining</th>
-                <th>Initial Volume</th>
-                <th>Location</th>
-                <th>Structure Min</th>
-            </tr>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th width="35%">Item</th>
+                    <th width="5%">Volume Remaining</th>
+                    <th width="5%">Initial Volume</th>
+                    <th width="5%">Remaining</th>
+                    <th width="16%">Location</th>
+                    <th width="13%">Order Price</th>
+                    <th width="13%">Structure Min</th>
+                    <th width="8%">Price Difference</th>
+                </tr>
+            </thead>
         {% for order in context.sellOrders %}
+            {% if order.price - order.structureLowest != 0 %}
+            <tr class="table-warning">
+            {% else %}
             <tr>
+            {% endif %}
                 <td>{{order.itemName}}</td>
                 <td>{{order.volume_remain}}</td>
                 <td>{{order.volume_total}}</td>
+                <td>{{((order.volume_remain / order.volume_total) * 100)|round(1)|float}}%</td>
                 <td>{{order.structure_name}}</td>
+                <td>{{order.price}}</td>
                 <td>{{order.structureLowest}}</td>
+                <td>{{order.price - order.structureLowest}}</td>
             </tr>
         {% endfor %}
         </table>
+        <p>Buy Orders</p>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th width="35%">Item</th>
+                    <th width="5%">Volume Remaining</th>
+                    <th width="5%">Initial Volume</th>
+                    <th width="5%">Remaining</th>
+                    <th width="16%">Location</th>
+                    <th width="13%">Order Price</th>
+                    <th width="13%">Structure Max</th>
+                    <th width="8%">Price Difference</th>
+                </tr>
+            </thead>
+        {% for order in context.buyOrders %}
+            {% if order.price - order.structureHighest != 0 %}
+            <tr class="table-warning">
+            {% else %}
+            <tr>
+            {% endif %}
+                <td>{{order.itemName}}</td>
+                <td>{{order.volume_remain}}</td>
+                <td>{{order.volume_total}}</td>
+                <td>{{((order.volume_remain / order.volume_total) * 100)|round(1)|float}}%</td>
+                <td>{{order.structure_name}}</td>
+                <td>{{order.price}}</td>
+                <td>{{order.structureHighest}}</td>
+                <td>{{order.price - order.structureHighest}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        
     {% endif %}
 {% endblock %}

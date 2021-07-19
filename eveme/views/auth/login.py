@@ -152,6 +152,8 @@ def callback():
 
     for order in data['orders']:
         eveme.helper.insertStructure(char_id, order['location_id'])
+        # Format price with commas
+
         if order['location_id'] in structuresChecked.keys():
             structureOrders = structuresChecked[order['location_id']]
         else:
@@ -174,11 +176,10 @@ def callback():
         # check each order with order in structure and compare
         if 'is_buy_order' in order.keys():
             order['itemName'] = invTypes[str(order['type_id'])]
-            orderMaxPrice = -1
+            orderMaxPrice = -1.0
             for structOrder in structureOrders:
                 # bug here string indices?
                 if (structOrder['is_buy_order']) and (structOrder['type_id'] == order['type_id']):
-                    print(structOrder['price'], 'buy')
                     if structOrder['price'] > orderMaxPrice:
                         orderMaxPrice = structOrder['price']
             order['structureHighest'] = orderMaxPrice
@@ -190,7 +191,6 @@ def callback():
             orderMinPrice = float('inf')
             for structOrder in structureOrders:
                 if (not structOrder['is_buy_order']) and (structOrder['type_id'] == order['type_id']):
-                    print(structOrder['price'], 'sell')
                     if structOrder['price'] < orderMinPrice:
                         orderMinPrice = structOrder['price']
             order['structureLowest'] = orderMinPrice
