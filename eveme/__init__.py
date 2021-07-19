@@ -15,6 +15,12 @@ def load_user(user_id):
     return User.get(user_id)
 
 
+@app.template_filter()
+def numberFormat(value):
+    value = float(value)
+    return "{:,.2f}".format(value)
+
+
 app.config.from_mapping(
     SECRET_KEY='dev',
     DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),

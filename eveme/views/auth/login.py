@@ -201,7 +201,7 @@ def callback():
                      "/portrait/".format(char_id))
     res = requests.get(portraitQuery)
     portrait = res.json()
-    picture = portrait['px64x64']
+    picture = portrait['px256x256']
 
     # Create a user in your db with the information provided
     # by ESI
