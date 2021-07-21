@@ -58,32 +58,21 @@ def handle_sso_token_response(sso_response):
         # print(jwt)
         character_id = int(jwt["sub"].split(":")[2])
         character_name = jwt["name"]
-        publicData_path = ("https://esi.evetech.net/latest/characters/{}"
-                           "/".format(character_id))
+
         headers = eveme.helper.createHeaders(access_token)
+        data = eveme.helper.esiRequest('charInfo', character_id)
 
-        res = requests.get(publicData_path)
-
-        res.raise_for_status()
-
-        data = res.json()
         data['access_token'] = access_token
         data["id"] = character_id
-        ordersQuery = ("https://esi.evetech.net/latest/characters/{}"
-                       "/orders/".format(character_id))
-
-        res = requests.get(ordersQuery, headers=headers)
-        orders = res.json()
+        orders = eveme.helper.esiRequest('charOrders', character_id, headers)
         data['orders'] = orders
+
         structNames = {}
         for order in data['orders']:
             if order['location_id'] in structNames.keys():
                 order['structure_name'] = structNames[order['location_id']]
             else:
-                structureName = ("https://esi.evetech.net/latest/universe/structures"
-                                 "/{}/".format(order['location_id']))
-                res = requests.get(structureName, headers=headers)
-                structure = res.json()
+                structure = eveme.helper.esiRequest('structureInfo', order['location_id'], headers)
                 order['structure_name'] = structure['name']
                 structNames[order['location_id']] = structure['name']
         return data

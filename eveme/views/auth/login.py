@@ -155,7 +155,6 @@ def callback():
                                         "/{}/?datasource=tranquility&page="
                                         "{}".format(order['location_id'], i + 1))
                 res = requests.get(structureOrdersQuery, headers=headers)
-                numPages = res.headers['X-Pages']
                 structureOrders.extend(res.json())
             structuresChecked[order['location_id']] = structureOrders
 
