@@ -49,38 +49,27 @@ def character(char_id):
     output = {}
     inAlliance = False
 
-    tempQuery = ("https://esi.evetech.net/latest/characters/{}"
-                 "/".format(char_id))
-
-    res = requests.get(tempQuery)
-    public = res.json()
-
-    tempQuery = ("https://esi.evetech.net/latest/corporations/{}"
-                 "/".format(public['corporation_id']))
-
-    res = requests.get(tempQuery)
-    corporation = res.json()
+    public = eveme.helper.esiRequest('charInfo', char_id)
+    corporation = eveme.helper.esiRequest('corpInfo', public['corporation_id'])
 
     if 'alliance_id' in public.keys():
-        tempQuery = ("https://esi.evetech.net/latest/alliances/{}"
-                     "/".format(public['alliance_id']))
-
-        res = requests.get(tempQuery)
-        alliance = res.json()
+        alliance = eveme.helper.esiRequest('allianceInfo', public['alliance_id'])
         inAlliance = True
-
-    output['corp_name'] = corporation['name']
-    if inAlliance:
         output['alliance_name'] = alliance['name']
 
+    output['corp_name'] = corporation['name']
     output['isLoggedInUser'] = False
 
     if current_user.is_authenticated and char_id == current_user.id:
+        output['isLoggedInUser'] = True
         headers = eveme.helper.createHeaders(current_user.access_token)
+
         buyOrders = current_user.buyOrders.split('},{')
         sellOrders = current_user.sellOrders.split('},{')
+
         buyOrdersDicts = []
         sellOrdersDicts = []
+        # Format orders from string to dict
         for i in range(len(buyOrders)):
             if i == 0:
                 buyOrders[i] = buyOrders[i]+'}'
@@ -97,35 +86,26 @@ def character(char_id):
             else:
                 sellOrders[i] = '{'+sellOrders[i]+'}'
             sellOrdersDicts.append(json.loads(sellOrders[i]))
+        # Get results from logged in user and put in output
         output['name'] = current_user.name
-        output['profile_pic'] = current_user.profile_pic
+        output['portrait'] = current_user.portrait
         output['buyOrders'] = buyOrdersDicts
         output['sellOrders'] = sellOrdersDicts
-        accessibleStructures = eveme.helper.getStructures(char_id)
 
+        accessibleStructures = eveme.helper.getStructures(char_id)
+        # Get names for all structures and add to output
         for i in range(len(accessibleStructures)):
-            structureName = ("https://esi.evetech.net/latest/universe/structures"
-                             "/{}/".format(accessibleStructures[i]))
-            res = requests.get(structureName, headers=headers)
-            structure = res.json()
+            structure = eveme.helper.esiRequest('structureInfo', accessibleStructures[i], headers)
             accessibleStructures[i] = structure['name']
         output['structures'] = accessibleStructures
-        output['isLoggedInUser'] = True
-
-        walletQuery = ("https://esi.evetech.net/latest/characters/{}/wallet".format(char_id))
-        res = requests.get(walletQuery, headers=headers)
-        balance = res.json()
+        # Get user wallet balance
+        balance = eveme.helper.esiRequest('walletBalance', char_id, headers)
         output['walletBalance'] = balance
 
     else:
-        tempQuery = ("https://esi.evetech.net/latest/characters/{}"
-                     "/portrait/".format(char_id))
-
-        res = requests.get(tempQuery)
-        portrait = res.json()
-
+        # Get the user's portrait and name
         output['name'] = public['name']
-        output['profile_pic'] = portrait['px64x64']
+        output['portrait'] = eveme.helper.esiRequest('portrait', char_id)['px256x256']
 
     return render_template("character.html", context=output)
 
@@ -203,11 +183,8 @@ def callback():
             order.pop('type_id', None)
             order.pop('location_id', None)
             userSellOrders.append(json.dumps(order))
-    portraitQuery = ("https://esi.evetech.net/latest/characters/{}"
-                     "/portrait/".format(char_id))
-    res = requests.get(portraitQuery)
-    portrait = res.json()
-    picture = portrait['px256x256']
+    # Get the user's portrait
+    portrait = eveme.helper.esiRequest('portrait', char_id)['px256x256']
 
     # Create a user in your db with the information provided
     # by ESI
@@ -215,7 +192,7 @@ def callback():
     buyOrders = ','.join(userBuyOrders)
     sellOrders = ','.join(userSellOrders)
     user = User(
-        id_=char_id, name_=data['name'], profile_pic_=picture,
+        id_=char_id, name_=data['name'], portrait_=portrait,
         buyOrders_=buyOrders, sellOrders_=sellOrders, access_token_=data['access_token']
     )
 
@@ -223,11 +200,11 @@ def callback():
     # Doesn't exist? Add it to the database.
     if not User.get(char_id):
         User.create(
-            char_id, data['name'], picture, buyOrders, sellOrders, data['access_token']
+            char_id, data['name'], portrait, buyOrders, sellOrders, data['access_token']
         )
-    # Exists but changed name or profile picture
+    # Exists but changed name or portrait
     else:
         User.update(
-            char_id, data['name'], picture, buyOrders, sellOrders, data['access_token']
+            char_id, data['name'], portrait, buyOrders, sellOrders, data['access_token']
         )
     return redirect(url_for('character', char_id=char_id))
