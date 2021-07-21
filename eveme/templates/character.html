@@ -17,6 +17,10 @@ User Details
     </div>
     {% if context.isLoggedInUser %}
         <div class="container-fluid">
+            <h4>Wallet</h4>
+            <p>Balance: {{ context.walletBalance }} ISK</p>
+        </div>
+        <div class="container-fluid">
             <h4>Structures with Access</h4>
             {% for structure in context.structures %}
                 {{structure}}

@@ -37,7 +37,8 @@ def login():
                   '&scope=esi-markets.read_character_orders.v1+' +\
                   'esi-markets.structure_markets.v1+' +\
                   'esi-universe.read_structures.v1+' +\
-                  'esi-assets.read_assets.v1' +\
+                  'esi-assets.read_assets.v1+' +\
+                  'esi-wallet.read_character_wallet.v1' +\
                   '&state=ohd9912dn102dn012'
     return redirect(request_uri)
 
@@ -110,6 +111,11 @@ def character(char_id):
             accessibleStructures[i] = structure['name']
         output['structures'] = accessibleStructures
         output['isLoggedInUser'] = True
+
+        walletQuery = ("https://esi.evetech.net/latest/characters/{}/wallet".format(char_id))
+        res = requests.get(walletQuery, headers=headers)
+        balance = res.json()
+        output['walletBalance'] = balance
 
     else:
         tempQuery = ("https://esi.evetech.net/latest/characters/{}"
