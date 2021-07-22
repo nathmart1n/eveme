@@ -19,6 +19,25 @@ User Details
         <div class="container-fluid">
             <h4>Wallet</h4>
             <p>Balance: {{ context.walletBalance }} ISK</p>
+            <h5>Transactions</h5>
+            <table class="table table-bordered table-striped">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                {% for transaction in context.walletTransactions %}
+                    <tr>
+                        <td>{{transaction.item_name}}</td>
+                        {% if transaction.is_buy %}
+                            <td>-{{transaction.unit_price}}</td>
+                        {% else %}
+                            <td>{{transaction.unit_price}}</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </table>
         </div>
         <div class="container-fluid">
             <h4>Structures with Access</h4>

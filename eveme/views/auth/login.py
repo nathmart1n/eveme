@@ -45,6 +45,9 @@ def login():
 
 @eveme.app.route("/character/<char_id>")
 def character(char_id):
+    json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "invTypes.json")
+    invTypes = dict(json.load(open(json_url)))
+
     char_id = int(char_id)
     output = {}
     inAlliance = False
@@ -101,7 +104,11 @@ def character(char_id):
         # Get user wallet balance
         balance = eveme.helper.esiRequest('walletBalance', char_id, headers)
         output['walletBalance'] = balance
-
+        output['walletTransactions'] = \
+            eveme.helper.esiRequest('walletTransactions', char_id, headers)
+        for transaction in output['walletTransactions']:
+            transaction['item_name'] = invTypes[str(transaction['type_id'])]
+        # print(output['walletTransactions'])
     else:
         # Get the user's portrait and name
         output['name'] = public['name']
@@ -175,7 +182,8 @@ def callback():
             order['itemName'] = invTypes[str(order['type_id'])]
             orderMinPrice = float('inf')
             for structOrder in structureOrders:
-                if (not structOrder['is_buy_order']) and (structOrder['type_id'] == order['type_id']):
+                if (not structOrder['is_buy_order']) and \
+                        (structOrder['type_id'] == order['type_id']):
                     if structOrder['price'] < orderMinPrice:
                         orderMinPrice = structOrder['price']
             order['structureLowest'] = orderMinPrice

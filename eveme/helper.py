@@ -41,7 +41,9 @@ def esiRequest(requestType, variable, charHeaders=None):
         'structureInfo': "https://esi.evetech.net/latest/universe/structures/{}/".format(variable),
         'walletBalance': "https://esi.evetech.net/latest/characters/{}/wallet".format(variable),
         'portrait': "https://esi.evetech.net/latest/characters/{}/portrait/".format(variable),
+        'walletTransactions': "https://esi.evetech.net/latest/characters/{}/wallet/transactions".format(variable),
     }
+
     if charHeaders:
         res = requests.get(requestURL[requestType], headers=charHeaders)
     else:
