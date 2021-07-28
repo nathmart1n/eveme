@@ -140,12 +140,21 @@ def callback():
             if order['location_id'] in structuresChecked.keys():
                 structureOrders = structuresChecked[order['location_id']]
             else:
-                structureOrdersQuery = ("https://esi.evetech.net/latest/markets/structures"
-                                        "/{}/".format(order['location_id']))
-                res = requests.get(structureOrdersQuery, headers=headers)
-                res.raise_for_status()
-                numPages = res.headers['X-Pages']
-                structureOrders = res.json()
+                if order['location_id'] < 100000000:
+                    # TODO: Fill this out for region orders then narrow down to station.
+                    structureOrdersQuery = ("https://esi.evetech.net/latest/markets/stations"
+                                            "/{}/".format(order['location_id']))
+                    res = requests.get(structureOrdersQuery)
+                    res.raise_for_status()
+                    numPages = res.headers['X-Pages']
+                    structureOrders = res.json()
+                else:
+                    structureOrdersQuery = ("https://esi.evetech.net/latest/markets/structures"
+                                            "/{}/".format(order['location_id']))
+                    res = requests.get(structureOrdersQuery, headers=headers)
+                    res.raise_for_status()
+                    numPages = res.headers['X-Pages']
+                    structureOrders = res.json()
 
                 for i in range(1, int(numPages)):
                     structureOrdersQuery = ("https://esi.evetech.net/latest/markets/structures"

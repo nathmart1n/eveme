@@ -72,9 +72,14 @@ def handle_sso_token_response(sso_response):
             if order['location_id'] in structNames.keys():
                 order['structure_name'] = structNames[order['location_id']]
             else:
-                structure = eveme.helper.esiRequest('structureInfo', order['location_id'], headers)
-                order['structure_name'] = structure['name']
-                structNames[order['location_id']] = structure['name']
+                if order['location_id'] < 100000000:
+                    station = eveme.helper.esiRequest('stationInfo', order['location_id'])
+                    order['structure_name'] = station['name']
+                    structNames[order['location_id']] = station['name']
+                else:
+                    structure = eveme.helper.esiRequest('structureInfo', order['location_id'], headers)
+                    order['structure_name'] = structure['name']
+                    structNames[order['location_id']] = structure['name']
         return data
     else:
         print("\nSomething went wrong! Re read the comment at the top of this "

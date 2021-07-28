@@ -34,6 +34,7 @@ def esiRequest(requestType, variable, charHeaders=None):
         'walletBalance': "https://esi.evetech.net/latest/characters/{}/wallet".format(variable),
         'portrait': "https://esi.evetech.net/latest/characters/{}/portrait/".format(variable),
         'walletTransactions': "https://esi.evetech.net/latest/characters/{}/wallet/transactions".format(variable),
+        'stationInfo': "https://esi.evetech.net/latest/universe/stations/{}/".format(variable),
     }
 
     if charHeaders:
