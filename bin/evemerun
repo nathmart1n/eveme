@@ -13,9 +13,9 @@ set -Eeuo pipefail
 set -x
 
 # Clean
-if [[ ! -d "var/uploads" ]]
-then ./bin/evemedb create
-fi ;
+# if [[ ! -d "var/uploads" ]]
+# then ./bin/evemedb create
+# fi ;
 
 
 export FLASK_ENV=development

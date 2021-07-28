@@ -95,7 +95,7 @@ def character(char_id):
     else:
         # Get the user's portrait and name
         output['name'] = public['name']
-        output['portrait'] = eveme.helper.esiRequest('portrait', char_id)['px256x256']
+        output['profilePic'] = eveme.helper.esiRequest('portrait', char_id)['px256x256']
 
     return render_template("character.html", context=output)
 
