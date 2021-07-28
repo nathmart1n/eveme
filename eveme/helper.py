@@ -1,5 +1,6 @@
 import eveme
 import requests
+import time
 from firebase_admin import db, credentials
 
 
@@ -24,6 +25,7 @@ def insertStructure(user_id, structure_id):
 
 
 def esiRequest(requestType, variable, charHeaders=None):
+    start_time = time.time()
     """Performs request to ESI API. userToken necessary if request type requires auth."""
     requestURL = {
         'charInfo': "https://esi.evetech.net/latest/characters/{}/".format(variable),
@@ -41,4 +43,6 @@ def esiRequest(requestType, variable, charHeaders=None):
         res = requests.get(requestURL[requestType], headers=charHeaders)
     else:
         res = requests.get(requestURL[requestType])
+
+    print("--- esiRequest() with " + requestType + " took %s seconds ---" % (time.time() - start_time))
     return res.json()
