@@ -28,9 +28,9 @@ import pathlib
 import time
 
 
-
 @eveme.app.route("/login/")
 def login():
+    start_time = time.time()
     """First step in ESI OAuth."""
     request_uri = 'https://login.eveonline.com/v2/oauth/authorize/?response' +\
                   '_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2F' +\
@@ -42,6 +42,7 @@ def login():
                   'esi-assets.read_assets.v1+' +\
                   'esi-wallet.read_character_wallet.v1' +\
                   '&state=ohd9912dn102dn012'
+    print("--- login() took %s seconds ---" % (time.time() - start_time))
     return redirect(request_uri)
 
 
