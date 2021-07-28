@@ -11,7 +11,8 @@ firebase_admin.initialize_app(cred, {
 })
 
 # As an admin, the app has access to read and write all data, regradless of Security Rules
-ref = db.reference('users')
+ref = db.reference('')
+users_ref = ref.child('users')
 
 # ref = db.reference('https://eveme-a9975-default-rtdb.firebaseio.com/users/', None)
 
@@ -29,8 +30,7 @@ class User(UserMixin):
 
     @staticmethod
     def get(user_id):
-        users = ref.get()
-
+        users = users_ref.get()
         if user_id not in users.keys():
             return None
         selectedUser = users[user_id]
@@ -46,9 +46,9 @@ class User(UserMixin):
         return user
 
     @staticmethod
-    def update(user_info_):
-        ref.update(user_info_)
+    def update(user_info_, user_id_):
+        users_ref.child(str(user_id_)).update(user_info_)
 
     @staticmethod
-    def create(user_info_):
-        ref.set(user_info_)
+    def create(user_info_, user_id_):
+        users_ref.child(str(user_id_)).set(user_info_)
