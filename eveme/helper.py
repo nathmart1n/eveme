@@ -1,34 +1,26 @@
 import eveme
 import requests
+from firebase_admin import db, credentials
 
 
 def createHeaders(access_token):
-    """Formats headers for ESI API authenticated request."""
     return {
             "Authorization": "Bearer {}".format(access_token)
            }
 
 
-def getStructures(char_id):
-    """Gets all structures for a given character."""
-    connection = eveme.model.get_db()
-
-    structures = connection.execute(
-        "SELECT * FROM structureAccess WHERE id = ?", (char_id,)
-    ).fetchall()
-
-    return [x['structure_id'] for x in structures]
+def getStructures(user_id):
+    ref = db.reference('users/' + user_id)
+    output = []
+    structs = ref.get()['structureAccess']
+    for structure in structs:
+        output.append(structure)
+    return output
 
 
 def insertStructure(user_id, structure_id):
-    """Inserts structure into structureAccess table."""
-    connection = eveme.model.get_db()
-    connection.execute(
-        "INSERT OR IGNORE INTO structureAccess (id, structure_id) "
-        "VALUES (?, ?)",
-        (user_id, structure_id),
-    )
-    connection.commit()
+    ref = db.reference('users/' + user_id + '/structureAccess')
+    ref.put(structure_id)
 
 
 def esiRequest(requestType, variable, charHeaders=None):

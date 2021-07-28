@@ -3,8 +3,10 @@ import os
 from flask import Flask
 from flask_login import LoginManager
 from eveme.user import User
+
 # app is a single object used by all the code modules in this package
 app = Flask(__name__, instance_relative_config=True)
+
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -34,4 +36,3 @@ app.config.from_pyfile('config.py', silent=True)
 # going to tell pylint and pycodestyle to ignore this coding style violation.
 import eveme.views  # noqa: E402  pylint: disable=wrong-import-position
 import eveme.model  # noqa: E402  pylint: disable=wrong-import-position
-import eveme.api  # noqa: E402  pylint: disable=wrong-import-position
