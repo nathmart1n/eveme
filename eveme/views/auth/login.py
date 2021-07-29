@@ -3,7 +3,7 @@ EVEME index (login) view.
 
 URLs include:
 /login/
-/success/<char_id>
+/character/<char_id>
 /callback/
 """
 from flask import (
@@ -56,14 +56,7 @@ def character(char_id):
     inAlliance = False
 
     public = eveme.helper.esiRequest('charInfo', char_id)
-    corporation = eveme.helper.esiRequest('corpInfo', public['corporation_id'])
 
-    if 'alliance_id' in public.keys():
-        alliance = eveme.helper.esiRequest('allianceInfo', public['alliance_id'])
-        inAlliance = True
-        output['alliance_name'] = alliance['name']
-
-    output['corp_name'] = corporation['name']
     output['isLoggedInUser'] = False
 
     if current_user.is_authenticated and char_id == current_user.id:
@@ -88,6 +81,10 @@ def character(char_id):
                 structure = eveme.helper.esiRequest('structureInfo', accessibleStructures[i], headers)
                 accessibleStructures[i] = structure['name']
             output['structures'] = accessibleStructures
+        # Get user corp and alliance
+        if current_user.alliance:
+            output['alliance'] = current_user.alliance
+        output['corporation'] = current_user.corporation
 
         # Get user wallet balance
         balance = eveme.helper.esiRequest('walletBalance', char_id, headers)
@@ -100,6 +97,15 @@ def character(char_id):
         # Get the user's portrait and name
         output['name'] = public['name']
         output['profilePic'] = eveme.helper.esiRequest('portrait', char_id)['px256x256']
+        # Get the user's corp and alliance
+        corporation = eveme.helper.esiRequest('corpInfo', public['corporation_id'])
+
+        if 'alliance_id' in public.keys():
+            alliance = eveme.helper.esiRequest('allianceInfo', public['alliance_id'])
+            inAlliance = True
+            output['alliance'] = alliance['name']
+
+        output['corporation'] = corporation['name']
     print("--- character() took %s seconds ---" % (time.time() - start_time))
     return render_template("character.html", context=output)
 
@@ -202,6 +208,16 @@ def callback():
     # Get the user's portrait
     portrait = eveme.helper.esiRequest('portrait', char_id)['px256x256']
 
+    # Get the user's corporation and alliance
+    corporation = eveme.helper.esiRequest('corpInfo', data['corporation_id'])
+
+    if 'alliance_id' in data.keys():
+        alliance = eveme.helper.esiRequest('allianceInfo', data['alliance_id'])
+        inAlliance = True
+        user_info['alliance'] = alliance['name']
+
+    user_info['corporation'] = corporation['name']
+
     # Create a user in your db with the information provided
     # by ESI
     user_info['name'] = data['name']
@@ -211,7 +227,8 @@ def callback():
     user = User(
         id_=char_id, name_=data['name'], profilePic_=portrait,
         buyOrders_=user_info['buyOrders'], sellOrders_=user_info['sellOrders'],
-        accessToken_=data['access_token'], structureAccess_=list(structuresChecked.keys())
+        accessToken_=data['access_token'], structureAccess_=list(structuresChecked.keys()),
+        corporation_=corporation['name'], alliance_=alliance['name']
     )
 
     login_user(user)
