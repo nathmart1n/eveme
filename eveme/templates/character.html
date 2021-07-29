@@ -8,9 +8,9 @@ User Details
             <img src="{{ context.profilePic }}" class="rounded-circle" alt="{{ context.name }} Portrait" width="150">
             <div class="mt-3">
                 <h4>Character Name: {{ context.name }}</h4>
-                <p class="text-secondary mb-1">Corporation: {{ context.corp_name}}</p>
-                {% if context.alliance_name %}
-                    <p class="text-muted font-size-sm">Alliance: {{ context.alliance_name}}</p>
+                <p class="text-secondary mb-1">Corporation: {{ context.corporation}}</p>
+                {% if context.alliance %}
+                    <p class="text-muted font-size-sm">Alliance: {{ context.alliance}}</p>
                 {% endif %}
             </div>
         </div>

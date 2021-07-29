@@ -19,7 +19,7 @@ users_ref = ref.child('users')
 
 class User(UserMixin):
     def __init__(self, id_, name_, profilePic_, buyOrders_, sellOrders_,
-                 accessToken_, structureAccess_):
+                 accessToken_, structureAccess_, corporation_, alliance_):
         self.id = id_
         self.name = name_
         self.profilePic = profilePic_
@@ -27,6 +27,8 @@ class User(UserMixin):
         self.sellOrders = sellOrders_
         self.accessToken = accessToken_
         self.structureAccess = structureAccess_
+        self.corporation = corporation_
+        self.alliance = alliance_
 
     @staticmethod
     def get(user_id):
@@ -41,7 +43,9 @@ class User(UserMixin):
             buyOrders_=selectedUser['buyOrders'],
             sellOrders_=selectedUser['sellOrders'],
             accessToken_=selectedUser['accessToken'],
-            structureAccess_=selectedUser['structureAccess']
+            structureAccess_=selectedUser['structureAccess'],
+            corporation_=selectedUser['corporation'],
+            alliance_=selectedUser['alliance']
         )
         return user
 

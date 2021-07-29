@@ -6,6 +6,7 @@ URLs include:
 """
 import flask
 import eveme
+import eveme.helper
 
 
 @eveme.app.route('/settings/', methods=['GET', 'POST'])
@@ -14,6 +15,12 @@ def show_settings():
     context = {}
 
     if flask.request.method == 'POST':
-        return flask.render_template("settings.html", **context)
+        if 'userOrders' in flask.request.form:
+            print('a')
+        elif 'userData' in flask.request.form:
+            eveme.helper.updateUserData()
+        elif 'priceData' in flask.request.form:
+            print('b')
+        return flask.render_template("settings.html")
 
     return flask.render_template("settings.html")
