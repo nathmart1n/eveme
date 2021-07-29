@@ -1,0 +1,8 @@
+.btn-secondary, .btn-secondary:hover, .btn-secondary:active, .btn-secondary:visited {
+    background-color: #FFFFFF !important;
+}
+
+.dropdown-toggle::after {
+    border-top-color:#888 !important;
+    border-bottom-color:#888 !important;
+}

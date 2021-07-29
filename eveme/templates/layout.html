@@ -34,15 +34,17 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                     {% if current_user.is_authenticated %}
-                        <div class="dropdown" style="padding-right: 12px;">
-                            <a class="btn btn-secondary dropdown-toggle black-background white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        <li class="dropdown" style="padding-right: 12px;">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img alt="profilePic" src="{{current_user.profilePic}}" width="40" height="40">
+                                <span class="caret" style="color: #808080"></span>
                             </a>
-                        
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <li id="username" class="dropdown-header">{{ current_user.name }}</li>
+                                <li><a class="dropdown-item" href="{{ url_for('character', char_id=current_user.id) }}">Account</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for('show_settings') }}">Settings</a></li>
                             </ul>
-                        </div>
+                        </li>
                         <li style="padding-top: 1px">
                         <a href="{{ url_for('logout') }}" class="btn btn-primary my-2 my-sm-0" role="button">Logout</a>
                         </li>
