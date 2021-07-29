@@ -3,5 +3,22 @@
 About us
 {% endblock %}
 {% block content %}
-<p>Settings go here.</p>
+<div class="container-fluid">
+    <h3>Refresh Data</h3>
+    <form>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="userOrders">
+            <label class="form-check-label" for="userOrders">User Orders (quantity, location, price)</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="userOrders">
+            <label class="form-check-label" for="userOrders">User Data (profile pic, name, corp, alliance)</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="userOrders">
+            <label class="form-check-label" for="userOrders">Price Data (price of best orders in stations)</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Refresh Selected</button>
+    </form>
+</div>
 {% endblock %}
