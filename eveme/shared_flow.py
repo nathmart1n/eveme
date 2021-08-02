@@ -7,6 +7,7 @@ found here are used by the OAuth 2.0 examples contained in this project.
 import urllib
 import eveme.helper
 import requests
+import time
 
 from eveme.validate_jwt import validate_eve_jwt
 
@@ -42,6 +43,7 @@ def send_token_request(form_values, add_headers={}):
 
 
 def handle_sso_token_response(sso_response):
+    start_time = time.time()
     """Handles the authorization code response from the EVE SSO.
 
     Args:
@@ -80,6 +82,7 @@ def handle_sso_token_response(sso_response):
                     structure = eveme.helper.esiRequest('structureInfo', order['location_id'], headers)
                     order['structure_name'] = structure['name']
                     structNames[order['location_id']] = structure['name']
+        print("--- handle_sso_token_response() took %s seconds ---" % (time.time() - start_time))
         return data
     else:
         print("\nSomething went wrong! Re read the comment at the top of this "
