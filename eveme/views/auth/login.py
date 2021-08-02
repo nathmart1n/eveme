@@ -16,8 +16,9 @@ from flask import (
     url_for,
 )
 from flask_login import login_user, current_user
-from eveme.shared_flow import send_token_request, handle_sso_token_response
+from eveme.shared_flow import handle_sso_token_response
 from eveme.user import User
+from firebase_admin import db
 import eveme.helper
 import eveme
 import requests
@@ -60,6 +61,7 @@ def character(char_id):
     output['isLoggedInUser'] = False
 
     if current_user.is_authenticated and char_id == current_user.id:
+        eveme.helper.refreshAuth()
         output['isLoggedInUser'] = True
         headers = eveme.helper.createHeaders(current_user.accessToken)
         output['name'] = current_user.name
@@ -128,8 +130,9 @@ def callback():
     }
 
     headers = {"Authorization": auth_header}
-    res = send_token_request(form_values, add_headers=headers)
+    res = eveme.helper.send_token_request(form_values, add_headers=headers)
     data = handle_sso_token_response(res)
+    authTime = time.time()
     char_id = data['id']
     structuresChecked = {}
     user_info = {
@@ -144,60 +147,25 @@ def callback():
     headers = eveme.helper.createHeaders(data['access_token'])
 
     order_time = time.time()
+    ref = db.reference('prices')
     if data['orders']:
         for order in data['orders']:
             # eveme.helper.insertStructure(char_id, order['location_id'])
             # Format price with commas
 
-            if order['location_id'] in structuresChecked.keys():
-                structureOrders = structuresChecked[order['location_id']]
-            else:
-                if order['location_id'] < 100000000:
-                    # TODO: Fill this out for region orders then narrow down to station.
-                    structureOrdersQuery = ("https://esi.evetech.net/latest/markets/stations"
-                                            "/{}/".format(order['location_id']))
-                    res = requests.get(structureOrdersQuery)
-                    res.raise_for_status()
-                    numPages = res.headers['X-Pages']
-                    structureOrders = res.json()
-                else:
-                    structureOrdersQuery = ("https://esi.evetech.net/latest/markets/structures"
-                                            "/{}/".format(order['location_id']))
-                    res = requests.get(structureOrdersQuery, headers=headers)
-                    res.raise_for_status()
-                    numPages = res.headers['X-Pages']
-                    structureOrders = res.json()
-
-                for i in range(1, int(numPages)):
-                    structureOrdersQuery = ("https://esi.evetech.net/latest/markets/structures"
-                                            "/{}/?datasource=tranquility&page="
-                                            "{}".format(order['location_id'], i + 1))
-                    res = requests.get(structureOrdersQuery, headers=headers)
-                    numPages = res.headers['X-Pages']
-                    structureOrders.extend(res.json())
-                structuresChecked[order['location_id']] = structureOrders
+            if order['location_id'] not in structuresChecked.keys():
+                structuresChecked[order['location_id']] = 1
 
             # check each order with order in structure and compare
             if 'is_buy_order' in order.keys():
                 order['itemName'] = invTypes[str(order['type_id'])]
-                orderMaxPrice = -1.0
-                for structOrder in structureOrders:
-                    # bug here string indices?
-                    if (structOrder['is_buy_order']) and (structOrder['type_id'] == order['type_id']):
-                        if structOrder['price'] > orderMaxPrice:
-                            orderMaxPrice = structOrder['price']
-                order['structureHighest'] = orderMaxPrice
+                order['structureHighest'] = ref.child('buy').child(str(order['type_id'])).get()
                 order.pop('type_id', None)
                 order.pop('location_id', None)
                 user_info['buyOrders'][order['order_id']] = order
             else:
                 order['itemName'] = invTypes[str(order['type_id'])]
-                orderMinPrice = float('inf')
-                for structOrder in structureOrders:
-                    if (not structOrder['is_buy_order']) and (structOrder['type_id'] == order['type_id']):
-                        if structOrder['price'] < orderMinPrice:
-                            orderMinPrice = structOrder['price']
-                order['structureLowest'] = orderMinPrice
+                order['structureLowest'] = ref.child('sell').child(str(order['type_id'])).get()
                 order.pop('type_id', None)
                 order.pop('location_id', None)
                 user_info['sellOrders'][order['order_id']] = order
@@ -224,12 +192,15 @@ def callback():
     user_info['name'] = data['name']
     user_info['profilePic'] = portrait
     user_info['accessToken'] = data['access_token']
+    user_info['refreshToken'] = data['refresh_token']
+    user_info['authTime'] = authTime
 
     user = User(
         id_=char_id, name_=data['name'], profilePic_=portrait,
         buyOrders_=user_info['buyOrders'], sellOrders_=user_info['sellOrders'],
         accessToken_=data['access_token'], structureAccess_=list(structuresChecked.keys()),
-        corporation_=corporation['name'], alliance_=alliance['name']
+        corporation_=corporation['name'], alliance_=alliance['name'], authTime_=authTime,
+        refreshToken_=data['refresh_token']
     )
 
     login_user(user)
