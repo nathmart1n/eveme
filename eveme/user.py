@@ -19,7 +19,8 @@ users_ref = ref.child('users')
 
 class User(UserMixin):
     def __init__(self, id_, name_, profilePic_, buyOrders_, sellOrders_,
-                 accessToken_, structureAccess_, corporation_, alliance_):
+                 accessToken_, structureAccess_, corporation_, alliance_, authTime_,
+                 refreshToken_):
         self.id = id_
         self.name = name_
         self.profilePic = profilePic_
@@ -29,6 +30,8 @@ class User(UserMixin):
         self.structureAccess = structureAccess_
         self.corporation = corporation_
         self.alliance = alliance_
+        self.authTime = authTime_
+        self.refreshToken = refreshToken_
 
     @staticmethod
     def get(user_id):
@@ -45,13 +48,22 @@ class User(UserMixin):
             accessToken_=selectedUser['accessToken'],
             structureAccess_=selectedUser['structureAccess'],
             corporation_=selectedUser['corporation'],
-            alliance_=selectedUser['alliance']
+            alliance_=selectedUser['alliance'],
+            authTime_=selectedUser['authTime'],
+            refreshToken_=selectedUser['refreshToken']
         )
         return user
 
     @staticmethod
     def update(user_info_, user_id_):
         users_ref.child(str(user_id_)).update(user_info_)
+
+    @staticmethod
+    def updateAuthToken(newAuthToken, newAuthTime, user_id_):
+        users_ref.child(str(user_id_)).update({
+            "accessToken": newAuthToken,
+            "authTime": newAuthTime
+        })
 
     @staticmethod
     def create(user_info_, user_id_):
