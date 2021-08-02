@@ -143,6 +143,7 @@ def callback():
 
     headers = eveme.helper.createHeaders(data['access_token'])
 
+    order_time = time.time()
     if data['orders']:
         for order in data['orders']:
             # eveme.helper.insertStructure(char_id, order['location_id'])
@@ -215,7 +216,7 @@ def callback():
         alliance = eveme.helper.esiRequest('allianceInfo', data['alliance_id'])
         inAlliance = True
         user_info['alliance'] = alliance['name']
-
+    print("--- orders processing took %s seconds ---" % (time.time() - order_time))
     user_info['corporation'] = corporation['name']
 
     # Create a user in your db with the information provided
