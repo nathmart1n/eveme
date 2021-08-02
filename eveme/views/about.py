@@ -12,7 +12,7 @@ from flask_login import current_user
 
 @eveme.app.route('/about/')
 def show_about():
-    """Display / route."""
+    """Display /about/ route."""
     context = {}
     if current_user.is_authenticated:
         eveme.helper.refreshAuth()
