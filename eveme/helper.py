@@ -142,7 +142,7 @@ def updatePriceData():
 def refreshAuth():
     """Refreshes auth token if time greater than 20 mins."""
     start_time = time.time()
-    if current_user.is_authenticated and time.time() - current_user.authTime >= 1200:
+    if time.time() - current_user.authTime >= 1200:
         newAuthTime = time.time()
         user_pass = "{}:{}".format(current_app.config['ESI_CLIENT_ID'],
                                    current_app.config['ESI_SECRET_KEY'])
