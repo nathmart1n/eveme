@@ -1,5 +1,5 @@
 """
-EVEME index (contact) view.
+EVEME contact view.
 
 URLs include:
 /contact/

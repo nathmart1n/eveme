@@ -1,5 +1,5 @@
 """
-EVEME index (logout) view.
+EVEME logout view.
 
 URLs include:
 /logout/

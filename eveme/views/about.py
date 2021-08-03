@@ -1,5 +1,5 @@
 """
-EVEME index (about) view.
+EVEME about view.
 
 URLs include:
 /about/

@@ -37,7 +37,7 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <li id="username" class="dropdown-header">{{ current_user.name }}</li>
                                 <li><a class="dropdown-item" href="{{ url_for('character', char_id=current_user.id) }}">Profile</a></li>
-                                <li><a class="dropdown-item" href="{{ url_for('orders') }}">Market Orders</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for('show_orders') }}">Market Orders</a></li>
                                 <li><a class="dropdown-item" href="{{ url_for('show_settings') }}">Settings</a></li>
                             </ul>
                         </li>

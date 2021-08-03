@@ -1,8 +1,8 @@
 """
-EVEME index (about) view.
+EVEME market orders view.
 
 URLs include:
-/about/
+/orders/
 """
 import flask
 import eveme

@@ -53,7 +53,7 @@ def esiRequest(requestType, variable, charHeaders=None):
 
 
 def updateUserData():
-    """Queries ESI and updates user's publicData in DB."""
+    """Queries ESI and updates user's character sheet in DB."""
     start_time = time.time()
     # Get current user id
     charID = current_user.id
@@ -79,7 +79,11 @@ def updateUserData():
     new['profilePic'] = portrait['px256x256']
     ref = db.reference('users')
     charRef = ref.child(charID)
-    charRef.update(new)
+    if charID in ref.get().keys():
+        charRef.update(new)
+    else:
+        charRef.set(new)
+
     print("--- updateUserData() with took %s seconds ---" % (time.time() - start_time))
     return None
 
