@@ -18,20 +18,13 @@ users_ref = ref.child('users')
 
 
 class User(UserMixin):
-    def __init__(self, id_, name_, profilePic_, buyOrders_, sellOrders_,
-                 accessToken_, structureAccess_, corporation_, alliance_, authTime_,
-                 refreshToken_):
+    def __init__(self, id_, accessToken_, authTime_, refreshToken_, name_, profilePic_):
         self.id = id_
-        self.name = name_
-        self.profilePic = profilePic_
-        self.buyOrders = buyOrders_
-        self.sellOrders = sellOrders_
         self.accessToken = accessToken_
-        self.structureAccess = structureAccess_
-        self.corporation = corporation_
-        self.alliance = alliance_
         self.authTime = authTime_
         self.refreshToken = refreshToken_
+        self.profilePic = profilePic_
+        self.name = name_
 
     @staticmethod
     def get(user_id):
@@ -41,16 +34,11 @@ class User(UserMixin):
         selectedUser = users[user_id]
         user = User(
             id_=user_id,
-            name_=selectedUser['name'],
-            profilePic_=selectedUser['profilePic'],
-            buyOrders_=selectedUser['buyOrders'],
-            sellOrders_=selectedUser['sellOrders'],
             accessToken_=selectedUser['accessToken'],
-            structureAccess_=selectedUser['structureAccess'],
-            corporation_=selectedUser['corporation'],
-            alliance_=selectedUser['alliance'],
             authTime_=selectedUser['authTime'],
-            refreshToken_=selectedUser['refreshToken']
+            refreshToken_=selectedUser['refreshToken'],
+            name_=selectedUser['name'],
+            profilePic_=selectedUser['profilePic']
         )
         return user
 

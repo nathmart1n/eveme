@@ -73,8 +73,6 @@ def callback():
         'accessToken': None,
         'buyOrders': {},
         'sellOrders': {},
-        'name': None,
-        'profilePic': None,
         'structureAccess': [],
     }
 
@@ -88,7 +86,7 @@ def callback():
             # Format price with commas
 
             if order['location_id'] not in structuresChecked.keys():
-                structuresChecked[order['location_id']] = 1
+                structuresChecked[order['location_id']] = eveme.helper.esiRequest('structureInfo', order['location_id'], headers)['name']
 
             # check each order with order in structure and compare
             if 'is_buy_order' in order.keys():
@@ -103,7 +101,7 @@ def callback():
                 order.pop('type_id', None)
                 order.pop('location_id', None)
                 user_info['sellOrders'][order['order_id']] = order
-        user_info['structureAccess'] = list(structuresChecked.keys())
+        user_info['structureAccess'] = structuresChecked
     else:
         user_info['buyOrders'] = 'None'
         user_info['sellOrders'] = 'None'
@@ -118,17 +116,14 @@ def callback():
     user_info['authTime'] = authTime
 
     user = User(
-        id_=char_id,
-        buyOrders_=user_info['buyOrders'], sellOrders_=user_info['sellOrders'],
-        accessToken_=data['access_token'], structureAccess_=list(structuresChecked.keys()), authTime_=authTime,
-        refreshToken_=data['refresh_token']
+        id_=char_id, accessToken_=data['access_token'],
+        authTime_=authTime, refreshToken_=data['refresh_token'],
+        name_=data['name'], profilePic_=eveme.helper.esiRequest('portrait', char_id)['px256x256']
     )
-
     login_user(user)
     # Doesn't exist? Add it to the database.
     if not User.get(char_id):
         eveme.helper.updateUserData()
-        User.create(user_info, char_id)
     User.update(user_info, char_id)
 
     print("--- callback() took %s seconds ---" % (time.time() - start_time))

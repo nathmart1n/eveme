@@ -14,6 +14,7 @@ from flask import (
     url_for,
 )
 from flask_login import login_user, current_user
+from eveme import user
 from eveme.shared_flow import handle_sso_token_response
 from eveme.user import User
 from firebase_admin import db
@@ -33,6 +34,8 @@ def character(char_id):
     json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "invTypes.json")
     invTypes = dict(json.load(open(json_url)))
 
+    ref = db.reference('users')
+
     output = {}
     inAlliance = False
 
@@ -41,40 +44,33 @@ def character(char_id):
     output['isLoggedInUser'] = False
 
     if current_user.is_authenticated and char_id == current_user.id:
+        user_ref = ref.child(char_id).get()
         eveme.helper.refreshAuth()
         output['isLoggedInUser'] = True
-        headers = eveme.helper.createHeaders(current_user.accessToken)
-        output['name'] = current_user.name
-        output['profilePic'] = current_user.profilePic
+        headers = eveme.helper.createHeaders(user_ref['accessToken'])
+        output['name'] = user_ref['name']
+        output['profilePic'] = user_ref['profilePic']
         output['buyOrders'] = []
         output['sellOrders'] = []
 
-        if current_user.buyOrders != 'None':
-            for id in current_user.buyOrders.keys():
-                output['buyOrders'].append(current_user.buyOrders[id])
+        if user_ref['buyOrders'] != 'None':
+            for id in user_ref['buyOrders'].keys():
+                output['buyOrders'].append(user_ref['buyOrders'][id])
 
-        if current_user.sellOrders != 'None':
-            for id in current_user.sellOrders.keys():
-                output['sellOrders'].append(current_user.sellOrders[id])
+        if user_ref['sellOrders'] != 'None':
+            for id in user_ref['sellOrders'].keys():
+                output['sellOrders'].append(user_ref['sellOrders'][id])
 
-        if current_user.structureAccess != 'None':
-            accessibleStructures = eveme.helper.getStructures(char_id)
-            for i in range(len(accessibleStructures)):
-                structure = eveme.helper.esiRequest('structureInfo', accessibleStructures[i], headers)
-                accessibleStructures[i] = structure['name']
-            output['structures'] = accessibleStructures
+        if user_ref['structureAccess'] != 'None':
+            output['structures'] = user_ref['structureAccess']
         # Get user corp and alliance
-        if current_user.alliance:
-            output['alliance'] = current_user.alliance
-        output['corporation'] = current_user.corporation
+        if user_ref['alliance']:
+            output['alliance'] = user_ref['alliance']
+        output['corporation'] = user_ref['corporation']
 
         # Get user wallet balance
-        balance = eveme.helper.esiRequest('walletBalance', char_id, headers)
-        output['walletBalance'] = balance
-        output['walletTransactions'] = \
-            eveme.helper.esiRequest('walletTransactions', char_id, headers)
-        for transaction in output['walletTransactions']:
-            transaction['item_name'] = invTypes[str(transaction['type_id'])]
+        output['walletBalance'] = user_ref['walletBalance']
+        output['walletTransactions'] = user_ref['walletTransactions']
     else:
         # Get the user's portrait and name
         output['name'] = public['name']

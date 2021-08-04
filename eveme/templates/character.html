@@ -48,8 +48,8 @@ User Details
             {% if current_user.structureAccess == 'None' %}
                 <p>No accessible structures!</p>
             {% else %}
-                {% for structure in context.structures %}
-                    {{structure}}
+                {% for key, val in context.structures.items() %}
+                    {{val}}
                 {% endfor %}
             {% endif %}
             <h4>Sell Orders</h4>

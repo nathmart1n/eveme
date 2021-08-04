@@ -2,6 +2,9 @@ import eveme
 import requests
 import time
 import base64
+import os
+import json
+import pathlib
 from firebase_admin import db
 from flask_login import current_user
 from flask import current_app
@@ -15,11 +18,13 @@ def createHeaders(access_token):
 
 
 def getStructures(user_id):
+    start_time = time.time()
     ref = db.reference('users/' + user_id)
     output = []
     structs = ref.get()['structureAccess']
     for structure in structs:
         output.append(structure)
+    print("--- getStructures() took %s seconds ---" % (time.time() - start_time))
     return output
 
 
@@ -55,6 +60,11 @@ def esiRequest(requestType, variable, charHeaders=None):
 def updateUserData():
     """Queries ESI and updates user's character sheet in DB."""
     start_time = time.time()
+    json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "invTypes.json")
+    invTypes = dict(json.load(open(json_url)))
+
+    headers = createHeaders(current_user.accessToken)
+
     # Get current user id
     charID = current_user.id
     # Dict for new info
@@ -78,11 +88,22 @@ def updateUserData():
     new['name'] = publicData['name']
     new['profilePic'] = portrait['px256x256']
     ref = db.reference('users')
-    charRef = ref.child(charID)
-    if charID in ref.get().keys():
+
+    # Get user wallet balance
+    balance = eveme.helper.esiRequest('walletBalance', charID, headers)
+    new['walletBalance'] = balance
+    new['walletTransactions'] = \
+        eveme.helper.esiRequest('walletTransactions', charID, headers)
+    for transaction in new['walletTransactions']:
+        transaction['item_name'] = invTypes[str(transaction['type_id'])]
+
+    if User.get(str(charID)):
+        charRef = ref.child(str(charID))
         charRef.update(new)
     else:
-        charRef.set(new)
+        ref.set({
+            str(charID): new
+        })
 
     print("--- updateUserData() with took %s seconds ---" % (time.time() - start_time))
     return None
