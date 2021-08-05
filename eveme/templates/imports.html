@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}
+Imports
+{% endblock %}
+{% block content %}
+<div class="container-fluid mt-3">
+    <h3>Import Data</h3>
+    <form action="{{ url_for('show_imports') }}" method="POST">
+        <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

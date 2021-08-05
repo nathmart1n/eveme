@@ -30,14 +30,15 @@
                     <ul class="nav navbar-nav navbar-right">
                     {% if current_user.is_authenticated %}
                         <li class="dropdown" style="padding-right: 12px;">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img alt="profilePic" src="{{current_user.profilePic}}" width="40" height="40">
+                            <a class="btn btn-secondary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img alt="profilePic" src="{{current_user.profilePic}}" width="35" height="35">
                                 <span class="caret" style="color: #808080"></span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <li id="username" class="dropdown-header">{{ current_user.name }}</li>
                                 <li><a class="dropdown-item" href="{{ url_for('character', char_id=current_user.id) }}">Profile</a></li>
                                 <li><a class="dropdown-item" href="{{ url_for('show_orders') }}">Market Orders</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for('show_imports') }}">Imports</a></li>
                                 <li><a class="dropdown-item" href="{{ url_for('show_settings') }}">Settings</a></li>
                             </ul>
                         </li>

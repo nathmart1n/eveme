@@ -111,6 +111,53 @@ def updateUserData():
 
 def updateUserOrders():
     """Queries ESI and updates user's market orders in DB."""
+    start_time = time.time()
+    json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "invTypes.json")
+    invTypes = dict(json.load(open(json_url)))
+
+    # Link to structure prices in DB
+    ref = db.reference('prices')
+
+    headers = createHeaders(current_user.accessToken)
+
+    orders = eveme.helper.esiRequest('charOrders', current_user.id, headers)
+
+    structuresChecked = {}
+    user_info = {
+        'buyOrders': {},
+        'sellOrders': {},
+        'structureAccess': [],
+    }
+
+    if orders:
+        for order in orders:
+            # eveme.helper.insertStructure(char_id, order['location_id'])
+            # Format price with commas
+
+            if order['location_id'] not in structuresChecked.keys():
+                structuresChecked[order['location_id']] = eveme.helper.esiRequest('structureInfo', order['location_id'], headers)['name']
+
+            # check each order with order in structure and compare
+            if 'is_buy_order' in order.keys():
+                order['itemName'] = invTypes[str(order['type_id'])]
+                order['structureHighest'] = ref.child('buy').child(str(order['type_id'])).get()
+                order.pop('type_id', None)
+                order.pop('location_id', None)
+                user_info['buyOrders'][order['order_id']] = order
+            else:
+                order['itemName'] = invTypes[str(order['type_id'])]
+                order['structureLowest'] = ref.child('sell').child(str(order['type_id'])).get()
+                order.pop('type_id', None)
+                order.pop('location_id', None)
+                user_info['sellOrders'][order['order_id']] = order
+        user_info['structureAccess'] = structuresChecked
+    else:
+        user_info['buyOrders'] = 'None'
+        user_info['sellOrders'] = 'None'
+        user_info['structureAccess'] = 'None'
+
+    User.update(user_info, current_user.id)
+    print("--- updateUserOrders() with took %s seconds ---" % (time.time() - start_time))
     return None
 
 
@@ -118,9 +165,10 @@ def updatePriceData():
     """Queries ESI data for structures user has orders in and updates max/min prices."""
     start_time = time.time()
     ref = db.reference('prices')
+    structures = db.reference('users/'+current_user.id+'/structureAccess').get()
     headers = createHeaders(current_user.accessToken)
-    for structureID in current_user.structureAccess:
-        if structureID < 100000000:
+    for structureID in structures:
+        if int(structureID) < 100000000:
             # TODO: Fill this out for region orders then narrow down to station.
             return None
         else:

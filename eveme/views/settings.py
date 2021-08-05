@@ -18,10 +18,10 @@ def show_settings():
 
     if flask.request.method == 'POST':
         if 'userOrders' in flask.request.form:
-            print('a')
-        elif 'userData' in flask.request.form:
+            eveme.helper.updateUserOrders()
+        if 'userData' in flask.request.form:
             eveme.helper.updateUserData()
-        elif 'priceData' in flask.request.form:
+        if 'priceData' in flask.request.form:
             eveme.helper.updatePriceData()
         return flask.render_template("settings.html")
 
