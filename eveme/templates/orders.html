@@ -5,7 +5,7 @@ Market Orders
 {% block content %}
 <div class="container-fluid">
     <h4>Sell Orders</h4>
-    {% if current_user.sellOrders == 'None' %}
+    {% if not context.sellOrders %}
         <p>No sell orders to display!</p>
     {% else %}
         <table class="table table-bordered table-striped">
@@ -40,7 +40,7 @@ Market Orders
         </table>
     {% endif %}
     <h4>Buy Orders</h4>
-    {% if current_user.sellOrders == 'None' %}
+    {% if not context.sellOrders %}
         <p>No sell orders to display!</p>
     {% else %}
         <table class="table table-bordered table-striped">

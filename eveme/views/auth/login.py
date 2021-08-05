@@ -71,43 +71,9 @@ def callback():
     structuresChecked = {}
     user_info = {
         'accessToken': None,
-        'buyOrders': {},
-        'sellOrders': {},
-        'structureAccess': [],
     }
 
     headers = eveme.helper.createHeaders(data['access_token'])
-
-    order_time = time.time()
-    ref = db.reference('prices')
-    if data['orders']:
-        for order in data['orders']:
-            # eveme.helper.insertStructure(char_id, order['location_id'])
-            # Format price with commas
-
-            if order['location_id'] not in structuresChecked.keys():
-                structuresChecked[order['location_id']] = eveme.helper.esiRequest('structureInfo', order['location_id'], headers)['name']
-
-            # check each order with order in structure and compare
-            if 'is_buy_order' in order.keys():
-                order['itemName'] = invTypes[str(order['type_id'])]
-                order['structureHighest'] = ref.child('buy').child(str(order['type_id'])).get()
-                order.pop('type_id', None)
-                order.pop('location_id', None)
-                user_info['buyOrders'][order['order_id']] = order
-            else:
-                order['itemName'] = invTypes[str(order['type_id'])]
-                order['structureLowest'] = ref.child('sell').child(str(order['type_id'])).get()
-                order.pop('type_id', None)
-                order.pop('location_id', None)
-                user_info['sellOrders'][order['order_id']] = order
-        user_info['structureAccess'] = structuresChecked
-    else:
-        user_info['buyOrders'] = 'None'
-        user_info['sellOrders'] = 'None'
-        user_info['structureAccess'] = 'None'
-
-    print("--- orders processing took %s seconds ---" % (time.time() - order_time))
 
     # Create a user in your db with the information provided
     # by ESI

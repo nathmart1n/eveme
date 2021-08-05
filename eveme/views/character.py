@@ -51,10 +51,10 @@ def character(char_id):
         output['name'] = user_ref['name']
         output['profilePic'] = user_ref['profilePic']
 
-        if user_ref['structureAccess'] != 'None':
+        if 'structureAccess' in user_ref.keys():
             output['structures'] = user_ref['structureAccess']
         # Get user corp and alliance
-        if user_ref['alliance']:
+        if 'alliance' in user_ref.keys():
             output['alliance'] = user_ref['alliance']
         output['corporation'] = user_ref['corporation']
 

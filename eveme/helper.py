@@ -140,21 +140,21 @@ def updateUserOrders():
             # check each order with order in structure and compare
             if 'is_buy_order' in order.keys():
                 order['itemName'] = invTypes[str(order['type_id'])]
-                order['structureHighest'] = ref.child('buy').child(str(order['type_id'])).get()
+                order['structureHighest'] = ref.child(str(order['location_id'])).child('buy').child(str(order['type_id'])).get()
                 order.pop('type_id', None)
                 order.pop('location_id', None)
                 user_info['buyOrders'][order['order_id']] = order
             else:
                 order['itemName'] = invTypes[str(order['type_id'])]
-                order['structureLowest'] = ref.child('sell').child(str(order['type_id'])).get()
+                order['structureLowest'] = ref.child(str(order['location_id'])).child('sell').child(str(order['type_id'])).get()
                 order.pop('type_id', None)
                 order.pop('location_id', None)
                 user_info['sellOrders'][order['order_id']] = order
         user_info['structureAccess'] = structuresChecked
     else:
-        user_info['buyOrders'] = 'None'
-        user_info['sellOrders'] = 'None'
-        user_info['structureAccess'] = 'None'
+        user_info.pop('buyOrders')
+        user_info.pop('sellOrders')
+        user_info.pop('structureAccess')
 
     User.update(user_info, current_user.id)
     print("--- updateUserOrders() with took %s seconds ---" % (time.time() - start_time))
@@ -188,26 +188,26 @@ def updatePriceData():
             numPages = res.headers['X-Pages']
             structureOrders.extend(res.json())
 
-    prices = {
-        "sell": {},
-        "buy": {}
-    }
+        prices = {
+            "sell": {},
+            "buy": {}
+        }
 
-    for order in structureOrders:
-        if order['is_buy_order']:
-            if order['type_id'] in prices['buy'].keys():
-                if order['price'] > prices['buy'][order['type_id']]:
+        for order in structureOrders:
+            if order['is_buy_order']:
+                if order['type_id'] in prices['buy'].keys():
+                    if order['price'] > prices['buy'][order['type_id']]:
+                        prices['buy'][order['type_id']] = order['price']
+                else:
                     prices['buy'][order['type_id']] = order['price']
             else:
-                prices['buy'][order['type_id']] = order['price']
-        else:
-            if order['type_id'] in prices['sell'].keys():
-                if order['price'] < prices['sell'][order['type_id']]:
+                if order['type_id'] in prices['sell'].keys():
+                    if order['price'] < prices['sell'][order['type_id']]:
+                        prices['sell'][order['type_id']] = order['price']
+                else:
                     prices['sell'][order['type_id']] = order['price']
-            else:
-                prices['sell'][order['type_id']] = order['price']
-    # print(prices)
-    ref.set(prices)
+        # print(prices)
+        ref.child(structureID).set(prices)
     print("--- updatePriceData() with took %s seconds ---" % (time.time() - start_time))
     return None
 

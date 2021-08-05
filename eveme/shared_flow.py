@@ -39,22 +39,7 @@ def handle_sso_token_response(sso_response):
         data['access_token'] = access_token
         data['refresh_token'] = refresh_token
         data["id"] = character_id
-        orders = eveme.helper.esiRequest('charOrders', character_id, headers)
-        data['orders'] = orders
 
-        structNames = {}
-        for order in data['orders']:
-            if order['location_id'] in structNames.keys():
-                order['structure_name'] = structNames[order['location_id']]
-            else:
-                if order['location_id'] < 100000000:
-                    station = eveme.helper.esiRequest('stationInfo', order['location_id'])
-                    order['structure_name'] = station['name']
-                    structNames[order['location_id']] = station['name']
-                else:
-                    structure = eveme.helper.esiRequest('structureInfo', order['location_id'], headers)
-                    order['structure_name'] = structure['name']
-                    structNames[order['location_id']] = structure['name']
         print("--- handle_sso_token_response() took %s seconds ---" % (time.time() - start_time))
         return data
     else:

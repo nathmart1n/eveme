@@ -4,6 +4,7 @@ EVEME market orders view.
 URLs include:
 /orders/
 """
+from eveme import user
 import flask
 import eveme
 import time
@@ -26,12 +27,12 @@ def show_orders():
     if current_user.is_authenticated:
         eveme.helper.refreshAuth()
 
-    if user_ref['buyOrders'] != 'None':
+    if 'buyOrders' in user_ref.keys():
         for id in user_ref['buyOrders'].keys():
             output['buyOrders'].append(user_ref['buyOrders'][id])
         output['buyOrders'] = sorted(output['buyOrders'], key=lambda k: k['itemName'])
 
-    if user_ref['sellOrders'] != 'None':
+    if 'sellOrders' in user_ref.keys():
         for id in user_ref['sellOrders'].keys():
             output['sellOrders'].append(user_ref['sellOrders'][id])
         output['sellOrders'] = sorted(output['sellOrders'], key=lambda k: k['itemName'])

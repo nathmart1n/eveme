@@ -7,16 +7,16 @@ About us
     <h3>Refresh Data</h3>
     <form action="{{ url_for('show_settings') }}" method="POST">
         <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="priceData" value="" id="priceData">
+            <label class="form-check-label" for="priceData">Price Data (price of best orders in stations)</label>
+        </div>
+        <div class="form-check">
             <input class="form-check-input" type="checkbox" name="userOrders" value ="" id="userOrders">
             <label class="form-check-label" for="userOrders">User Orders (quantity, location, price)</label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="checkbox" name="userData" value="" id="userData">
             <label class="form-check-label" for="userData">User Data (profile pic, name, corp, alliance)</label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="priceData" value="" id="priceData">
-            <label class="form-check-label" for="priceData">Price Data (price of best orders in stations)</label>
         </div>
         <button type="submit" class="btn btn-primary">Refresh Selected</button>
     </form>

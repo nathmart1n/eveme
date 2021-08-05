@@ -18,7 +18,7 @@ User Details
     {% if context.isLoggedInUser %}
     <div class="container-fluid">
         <h4>Structures with Access through Market Orders</h4>
-        {% if current_user.structureAccess == 'None' %}
+        {% if not context.structures %}
             <p>No accessible structures!</p>
         {% else %}
             {% for key, val in context.structures.items() %}
