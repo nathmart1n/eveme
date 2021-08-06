@@ -36,3 +36,4 @@ app.config.from_pyfile('config.py', silent=True)
 # going to tell pylint and pycodestyle to ignore this coding style violation.
 import eveme.views  # noqa: E402  pylint: disable=wrong-import-position
 import eveme.model  # noqa: E402  pylint: disable=wrong-import-position
+import eveme.api  # noqa: E402  pylint: disable=wrong-import-position

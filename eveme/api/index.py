@@ -9,12 +9,12 @@ def get_info():
 
     Example:
     {
-      "structures": "/api/v1/s/",
+      "user": "/api/v1/u/",
       "url": "/api/v1/"
     }
     """
     context = {
-      "structures": "/api/v1/s/",
+      "user": "/api/v1/u/",
       "url": "/api/v1/"
     }
     return flask.jsonify(**context)
