@@ -7,3 +7,4 @@ from eveme.views.auth.logout import logout
 from eveme.views.settings import show_settings
 from eveme.views.orders import show_orders
 from eveme.views.character import character
+from eveme.views.imports import show_imports

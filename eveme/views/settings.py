@@ -17,12 +17,12 @@ def show_settings():
     eveme.helper.refreshAuth()
 
     if flask.request.method == 'POST':
-        if 'userOrders' in flask.request.form:
-            print('a')
-        elif 'userData' in flask.request.form:
-            eveme.helper.updateUserData()
-        elif 'priceData' in flask.request.form:
+        if 'priceData' in flask.request.form:
             eveme.helper.updatePriceData()
+        if 'userOrders' in flask.request.form:
+            eveme.helper.updateUserOrders()
+        if 'userData' in flask.request.form:
+            eveme.helper.updateUserData()
         return flask.render_template("settings.html")
 
     return flask.render_template("settings.html")

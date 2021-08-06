@@ -50,21 +50,11 @@ def character(char_id):
         headers = eveme.helper.createHeaders(user_ref['accessToken'])
         output['name'] = user_ref['name']
         output['profilePic'] = user_ref['profilePic']
-        output['buyOrders'] = []
-        output['sellOrders'] = []
 
-        if user_ref['buyOrders'] != 'None':
-            for id in user_ref['buyOrders'].keys():
-                output['buyOrders'].append(user_ref['buyOrders'][id])
-
-        if user_ref['sellOrders'] != 'None':
-            for id in user_ref['sellOrders'].keys():
-                output['sellOrders'].append(user_ref['sellOrders'][id])
-
-        if user_ref['structureAccess'] != 'None':
+        if 'structureAccess' in user_ref.keys():
             output['structures'] = user_ref['structureAccess']
         # Get user corp and alliance
-        if user_ref['alliance']:
+        if 'alliance' in user_ref.keys():
             output['alliance'] = user_ref['alliance']
         output['corporation'] = user_ref['corporation']
 
