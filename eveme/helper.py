@@ -46,6 +46,8 @@ def esiRequest(requestType, variable, charHeaders=None):
         'portrait': "https://esi.evetech.net/latest/characters/{}/portrait/".format(variable),
         'walletTransactions': "https://esi.evetech.net/latest/characters/{}/wallet/transactions".format(variable),
         'stationInfo': "https://esi.evetech.net/latest/universe/stations/{}/".format(variable),
+        'systemInfo': "https://esi.evetech.net/latest/universe/systems/{}/".format(variable),
+        'constellationInfo': "https://esi.evetech.net/latest/universe/constellations/{}/".format(variable),
     }
 
     if charHeaders:
@@ -109,6 +111,20 @@ def updateUserData():
     return None
 
 
+def modifyOrder(order, user_info, ref, isBuy, invTypes, structuresChecked):
+    order['volumeRemain'] = order.pop('volume_remain')
+    order['volumeTotal'] = order.pop('volume_total')
+    order['itemName'] = invTypes[str(order['type_id'])]
+    order['structureHighest'] = ref.child(str(order['location_id'])).child('buy').child(str(order['type_id'])).get()
+    order['structureName'] = structuresChecked[order['location_id']]
+    order.pop('type_id', None)
+    order.pop('location_id', None)
+    if isBuy:
+        user_info['buyOrders'][order['order_id']] = order
+    else:
+        user_info['sellOrders'][order['order_id']] = order
+
+
 def updateUserOrders():
     """Queries ESI and updates user's market orders in DB."""
     start_time = time.time()
@@ -139,17 +155,9 @@ def updateUserOrders():
 
             # check each order with order in structure and compare
             if 'is_buy_order' in order.keys():
-                order['itemName'] = invTypes[str(order['type_id'])]
-                order['structureHighest'] = ref.child(str(order['location_id'])).child('buy').child(str(order['type_id'])).get()
-                order.pop('type_id', None)
-                order.pop('location_id', None)
-                user_info['buyOrders'][order['order_id']] = order
+                modifyOrder(order, user_info, ref, True, invTypes, structuresChecked)
             else:
-                order['itemName'] = invTypes[str(order['type_id'])]
-                order['structureLowest'] = ref.child(str(order['location_id'])).child('sell').child(str(order['type_id'])).get()
-                order.pop('type_id', None)
-                order.pop('location_id', None)
-                user_info['sellOrders'][order['order_id']] = order
+                modifyOrder(order, user_info, ref, False, invTypes, structuresChecked)
         user_info['structureAccess'] = structuresChecked
     else:
         user_info.pop('buyOrders')
@@ -161,6 +169,17 @@ def updateUserOrders():
     return None
 
 
+def getRegionFromStructure(structureID, headers=None):
+    if headers:
+        # TODO: Add this for when checking player structure, need to modify esiRequest
+        return None
+    else:
+        stationInfo = esiRequest('structureInfo', structureID)
+        systemInfo = esiRequest('systemInfo', stationInfo['solar_system_id'])
+        constellationInfo = esiRequest('constellationInfo', systemInfo['constellation_id'])
+        return constellationInfo['region_id']
+
+
 def updatePriceData():
     """Queries ESI data for structures user has orders in and updates max/min prices."""
     start_time = time.time()
@@ -169,8 +188,26 @@ def updatePriceData():
     headers = createHeaders(current_user.accessToken)
     for structureID in structures:
         if int(structureID) < 100000000:
-            # TODO: Fill this out for region orders then narrow down to station.
-            return None
+            region = getRegionFromStructure(structureID)
+            regionOrdersQuery = ("https://esi.evetech.net/latest/markets/{}/orders".format(region))
+            res = requests.get(regionOrdersQuery)
+            res.raise_for_status()
+            numPages = res.headers['X-Pages']
+            regionOrders = res.json()
+
+            for i in range(1, int(numPages)):
+                regionOrdersQuery = ("https://esi.evetech.net/latest/markets/{}/orders?datasource=tranquility&page="
+                                     "{}".format(region, i + 1))
+                res = requests.get(regionOrdersQuery)
+                res.raise_for_status()
+                numPages = res.headers['X-Pages']
+                regionOrders.extend(res.json())
+
+            structureOrders = []
+
+            for order in regionOrders:
+                if order['location_id'] == structureID:
+                    structureOrders.append(order)
         else:
             structureOrdersQuery = ("https://esi.evetech.net/latest/markets/structures"
                                     "/{}/".format(structureID))
@@ -179,14 +216,14 @@ def updatePriceData():
             numPages = res.headers['X-Pages']
             structureOrders = res.json()
 
-        for i in range(1, int(numPages)):
-            structureOrdersQuery = ("https://esi.evetech.net/latest/markets/structures"
-                                    "/{}/?datasource=tranquility&page="
-                                    "{}".format(structureID, i + 1))
-            res = requests.get(structureOrdersQuery, headers=headers)
-            res.raise_for_status()
-            numPages = res.headers['X-Pages']
-            structureOrders.extend(res.json())
+            for i in range(1, int(numPages)):
+                structureOrdersQuery = ("https://esi.evetech.net/latest/markets/structures"
+                                        "/{}/?datasource=tranquility&page="
+                                        "{}".format(structureID, i + 1))
+                res = requests.get(structureOrdersQuery, headers=headers)
+                res.raise_for_status()
+                numPages = res.headers['X-Pages']
+                structureOrders.extend(res.json())
 
         prices = {
             "sell": {},
