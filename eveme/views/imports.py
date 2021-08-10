@@ -53,12 +53,13 @@ def show_imports():
         destoIDsString = ','.join(destoIDs)
         prices = []
         if source == '60003760':
+            region = eveme.helper.getRegionFromStructure(60003760)
             for chunkString in chunkStrings:
-                region = eveme.helper.getRegionFromStructure(60003760)
+                # print(chunkString)
                 priceDataRequest = ("https://market.fuzzwork.co.uk/aggregates/?station=60003760&types={}".format(chunkString))
-                res = requests.post(priceDataRequest)
+                res = requests.get(priceDataRequest)
                 res.raise_for_status()
-                print(res.json())
+                print(len(res.json()))
                 prices.append(res.json())
         else:
             eveme.helper.updatePriceData(source)
