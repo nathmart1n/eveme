@@ -7,14 +7,14 @@ Imports
     {% if not context.isPost%}
     <h3>Import Data</h3>
     <form action="{{ url_for('show_imports') }}" method="POST">
-        <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
+        <select name='source' class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
             <option selected>Source</option>
             <option value="jita">Jita IV - Moon 4 - Caldari Navy Assembly Plant</option>
             {% for key, val in context.structures.items() %}
             <option value="{{key}}">{{val}}</option>
             {% endfor %}
         </select>
-        <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
+        <select name='destination' class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
             <option selected>Desination</option>
             <option value="jita">Jita IV - Moon 4 - Caldari Navy Assembly Plant</option>
             {% for key, val in context.structures.items() %}

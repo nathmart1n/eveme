@@ -115,13 +115,12 @@ def modifyOrder(order, user_info, ref, isBuy, invTypes, structuresChecked):
     order['volumeRemain'] = order.pop('volume_remain')
     order['volumeTotal'] = order.pop('volume_total')
     order['itemName'] = invTypes[str(order['type_id'])]
-    order['structureHighest'] = ref.child(str(order['location_id'])).child('buy').child(str(order['type_id'])).get()
     order['structureName'] = structuresChecked[order['location_id']]
-    order.pop('type_id', None)
-    order.pop('location_id', None)
     if isBuy:
+        order['structureHighest'] = ref.child(str(order['location_id'])).child('buy').child(str(order['type_id'])).get()
         user_info['buyOrders'][order['order_id']] = order
     else:
+        order['structureLowest'] = ref.child(str(order['location_id'])).child('sell').child(str(order['type_id'])).get()
         user_info['sellOrders'][order['order_id']] = order
 
 
@@ -154,11 +153,21 @@ def updateUserOrders():
                 structuresChecked[order['location_id']] = eveme.helper.esiRequest('structureInfo', order['location_id'], headers)['name']
 
             # check each order with order in structure and compare
+
             if 'is_buy_order' in order.keys():
                 modifyOrder(order, user_info, ref, True, invTypes, structuresChecked)
             else:
                 modifyOrder(order, user_info, ref, False, invTypes, structuresChecked)
-        user_info['structureAccess'] = structuresChecked
+
+        validStructs = {}
+
+        for structureID in structuresChecked.keys():
+            structureOrdersQuery = ("https://esi.evetech.net/latest/markets/structures"
+                                    "/{}/".format(structureID))
+            res = requests.get(structureOrdersQuery, headers=headers)
+            if res.status_code == 200:
+                validStructs[structureID] = structuresChecked[structureID]
+        user_info['structureAccess'] = validStructs
     else:
         user_info.pop('buyOrders')
         user_info.pop('sellOrders')
@@ -174,21 +183,24 @@ def getRegionFromStructure(structureID, headers=None):
         # TODO: Add this for when checking player structure, need to modify esiRequest
         return None
     else:
-        stationInfo = esiRequest('structureInfo', structureID)
-        systemInfo = esiRequest('systemInfo', stationInfo['solar_system_id'])
+        stationInfo = esiRequest('stationInfo', structureID)
+        systemInfo = esiRequest('systemInfo', stationInfo['system_id'])
         constellationInfo = esiRequest('constellationInfo', systemInfo['constellation_id'])
         return constellationInfo['region_id']
 
 
-def updatePriceData():
+def updatePriceData(structureID=None):
     """Queries ESI data for structures user has orders in and updates max/min prices."""
     start_time = time.time()
     ref = db.reference('prices')
-    structures = db.reference('users/'+current_user.id+'/structureAccess').get()
+    if structureID:
+        structures = [structureID]
+    else:
+        structures = db.reference('users/'+current_user.id+'/structureAccess').get()
     headers = createHeaders(current_user.accessToken)
-    for structureID in structures:
-        if int(structureID) < 100000000:
-            region = getRegionFromStructure(structureID)
+    for selectedID in structures:
+        if int(selectedID) < 100000000:
+            region = getRegionFromStructure(selectedID)
             regionOrdersQuery = ("https://esi.evetech.net/latest/markets/{}/orders".format(region))
             res = requests.get(regionOrdersQuery)
             res.raise_for_status()
@@ -206,11 +218,11 @@ def updatePriceData():
             structureOrders = []
 
             for order in regionOrders:
-                if order['location_id'] == structureID:
+                if order['location_id'] == selectedID:
                     structureOrders.append(order)
         else:
             structureOrdersQuery = ("https://esi.evetech.net/latest/markets/structures"
-                                    "/{}/".format(structureID))
+                                    "/{}/".format(selectedID))
             res = requests.get(structureOrdersQuery, headers=headers)
             res.raise_for_status()
             numPages = res.headers['X-Pages']
@@ -219,7 +231,7 @@ def updatePriceData():
             for i in range(1, int(numPages)):
                 structureOrdersQuery = ("https://esi.evetech.net/latest/markets/structures"
                                         "/{}/?datasource=tranquility&page="
-                                        "{}".format(structureID, i + 1))
+                                        "{}".format(selectedID, i + 1))
                 res = requests.get(structureOrdersQuery, headers=headers)
                 res.raise_for_status()
                 numPages = res.headers['X-Pages']
@@ -229,7 +241,7 @@ def updatePriceData():
             "sell": {},
             "buy": {}
         }
-
+        # print(structureOrders)
         for order in structureOrders:
             if order['is_buy_order']:
                 if order['type_id'] in prices['buy'].keys():
@@ -243,8 +255,8 @@ def updatePriceData():
                         prices['sell'][order['type_id']] = order['price']
                 else:
                     prices['sell'][order['type_id']] = order['price']
-        # print(prices)
-        ref.child(structureID).set(prices)
+        # print(selectedID)
+        ref.child(selectedID).set(prices)
     print("--- updatePriceData() with took %s seconds ---" % (time.time() - start_time))
     return None
 
