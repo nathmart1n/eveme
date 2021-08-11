@@ -27,12 +27,12 @@ def show_settings():
             eveme.helper.updateUserOrders()
         if 'userData' in flask.request.form:
             eveme.helper.updateUserData()
-        if 'brokerFee' in flask.request.form:
+        if flask.request.form['brokerFee'] != '':
             print(flask.request.form['brokerFee'])
             ref.update({
                 'brokerFee': float(flask.request.form['brokerFee'])
             })
-        if 'transactionTax' in flask.request.form:
+        if flask.request.form['transactionTax'] != '':
             ref.update({
                 'transactionTax': float(flask.request.form['transactionTax'])
             })

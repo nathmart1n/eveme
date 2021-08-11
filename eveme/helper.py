@@ -117,10 +117,10 @@ def modifyOrder(order, user_info, ref, isBuy, invTypes, structuresChecked):
     order['itemName'] = invTypes[str(order['type_id'])]['typeName']
     order['structureName'] = structuresChecked[order['location_id']]
     if isBuy:
-        order['structureHighest'] = ref.child(str(order['location_id'])).child('buy').child(str(order['type_id'])).get()
+        order['structureHighest'] = ref.child(str(order['location_id'])).child(str(order['type_id'])).child('buy').child('max').get()
         user_info['buyOrders'][order['order_id']] = order
     else:
-        order['structureLowest'] = ref.child(str(order['location_id'])).child('sell').child(str(order['type_id'])).get()
+        order['structureLowest'] = ref.child(str(order['location_id'])).child(str(order['type_id'])).child('sell').child('min').get()
         user_info['sellOrders'][order['order_id']] = order
 
 
@@ -237,24 +237,29 @@ def updatePriceData(structureID=None):
                 numPages = res.headers['X-Pages']
                 structureOrders.extend(res.json())
 
-        prices = {
-            "sell": {},
-            "buy": {}
-        }
+        prices = {}
         # print(structureOrders)
         for order in structureOrders:
-            if order['is_buy_order']:
-                if order['type_id'] in prices['buy'].keys():
-                    if order['price'] > prices['buy'][order['type_id']]:
-                        prices['buy'][order['type_id']] = order['price']
+            if order['type_id'] in prices.keys():
+                if order['is_buy_order']:
+                    if order['price'] > prices[order['type_id']]['buy']['max']:
+                        prices[order['type_id']]['buy']['max'] = order['price']
                 else:
-                    prices['buy'][order['type_id']] = order['price']
+                    if order['price'] < prices[order['type_id']]['sell']['min']:
+                        prices[order['type_id']]['sell']['min'] = order['price']
             else:
-                if order['type_id'] in prices['sell'].keys():
-                    if order['price'] < prices['sell'][order['type_id']]:
-                        prices['sell'][order['type_id']] = order['price']
+                prices[order['type_id']] = {
+                    "buy": {
+                        "max": -1
+                    },
+                    "sell": {
+                        "min": 99999999999999999999
+                    }
+                }
+                if order['is_buy_order']:
+                    prices[order['type_id']]['buy']['max'] = order['price']
                 else:
-                    prices['sell'][order['type_id']] = order['price']
+                    prices[order['type_id']]['sell']['min'] = order['price']
         # print(selectedID)
         ref.child(selectedID).set(prices)
     print("--- updatePriceData() with took %s seconds ---" % (time.time() - start_time))

@@ -52,7 +52,7 @@ def show_imports():
             eveme.helper.updatePriceData(destination)
 
             if source == '60003760':
-                destoPrices = prices_ref.child(destination).child('sell').get()
+                destoPrices = prices_ref.child(destination).get()
 
                 destoIDs = list(destoPrices.keys())
 
@@ -70,21 +70,18 @@ def show_imports():
             else:
                 eveme.helper.updatePriceData(source)
 
-        # TODO: Add Jita prices to DB
-        destoPrices = prices_ref.child(destination).child('sell').get()
-        if source == '60003760':
-            sourcePrices = prices_ref.child(source).get()
-        else:
-            sourcePrices = prices_ref.child(source).child('sell').get()
+        destoPrices = prices_ref.child(destination).get()
+        sourcePrices = prices_ref.child(source).get()
 
         for typeID in destoPrices.keys():
             # TODO: Make this togglable with something in the form.
-            if destoPrices[typeID] - float(sourcePrices[str(typeID)]['sell']['min']) > 0:
-                context['imports'][typeID] = {}
-                context['imports'][typeID]['sourcePrice'] = float(sourcePrices[str(typeID)]['sell']['min'])
-                context['imports'][typeID]['destoPrice'] = destoPrices[typeID]
-                context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
-                context['imports'][typeID]['volume'] = invTypes[typeID]['volume']
+            if destoPrices[typeID]['sell']['min'] < 99999999999999999999:
+                if destoPrices[typeID]['sell']['min'] - float(sourcePrices[str(typeID)]['sell']['min']) > 0:
+                    context['imports'][typeID] = {}
+                    context['imports'][typeID]['sourcePrice'] = float(sourcePrices[str(typeID)]['sell']['min'])
+                    context['imports'][typeID]['destoPrice'] = destoPrices[typeID]['sell']['min']
+                    context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
+                    context['imports'][typeID]['volume'] = invTypes[typeID]['volume']
 
         # TODO: Make this variable dependent on user input
         context['pricePerM3'] = 820
