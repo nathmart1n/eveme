@@ -21,8 +21,41 @@ Imports
             <option value="{{key}}">{{val}}</option>
             {% endfor %}
         </select>
+        
+        <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="updatePrices" id="updatePrices">
+              <label class="form-check-label" for="updatePrices">
+                Update Prices
+              </label>
+            </div>
+        </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    {% else %}
+    <table class="table table-bordered table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th>Item</th>
+                <th>Source Price</th>
+                <th>Destination Price</th>
+                <th>Price Difference</th>
+            </tr>
+        </thead>
+    {% for key, value in context.imports.items() %}
+        {% if value.sourcePrice - value.destoPrice > 0 %}
+        <tr class="table-warning">
+        {% else %}
+        <tr>
+        {% endif %}
+            <td>{{value.itemName}}</td>
+            <td>{{value.sourcePrice}}</td>
+            <td>{{value.destoPrice}}</td>
+            <td>{{value.destoPrice - value.sourcePrice}}</td>
+        </tr>
+    {% endfor %}
+    </table>
     {% endif %}
 </div>
 {% endblock %}

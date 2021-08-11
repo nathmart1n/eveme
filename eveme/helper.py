@@ -174,7 +174,7 @@ def updateUserOrders():
         user_info.pop('structureAccess')
 
     User.update(user_info, current_user.id)
-    print("--- updateUserOrders() with took %s seconds ---" % (time.time() - start_time))
+    print("--- updateUserOrders() took %s seconds ---" % (time.time() - start_time))
     return None
 
 
