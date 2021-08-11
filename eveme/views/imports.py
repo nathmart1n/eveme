@@ -55,6 +55,8 @@ def show_imports():
 
         destoIDs = list(destoPrices.keys())
         sourcePrices = {}
+
+        # TODO: Add Jita prices to DB
         if source == '60003760':
             chunks = [destoIDs[x:x+200] for x in range(0, len(destoIDs), 200)]
             chunkStrings = []
@@ -70,13 +72,20 @@ def show_imports():
         else:
             eveme.helper.updatePriceData(source)
         for typeID in destoIDs:
-            context['imports'][typeID] = {}
-            context['imports'][typeID]['sourcePrice'] = float(sourcePrices[str(typeID)]['sell']['min'])
-            context['imports'][typeID]['destoPrice'] = destoPrices[typeID]
-            context['imports'][typeID]['itemName'] = invTypes[typeID]
+            # TODO: Make this togglable with something in the form.
+            if destoPrices[typeID] - float(sourcePrices[str(typeID)]['sell']['min']) > 0:
+                context['imports'][typeID] = {}
+                context['imports'][typeID]['sourcePrice'] = float(sourcePrices[str(typeID)]['sell']['min'])
+                context['imports'][typeID]['destoPrice'] = destoPrices[typeID]
+                context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
+                context['imports'][typeID]['volume'] = invTypes[typeID]['volume']
 
-        # Get absolute difference between source and destination prices
-        # Get percent difference between source and destination prices
+        # TODO: Make this variable dependent on user input
+        context['pricePerM3'] = 820
+        context['collateralPercentage'] = 0.015
+
+        # TODO: Get absolute difference between source and destination prices
+        # TODO: Get percent difference between source and destination prices
         print("--- show_imports() showing trades took %s seconds ---" % (time.time() - start_time))
         return flask.render_template("imports.html", context=context)
 

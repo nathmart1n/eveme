@@ -97,7 +97,7 @@ def updateUserData():
     new['walletTransactions'] = \
         eveme.helper.esiRequest('walletTransactions', charID, headers)
     for transaction in new['walletTransactions']:
-        transaction['item_name'] = invTypes[str(transaction['type_id'])]
+        transaction['item_name'] = invTypes[str(transaction['type_id'])]['typeName']
 
     if User.get(str(charID)):
         charRef = ref.child(str(charID))
@@ -114,7 +114,7 @@ def updateUserData():
 def modifyOrder(order, user_info, ref, isBuy, invTypes, structuresChecked):
     order['volumeRemain'] = order.pop('volume_remain')
     order['volumeTotal'] = order.pop('volume_total')
-    order['itemName'] = invTypes[str(order['type_id'])]
+    order['itemName'] = invTypes[str(order['type_id'])]['typeName']
     order['structureName'] = structuresChecked[order['location_id']]
     if isBuy:
         order['structureHighest'] = ref.child(str(order['location_id'])).child('buy').child(str(order['type_id'])).get()

@@ -3,12 +3,18 @@
 Market Orders
 {% endblock %}
 {% block content %}
+<script>
+    $(document).ready( function () {
+        $('#sell').DataTable();
+        $('#buy').DataTable();
+    } );
+</script>
 <div class="container-fluid">
     <h4>Sell Orders</h4>
     {% if not context.sellOrders %}
         <p>No sell orders to display!</p>
     {% else %}
-        <table class="table table-bordered table-striped">
+        <table id="sell" class="table table-bordered table-striped">
             <thead class="thead-light">
                 <tr>
                     <th width="35%">Item</th>
@@ -21,29 +27,31 @@ Market Orders
                     <th width="8%">Price Difference</th>
                 </tr>
             </thead>
-        {% for order in context.sellOrders %}
-            {% if order.price - order.structureLowest > 0 %}
-            <tr class="table-warning">
-            {% else %}
-            <tr>
-            {% endif %}
-                <td>{{order.itemName}}</td>
-                <td>{{order.volumeRemain}}</td>
-                <td>{{order.volumeTotal}}</td>
-                <td>{{((order.volumeRemain / order.volumeTotal) * 100)|round(1)|float}}%</td>
-                <td>{{order.structureName}}</td>
-                <td>{{order.price | numberFormat}}</td>
-                <td>{{order.structureLowest | numberFormat}}</td>
-                <td>{{(order.price - order.structureLowest) | numberFormat}}</td>
-            </tr>
-        {% endfor %}
+            <tbody>
+            {% for order in context.sellOrders %}
+                {% if order.price - order.structureLowest > 0 %}
+                <tr class="table-warning">
+                {% else %}
+                <tr>
+                {% endif %}
+                    <td>{{order.itemName}}</td>
+                    <td>{{order.volumeRemain}}</td>
+                    <td>{{order.volumeTotal}}</td>
+                    <td>{{((order.volumeRemain / order.volumeTotal) * 100)|round(1)|float}}%</td>
+                    <td>{{order.structureName}}</td>
+                    <td>{{order.price | numberFormat}}</td>
+                    <td>{{order.structureLowest | numberFormat}}</td>
+                    <td>{{(order.price - order.structureLowest) | numberFormat}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
         </table>
     {% endif %}
     <h4>Buy Orders</h4>
     {% if not context.buyOrders %}
         <p>No buy orders to display!</p>
     {% else %}
-        <table class="table table-bordered table-striped">
+        <table id="buy" class="table table-bordered table-striped">
             <thead class="thead-light">
                 <tr>
                     <th width="35%">Item</th>
@@ -56,22 +64,24 @@ Market Orders
                     <th width="8%">Price Difference</th>
                 </tr>
             </thead>
-        {% for order in context.buyOrders %}
-            {% if order.price - order.structureHighest < 0 %}
-            <tr class="table-warning">
-            {% else %}
-            <tr>
-            {% endif %}
-                <td>{{order.itemName}}</td>
-                <td>{{order.volumeRemain}}</td>
-                <td>{{order.volumeTotal}}</td>
-                <td>{{((order.volumeRemain / order.volumeTotal) * 100)|round(1)|float}}%</td>
-                <td>{{order.structureName}}</td>
-                <td>{{order.price | numberFormat}}</td>
-                <td>{{order.structureHighest | numberFormat}}</td>
-                <td>{{(order.price - order.structureHighest) | numberFormat}}</td>
-            </tr>
-        {% endfor %}
+            <tbody>
+            {% for order in context.buyOrders %}
+                {% if order.price - order.structureHighest < 0 %}
+                <tr class="table-warning">
+                {% else %}
+                <tr>
+                {% endif %}
+                    <td>{{order.itemName}}</td>
+                    <td>{{order.volumeRemain}}</td>
+                    <td>{{order.volumeTotal}}</td>
+                    <td>{{((order.volumeRemain / order.volumeTotal) * 100)|round(1)|float}}%</td>
+                    <td>{{order.structureName}}</td>
+                    <td>{{order.price | numberFormat}}</td>
+                    <td>{{order.structureHighest | numberFormat}}</td>
+                    <td>{{(order.price - order.structureHighest) | numberFormat}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
         </table> 
     {% endif %}
 </div>

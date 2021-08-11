@@ -3,6 +3,11 @@
 Imports
 {% endblock %}
 {% block content %}
+<script>
+    $(document).ready( function () {
+        $('#imports').DataTable();
+    } );
+</script>
 <div class="container-fluid mt-3">
     {% if not context.isPost%}
     <h3>Import Data</h3>
@@ -34,28 +39,37 @@ Imports
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     {% else %}
-    <table class="table table-bordered table-striped">
+    <table id="imports" class="table table-bordered table-striped">
         <thead class="thead-light">
             <tr>
                 <th>Item</th>
                 <th>Source Price</th>
                 <th>Destination Price</th>
                 <th>Price Difference</th>
+                <th>M3</th>
+                <th>Shipping Price</th>
+                <th>Profit before Market Fees</th>
             </tr>
         </thead>
-    {% for key, value in context.imports.items() %}
-        {% if value.sourcePrice - value.destoPrice > 0 %}
-        <tr class="table-warning">
-        {% else %}
-        <tr>
-        {% endif %}
-            <td>{{value.itemName}}</td>
-            <td>{{value.sourcePrice}}</td>
-            <td>{{value.destoPrice}}</td>
-            <td>{{value.destoPrice - value.sourcePrice}}</td>
-        </tr>
-    {% endfor %}
+        <tbody>
+        {% for key, value in context.imports.items() %}
+            {% if value.sourcePrice - value.destoPrice > 0 %}
+            <tr class="table-warning">
+            {% else %}
+            <tr>
+            {% endif %}
+                <td>{{value.itemName}}</td>
+                <td>{{value.sourcePrice | numberFormat}}</td>
+                <td>{{value.destoPrice | numberFormat}}</td>
+                <td>{{(value.destoPrice - value.sourcePrice) | numberFormat}}</td>
+                <td>{{value.volume | numberFormat}}</td>
+                <td>{{((value.volume * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage)) | numberFormat}}</td>
+                <td>{{((value.destoPrice - value.sourcePrice) - ((value.volume * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) | numberFormat}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
     </table>
     {% endif %}
 </div>
+
 {% endblock %}
