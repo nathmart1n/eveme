@@ -76,12 +76,14 @@ def show_imports():
         for typeID in destoPrices.keys():
             # TODO: Make this togglable with something in the form.
             if destoPrices[typeID]['sell']['min'] < 99999999999999999999:
-                if destoPrices[typeID]['sell']['min'] - float(sourcePrices[str(typeID)]['sell']['min']) > 0:
+                if destoPrices[typeID]['sell']['min'] - float(sourcePrices[str(typeID)]['sell']['min']) > 0 and invTypes[typeID]['volume'] < 350000:
                     context['imports'][typeID] = {}
                     context['imports'][typeID]['sourcePrice'] = float(sourcePrices[str(typeID)]['sell']['min'])
                     context['imports'][typeID]['destoPrice'] = destoPrices[typeID]['sell']['min']
                     context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
-                    context['imports'][typeID]['volume'] = invTypes[typeID]['volume']
+                    context['imports'][typeID]['m3'] = invTypes[typeID]['volume']
+                    context['imports'][typeID]['numOrders'] = destoPrices[typeID]['sell']['numOrders']
+                    context['imports'][typeID]['remainingVolume'] = destoPrices[typeID]['sell']['remainingVolume']
 
         # TODO: Make this variable dependent on user input
         context['pricePerM3'] = 820

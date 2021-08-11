@@ -45,10 +45,11 @@ Imports
                 <th>Item</th>
                 <th>Source Price</th>
                 <th>Destination Price</th>
+                <th>Destination Order Count</th>
+                <th>Destination Remaining Volume</th>
                 <th>Price Difference</th>
                 <th>M3</th>
                 <th>Shipping Price</th>
-                <th>Profit before Market Fees</th>
                 <th>Profit after Market Fees</th>
             </tr>
         </thead>
@@ -62,11 +63,12 @@ Imports
                 <td>{{value.itemName}}</td>
                 <td>{{value.sourcePrice | numberFormat}}</td>
                 <td>{{value.destoPrice | numberFormat}}</td>
+                <td>{{value.numOrders}}</td>
+                <td>{{value.remainingVolume}}</td>
                 <td>{{(value.destoPrice - value.sourcePrice) | numberFormat}}</td>
-                <td>{{value.volume | numberFormat}}</td>
-                <td>{{((value.volume * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage)) | numberFormat}}</td>
-                <td>{{((value.destoPrice - value.sourcePrice) - ((value.volume * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) | numberFormat}}</td>
-                <td>{{(((value.destoPrice - value.sourcePrice) - ((value.volume * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee - context.transactionTax) / 100)) | numberFormat}}</td>
+                <td>{{value.m3 | numberFormat}}</td>
+                <td>{{((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage)) | numberFormat}}</td>
+                <td>{{(((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee - context.transactionTax) / 100)) | numberFormat}}</td>
             </tr>
         {% endfor %}
         </tbody>

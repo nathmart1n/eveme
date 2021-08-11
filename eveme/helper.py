@@ -242,24 +242,36 @@ def updatePriceData(structureID=None):
         for order in structureOrders:
             if order['type_id'] in prices.keys():
                 if order['is_buy_order']:
+                    prices[order['type_id']]['buy']['numOrders'] += 1
+                    prices[order['type_id']]['buy']['remainingVolume'] += order['volume_remain']
                     if order['price'] > prices[order['type_id']]['buy']['max']:
                         prices[order['type_id']]['buy']['max'] = order['price']
                 else:
+                    prices[order['type_id']]['sell']['numOrders'] += 1
+                    prices[order['type_id']]['sell']['remainingVolume'] += order['volume_remain']
                     if order['price'] < prices[order['type_id']]['sell']['min']:
                         prices[order['type_id']]['sell']['min'] = order['price']
             else:
                 prices[order['type_id']] = {
                     "buy": {
-                        "max": -1
+                        "max": -1,
+                        "numOrders": 0,
+                        "remainingVolume": 0
                     },
                     "sell": {
-                        "min": 99999999999999999999
+                        "min": 99999999999999999999,
+                        "numOrders": 0,
+                        "remainingVolume": 0
                     }
                 }
                 if order['is_buy_order']:
                     prices[order['type_id']]['buy']['max'] = order['price']
+                    prices[order['type_id']]['buy']['numOrders'] += 1
+                    prices[order['type_id']]['buy']['remainingVolume'] += order['volume_remain']
                 else:
                     prices[order['type_id']]['sell']['min'] = order['price']
+                    prices[order['type_id']]['sell']['numOrders'] += 1
+                    prices[order['type_id']]['sell']['remainingVolume'] += order['volume_remain']
         # print(selectedID)
         ref.child(selectedID).set(prices)
     print("--- updatePriceData() with took %s seconds ---" % (time.time() - start_time))
