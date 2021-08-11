@@ -18,7 +18,16 @@ Settings
             <input class="form-check-input" type="checkbox" name="userData" value="" id="userData">
             <label class="form-check-label" for="userData">User Data (profile pic, name, corp, alliance)</label>
         </div>
-        <button type="submit" class="btn btn-primary">Refresh Selected</button>
+
+        <div class="row justify-content-md-left">
+            <div class="col-sm-1 mb-2">
+                <input type="text" class="form-control" name="brokerFee" placeholder="Broker Fee %" aria-label="Broker Fee %">
+            </div>
+            <div class="col-sm-1 mb-2">
+                <input type="text" class="form-control" name="transactionTax" placeholder="Transaction Tax %" aria-label="Transaction Tax %">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </div>
 {% endblock %}

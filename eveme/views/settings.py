@@ -7,6 +7,8 @@ URLs include:
 import flask
 import eveme
 import eveme.helper
+from flask_login import current_user
+from firebase_admin import db
 
 
 @eveme.app.route('/settings/', methods=['GET', 'POST'])
@@ -17,12 +19,23 @@ def show_settings():
     eveme.helper.refreshAuth()
 
     if flask.request.method == 'POST':
+        ref = db.reference('users').child(str(current_user.id))
+
         if 'priceData' in flask.request.form:
             eveme.helper.updatePriceData()
         if 'userOrders' in flask.request.form:
             eveme.helper.updateUserOrders()
         if 'userData' in flask.request.form:
             eveme.helper.updateUserData()
+        if 'brokerFee' in flask.request.form:
+            print(flask.request.form['brokerFee'])
+            ref.update({
+                'brokerFee': float(flask.request.form['brokerFee'])
+            })
+        if 'transactionTax' in flask.request.form:
+            ref.update({
+                'transactionTax': float(flask.request.form['transactionTax'])
+            })
         return flask.render_template("settings.html")
 
     return flask.render_template("settings.html")

@@ -44,34 +44,40 @@ def show_imports():
         elif flask.request.form['destination'] == 'jita':
             destination = '60003760'
         # Update price data for source and destination
-        ref = db.reference('prices')
+        prices_ref = db.reference('prices')
 
         # TODO: Add check box for using buy or sell orders in source/desto, for now default to sell in both
 
         if 'updatePrices' in flask.request.form.keys():
             eveme.helper.updatePriceData(destination)
 
-        destoPrices = ref.child(destination).child('sell').get()
+            if source == '60003760':
+                destoPrices = prices_ref.child(destination).child('sell').get()
 
-        destoIDs = list(destoPrices.keys())
-        sourcePrices = {}
+                destoIDs = list(destoPrices.keys())
+
+                chunks = [destoIDs[x:x+200] for x in range(0, len(destoIDs), 200)]
+                chunkStrings = []
+                for chunk in chunks:
+                    chunkStrings.append(','.join(chunk))
+                prices = {}
+                for chunkString in chunkStrings:
+                    priceDataRequest = ("https://market.fuzzwork.co.uk/aggregates/?station=60003760&types={}".format(chunkString))
+                    res = requests.get(priceDataRequest)
+                    res.raise_for_status()
+                    prices.update(res.json())
+                prices_ref.child('60003760').update(prices)
+            else:
+                eveme.helper.updatePriceData(source)
 
         # TODO: Add Jita prices to DB
+        destoPrices = prices_ref.child(destination).child('sell').get()
         if source == '60003760':
-            chunks = [destoIDs[x:x+200] for x in range(0, len(destoIDs), 200)]
-            chunkStrings = []
-            for chunk in chunks:
-                chunkStrings.append(','.join(chunk))
-            prices = {}
-            for chunkString in chunkStrings:
-                priceDataRequest = ("https://market.fuzzwork.co.uk/aggregates/?station=60003760&types={}".format(chunkString))
-                res = requests.get(priceDataRequest)
-                res.raise_for_status()
-                prices.update(res.json())
-            sourcePrices = prices
+            sourcePrices = prices_ref.child(source).get()
         else:
-            eveme.helper.updatePriceData(source)
-        for typeID in destoIDs:
+            sourcePrices = prices_ref.child(source).child('sell').get()
+
+        for typeID in destoPrices.keys():
             # TODO: Make this togglable with something in the form.
             if destoPrices[typeID] - float(sourcePrices[str(typeID)]['sell']['min']) > 0:
                 context['imports'][typeID] = {}
@@ -83,6 +89,11 @@ def show_imports():
         # TODO: Make this variable dependent on user input
         context['pricePerM3'] = 820
         context['collateralPercentage'] = 0.015
+
+        # Get user defined brokers fee and transaction tax
+        user_ref = db.reference('users').child(str(current_user.id))
+        context['brokerFee'] = user_ref.child('brokerFee').get()
+        context['transactionTax'] = user_ref.child('transactionTax').get()
 
         # TODO: Get absolute difference between source and destination prices
         # TODO: Get percent difference between source and destination prices
