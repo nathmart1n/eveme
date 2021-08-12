@@ -180,13 +180,13 @@ def updateUserOrders():
 
 def getRegionFromStructure(structureID, headers=None):
     if headers:
-        # TODO: Add this for when checking player structure, need to modify esiRequest
-        return None
+        structureInfo = esiRequest('structureInfo', structureID, headers)
+        systemInfo = esiRequest('systemInfo', structureInfo['solar_system_id'])
     else:
         stationInfo = esiRequest('stationInfo', structureID)
         systemInfo = esiRequest('systemInfo', stationInfo['system_id'])
-        constellationInfo = esiRequest('constellationInfo', systemInfo['constellation_id'])
-        return constellationInfo['region_id']
+    constellationInfo = esiRequest('constellationInfo', systemInfo['constellation_id'])
+    return constellationInfo['region_id']
 
 
 def updatePriceData(structureID=None):

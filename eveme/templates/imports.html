@@ -12,22 +12,39 @@ Imports
     {% if not context.isPost%}
     <h3>Import Data</h3>
     <form action="{{ url_for('show_imports') }}" method="POST">
-        <select name='source' class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
-            <option selected>Source</option>
-            <option value="jita">Jita IV - Moon 4 - Caldari Navy Assembly Plant</option>
-            {% for key, val in context.structures.items() %}
-            <option value="{{key}}">{{val}}</option>
-            {% endfor %}
-        </select>
-        <select name='destination' class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
-            <option selected>Desination</option>
-            <option value="jita">Jita IV - Moon 4 - Caldari Navy Assembly Plant</option>
-            {% for key, val in context.structures.items() %}
-            <option value="{{key}}">{{val}}</option>
-            {% endfor %}
-        </select>
-        
-        <div class="col-12">
+        <div class="row justify-content-md-left mb-3">
+            <div class="col-2">
+                <select name='source' class="form-select form-select-md" aria-label=".form-select-lg example">
+                    <option selected>Source</option>
+                    <option value="jita">Jita IV - Moon 4 - Caldari Navy Assembly Plant</option>
+                    {% for key, val in context.structures.items() %}
+                    <option value="{{key}}">{{val}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-2">
+                <select name='destination' class="form-select form-select-md" aria-label=".form-select-lg example">
+                    <option selected>Desination</option>
+                    <option value="jita">Jita IV - Moon 4 - Caldari Navy Assembly Plant</option>
+                    {% for key, val in context.structures.items() %}
+                    <option value="{{key}}">{{val}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-left">
+            <div class="col-2 mb-3">
+                <input type="text" class="form-control" name="analysisPeriod" placeholder="Analysis Period (days)" aria-label="Analysis Period (days)">
+            </div>
+        </div>
+        <div class="row justify-content-md-left">
+            <div class="col-2 mb-3">
+                <input type="text" class="form-control" name="aggregatePeriod" placeholder="Aggregate Over (days)" aria-label="Aggregate Over (days)">
+            </div>
+        </div>
+
+        <div class="col-2 mb-3">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" name="updatePrices" id="updatePrices">
               <label class="form-check-label" for="updatePrices">
@@ -43,10 +60,12 @@ Imports
         <thead class="thead-light">
             <tr>
                 <th>Item</th>
-                <th>Source Price</th>
-                <th>Destination Price</th>
-                <th>Destination Order Count</th>
-                <th>Destination Remaining Volume</th>
+                <th>Src. Price</th>
+                <th>Dst. Price</th>
+                <th>Dst. Order Count</th>
+                <th>Dst. Remaining Volume</th>
+                <th>Agg. Average Volume</th>
+                <th>Dst. Remaining Volume</th>
                 <th>Price Difference</th>
                 <th>M3</th>
                 <th>Shipping Price</th>
@@ -65,6 +84,8 @@ Imports
                 <td>{{value.destoPrice | numberFormat}}</td>
                 <td>{{value.numOrders}}</td>
                 <td>{{value.remainingVolume}}</td>
+                <td>{{value.aggPeriodAvg}}</td>
+                <td>{{((value.remainingVolume / value.aggPeriodAvg) * 100)|round(1)|float}}</td>
                 <td>{{(value.destoPrice - value.sourcePrice) | numberFormat}}</td>
                 <td>{{value.m3 | numberFormat}}</td>
                 <td>{{((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage)) | numberFormat}}</td>

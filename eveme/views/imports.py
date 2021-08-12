@@ -96,7 +96,7 @@ def show_imports():
         # TODO: Make this more efficient. Maybe download historical data and save to static file?
         # Let user select what market groups they want.
         # That then queries our historical data static file instead of querying API
-        
+
         # TODO: Make so user selects karkinos routes instead of systems.
         for typeID in context['imports'].keys():
             item_time = time.time()
