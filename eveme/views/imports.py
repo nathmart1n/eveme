@@ -32,9 +32,15 @@ def show_imports():
         context['isPost'] = True
         context['imports'] = {}
 
+        headers = eveme.helper.createHeaders(current_user.accessToken)
+
         if flask.request.form['source'] == flask.request.form['destination']:
             context['sourceDestoSame'] = True
             return flask.render_template("imports.html", context=context)
+
+        # Analysis period represents the number of days back we should use to compute average volume for the given aggregate period
+        analysisPeriod = int(flask.request.form['analysisPeriod'])
+        aggregatePeriod = int(flask.request.form['aggregatePeriod'])
 
         source = flask.request.form['source']
         destination = flask.request.form['destination']
@@ -84,6 +90,28 @@ def show_imports():
                     context['imports'][typeID]['m3'] = invTypes[typeID]['volume']
                     context['imports'][typeID]['numOrders'] = destoPrices[typeID]['sell']['numOrders']
                     context['imports'][typeID]['remainingVolume'] = destoPrices[typeID]['sell']['remainingVolume']
+        destoRegion = eveme.helper.getRegionFromStructure(destination, headers=headers)
+        print(len(context['imports'].keys()))
+
+        # TODO: Make this more efficient. Maybe download historical data and save to static file?
+        # Let user select what market groups they want.
+        # That then queries our historical data static file instead of querying API
+        
+        # TODO: Make so user selects karkinos routes instead of systems.
+        for typeID in context['imports'].keys():
+            item_time = time.time()
+            historicalData = requests.get("https://esi.evetech.net/latest/markets/{}/"
+                                          "history/?datasource=tranquility&type_id={}".format(int(destoRegion), int(typeID))).json()
+            # print("--- API for " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
+            # Slice historical data to match analysis period
+            slicedHistData = historicalData[-analysisPeriod:]
+            totalVol = 0
+            for day in slicedHistData:
+                totalVol += day['volume']
+            totalVol = float(totalVol)
+            dailyVolAverage = totalVol / len(slicedHistData)
+            context['imports'][typeID]['aggPeriodAvg'] = aggregatePeriod * dailyVolAverage
+            print("--- item " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
 
         # TODO: Make this variable dependent on user input
         context['pricePerM3'] = 820
