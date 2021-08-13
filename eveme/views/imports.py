@@ -4,7 +4,6 @@ EVEME imports view.
 URLs include:
 /imports/
 """
-from base64 import decodestring
 import flask
 import eveme
 import eveme.helper
