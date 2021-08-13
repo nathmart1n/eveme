@@ -104,12 +104,14 @@ def show_imports():
             # print("--- API for " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
             # Slice historical data to match analysis period
             slicedHistData = historicalData[-analysisPeriod:]
-            totalVol = 0
-            for day in slicedHistData:
-                totalVol += day['volume']
-            totalVol = float(totalVol)
-            dailyVolAverage = totalVol / len(slicedHistData)
-            context['imports'][typeID]['aggPeriodAvg'] = aggregatePeriod * dailyVolAverage
+            if slicedHistData:
+                totalVol = 0
+
+                for day in slicedHistData:
+                    totalVol += day['volume']
+                totalVol = float(totalVol)
+                dailyVolAverage = totalVol / len(slicedHistData)
+                context['imports'][typeID]['aggPeriodAvg'] = aggregatePeriod * dailyVolAverage
             print("--- item " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
 
         # TODO: Make this variable dependent on user input
