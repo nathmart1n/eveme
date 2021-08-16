@@ -90,6 +90,7 @@ def show_imports():
                     context['imports'][typeID]['numOrders'] = destoPrices[typeID]['sell']['numOrders']
                     context['imports'][typeID]['remainingVolume'] = destoPrices[typeID]['sell']['remainingVolume']
         destoRegion = eveme.helper.getRegionFromStructure(destination, headers=headers)
+        print(destoRegion)
         print(len(context['imports'].keys()))
 
         # TODO: Make this more efficient. Maybe download historical data and save to static file?

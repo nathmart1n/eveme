@@ -8,6 +8,7 @@ Imports
         $('#imports').DataTable();
     } );
 </script>
+
 <div class="container-fluid mt-3">
     {% if not context.isPost%}
     <h3>Import Data</h3>
@@ -41,6 +42,11 @@ Imports
         <div class="row justify-content-md-left">
             <div class="col-2 mb-3">
                 <input type="text" class="form-control" name="aggregatePeriod" placeholder="Aggregate Over (days)" aria-label="Aggregate Over (days)">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row row-cols-3">
             </div>
         </div>
 
