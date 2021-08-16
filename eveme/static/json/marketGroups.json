@@ -1,0 +1,2329 @@
+{
+    "Ammunition & Charges": {
+        "Bombs": {},
+        "Cap Booster Charges": {},
+        "Command Burst Charges": {
+            "Armor Command Burst Charges": {},
+            "Information Command Burst Charges": {},
+            "Mining Foreman Burst Charges": {},
+            "Shield Command Burst Charges": {},
+            "Skirmish Command Burst Charges": {}
+        },
+        "Condenser Packs": {
+            "Advanced Condenser Packs": {
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            },
+            "Standard Condenser Packs": {
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            }
+        },
+        "Exotic Plasma Charges": {
+            "Advanced Exotic Plasma Charges": {
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            },
+            "Standard Exotic Plasma Charges": {
+                "Extra Large": {},
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            }
+        },
+        "Frequency Crystals": {
+            "Advanced Beam Laser Crystals": {
+                "Extra Large": {},
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            },
+            "Advanced Pulse Laser Crystals": {
+                "Extra Large": {},
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            },
+            "Faction Crystals": {
+                "Extra Large": {},
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            },
+            "Orbital Strike": {},
+            "Standard Crystals": {
+                "Extra Large": {},
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            }
+        },
+        "Hybrid Charges": {
+            "Advanced Blaster Charges": {
+                "Extra Large": {},
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            },
+            "Advanced Railgun Charges": {
+                "Extra Large": {},
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            },
+            "Faction Charges": {
+                "Extra Large": {},
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            },
+            "Orbital Strike": {},
+            "Standard Charges": {
+                "Extra Large": {},
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            }
+        },
+        "Mining Crystals": {},
+        "Missiles": {
+            "Auto-Targeting": {
+                "Faction Auto-Targeting": {},
+                "Standard Auto-Targeting": {}
+            },
+            "Cruise Missiles": {
+                "Advanced High Damage Cruise Missiles": {},
+                "Advanced High Precision Cruise Missiles": {},
+                "Faction Cruise Missiles": {},
+                "Standard Cruise Missiles": {}
+            },
+            "Defender": {},
+            "Heavy Assault Missiles": {
+                "Advanced Anti-Ship Heavy Assault Missile": {},
+                "Advanced Long Range Heavy Assault Missiles": {},
+                "Faction Heavy Assault Missiles": {},
+                "Standard Heavy Assault Missiles": {}
+            },
+            "Heavy Missiles": {
+                "Advanced High Damage Heavy Missiles": {},
+                "Advanced High Precision Heavy Missiles": {},
+                "Faction Heavy Missiles": {},
+                "Standard Heavy Missiles": {}
+            },
+            "Light Missiles": {
+                "Advanced High Damage Light Missiles": {},
+                "Advanced High Precision Light Missiles": {},
+                "Faction Light Missiles": {},
+                "Standard Light Missiles": {}
+            },
+            "Rockets": {
+                "Advanced Anti-Ship Rockets": {},
+                "Advanced Long Range Rockets": {},
+                "Faction Rockets": {},
+                "Standard Rockets": {}
+            },
+            "Structure Anticapital Missiles": {},
+            "Structure Antisubcapital Missiles": {},
+            "Torpedoes": {
+                "Advanced Anti-Ship Torpedoes": {},
+                "Advanced Long Range Torpedoes": {},
+                "Faction Torpedoes": {},
+                "Standard Torpedoes": {}
+            },
+            "XL Cruise Missiles": {
+                "Advanced High Damage XL Cruise Missiles": {},
+                "Advanced High Precision XL Cruise Missiles": {},
+                "Faction XL Cruise Missiles": {},
+                "Standard XL Cruise Missiles": {}
+            },
+            "XL Torpedoes": {
+                "Advanced Anti-Ship XL Torpedoes": {},
+                "Advanced Long Range XL Torpedoes": {},
+                "Faction XL Torpedoes": {},
+                "Standard XL Torpedoes": {}
+            }
+        },
+        "Nanite Repair Paste": {},
+        "Probes": {
+            "Interdiction Probes": {},
+            "Scan Probes": {},
+            "Survey Probes": {}
+        },
+        "Projectile Ammo": {
+            "Advanced Artillery Ammo": {
+                "Extra Large": {},
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            },
+            "Advanced Autocannon Ammo": {
+                "Extra Large": {},
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            },
+            "Faction Ammo": {
+                "Extra Large": {},
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            },
+            "Orbital Strike": {},
+            "Standard Ammo": {
+                "Extra Large": {},
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            }
+        },
+        "Scripts": {},
+        "Structure Guided Bombs": {}
+    },
+    "Apparel": {
+        "Accessories": {
+            "Augmentations": {},
+            "Eyewear": {},
+            "Headwear": {},
+            "Tattoos": {}
+        },
+        "Men's Clothing": {
+            "Bottoms": {},
+            "Footwear": {},
+            "Outerwear": {},
+            "Tops": {}
+        },
+        "Women's Clothing": {
+            "Bottoms": {},
+            "Bottoms, extras": {},
+            "Footwear": {},
+            "Outerwear": {},
+            "Tops": {}
+        }
+    },
+    "Blueprints & Reactions": {
+        "Ammunition & Charges": {
+            "Bombs": {},
+            "Cap Booster Charges": {},
+            "Command Burst Charges": {
+                "Armor Command Burst Charges": {},
+                "Information Command Burst Charges": {},
+                "Mining Foreman Burst Charges": {},
+                "Shield Command Burst Charges": {},
+                "Skirmish Command Burst Charges": {}
+            },
+            "Frequency Crystals": {
+                "Extra Large": {},
+                "Large": {},
+                "Medium": {},
+                "Orbital Strike": {},
+                "Small": {}
+            },
+            "Hybrid Charges": {
+                "Extra Large": {},
+                "Large": {},
+                "Medium": {},
+                "Orbital Strike": {},
+                "Small": {}
+            },
+            "Mining Crystals": {},
+            "Missiles": {
+                "Auto-Targeting": {},
+                "Cruise Missiles": {},
+                "Defender": {},
+                "Heavy Assault Missiles": {},
+                "Heavy Missiles": {},
+                "Light Missiles": {},
+                "Rockets": {},
+                "Structure Anticapital Missiles": {},
+                "Structure Antisubcapital Missiles": {},
+                "Torpedoes": {},
+                "XL Cruise Missiles": {},
+                "XL Torpedoes": {}
+            },
+            "Nanite Repair Paste": {},
+            "Probes": {
+                "Interdiction Probes": {},
+                "Scan Probes": {},
+                "Survey Probes": {}
+            },
+            "Projectile Ammo": {
+                "Extra Large": {},
+                "Large": {},
+                "Medium": {},
+                "Orbital Strike": {},
+                "Small": {}
+            },
+            "Scripts": {},
+            "Structure Guided Bombs": {}
+        },
+        "Drones": {
+            "Combat Drones": {
+                "Heavy Attack Drones": {},
+                "Light Scout Drones": {},
+                "Medium Scout Drones": {},
+                "Sentry Drones": {}
+            },
+            "Combat Utility Drones": {},
+            "Electronic Warfare Drones": {},
+            "Fighters": {
+                "Heavy Fighters": {},
+                "Light Fighters": {},
+                "Support Fighters": {}
+            },
+            "Logistic Drones": {},
+            "Mining Drones": {},
+            "Salvage Drones": {}
+        },
+        "Manufacture & Research": {
+            "Components": {
+                "Advanced Capital Ship Components": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                },
+                "Advanced Components": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                },
+                "Fuel Blocks": {},
+                "Outpost Components": {
+                    "Construction Platforms": {}
+                },
+                "Protective Components": {},
+                "R.A.M.": {},
+                "Standard Capital Ship Components": {},
+                "Structure Components": {},
+                "Subsystem Components": {}
+            },
+            "Materials": {
+                "R.Db": {}
+            }
+        },
+        "Reaction Formulas": {
+            "Biochemical Reaction Formulas": {},
+            "Complex Biochemical Reactions": {},
+            "Complex Reactions": {},
+            "Composite Reaction Formulas": {},
+            "Molecular-Forged Reaction Formulas": {},
+            "Polymer Reaction Formulas": {},
+            "Polymer Reactions": {},
+            "Simple Biochemical Reactions": {},
+            "Simple Reactions": {}
+        },
+        "Ship Equipment": {
+            "Drone Upgrades": {},
+            "Electronic Warfare": {
+                "Burst Projectors": {},
+                "ECCM": {},
+                "ECM Burst": {},
+                "Electronic Counter Measures": {},
+                "Interdiction Sphere Launchers": {},
+                "Projected ECCM": {},
+                "Remote Sensor Dampeners": {},
+                "Sensor Backup Arrays": {},
+                "Stasis Grapplers": {},
+                "Stasis Webifiers": {},
+                "Target Painters": {},
+                "Warp Disruption Field Generators": {},
+                "Warp Disruptors": {},
+                "Warp Scramblers": {},
+                "Weapon Disruptors": {}
+            },
+            "Electronics and Sensor Upgrades": {
+                "Automated Targeting Systems": {},
+                "CPU Upgrades": {},
+                "Cloaking Devices": {},
+                "Passive Targeting Systems": {},
+                "Remote Sensor Boosters": {},
+                "Sensor Boosters": {},
+                "Signal Amplifiers": {},
+                "Tractor Beams": {}
+            },
+            "Engineering Equipment": {
+                "Auxiliary Power Controls": {},
+                "Capacitor Batteries": {},
+                "Capacitor Boosters": {},
+                "Capacitor Flux Coils": {},
+                "Capacitor Power Relays": {},
+                "Capacitor Rechargers": {},
+                "Energy Neutralizers": {},
+                "Energy Nosferatu": {},
+                "Power Diagnostic Systems": {},
+                "Reactor Control Units": {},
+                "Remote Capacitor Transmitters": {}
+            },
+            "Fleet Assistance Modules": {},
+            "Harvest Equipment": {
+                "Mining Lasers": {},
+                "Mining Upgrades": {},
+                "Salvagers": {}
+            },
+            "Hull & Armor ": {
+                "Armor Coatings": {},
+                "Armor Hardeners": {},
+                "Armor Plates": {},
+                "Armor Repairers": {},
+                "Damage Controls": {},
+                "Energized Armor Membranes": {},
+                "Hull Repairers": {},
+                "Hull Upgrades": {},
+                "Mass Entangler": {},
+                "Remote Armor Repairers": {},
+                "Remote Hull Repairers": {}
+            },
+            "Propulsion ": {
+                "Afterburners": {},
+                "Micro Jump Drives": {},
+                "Micro Jump Field Generators": {},
+                "Microwarpdrives": {},
+                "Propulsion Upgrades": {}
+            },
+            "Scanning Equipment": {
+                "Analyzers": {},
+                "Entosis Links": {},
+                "Scan Probe Launchers": {},
+                "Scanners": {},
+                "Scanning Upgrades": {},
+                "Survey Probe Launchers": {}
+            },
+            "Shield": {
+                "Remote Shield Boosters": {},
+                "Shield Boosters": {},
+                "Shield Extenders": {},
+                "Shield Flux Coils": {},
+                "Shield Hardeners": {},
+                "Shield Power Relays": {},
+                "Shield Rechargers": {},
+                "Shield Resistance Amplifiers": {}
+            },
+            "Smartbombs": {},
+            "Turrets & Bays": {
+                "Bomb Launchers": {},
+                "Energy Turrets": {
+                    "Extra Large": {},
+                    "Large": {},
+                    "Medium": {},
+                    "Small": {}
+                },
+                "Hybrid Turrets": {
+                    "Extra Large": {},
+                    "Large": {},
+                    "Medium": {},
+                    "Small": {}
+                },
+                "Missile Launchers": {},
+                "Projectile Turrets": {
+                    "Extra Large": {},
+                    "Large": {},
+                    "Medium": {},
+                    "Small": {}
+                },
+                "Superweapons": {},
+                "Weapon Upgrades": {}
+            }
+        },
+        "Ship Modifications": {
+            "Armor Rigs": {
+                "Capital Armor Rigs": {},
+                "Large Armor Rigs": {},
+                "Medium Armor Rigs": {},
+                "Small Armor Rigs": {}
+            },
+            "Astronautic Rigs": {
+                "Capital Astronautic Rigs": {},
+                "Large Astronautic Rigs": {},
+                "Medium Astronautic Rigs": {},
+                "Small Astronautic Rigs": {}
+            },
+            "Drone Rigs": {
+                "Capital Drone Rigs": {},
+                "Large Drone Rigs": {},
+                "Medium Drone Rigs": {},
+                "Small Drone Rigs": {}
+            },
+            "Electronics Superiority Rigs": {
+                "Capital Electronics Superiority Rigs": {},
+                "Large Electronics Superiority Rigs": {},
+                "Medium Electronics Superiority Rigs": {},
+                "Small Electronics Superiority Rigs": {}
+            },
+            "Energy Weapon Rigs": {
+                "Capital Energy Weapon Rigs": {},
+                "Large Energy Weapon Rigs": {},
+                "Medium Energy Weapon Rigs": {},
+                "Small Energy Weapon Rigs": {}
+            },
+            "Engineering Rigs": {
+                "Capital Engineering Rigs": {},
+                "Large Engineering Rigs": {},
+                "Medium Engineering Rigs": {},
+                "Small Engineering Rigs": {}
+            },
+            "Hybrid Weapon Rigs": {
+                "Capital Hybrid Weapon Rigs": {},
+                "Large Hybrid Weapon Rigs": {},
+                "Medium Hybrid Weapon Rigs": {},
+                "Small Hybrid Weapon Rigs": {}
+            },
+            "Missile Launcher Rigs": {
+                "Capital Missile Launcher Rigs": {},
+                "Large Missile Launcher Rigs": {},
+                "Medium Missile Launcher Rigs": {},
+                "Small Missile Launcher Rigs": {}
+            },
+            "Projectile Weapon Rigs": {
+                "Capital Projectile Weapon Rigs": {},
+                "Large Projectile Weapon Rigs": {},
+                "Medium Projectile Weapon Rigs": {},
+                "Small Projectile Weapon Rigs": {}
+            },
+            "Resource Processing Rigs": {
+                "Capital Resource Processing Rigs": {},
+                "Large Resource Processing Rigs": {},
+                "Medium Resource Processing Rigs": {},
+                "Small Resource Processing Rigs": {}
+            },
+            "Scanning Rigs": {
+                "Capital Scanning Rigs": {},
+                "Large Scanning Rigs": {},
+                "Medium Scanning Rigs": {},
+                "Small Scanning Rigs": {}
+            },
+            "Shield Rigs": {
+                "Capital Shield Rigs": {},
+                "Large Shield Rigs": {},
+                "Medium Shield Rigs": {},
+                "Small Shield Rigs": {}
+            },
+            "Targeting Rigs": {
+                "Capital Targeting Rigs": {},
+                "Large Targeting Rigs": {},
+                "Medium Targeting Rigs": {},
+                "Small Targeting Rigs": {}
+            }
+        },
+        "Ships": {
+            "Assault Frigates": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Battlecruisers": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Battleships": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Capital Industrial Ships": {
+                "ORE": {}
+            },
+            "Carriers": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Command Ships": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Covert Ops": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Cruisers": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Destroyers": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Dreadnoughts": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Exhumers": {
+                "ORE": {}
+            },
+            "Force Auxiliaries": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Freighters": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {},
+                "ORE": {}
+            },
+            "Frigates": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {},
+                "ORE": {}
+            },
+            "Heavy Assault Cruisers": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Industrial Command Ships": {
+                "ORE": {}
+            },
+            "Industrial Ships": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {},
+                "ORE": {}
+            },
+            "Interceptors": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Interdictors": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Logistics": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Mining Barges": {
+                "ORE": {}
+            },
+            "Recon Ships": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Shuttles": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Titans": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Transport Ships": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            }
+        },
+        "Structure Equipment": {
+            "Electronic Warfare": {
+                "Electronic Counter Measures": {},
+                "Remote Sensor Dampeners": {},
+                "Stasis Webifiers": {},
+                "Structure Burst Projectors": {},
+                "Target Painters": {},
+                "Warp Scramblers": {},
+                "Weapon Disruptors": {}
+            },
+            "Electronics and Sensor Upgrades": {
+                "CPU Upgrades": {},
+                "Ship Tractor Beams": {},
+                "Signal Amplifiers": {}
+            },
+            "Engineering Equipment": {
+                "Armor Reinforcers": {},
+                "Capacitor Batteries": {},
+                "Capacitor Power Relays": {},
+                "Energy Neutralizers": {},
+                "Point Defense Batteries": {},
+                "Reactor Control Units": {}
+            },
+            "Fighter Upgrades": {},
+            "Service Modules": {
+                "Citadel Service Modules": {},
+                "Engineering Service Modules": {},
+                "Resource Processing Service Modules": {}
+            },
+            "Structure Weapons": {
+                "Doomsday Devices": {},
+                "Guided Bomb Launchers": {},
+                "Missile Launchers": {
+                    "Structure Anticapital Launcher": {},
+                    "Structure Antisubcapital Launcher": {}
+                },
+                "Weapon Upgrades": {
+                    "Ballistic Control Systems": {},
+                    "Missile Guidance Enhancers": {}
+                }
+            }
+        },
+        "Structure Modifications": {
+            "Structure Combat Rigs": {},
+            "Structure Engineering Rigs": {},
+            "Structure Resource Processing Rigs": {}
+        },
+        "Structures": {
+            "Citadels": {},
+            "Deployable Structures": {
+                "Cargo Containers": {},
+                "Mobile Cynosural Beacons": {},
+                "Mobile Cynosural Inhibitors": {},
+                "Mobile Depots": {},
+                "Mobile Micro Jump Units": {},
+                "Mobile Observatories": {},
+                "Mobile Scan Inhibitors": {},
+                "Mobile Siphon Units": {},
+                "Mobile Tractor Units": {},
+                "Warp Disruption Fields": {}
+            },
+            "Engineering Complexes": {},
+            "Navigation Structures": {},
+            "Refineries": {},
+            "Sovereignty and Infrastructure": {
+                "Industrial Upgrades": {},
+                "Military Upgrades": {},
+                "Sovereignty Structures": {},
+                "Strategic Upgrades": {}
+            },
+            "Starbase Structures": {
+                "Assembly Arrays": {},
+                "Compression Array": {},
+                "Control Towers": {},
+                "Corporate Hangar Arrays": {},
+                "Cynosural Generator Arrays": {},
+                "Cynosural System Jammers": {},
+                "Jump Bridge": {},
+                "Laboratories": {},
+                "Moon Harvesting Arrays": {},
+                "Personal Hangar Arrays": {},
+                "Reactors": {},
+                "Reprocessing Arrays": {},
+                "Shield Hardening Arrays": {},
+                "Ship Maintenance Arrays": {},
+                "Silos": {},
+                "Weapon Batteries": {
+                    "Electronic Warfare Batteries": {},
+                    "Energy Neutralization Batteries": {},
+                    "Hybrid Batteries": {},
+                    "Laser Batteries": {},
+                    "Missile Batteries": {},
+                    "Projectile Batteries": {}
+                }
+            }
+        }
+    },
+    "Drones": {
+        "Combat Drones": {
+            "Heavy Attack Drones": {},
+            "Light Scout Drones": {},
+            "Medium Scout Drones": {},
+            "Sentry Drones": {}
+        },
+        "Combat Utility Drones": {},
+        "Electronic Warfare Drones": {},
+        "Fighters": {
+            "Carrier-based Fighters": {
+                "Heavy Fighters": {},
+                "Light Fighters": {},
+                "Support Fighters": {}
+            },
+            "Structure-based Fighters": {
+                "Standup Heavy Fighters": {},
+                "Standup Light Fighters": {},
+                "Standup Support Fighters": {}
+            }
+        },
+        "Logistic Drones": {},
+        "Mining Drones": {},
+        "Salvage Drones": {}
+    },
+    "Implants & Boosters": {
+        "Booster": {
+            "Booster Slot 01": {
+                "Antipharmakon": {},
+                "Blue Pill": {},
+                "Exile": {},
+                "Mindflood": {},
+                "Other": {},
+                "X-Instinct": {}
+            },
+            "Booster Slot 02": {
+                "Antipharmakon": {},
+                "Drop": {},
+                "Frentix": {},
+                "Sooth Sayer": {}
+            },
+            "Booster Slot 03": {
+                "Antipharmakon": {},
+                "Crash": {}
+            },
+            "Booster Slot 11": {
+                "Hardshell": {},
+                "Overclocker": {},
+                "Pyrolancea": {}
+            },
+            "Booster Slot 12": {},
+            "Booster Slot 14": {},
+            "Booster Slot 15": {},
+            "Booster Slot 16": {},
+            "Booster Slot 17": {},
+            "Clone Mappers": {}
+        },
+        "Cerebral Accelerators": {},
+        "Implants": {
+            "Attribute Enhancers": {
+                "Implant Slot 01": {},
+                "Implant Slot 02": {},
+                "Implant Slot 03": {},
+                "Implant Slot 04": {},
+                "Implant Slot 05": {}
+            },
+            "Skill Hardwiring": {
+                "Armor Implants": {
+                    "Implant Slot 06": {},
+                    "Implant Slot 07": {},
+                    "Implant Slot 08": {},
+                    "Implant Slot 09": {},
+                    "Implant Slot 10": {}
+                },
+                "Drone Implants": {
+                    "Implant Slot 06": {},
+                    "Implant Slot 07": {},
+                    "Implant Slot 08": {},
+                    "Implant Slot 09": {},
+                    "Implant Slot 10": {}
+                },
+                "Electronic Systems Implants": {
+                    "Implant Slot 08": {},
+                    "Implant Slot 09": {}
+                },
+                "Engineering Implants": {
+                    "Implant Slot 06": {},
+                    "Implant Slot 07": {},
+                    "Implant Slot 08": {}
+                },
+                "Faction Omega Implants": {
+                    "Implant Slot 06": {}
+                },
+                "Fleet Support Implants": {
+                    "Implant Slot 10": {}
+                },
+                "Gunnery Implants": {
+                    "Implant Slot 06": {},
+                    "Implant Slot 07": {},
+                    "Implant Slot 08": {},
+                    "Implant Slot 09": {},
+                    "Implant Slot 10": {}
+                },
+                "Industry Implants": {
+                    "Implant Slot 08": {}
+                },
+                "Missile Implants": {
+                    "Implant Slot 06": {},
+                    "Implant Slot 07": {},
+                    "Implant Slot 08": {},
+                    "Implant Slot 09": {},
+                    "Implant Slot 10": {}
+                },
+                "Navigation Implants": {
+                    "Implant Slot 06": {},
+                    "Implant Slot 07": {},
+                    "Implant Slot 08": {},
+                    "Implant Slot 09": {}
+                },
+                "Neural Enhancement Implants": {
+                    "Implant Slot 08": {},
+                    "Implant Slot 09": {},
+                    "Implant Slot 10": {}
+                },
+                "Resource Processing Implants": {
+                    "Implant Slot 07": {},
+                    "Implant Slot 08": {},
+                    "Implant Slot 10": {}
+                },
+                "Scanning Implants": {
+                    "Implant Slot 06": {},
+                    "Implant Slot 07": {},
+                    "Implant Slot 08": {},
+                    "Implant Slot 09": {},
+                    "Implant Slot 10": {}
+                },
+                "Science Implants": {
+                    "Implant Slot 06": {},
+                    "Implant Slot 07": {},
+                    "Implant Slot 08": {}
+                },
+                "Shield Implants": {
+                    "Implant Slot 06": {},
+                    "Implant Slot 07": {},
+                    "Implant Slot 08": {},
+                    "Implant Slot 09": {}
+                },
+                "Targeting Implants": {
+                    "Implant Slot 07": {},
+                    "Implant Slot 08": {}
+                }
+            }
+        }
+    },
+    "Manufacture & Research": {
+        "Components": {
+            "Advanced Capital Components": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {},
+                "Triglavian": {}
+            },
+            "Advanced Components": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {},
+                "Triglavian": {}
+            },
+            "Fuel Blocks": {},
+            "Outpost Components": {
+                "Construction Platforms": {},
+                "Improvement Platforms": {
+                    "Amarr Improvement Platforms": {},
+                    "Caldari Improvement Platforms": {},
+                    "Gallente Improvement Platforms": {},
+                    "Minmatar Improvement Platforms": {}
+                },
+                "Outpost Upgrade Platforms": {}
+            },
+            "Protective Components": {},
+            "R.A.M.": {},
+            "Standard Capital Ship Components": {},
+            "Structure Components": {},
+            "Subsystem Components": {}
+        },
+        "Materials": {
+            "Advanced Protective Technology": {},
+            "Faction Materials": {
+                "Angel Cartel": {},
+                "Blood Raiders": {},
+                "Guristas": {},
+                "Rogue Drones": {},
+                "Serpentis": {},
+                "Sleeper": {},
+                "Takmahl": {},
+                "Talocan": {},
+                "Yan Jung": {}
+            },
+            "Gas Clouds Materials": {
+                "Booster Gas Clouds": {},
+                "Fullerenes": {}
+            },
+            "Ice Products": {},
+            "Minerals": {},
+            "Molecular-Forging Tools": {},
+            "Named Components": {},
+            "Planetary Materials": {
+                "Advanced Planetary Materials": {},
+                "Processed Planetary Materials": {},
+                "Raw Planetary Materials": {},
+                "Refined Planetary Materials": {},
+                "Specialized Planetary Materials": {}
+            },
+            "Raw Materials": {
+                "Abyssal Materials": {},
+                "Alloys & Compounds": {},
+                "Ice Ores": {},
+                "Moon Ores": {
+                    "Common Moon Ores": {},
+                    "Exceptional Moon Ores": {},
+                    "Rare Moon Ores": {},
+                    "Ubiquitous Moon Ores": {},
+                    "Uncommon Moon Ores": {}
+                },
+                "Standard Ores": {
+                    "Arkonor": {},
+                    "Bezdnacine": {},
+                    "Bistot": {},
+                    "Crokite": {},
+                    "Dark Ochre": {},
+                    "Gneiss": {},
+                    "Hedbergite": {},
+                    "Hemorphite": {},
+                    "Jaspet": {},
+                    "Kernite": {},
+                    "Mercoxit": {},
+                    "Omber": {},
+                    "Plagioclase": {},
+                    "Pyroxeres": {},
+                    "Rakovene": {},
+                    "Scordite": {},
+                    "Spodumain": {},
+                    "Talassonite": {},
+                    "Veldspar": {}
+                }
+            },
+            "Reaction Materials": {
+                "Advanced Moon Materials": {},
+                "Booster Materials": {},
+                "Molecular-Forged Materials": {},
+                "Polymer Materials": {},
+                "Processed Moon Materials": {},
+                "Raw Moon Materials": {}
+            },
+            "Salvage Materials": {
+                "Ancient Salvaged Materials": {},
+                "Salvaged Materials": {}
+            }
+        },
+        "Research Equipment": {
+            "Ancient Relics": {},
+            "Datacores": {},
+            "Decryptors": {},
+            "R.Db": {}
+        }
+    },
+    "Pilot's Services": {
+        "HyperNet Relay": {},
+        "PLEX": {},
+        "Pilot's Services": {},
+        "Skill Trading": {}
+    },
+    "Planetary Infrastructure": {
+        "Command Centers": {},
+        "Orbital Infrastructure": {}
+    },
+    "Ship Equipment": {
+        "Drone Upgrades": {},
+        "Electronic Warfare": {
+            "Burst Projectors": {},
+            "ECCM": {
+                "Gravimetric Sensors": {},
+                "Ladar Sensors": {},
+                "Magnetometric Sensors": {},
+                "Multi-Spectrum Sensors": {},
+                "Radar Sensors": {}
+            },
+            "ECM Bursts": {},
+            "Electronic Counter Measures": {
+                "Gravimetric Jammers": {},
+                "Ladar Jammers": {},
+                "Magnetometric Jammers": {},
+                "Multi Spectrum Jammers": {},
+                "Radar Jammers": {},
+                "Signal Distortion Amplifier": {}
+            },
+            "Interdiction Sphere Launchers": {},
+            "Projected ECCM": {},
+            "Remote Sensor Dampeners": {},
+            "Sensor Backup Arrays": {
+                "Gravimetric Backup Arrays": {},
+                "Ladar Backup Arrays": {},
+                "Magnetometric Backup Arrays": {},
+                "Multi-Frequency Backup Arrays": {},
+                "Radar Backup Arrays": {}
+            },
+            "Signature Suppressor": {},
+            "Stasis Grapplers": {},
+            "Stasis Webifiers": {},
+            "Target Painters": {},
+            "Warp Disruption Field Generators": {},
+            "Warp Disruptors": {},
+            "Warp Scramblers": {},
+            "Weapon Disruptors": {}
+        },
+        "Electronics and Sensor Upgrades": {
+            "Automated Targeting Systems": {},
+            "CPU Upgrades": {},
+            "Cloaking Devices": {},
+            "Passive Targeting Systems": {},
+            "Remote Sensor Boosters": {},
+            "Sensor Boosters": {},
+            "Signal Amplifiers": {},
+            "Tractor Beams": {}
+        },
+        "Engineering Equipment": {
+            "Auxiliary Power Controls": {},
+            "Capacitor Batteries": {
+                "Capital": {},
+                "Large": {},
+                "Medium": {},
+                "Micro": {},
+                "Small": {}
+            },
+            "Capacitor Boosters": {
+                "Capital": {},
+                "Heavy": {},
+                "Medium": {},
+                "Micro": {},
+                "Small": {}
+            },
+            "Capacitor Flux Coils": {},
+            "Capacitor Power Relays": {},
+            "Capacitor Rechargers": {},
+            "Energy Neutralizers": {
+                "Capital": {},
+                "Heavy": {},
+                "Medium": {},
+                "Small": {}
+            },
+            "Energy Nosferatu": {
+                "Capital": {},
+                "Heavy": {},
+                "Medium": {},
+                "Small": {}
+            },
+            "Power Diagnostic Systems": {},
+            "Reactor Control Units": {},
+            "Remote Capacitor Transmitters": {
+                "Capital": {},
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            }
+        },
+        "Fleet Assistance Modules": {
+            "Clone Vat Bays": {},
+            "Command Bursts": {},
+            "Command Processors": {},
+            "Cynosural Field Generators": {},
+            "Jump Portal Generators": {}
+        },
+        "Harvest Equipment": {
+            "Gas Cloud Harvesters": {},
+            "Ice Harvesters": {},
+            "Ice Mining Lasers": {},
+            "Mining Lasers": {},
+            "Mining Upgrades": {},
+            "Salvagers": {},
+            "Strip Miners": {}
+        },
+        "Hull & Armor ": {
+            "Armor Hardeners": {
+                "EM Armor Hardeners": {},
+                "Explosive Armor Hardeners": {},
+                "Kinetic Armor Hardeners": {},
+                "Reactive Armor Hardeners": {},
+                "Scriptable Armor Hardeners": {},
+                "Thermal Armor Hardeners": {}
+            },
+            "Armor Plates": {
+                "100mm Armor Plate": {},
+                "1600mm Armor Plate": {},
+                "200mm Armor Plate": {},
+                "25000mm Armor Plate": {},
+                "400mm Armor Plate": {},
+                "800mm Armor Plate": {}
+            },
+            "Armor Repairers": {
+                "Capital": {},
+                "Large": {},
+                "Medium": {},
+                "Small ": {}
+            },
+            "Armor Resistance Coatings": {
+                "EM Coatings": {},
+                "Explosive Coatings": {},
+                "Kinetic Coatings": {},
+                "Multispectrum Coatings": {},
+                "Thermal Coatings": {}
+            },
+            "Damage Controls": {},
+            "Energized Armor Resistance Membranes": {
+                "EM Energized Membranes": {},
+                "Explosive Energized Membranes": {},
+                "Kinetic Energized Membranes": {},
+                "Multispectrum Energized Membranes": {},
+                "Thermal Energized Membranes": {}
+            },
+            "Hull Repairers": {
+                "Capital": {},
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            },
+            "Hull Upgrades": {
+                "Expanded Cargoholds": {},
+                "Nanofiber Internal Structures": {},
+                "Reinforced Bulkheads": {}
+            },
+            "Layered Armor Coatings": {},
+            "Layered Energized Armor Membranes": {},
+            "Mass Entanglers": {},
+            "Mutadaptive Remote Armor Repairers": {
+                "Medium": {}
+            },
+            "Remote Armor Repairers": {
+                "Capital": {},
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            },
+            "Remote Hull Repairers": {
+                "Capital": {},
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            }
+        },
+        "Propulsion ": {
+            "Afterburners": {},
+            "Micro Jump Drives": {},
+            "Micro Jump Field Generators": {},
+            "Microwarpdrives": {},
+            "Propulsion Upgrades": {
+                "Inertial Stabilizers": {},
+                "Interdiction Nullifiers": {},
+                "Jump Economizers": {},
+                "Overdrives": {},
+                "Warp Accelerators": {},
+                "Warp Core Stabilizers": {}
+            }
+        },
+        "Scanning Equipment": {
+            "Analyzers": {},
+            "Cargo Scanners": {},
+            "Entosis Links": {},
+            "Scan Probe Launchers": {},
+            "Scanning Upgrades": {},
+            "Ship Scanners": {},
+            "Survey Probe Launchers": {},
+            "Survey Scanners": {}
+        },
+        "Shield": {
+            "Remote Shield Boosters": {
+                "Capital": {},
+                "Large": {},
+                "Medium": {},
+                "Micro": {},
+                "Small": {}
+            },
+            "Shield Boosters": {
+                "Boost Amplifiers": {},
+                "Capital": {},
+                "Extra Large": {},
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            },
+            "Shield Extenders": {
+                "Capital": {},
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            },
+            "Shield Flux Coils": {},
+            "Shield Hardeners": {
+                "EM Shield Hardeners": {},
+                "Explosive Shield Hardeners": {},
+                "Kinetic Shield Hardeners": {},
+                "Multispectrum Shield Hardeners": {},
+                "Scriptable Shield Hardeners": {},
+                "Thermal Shield Hardeners": {}
+            },
+            "Shield Power Relays": {},
+            "Shield Rechargers": {},
+            "Shield Resistance Amplifiers": {
+                "EM Shield Amplifiers": {},
+                "Explosive Shield Amplifiers": {},
+                "Kinetic Shield Amplifiers": {},
+                "Thermal Shield Amplifiers": {}
+            }
+        },
+        "Smartbombs": {
+            "Large": {},
+            "Medium": {},
+            "Micro": {},
+            "Small": {}
+        },
+        "Turrets & Launchers": {
+            "Bomb Launchers": {},
+            "Energy Turrets": {
+                "Beam Lasers": {
+                    "Extra Large": {},
+                    "Large": {},
+                    "Medium": {},
+                    "Small": {}
+                },
+                "Pulse Lasers": {
+                    "Extra Large": {},
+                    "Large": {},
+                    "Medium": {},
+                    "Small": {}
+                }
+            },
+            "Hybrid Turrets": {
+                "Blasters": {
+                    "Extra Large": {},
+                    "Large": {},
+                    "Medium": {},
+                    "Small": {}
+                },
+                "Railguns": {
+                    "Extra Large": {},
+                    "Large": {},
+                    "Medium": {},
+                    "Small": {}
+                }
+            },
+            "Missile Launchers": {
+                "Cruise Launchers": {},
+                "Defender Launchers": {},
+                "Heavy Assault Launchers": {},
+                "Heavy Launchers": {},
+                "Light Missile Launchers": {},
+                "Rapid Heavy Missile Launchers": {},
+                "Rapid Light Missile Launchers": {},
+                "Rapid Torpedo Launchers": {},
+                "Rocket Launchers": {},
+                "Torpedo Launchers": {},
+                "XL Launchers": {}
+            },
+            "Precursor Turrets": {
+                "Entropic Disintegrators": {
+                    "Extra Large": {},
+                    "Large": {},
+                    "Medium": {},
+                    "Small": {}
+                }
+            },
+            "Projectile Turrets": {
+                "Artillery Cannons": {
+                    "Extra Large": {},
+                    "Large": {},
+                    "Medium": {},
+                    "Small": {}
+                },
+                "Autocannons": {
+                    "Extra Large": {},
+                    "Large": {},
+                    "Medium": {},
+                    "Small": {}
+                }
+            },
+            "Superweapons": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {},
+                "Non-Racial": {},
+                "ORE": {}
+            },
+            "Vorton Projectors": {
+                "Large": {},
+                "Medium": {},
+                "Small": {}
+            },
+            "Weapon Upgrades": {
+                "Ballistic Control Systems": {},
+                "Entropic Radiation Sinks": {},
+                "Gyrostabilizers": {},
+                "Heat Sinks": {},
+                "Magnetic Field Stabilizers": {},
+                "Missile Guidance Computers": {},
+                "Missile Guidance Enhancers": {},
+                "Remote Tracking Computers": {},
+                "Siege Modules": {},
+                "Tracking Computers": {},
+                "Tracking Enhancers": {},
+                "Vorton Tuning Systems": {}
+            }
+        }
+    },
+    "Ship SKINs": {
+        "Battlecruisers": {
+            "Advanced Battlecruisers": {
+                "Command Ships": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                }
+            },
+            "Faction Battlecruisers": {
+                "Navy Faction": {}
+            },
+            "Precursor Battlecruisers": {
+                "Triglavian": {}
+            },
+            "Special Battlecruisers": {
+                "Special Battlecruisers": {}
+            },
+            "Standard Battlecruisers": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            }
+        },
+        "Battleships": {
+            "Advanced Battleships": {
+                "Black Ops": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {},
+                    "Special Black Ops": {}
+                },
+                "Marauders": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                }
+            },
+            "Faction Battleships": {
+                "Navy Faction": {},
+                "Pirate Faction": {}
+            },
+            "Precursor Battleships": {
+                "Triglavian": {}
+            },
+            "Special Battleships": {
+                "Special Battleships": {}
+            },
+            "Standard Battleships": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            }
+        },
+        "Capital Ships": {
+            "Capital Industrial Ships": {
+                "ORE": {}
+            },
+            "Carriers": {
+                "Faction Carriers": {
+                    "Pirate Faction": {}
+                },
+                "Standard Carriers": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                }
+            },
+            "Dreadnoughts": {
+                "Faction Dreadnoughts": {
+                    "Pirate Faction": {}
+                },
+                "Precursor Dreadnoughts": {
+                    "Triglavian": {}
+                },
+                "Standard Dreadnoughts": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                }
+            },
+            "Force Auxiliaries": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Freighters": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {},
+                "ORE": {}
+            },
+            "Jump Freighters": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Titans": {
+                "Faction Titans": {
+                    "Pirate Faction": {}
+                },
+                "Standard Titans": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                }
+            }
+        },
+        "Capsules": {
+            "Capsules": {},
+            "Special Edition Capsules": {}
+        },
+        "Corvettes": {
+            "Faction Corvettes": {
+                "Pirate Faction": {}
+            },
+            "Standard Corvettes": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            }
+        },
+        "Cruisers": {
+            "Advanced Cruisers": {
+                "Flag Cruisers": {
+                    "CONCORD": {}
+                },
+                "Heavy Assault Cruisers": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                },
+                "Heavy Interdiction Cruisers": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                },
+                "Logistics": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                },
+                "Recon Ships": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {},
+                    "Special Recon Ships": {}
+                },
+                "Strategic Cruisers": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                }
+            },
+            "Faction Cruisers": {
+                "Navy Faction": {},
+                "Pirate Faction": {}
+            },
+            "Precursor Cruisers": {
+                "Triglavian": {}
+            },
+            "Standard Cruisers": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            }
+        },
+        "Destroyers": {
+            "Advanced Destroyers": {
+                "Command Destroyers": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                },
+                "Interdictors": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                },
+                "Tactical Destroyers": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                }
+            },
+            "Precursor Destroyers": {
+                "Triglavian": {}
+            },
+            "Special Destroyers": {
+                "Special Destroyers": {}
+            },
+            "Standard Destroyers": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            }
+        },
+        "Frigates": {
+            "Advanced Frigates": {
+                "Assault Frigates": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                },
+                "Covert Ops": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {},
+                    "Special Covert Ops": {}
+                },
+                "Electronic Attack Frigates": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                },
+                "Expedition Frigates": {},
+                "Interceptors": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                },
+                "Logistics Frigates": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                }
+            },
+            "Faction Frigates": {
+                "Navy Faction": {},
+                "Pirate Faction": {}
+            },
+            "Precursor Frigates": {
+                "Triglavian": {}
+            },
+            "Standard Frigates": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {},
+                "ORE": {}
+            }
+        },
+        "Industrial Ships": {
+            "Advanced Industrial Ships": {
+                "Transport Ships": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                }
+            },
+            "Industrial Command Ships": {
+                "ORE": {}
+            },
+            "Special Edition Industrial Ships": {
+                "ORE": {}
+            },
+            "Standard Industrial Ships": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {},
+                "ORE": {}
+            }
+        },
+        "Mining Barges": {
+            "Exhumers": {},
+            "Mining Barges": {}
+        },
+        "Multiple Hull SKINs": {
+            "Special Edition SKINs": {}
+        },
+        "Shuttles": {
+            "Amarr": {},
+            "Caldari": {},
+            "Gallente": {},
+            "Minmatar": {},
+            "Special Shuttles": {}
+        }
+    },
+    "Ship and Module Modifications": {
+        "Mutaplasmids": {
+            "Armor Mutaplasmids": {
+                "Capital Armor Mutaplasmids": {},
+                "Large Armor Mutaplasmids": {},
+                "Medium Armor Mutaplasmids": {},
+                "Small Armor Mutaplasmids": {}
+            },
+            "Astronautic Mutaplasmids": {
+                "Capital Astronautic Mutaplasmids": {},
+                "Large Astronautic Mutaplasmids": {},
+                "Medium Astronautic Mutaplasmids": {},
+                "Small Astronautic Mutaplasmids": {}
+            },
+            "Damage Control Mutaplasmids": {
+                "Assault Damage Control Mutaplasmids": {},
+                "Damage Control Mutaplasmids": {}
+            },
+            "Engineering Mutaplasmids": {
+                "Capital Engineering Mutaplasmids": {},
+                "Large Engineering Mutaplasmids": {},
+                "Medium Engineering Mutaplasmids": {},
+                "Small Engineering Mutaplasmids": {}
+            },
+            "Shield Mutaplasmids": {
+                "Capital Shield Mutaplasmids": {},
+                "Large Shield Mutaplasmids": {},
+                "Medium Shield Mutaplasmids": {},
+                "Small Shield Mutaplasmids": {},
+                "X-Large Shield Mutaplasmids": {}
+            },
+            "Stasis Webifier Mutaplasmids": {},
+            "Warp Disruption Mutaplasmids": {},
+            "Weapon Upgrade Mutaplasmids": {
+                "Ballistic Control System Mutaplasmids": {},
+                "Entropic Radiation Sink Mutaplasmids": {},
+                "Gyrostabilizer Mutaplasmids": {},
+                "Heat Sink Mutaplasmids": {},
+                "Magnetic Field Stabilizer Mutaplasmids": {},
+                "Siege Module Mutaplasmids": {}
+            }
+        },
+        "Rigs": {
+            "Armor Rigs": {
+                "Capital Armor Rigs": {},
+                "Large Armor Rigs": {},
+                "Medium Armor Rigs": {},
+                "Small Armor Rigs": {}
+            },
+            "Astronautic Rigs": {
+                "Capital Astronautic Rigs": {},
+                "Large Astronautic Rigs": {},
+                "Medium Astronautic Rigs": {},
+                "Small Astronautic Rigs": {}
+            },
+            "Drone Rigs": {
+                "Capital Drone Rigs": {},
+                "Large Drone Rigs": {},
+                "Medium Drone Rigs": {},
+                "Small Drone Rigs": {}
+            },
+            "Electronics Superiority Rigs": {
+                "Capital Electronics Superiority Rigs": {},
+                "Large Electronics Superiority Rigs": {},
+                "Medium Electronics Superiority Rigs": {},
+                "Small Electronics Superiority Rigs": {}
+            },
+            "Energy Weapon Rigs": {
+                "Capital Energy Weapon Rigs": {},
+                "Large Energy Weapon Rigs": {},
+                "Medium Energy Weapon Rigs": {},
+                "Small Energy Weapon Rigs": {}
+            },
+            "Engineering Rigs": {
+                "Capital Engineering Rigs": {},
+                "Large Engineering Rigs": {},
+                "Medium Engineering Rigs": {},
+                "Small Engineering Rigs": {}
+            },
+            "Hybrid Weapon Rigs": {
+                "Capital Hybrid Weapon Rigs": {},
+                "Large Hybrid Weapon Rigs": {},
+                "Medium Hybrid Weapon Rigs": {},
+                "Small Hybrid Weapon Rigs": {}
+            },
+            "Missile Launcher Rigs": {
+                "Capital Missile Launcher Rigs": {},
+                "Large Missile Launcher Rigs": {},
+                "Medium Missile Launcher Rigs": {},
+                "Small Missile Launcher Rigs": {}
+            },
+            "Projectile Weapon Rigs": {
+                "Capital Projectile Weapon Rigs": {},
+                "Large Projectile Weapon Rigs": {},
+                "Medium Projectile Weapon Rigs": {},
+                "Small Projectile Weapon Rigs": {}
+            },
+            "Resource Processing Rigs": {
+                "Capital Resource Processing Rigs": {},
+                "Large Resource Processing Rigs": {},
+                "Medium Resource Processing Rigs": {},
+                "Small Resource Processing Rigs": {}
+            },
+            "Scanning Rigs": {
+                "Capital Scanning Rigs": {},
+                "Large Scanning Rigs": {},
+                "Medium Scanning Rigs": {},
+                "Small Scanning Rigs": {}
+            },
+            "Shield Rigs": {
+                "Capital Shield Rigs": {},
+                "Large Shield Rigs": {},
+                "Medium Shield Rigs": {},
+                "Small Shield Rigs": {}
+            },
+            "Targeting Rigs": {
+                "Capital Targeting Rigs": {},
+                "Large Targeting Rigs": {},
+                "Medium Targeting Rigs": {},
+                "Small Targeting Rigs": {}
+            }
+        },
+        "Subsystems": {
+            "Amarr Subsystems": {
+                "Amarr Core Subsystems": {},
+                "Amarr Defensive Subsystems": {},
+                "Amarr Offensive Subsystems": {},
+                "Amarr Propulsion Subsystems": {}
+            },
+            "Caldari Subsystems": {
+                "Caldari Core Subsystems": {},
+                "Caldari Defensive Subsystems": {},
+                "Caldari Offensive Subsystems": {},
+                "Caldari Propulsion Subsystems": {}
+            },
+            "Gallente Subsystems": {
+                "Gallente Core Subsystems": {},
+                "Gallente Defensive Subsystems": {},
+                "Gallente Offensive Subsystems": {},
+                "Gallente Propulsion Subsystems": {}
+            },
+            "Minmatar Subsystems": {
+                "Minmatar Core Subsystems": {},
+                "Minmatar Defensive Subsystems": {},
+                "Minmatar Offensive Subsystems": {},
+                "Minmatar Propulsion Subsystems": {}
+            }
+        }
+    },
+    "Ships": {
+        "Battlecruisers": {
+            "Advanced Battlecruisers": {
+                "Command Ships": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                }
+            },
+            "Faction Battlecruisers": {
+                "Navy Faction": {}
+            },
+            "Precursor Battlecruisers": {
+                "Triglavian": {}
+            },
+            "Standard Battlecruisers": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            }
+        },
+        "Battleships": {
+            "Advanced Battleships": {
+                "Black Ops": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                },
+                "Marauders": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                }
+            },
+            "Faction Battleships": {
+                "Navy Faction": {},
+                "Pirate Faction": {}
+            },
+            "Precursor Battleships": {
+                "Triglavian": {}
+            },
+            "Standard Battleships": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            }
+        },
+        "Capital Ships": {
+            "Capital Industrial Ships": {
+                "ORE": {}
+            },
+            "Carriers": {
+                "Amarr": {},
+                "Caldari": {},
+                "Faction Carrier": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Dreadnoughts": {
+                "Amarr": {},
+                "Caldari": {},
+                "Faction Dreadnoughts": {},
+                "Gallente": {},
+                "Minmatar": {},
+                "Precursor Dreadnoughts": {}
+            },
+            "Force Auxiliaries": {
+                "Amarr": {},
+                "Caldari": {},
+                "Faction Force Auxiliaries": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Freighters": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {},
+                "ORE": {}
+            },
+            "Jump Freighters": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            },
+            "Titans": {
+                "Amarr": {},
+                "Caldari": {},
+                "Faction Titans": {},
+                "Gallente": {},
+                "Minmatar": {}
+            }
+        },
+        "Corvettes": {
+            "Amarr": {},
+            "Caldari": {},
+            "Gallente": {},
+            "Minmatar": {}
+        },
+        "Cruisers": {
+            "Advanced Cruisers": {
+                "Flag Cruisers": {
+                    "CONCORD": {}
+                },
+                "Heavy Assault Cruisers": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {},
+                    "Triglavian": {}
+                },
+                "Heavy Interdiction Cruisers": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                },
+                "Logistics": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {},
+                    "Triglavian": {}
+                },
+                "Recon Ships": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                },
+                "Strategic Cruisers": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                }
+            },
+            "Faction Cruisers": {
+                "Navy Faction": {},
+                "Pirate Faction": {}
+            },
+            "Precursor Cruisers": {
+                "Triglavian": {}
+            },
+            "Standard Cruisers": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            }
+        },
+        "Destroyers": {
+            "Advanced Destroyers": {
+                "Command Destroyers": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {},
+                    "Triglavian": {}
+                },
+                "Interdictors": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                },
+                "Tactical Destroyers": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                }
+            },
+            "Precursor Destroyers": {
+                "Triglavian": {}
+            },
+            "Standard Destroyers": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {}
+            }
+        },
+        "Frigates": {
+            "Advanced Frigates": {
+                "Assault Frigates": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {},
+                    "Triglavian": {}
+                },
+                "Covert Ops": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                },
+                "Electronic Attack Frigates": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                },
+                "Expedition Frigates": {},
+                "Interceptors": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                },
+                "Logistics Frigates": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                }
+            },
+            "Faction Frigates": {
+                "Navy Faction": {},
+                "Pirate Faction": {}
+            },
+            "Precursor Frigates": {
+                "Triglavian": {}
+            },
+            "Standard Frigates": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {},
+                "ORE": {}
+            }
+        },
+        "Industrial Ships": {
+            "Advanced Industrial Ships": {
+                "Transport Ships": {
+                    "Amarr": {},
+                    "Caldari": {},
+                    "Gallente": {},
+                    "Minmatar": {}
+                }
+            },
+            "Industrial Command Ships": {
+                "ORE": {}
+            },
+            "Standard Industrial Ships": {
+                "Amarr": {},
+                "Caldari": {},
+                "Gallente": {},
+                "Minmatar": {},
+                "ORE": {}
+            }
+        },
+        "Mining Barges": {
+            "Exhumers": {},
+            "Mining Barges": {}
+        },
+        "Shuttles": {
+            "Amarr": {},
+            "Caldari": {},
+            "Faction Shuttles": {},
+            "Gallente": {},
+            "Minmatar": {}
+        },
+        "Special Edition Ships": {
+            "Special Edition Assault Frigates": {},
+            "Special Edition Battlecruisers": {},
+            "Special Edition Battleships": {},
+            "Special Edition Corvettes": {},
+            "Special Edition Covert Ops": {},
+            "Special Edition Cruisers": {},
+            "Special Edition Destroyers": {},
+            "Special Edition Frigates": {},
+            "Special Edition Heavy Assault Cruisers": {},
+            "Special Edition Heavy Interdiction Cruisers": {},
+            "Special Edition Industrial Ships": {},
+            "Special Edition Interceptors": {},
+            "Special Edition Logistics": {},
+            "Special Edition Recon Ships": {},
+            "Special Edition Shuttles": {}
+        }
+    },
+    "Skills": {
+        "Armor": {},
+        "Corporation Management": {},
+        "Drones": {},
+        "Electronic Systems": {},
+        "Engineering": {},
+        "Fleet Support": {},
+        "Gunnery": {},
+        "Missiles": {},
+        "Navigation": {},
+        "Neural Enhancement": {},
+        "Planet Management": {},
+        "Production": {},
+        "Resource Processing": {},
+        "Rigging": {},
+        "Scanning": {},
+        "Science": {},
+        "Shields": {},
+        "Social": {},
+        "Spaceship Command": {},
+        "Structure Management": {},
+        "Subsystems": {},
+        "Targeting": {},
+        "Trade": {}
+    },
+    "Special Edition Assets": {
+        "Special Edition Apparel": {},
+        "Special Edition Blueprints": {},
+        "Special Edition Commodities": {},
+        "Special Edition Deployable Structures": {},
+        "Special Edition Festival Assets": {},
+        "Special Edition Implants": {},
+        "Special Edition Tournament Cards": {
+            "Alliance Tournament Cards": {
+                "Alliance Tournament All Star Teams": {}
+            },
+            "New Eden Open Cards": {
+                "NEO YC 114 Team Cards": {}
+            }
+        }
+    },
+    "Structure Equipment": {
+        "Electronic Warfare": {
+            "Electronic Counter Measures": {},
+            "Remote Sensor Dampeners": {},
+            "Stasis Webifiers": {},
+            "Structure Burst Projectors": {},
+            "Target Painters": {},
+            "Warp Disruptors": {},
+            "Weapon Disruptors": {}
+        },
+        "Electronics and Sensor Upgrades": {
+            "CPU Upgrades": {},
+            "Signal Amplifiers": {}
+        },
+        "Engineering Equipment": {
+            "Armor Reinforcers": {},
+            "Capacitor Batteries": {},
+            "Capacitor Power Relays": {},
+            "Energy Neutralizers": {},
+            "Point Defense Batteries": {},
+            "Reactor Control Units": {}
+        },
+        "Quantum Cores": {},
+        "Service Modules": {
+            "Citadel Service Modules": {},
+            "Engineering Service Modules": {},
+            "Resource Processing Service Modules": {}
+        },
+        "Structure Weapons": {
+            "Doomsday Devices": {},
+            "Guided Bomb Launchers": {},
+            "Missile Launchers": {
+                "Structure Anticapital Launcher": {},
+                "Structure Antisubcapital Launcher": {}
+            },
+            "Weapon Upgrades": {
+                "Ballistic Control Systems": {},
+                "Missile Guidance Enhancers": {}
+            }
+        }
+    },
+    "Structure Modifications": {
+        "Structure Combat Rigs": {
+            "Large Structure Combat Rigs": {},
+            "Medium Structure Combat Rigs": {},
+            "X-Large Structure Combat Rigs": {}
+        },
+        "Structure Engineering Rigs": {
+            "Large Structure Engineering Rigs": {},
+            "Medium Structure Engineering Rigs": {},
+            "X-Large Structure Engineering Rigs": {}
+        },
+        "Structure Resource Processing Rigs": {
+            "Large Structure Resource Processing Rigs": {},
+            "Medium Structure Resource Processing Rigs": {},
+            "X-Large Structure Resource Processing Rigs": {}
+        }
+    },
+    "Structures": {
+        "Citadels": {
+            "Faction Citadels": {},
+            "Standard Citadels": {}
+        },
+        "Deployable Structures": {
+            "Cargo Containers": {
+                "Audit Log Containers": {},
+                "Freight Containers": {},
+                "Secure Containers": {},
+                "Standard Containers": {},
+                "Station Containers": {}
+            },
+            "Encounter Surveillance Systems": {},
+            "Mobile Cynosural Beacons": {},
+            "Mobile Cynosural Inhibitors": {},
+            "Mobile Depots": {},
+            "Mobile Micro Jump Units": {},
+            "Mobile Observatories": {},
+            "Mobile Scan Inhibitors": {},
+            "Mobile Siphon Units": {},
+            "Mobile Tractor Units": {},
+            "Warp Disruption Fields ": {}
+        },
+        "Engineering Complexes": {},
+        "Navigation Structures": {},
+        "Refineries": {},
+        "Sovereignty Structures": {
+            "Infrastructure Hubs": {},
+            "Infrastructure Upgrades": {
+                "Industrial Upgrades": {},
+                "Military Upgrades": {},
+                "Strategic Upgrades": {}
+            },
+            "Sovereignty Blockade Units": {},
+            "Territorial Claim Units": {}
+        },
+        "Starbase Structures": {
+            "Assembly Arrays": {},
+            "Compression Array": {},
+            "Control Towers": {},
+            "Corporate Hangar Array": {},
+            "Cynosural Generator Array": {},
+            "Cynosural System Jammer": {},
+            "Jump Bridge ": {},
+            "Laboratory": {},
+            "Moon Harvesting Arrays": {},
+            "Personal Hangar Arrays": {},
+            "Reactors": {},
+            "Reprocessing Arrays": {},
+            "Shield Hardening Arrays": {},
+            "Ship Maintenance Arrays": {},
+            "Silos": {},
+            "System Scanning Array": {},
+            "Weapon Batteries": {
+                "Electronic Warfare Batteries": {},
+                "Energy Neutralization Batteries": {},
+                "Hybrid Batteries": {},
+                "Laser Batteries": {},
+                "Missile Batteries": {},
+                "Projectile Batteries": {}
+            }
+        }
+    },
+    "Trade Goods": {
+        "Aurum Tokens": {},
+        "Bounty Encrypted Bonds": {},
+        "Consumer Products": {},
+        "Covert Research Tools": {},
+        "Criminal Dog Tags": {
+            "Angels": {},
+            "Blood Raiders": {},
+            "Commanders": {},
+            "Dark Blood": {},
+            "Domination": {},
+            "Dread Guristas": {},
+            "Guristas": {},
+            "Sansha": {},
+            "Serpentis": {},
+            "Shadow Serpentis": {},
+            "True Sansha": {}
+        },
+        "Criminal Evidence": {
+            "Criminal DNA Patterns": {},
+            "Overseer's Personal Effects": {}
+        },
+        "Filaments": {
+            "Dark Filaments": {},
+            "Electrical Filaments": {},
+            "Exotic Filaments": {},
+            "Firestorm Filaments": {},
+            "Gamma Filaments": {},
+            "Jump Filaments": {},
+            "Proving Ground Filaments": {},
+            "Triglavian Space Inbound": {},
+            "Triglavian Space Outbound": {}
+        },
+        "Industrial Goods": {},
+        "Insignias": {
+            "Amarr Navy": {},
+            "Ammatar Navy": {},
+            "CONCORD": {},
+            "Caldari Navy": {},
+            "Gallente Navy": {},
+            "Individuals": {},
+            "Khanid Navy": {},
+            "Minmatar Fleet": {}
+        },
+        "Narcotics": {},
+        "Nexus Chips": {},
+        "Passengers": {},
+        "Political Paraphernalia": {},
+        "Radioactive Goods": {},
+        "Security Tags": {},
+        "Sleeper Components": {},
+        "Starbase Charters": {},
+        "Strong Boxes": {},
+        "Triglavian Data": {},
+        "Unknown Components": {}
+    }
+}
