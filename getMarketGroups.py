@@ -13,6 +13,9 @@ print('Beginning file download with requests')
 json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "marketGroupTypes.json")
 marketGroupTypes = dict(json.load(open(json_url)))
 
+json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "invTypes.json")
+invTypes = dict(json.load(open(json_url)))
+
 url = 'https://www.fuzzwork.co.uk/dump/latest/invMarketGroups.csv'
 r = requests.get(url)
 
@@ -45,8 +48,9 @@ def get_nodes(node):
         children = [idToName[child] for child in children]
         d = dict(zip(children, dicts))
     else:
-        print(type(node))
-        d = dict.fromkeys(marketGroupTypes[node])
+        if node in marketGroupTypes.keys():
+            for typeID in marketGroupTypes[node]:
+                d[typeID] = invTypes[str(typeID)]['typeName']
     return d
 
 

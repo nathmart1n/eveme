@@ -24,7 +24,7 @@ df = pd.read_csv('invTypes.csv')
 df_copy = df[df['marketGroupID'] == '1696']
 print(df_copy)
 
-marketGroupTypes = df.groupby('marketGroupID')['typeName'].apply(list).to_dict()
+marketGroupTypes = df.groupby('marketGroupID')['typeID'].apply(list).to_dict()
 
 with open('eveme/static/json/marketGroupTypes.json', 'w') as fp:
     json.dump(marketGroupTypes, fp, indent=4, sort_keys=True)
