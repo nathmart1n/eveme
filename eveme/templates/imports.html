@@ -4,9 +4,10 @@ Imports
 {% endblock %}
 {% block content %}
 <script>
+    
     $(document).ready( function () {
         $('#imports').DataTable();
-    } );
+    });
 </script>
 
 <div class="container-fluid mt-3">
@@ -57,6 +58,24 @@ Imports
                 Update Prices
               </label>
             </div>
+        </div>
+
+        Select items
+        <div class="col-2 mb-3">
+            <ul>
+                {% for key, value in context.marketGroups.items() %}
+                <li>
+                    <input type="checkbox" name="{{key}}"> {{key}}
+                    {% for key2, value2 in value.items() %}
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="{{key2}}"> {{key2}}
+                        </li>
+                    </ul>
+                    {% endfor %}
+                </li>
+                {% endfor %}
+            </ul>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

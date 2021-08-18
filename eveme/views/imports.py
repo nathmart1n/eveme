@@ -28,8 +28,7 @@ def show_imports():
         # Import item ids to names file
         json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "invTypes.json")
         invTypes = dict(json.load(open(json_url)))
-        json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "marketGroups.json")
-        context['marketGroups'] = dict(json.load(open(json_url)))
+
         # Get market groups from file
 
         # Get item names from IDs
@@ -131,6 +130,9 @@ def show_imports():
         # TODO: Get percent difference between source and destination prices
         print("--- show_imports() showing trades took %s seconds ---" % (time.time() - start_time))
         return flask.render_template("imports.html", context=context)
+
+    json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "marketGroups.json")
+    context['marketGroups'] = dict(json.load(open(json_url)))
 
     context['structures'] = db.reference('users/' + current_user.id + '/structureAccess').get()
 
