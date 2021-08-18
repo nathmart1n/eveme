@@ -1,5 +1,5 @@
 """
-Helper python file to refresh typeIDs JSON
+Helper python file that gets the market groups as seen in the market tab.
 """
 import requests
 import pandas as pd
@@ -19,7 +19,7 @@ invTypes = dict(json.load(open(json_url)))
 url = 'https://www.fuzzwork.co.uk/dump/latest/invMarketGroups.csv'
 r = requests.get(url)
 
-with open('marketGroups.csv', 'wb') as f:
+with open('../marketGroups.csv', 'wb') as f:
     f.write(r.content)
 
 df_marketGroups = pd.read_csv('marketGroups.csv')
@@ -32,7 +32,7 @@ df_marketGroups['marketGroupID'] = df_marketGroups['marketGroupID'].astype('stri
 marketGroups = df_marketGroups['marketGroupID'].tolist()
 parentGroups = df_marketGroups['parentGroupID'].tolist()
 # Convert groups to their names from IDs
-# parentGroups = [idToName[k] for k in parentGroups]
+
 # Join parent with child in single list
 zippedGroups = list(zip(parentGroups, marketGroups))
 # Get our root groups

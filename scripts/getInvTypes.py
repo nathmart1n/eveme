@@ -10,7 +10,7 @@ print('Beginning file download with requests')
 url = 'https://www.fuzzwork.co.uk/dump/latest/invTypes.csv'
 r = requests.get(url)
 
-with open('invTypes.csv', 'wb') as f:
+with open('../invTypes.csv', 'wb') as f:
     f.write(r.content)
 
 df = pd.read_csv('invTypes.csv')

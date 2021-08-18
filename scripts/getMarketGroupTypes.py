@@ -1,5 +1,5 @@
 """
-Helper python file to refresh typeIDs JSON
+Helper python file that gets all typeIDs in each market group with typeIDs
 """
 import requests
 import pandas as pd
@@ -19,7 +19,7 @@ r = requests.get(url)
 with open('invTypes.csv', 'wb') as f:
     f.write(r.content)
 
-df = pd.read_csv('invTypes.csv')
+df = pd.read_csv('../invTypes.csv')
 
 df_copy = df[df['marketGroupID'] == '1696']
 print(df_copy)
