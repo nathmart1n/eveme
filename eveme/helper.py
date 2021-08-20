@@ -112,6 +112,7 @@ def updateUserData():
 
 
 def modifyOrder(order, user_info, ref, isBuy, invTypes, structuresChecked):
+    """Modify orders to separate into buy sell and substitute in highest/lowest prices."""
     order['volumeRemain'] = order.pop('volume_remain')
     order['volumeTotal'] = order.pop('volume_total')
     order['itemName'] = invTypes[str(order['type_id'])]['typeName']
