@@ -19,10 +19,10 @@ invTypes = dict(json.load(open(json_url)))
 url = 'https://www.fuzzwork.co.uk/dump/latest/invMarketGroups.csv'
 r = requests.get(url)
 
-with open('../marketGroups.csv', 'wb') as f:
+with open('temp/marketGroups.csv', 'wb') as f:
     f.write(r.content)
 
-df_marketGroups = pd.read_csv('marketGroups.csv')
+df_marketGroups = pd.read_csv('temp/marketGroups.csv')
 idToName = pd.Series(df_marketGroups['marketGroupName'].values, index=df_marketGroups['marketGroupID']).to_dict()
 idToName = {str(key): value for key, value in idToName.items()}
 idToName['None'] = 'None'
