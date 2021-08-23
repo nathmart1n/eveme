@@ -28,11 +28,6 @@ def getStructures(user_id):
     return output
 
 
-def insertStructure(user_id, structure_id):
-    ref = db.reference('users/' + user_id + '/structureAccess')
-    ref.put(structure_id)
-
-
 def esiRequest(requestType, variable, charHeaders=None):
     """Performs request to ESI API. userToken necessary if request type requires auth."""
     start_time = time.time()
