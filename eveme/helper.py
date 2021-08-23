@@ -128,6 +128,7 @@ def modifyOrder(order, user_info, ref, isBuy, invTypes, structuresChecked):
 def updateUserOrders():
     """Queries ESI and updates user's market orders in DB."""
     start_time = time.time()
+    # Load in typeID conversion (invTypes) MAKE THIS ANOTHER FUNCTION
     json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "invTypes.json")
     invTypes = dict(json.load(open(json_url)))
 
