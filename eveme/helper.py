@@ -108,10 +108,14 @@ def updateUserData():
 
 def modifyOrder(order, user_info, ref, isBuy, invTypes, structuresChecked):
     """Modify orders to separate into buy sell and substitute in highest/lowest prices."""
+    # Rename CCP snake case to our camel case
     order['volumeRemain'] = order.pop('volume_remain')
     order['volumeTotal'] = order.pop('volume_total')
+    # Get the itemName from our invTypes typeID to name file
     order['itemName'] = invTypes[str(order['type_id'])]['typeName']
+    # StructuresChecked is a list of structure names by location_id, get name from there
     order['structureName'] = structuresChecked[order['location_id']]
+    # Add to buy or sell orders depending on order type
     if isBuy:
         order['structureHighest'] = ref.child(str(order['location_id'])).child(str(order['type_id'])).child('buy').child('max').get()
         user_info['buyOrders'][order['order_id']] = order
