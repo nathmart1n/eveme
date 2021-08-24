@@ -4,3 +4,4 @@ instance/
 __pycache__/
 var/
 .vscode/
+node_modules/
