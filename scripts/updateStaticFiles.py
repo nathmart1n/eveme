@@ -11,16 +11,17 @@ import pathlib
 # these functions are from stackoverflow, don't really understand but it works
 def get_nodes(node):
     d = {}
-    # d['id'] = node
     children = get_children(node)
     if children:
         dicts = [get_nodes(child) for child in children]
         children = [idToName[child] for child in children]
         d = dict(zip(children, dicts))
+        d['id'] = node
     else:
         if node in marketGroupTypes.keys():
             for typeID in marketGroupTypes[node]:
                 d[typeID] = invTypes[typeID]['typeName']
+        d[-1] = node
     return d
 
 
@@ -94,7 +95,6 @@ zippedGroups = list(zip(parentGroups, marketGroups))
 root_nodes = {x[1] for x in zippedGroups if x[0] == "None"}
 # Execute function
 tree = get_nodes('None')
-
 with open('eveme/static/json/marketGroups.json', 'w') as fp:
     json.dump(tree, fp, indent=4, sort_keys=True)
 print('marketGroups.json updated')
