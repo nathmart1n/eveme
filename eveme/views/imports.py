@@ -28,9 +28,16 @@ def show_imports():
         # Import item ids to names file
         json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "invTypes.json")
         invTypes = dict(json.load(open(json_url)))
+        json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "marketGroupsToIDs.json")
+        marketToID = dict(json.load(open(json_url)))
+        json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "marketGroupTypes.json")
+        marketGroupTypes = dict(json.load(open(json_url)))
 
-        # Get market groups from file
-
+        # Load selected groups from form
+        groups = flask.request.form.getlist('groups')
+        groupsIDs = []
+        for group in groups:
+            groupsIDs.append(marketToID[group])
         # Get item names from IDs
         context['isPost'] = True
         context['imports'] = {}

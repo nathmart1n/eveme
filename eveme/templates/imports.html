@@ -65,11 +65,11 @@ Imports
             <ul>
                 {% for key, value in context.marketGroups.items() %}
                 <li>
-                    <input type="checkbox" name="{{key}}"> {{key}}
+                    <input type="checkbox" value="{{key}}" name="groups"> {{key}}
                     {% for key2, value2 in value.items() %}
                     <ul>
                         <li>
-                            <input type="checkbox" name="{{key2}}"> {{key2}}
+                            <input type="checkbox" value="{{key2}}" name="groups"> {{key2}}
                         </li>
                     </ul>
                     {% endfor %}

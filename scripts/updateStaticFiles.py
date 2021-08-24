@@ -98,3 +98,14 @@ tree = get_nodes('None')
 with open('eveme/static/json/marketGroups.json', 'w') as fp:
     json.dump(tree, fp, indent=4, sort_keys=True)
 print('marketGroups.json updated')
+
+# Update marketGroupsToIDs.json
+print('Updating marketGroupsToIDs.json')
+
+# Read in marketGroups dataframe
+df_marketGroups = pd.read_csv('temp/marketGroups.csv')
+# Create dict converting marketGroupID to a marketGroupName
+nameToID = pd.Series(df_marketGroups['marketGroupID'].values, index=df_marketGroups['marketGroupName']).to_dict()
+
+with open('eveme/static/json/marketGroupsToIDs.json', 'w') as fp:
+    json.dump(nameToID, fp, indent=4, sort_keys=True)
