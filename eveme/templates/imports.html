@@ -68,28 +68,56 @@ Imports
         </div>
         <div class="collapse" id="collapseExample">
             <div class="card card-body">
-                <ul>
-                    {% for key, value in context.marketGroups.items() %}
-                        {% if key != 'id' %}
-                        <li>
-                            <input type="checkbox" value="{{value['id']}}" name="groups"> {{key}}
-                            {% for key2, value2 in value.items() %}
-                                {% if key2 != 'id' and key2 != -1 %}
-                                <ul>
-                                    <li>
-                                        {% if 'id' in value2.keys() %}
-                                            <input type="checkbox" value="{{value2['id']}}" name="groups"> {{key2}}
-                                        {% else %}
-                                            <input type="checkbox" value="{{value2['-1']}}" name="groups"> {{key2}}
+                <div id="jstreeDiv">
+                    <ul class="collapsibleList">
+                        {% for key, value in context.marketGroups.items() %}
+                            {% if key != 'id' %}
+                            <li>
+                                <input style="margin-right:5px;" type="checkbox" value="{{value['id']}}" name="groups">{{key}}
+                                <ul class="collapsibleList">
+                                    {% for key2, value2 in value.items() %}
+                                        {% if key2 != 'id' and key2 != '-1' %}
+                                            {% if 'id' in value2.keys() %}
+                                            <li>
+                                                <input style="margin-right:5px;" type="checkbox" value="{{value2['id']}}" name="groups">{{key2}}
+                                                <ul>
+                                                    {% for key3, value3 in value2.items() %}
+                                                        {% if key3 != 'id' and key3 != '-1' %}
+                                                            {% if 'id' in value3.keys() %}
+                                                            <li>
+                                                                <input style="margin-right:5px;" type="checkbox" value="{{value3['id']}}" name="groups">{{key3}}
+                                                            </li>
+                                                            {% else %}
+                                                            <li>
+                                                                <input style="margin-right:5px;" type="checkbox" value="{{value3['-1']}}" name="groups">{{key3}}
+                                                            </li>
+                                                            {% endif %}
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </ul>
+                                            </li>
+                                            {% else %}
+                                            <li>
+                                                <input style="margin-right:5px;" type="checkbox" value="{{value2['-1']}}" name="groups">{{key2}}
+                                                <ul>
+                                                    {% for key3, value3 in value2.items() %}
+                                                        {% if key3 != '-1' %}
+                                                        <li>
+                                                            <input style="margin-right:5px;" type="checkbox" value="{{key3}}" name="items">{{value3}}
+                                                        </li>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </ul>
+                                            </li>
+                                            {% endif %}
                                         {% endif %}
-                                    </li>
+                                    {% endfor %}
                                 </ul>
-                                {% endif %}
-                            {% endfor %}
-                        </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
+                            </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -105,7 +133,7 @@ Imports
                 <th>Dst. Order Count</th>
                 <th>Dst. Remaining Volume</th>
                 <th>Agg. Average Volume</th>
-                <th>Dst. Remaining Volume</th>
+                <th>Dst. Percent Agg Vol Remaining</th>
                 <th>Price Difference</th>
                 <th>M3</th>
                 <th>Shipping Price</th>
@@ -136,5 +164,20 @@ Imports
     </table>
     {% endif %}
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+<script>
+    $(function () { $('#jstreeDiv').jstree(); });
 
+    $('#jstreeDiv').on("changed.jstree", function (e, data) {
+        console.log(data.selected);
+    });
+
+    $('button').on('click', function () {
+        $('#jstree').jstree(true).select_node('child_node_1');
+        $('#jstree').jstree('select_node', 'child_node_1');
+        $.jstree.reference('#jstree').select_node('child_node_1');
+    });
+
+    //TODO: Implement JSTree checkboxes
+</script>
 {% endblock %}

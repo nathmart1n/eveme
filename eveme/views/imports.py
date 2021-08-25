@@ -33,11 +33,14 @@ def show_imports():
 
         # Load selected groups from form
         groups = flask.request.form.getlist('groups')
+        items = flask.request.form.getlist('items')
         print(groups)
         # Get group types for selected groups
         groupTypes = []
         for group in groups:
             groupTypes += marketGroupTypes[group]
+        for item in items:
+            groupTypes += item
         groupTypes = list(map(str, groupTypes))
         print(groupTypes)
         # Get item names from IDs
@@ -95,14 +98,13 @@ def show_imports():
             # TODO: Fix handling for item not existing in source and/or desto
             if typeID in destoPrices.keys():
                 if destoPrices[typeID]['sell']['min'] < 99999999999999999999:
-                    if destoPrices[typeID]['sell']['min'] - float(sourcePrices[str(typeID)]['sell']['min']) > 0 and invTypes[typeID]['volume'] < 350000:
-                        context['imports'][typeID] = {}
-                        context['imports'][typeID]['sourcePrice'] = float(sourcePrices[str(typeID)]['sell']['min'])
-                        context['imports'][typeID]['destoPrice'] = destoPrices[typeID]['sell']['min']
-                        context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
-                        context['imports'][typeID]['m3'] = invTypes[typeID]['volume']
-                        context['imports'][typeID]['numOrders'] = destoPrices[typeID]['sell']['numOrders']
-                        context['imports'][typeID]['remainingVolume'] = destoPrices[typeID]['sell']['remainingVolume']
+                    context['imports'][typeID] = {}
+                    context['imports'][typeID]['sourcePrice'] = float(sourcePrices[str(typeID)]['sell']['min'])
+                    context['imports'][typeID]['destoPrice'] = destoPrices[typeID]['sell']['min']
+                    context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
+                    context['imports'][typeID]['m3'] = invTypes[typeID]['volume']
+                    context['imports'][typeID]['numOrders'] = destoPrices[typeID]['sell']['numOrders']
+                    context['imports'][typeID]['remainingVolume'] = destoPrices[typeID]['sell']['remainingVolume']
             else:
                 print('dang')
         destoRegion = eveme.helper.getRegionFromStructure(destination, headers=headers)

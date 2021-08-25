@@ -6,3 +6,13 @@
     border-top-color:#888 !important;
     border-bottom-color:#888 !important;
 }
+
+a {
+    color: #000000;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline !important;
+}
