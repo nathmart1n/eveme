@@ -28,16 +28,18 @@ def show_imports():
         # Import item ids to names file
         json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "invTypes.json")
         invTypes = dict(json.load(open(json_url)))
-        json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "marketGroupsToIDs.json")
-        marketToID = dict(json.load(open(json_url)))
         json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "marketGroupTypes.json")
         marketGroupTypes = dict(json.load(open(json_url)))
 
         # Load selected groups from form
         groups = flask.request.form.getlist('groups')
-        groupsIDs = []
+        print(groups)
+        # Get group types for selected groups
+        groupTypes = []
         for group in groups:
-            groupsIDs.append(marketToID[group])
+            groupTypes += marketGroupTypes[group]
+        groupTypes = list(map(str, groupTypes))
+        print(groupTypes)
         # Get item names from IDs
         context['isPost'] = True
         context['imports'] = {}
@@ -89,17 +91,20 @@ def show_imports():
         destoPrices = prices_ref.child(destination).get()
         sourcePrices = prices_ref.child(source).get()
 
-        for typeID in destoPrices.keys():
-            # TODO: Make this togglable with something in the form.
-            if destoPrices[typeID]['sell']['min'] < 99999999999999999999:
-                if destoPrices[typeID]['sell']['min'] - float(sourcePrices[str(typeID)]['sell']['min']) > 0 and invTypes[typeID]['volume'] < 350000:
-                    context['imports'][typeID] = {}
-                    context['imports'][typeID]['sourcePrice'] = float(sourcePrices[str(typeID)]['sell']['min'])
-                    context['imports'][typeID]['destoPrice'] = destoPrices[typeID]['sell']['min']
-                    context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
-                    context['imports'][typeID]['m3'] = invTypes[typeID]['volume']
-                    context['imports'][typeID]['numOrders'] = destoPrices[typeID]['sell']['numOrders']
-                    context['imports'][typeID]['remainingVolume'] = destoPrices[typeID]['sell']['remainingVolume']
+        for typeID in groupTypes:
+            # TODO: Fix handling for item not existing in source and/or desto
+            if typeID in destoPrices.keys():
+                if destoPrices[typeID]['sell']['min'] < 99999999999999999999:
+                    if destoPrices[typeID]['sell']['min'] - float(sourcePrices[str(typeID)]['sell']['min']) > 0 and invTypes[typeID]['volume'] < 350000:
+                        context['imports'][typeID] = {}
+                        context['imports'][typeID]['sourcePrice'] = float(sourcePrices[str(typeID)]['sell']['min'])
+                        context['imports'][typeID]['destoPrice'] = destoPrices[typeID]['sell']['min']
+                        context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
+                        context['imports'][typeID]['m3'] = invTypes[typeID]['volume']
+                        context['imports'][typeID]['numOrders'] = destoPrices[typeID]['sell']['numOrders']
+                        context['imports'][typeID]['remainingVolume'] = destoPrices[typeID]['sell']['remainingVolume']
+            else:
+                print('dang')
         destoRegion = eveme.helper.getRegionFromStructure(destination, headers=headers)
         print(len(context['imports'].keys()))
 
@@ -108,7 +113,7 @@ def show_imports():
         # That then queries our historical data static file instead of querying API
 
         # TODO: Make so user selects karkinos routes instead of systems.
-        for typeID in context['imports'].keys():
+        for typeID in groupTypes:
             item_time = time.time()
             historicalData = requests.get("https://esi.evetech.net/latest/markets/{}/"
                                           "history/?datasource=tranquility&type_id={}".format(int(destoRegion), int(typeID))).json()

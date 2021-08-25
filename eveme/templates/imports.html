@@ -60,22 +60,37 @@ Imports
             </div>
         </div>
 
-        Select items
+        <h5>Select items to be queried</h5>
         <div class="col-2 mb-3">
-            <ul>
-                {% for key, value in context.marketGroups.items() %}
-                <li>
-                    <input type="checkbox" value="{{key}}" name="groups"> {{key}}
-                    {% for key2, value2 in value.items() %}
-                    <ul>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Button with data-bs-target
+            </button>
+        </div>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <ul>
+                    {% for key, value in context.marketGroups.items() %}
+                        {% if key != 'id' %}
                         <li>
-                            <input type="checkbox" value="{{key2}}" name="groups"> {{key2}}
+                            <input type="checkbox" value="{{value['id']}}" name="groups"> {{key}}
+                            {% for key2, value2 in value.items() %}
+                                {% if key2 != 'id' and key2 != -1 %}
+                                <ul>
+                                    <li>
+                                        {% if 'id' in value2.keys() %}
+                                            <input type="checkbox" value="{{value2['id']}}" name="groups"> {{key2}}
+                                        {% else %}
+                                            <input type="checkbox" value="{{value2['-1']}}" name="groups"> {{key2}}
+                                        {% endif %}
+                                    </li>
+                                </ul>
+                                {% endif %}
+                            {% endfor %}
                         </li>
-                    </ul>
+                        {% endif %}
                     {% endfor %}
-                </li>
-                {% endfor %}
-            </ul>
+                </ul>
+            </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
