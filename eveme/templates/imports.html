@@ -162,37 +162,5 @@ Imports
     {% endif %}
 </div>
 <script src="../static/js/jstree.js"></script>
-<script>
-    $(function () { $('#jstreeDiv').jstree({
-        "checkbox" : {
-            "three_state": false,
-            "cascade" : 'down',
-            "cascade_to_hidden": true
-        },
-        "plugins": ["checkbox"]
-    }); });
-
-    $('#jstreeDiv').on("changed.jstree", function (e, data) {
-        console.log(data.selected);
-    });
-
-    function submitMe(){ 
-        var selectedElmsinfo = [];
-
-        var selectedElms = $('#jstreeDiv').jstree("get_selected", true);
-            $.each(selectedElms, function() {
-                if (!this.id.startsWith("j")) {
-                    selectedElmsinfo.push(this.id);
-                }
-            });
-            var str1 = "[";
-            var str2 = "]";
-            var res = str1.concat(selectedElmsinfo.join(","), str2);
-            document.getElementById('jsfields').value = res;
-    }
-
-    
-
-    //TODO: Implement JSTree checkboxes
-</script>
+<script src="../static/js/jstreeBehavior.js"></script>
 {% endblock %}
