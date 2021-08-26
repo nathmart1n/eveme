@@ -98,23 +98,23 @@ def show_imports():
             context['imports'][typeID] = {}
             if typeID in destoPrices.keys():
                 if destoPrices[typeID]['sell']['min'] < 99999999999999999999:
-                    context['imports'][typeID]['sourcePrice'] = float(sourcePrices[str(typeID)]['sell']['min'])
                     context['imports'][typeID]['destoPrice'] = destoPrices[typeID]['sell']['min']
-                    context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
-                    context['imports'][typeID]['m3'] = invTypes[typeID]['volume']
-                    context['imports'][typeID]['numOrders'] = destoPrices[typeID]['sell']['numOrders']
-                    context['imports'][typeID]['remainingVolume'] = destoPrices[typeID]['sell']['remainingVolume']
+                else:
+                    context['imports'][typeID]['destoPrice'] = 1
+                context['imports'][typeID]['sourcePrice'] = float(sourcePrices[str(typeID)]['sell']['min'])
+                context['imports'][typeID]['numOrders'] = destoPrices[typeID]['sell']['numOrders']
+                context['imports'][typeID]['remainingVolume'] = destoPrices[typeID]['sell']['remainingVolume']
             else:
                 if typeID in sourcePrices.keys():
                     context['imports'][typeID]['sourcePrice'] = float(sourcePrices[str(typeID)]['sell']['min'])
                 else:
                     context['imports'][typeID]['sourcePrice'] = 0
-                context['imports'][typeID]['destoPrice'] = 0
-                context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
-                context['imports'][typeID]['m3'] = invTypes[typeID]['volume']
+                context['imports'][typeID]['destoPrice'] = 1
                 context['imports'][typeID]['numOrders'] = 0
                 context['imports'][typeID]['remainingVolume'] = 0
                 print(invTypes[typeID]['typeName'], ' NOT IN DESTO PRICES')
+            context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
+            context['imports'][typeID]['m3'] = invTypes[typeID]['volume']
         destoRegion = eveme.helper.getRegionFromStructure(destination, headers=headers)
 
         # TODO: Make this more efficient. Maybe download historical data and save to static file? Cache this
