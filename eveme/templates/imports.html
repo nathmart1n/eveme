@@ -113,7 +113,7 @@ Imports
     </form>
     {% else %}
     <div>
-        <h2> IF THERE ARE ZEROES IN COLUMNS THAT MEANS THERE IS NO DATA WORKING ON FIX</h2>
+        <h2> IF THERE ARE ZEROES/ONES IN COLUMNS THAT GENERALLY MEANS THERE IS NO DATA WORKING ON FIX</h2>
     </div>
     <table id="imports" class="table table-bordered table-striped">
         <thead class="thead-light">
@@ -128,7 +128,8 @@ Imports
                 <th>Price Difference</th>
                 <th>M3</th>
                 <th>Shipping Price</th>
-                <th>Profit after Market Fees</th>
+                <th>Profit Percentage</th>
+                <th>Profit after Fees</th>
             </tr>
         </thead>
         <tbody>
@@ -148,6 +149,7 @@ Imports
                 <td>{{(value.destoPrice - value.sourcePrice) | numberFormat}}</td>
                 <td>{{value.m3 | numberFormat}}</td>
                 <td>{{((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage)) | numberFormat}}</td>
+                <td>{{((((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee - context.transactionTax) / 100)) / value.destoPrice * 100)|round(1)|float}}</td>
                 <td>{{(((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee - context.transactionTax) / 100)) | numberFormat}}</td>
             </tr>
         {% endfor %}
