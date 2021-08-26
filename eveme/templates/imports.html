@@ -13,7 +13,7 @@ Imports
 <div class="container-fluid mt-3">
     {% if not context.isPost%}
     <h3>Import Data</h3>
-    <form action="{{ url_for('show_imports') }}" method="POST">
+    <form onsubmit="return submitMe()" action="{{ url_for('show_imports') }}" method="POST">
         <div class="row justify-content-md-left mb-3">
             <div class="col-2">
                 <select name='source' class="form-select form-select-md" aria-label=".form-select-lg example">
@@ -63,7 +63,7 @@ Imports
         <h5>Select items to be queried</h5>
         <div class="col-2 mb-3">
             <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                Button with data-bs-target
+                Select Items
             </button>
         </div>
         <div class="collapse" id="collapseExample">
@@ -72,24 +72,20 @@ Imports
                     <ul class="collapsibleList">
                         {% for key, value in context.marketGroups.items() %}
                             {% if key != 'id' %}
-                            <li>
-                                <input style="margin-right:5px;" type="checkbox" value="{{value['id']}}" name="groups">{{key}}
+                            <li style="margin-right:5px;">{{key}}
                                 <ul class="collapsibleList">
                                     {% for key2, value2 in value.items() %}
                                         {% if key2 != 'id' and key2 != '-1' %}
                                             {% if 'id' in value2.keys() %}
-                                            <li>
-                                                <input style="margin-right:5px;" type="checkbox" value="{{value2['id']}}" name="groups">{{key2}}
+                                            <li style="margin-right:5px;">{{key2}}
                                                 <ul>
                                                     {% for key3, value3 in value2.items() %}
                                                         {% if key3 != 'id' and key3 != '-1' %}
                                                             {% if 'id' in value3.keys() %}
-                                                            <li>
-                                                                <input style="margin-right:5px;" type="checkbox" value="{{value3['id']}}" name="groups">{{key3}}
+                                                            <li style="margin-right:5px;" id="{{value3['id']}}">{{key3}}
                                                             </li>
                                                             {% else %}
-                                                            <li>
-                                                                <input style="margin-right:5px;" type="checkbox" value="{{value3['-1']}}" name="groups">{{key3}}
+                                                            <li style="margin-right:5px;" id="{{value3['-1']}}">{{key3}}
                                                             </li>
                                                             {% endif %}
                                                         {% endif %}
@@ -97,13 +93,11 @@ Imports
                                                 </ul>
                                             </li>
                                             {% else %}
-                                            <li>
-                                                <input style="margin-right:5px;" type="checkbox" value="{{value2['-1']}}" name="groups">{{key2}}
+                                            <li style="margin-right:5px;">{{key2}}
                                                 <ul>
                                                     {% for key3, value3 in value2.items() %}
                                                         {% if key3 != '-1' %}
-                                                        <li>
-                                                            <input style="margin-right:5px;" type="checkbox" value="{{key3}}" name="items">{{value3}}
+                                                        <li style="margin-right:5px;" id="{{key3}}">{{value3}}
                                                         </li>
                                                         {% endif %}
                                                     {% endfor %}
@@ -120,10 +114,13 @@ Imports
                 </div>
             </div>
         </div>
-
+        <input type="hidden" name="jsfields" id="jsfields" value="" />
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     {% else %}
+    <div>
+        <h2> IF THERE ARE ZEROES IN COLUMNS THAT MEANS THERE IS NO DATA WORKING ON FIX</h2>
+    </div>
     <table id="imports" class="table table-bordered table-striped">
         <thead class="thead-light">
             <tr>
@@ -142,7 +139,7 @@ Imports
         </thead>
         <tbody>
         {% for key, value in context.imports.items() %}
-            {% if value.sourcePrice - value.destoPrice > 0 %}
+            {% if (((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee - context.transactionTax) / 100)) < 0 %}
             <tr class="table-warning">
             {% else %}
             <tr>
@@ -164,19 +161,37 @@ Imports
     </table>
     {% endif %}
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+<script src="../static/js/jstree.js"></script>
 <script>
-    $(function () { $('#jstreeDiv').jstree(); });
+    $(function () { $('#jstreeDiv').jstree({
+        "checkbox" : {
+            "three_state": false,
+            "cascade" : 'down',
+            "cascade_to_hidden": true
+        },
+        "plugins": ["checkbox"]
+    }); });
 
     $('#jstreeDiv').on("changed.jstree", function (e, data) {
         console.log(data.selected);
     });
 
-    $('button').on('click', function () {
-        $('#jstree').jstree(true).select_node('child_node_1');
-        $('#jstree').jstree('select_node', 'child_node_1');
-        $.jstree.reference('#jstree').select_node('child_node_1');
-    });
+    function submitMe(){ 
+        var selectedElmsinfo = [];
+
+        var selectedElms = $('#jstreeDiv').jstree("get_selected", true);
+            $.each(selectedElms, function() {
+                if (!this.id.startsWith("j")) {
+                    selectedElmsinfo.push(this.id);
+                }
+            });
+            var str1 = "[";
+            var str2 = "]";
+            var res = str1.concat(selectedElmsinfo.join(","), str2);
+            document.getElementById('jsfields').value = res;
+    }
+
+    
 
     //TODO: Implement JSTree checkboxes
 </script>

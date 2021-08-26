@@ -4,7 +4,6 @@ EVEME imports view.
 URLs include:
 /imports/
 """
-from base64 import decodestring
 import flask
 import eveme
 import eveme.helper
@@ -32,17 +31,17 @@ def show_imports():
         marketGroupTypes = dict(json.load(open(json_url)))
 
         # Load selected groups from form
-        groups = flask.request.form.getlist('groups')
-        items = flask.request.form.getlist('items')
-        print(groups)
+        groups = json.loads(flask.request.form['jsfields'])
+        groups = [str(i) for i in groups]
         # Get group types for selected groups
         groupTypes = []
         for group in groups:
-            groupTypes += marketGroupTypes[group]
-        for item in items:
-            groupTypes += item
-        groupTypes = list(map(str, groupTypes))
-        print(groupTypes)
+            if group in marketGroupTypes.keys():
+                groupTypes += marketGroupTypes[group]
+            else:
+                groupTypes.append(group)
+        # TODO: Figure out a way to not have to convert so much
+        groupTypes = [str(i) for i in groupTypes]
         # Get item names from IDs
         context['isPost'] = True
         context['imports'] = {}
@@ -96,9 +95,9 @@ def show_imports():
 
         for typeID in groupTypes:
             # TODO: Fix handling for item not existing in source and/or desto
+            context['imports'][typeID] = {}
             if typeID in destoPrices.keys():
                 if destoPrices[typeID]['sell']['min'] < 99999999999999999999:
-                    context['imports'][typeID] = {}
                     context['imports'][typeID]['sourcePrice'] = float(sourcePrices[str(typeID)]['sell']['min'])
                     context['imports'][typeID]['destoPrice'] = destoPrices[typeID]['sell']['min']
                     context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
@@ -106,14 +105,19 @@ def show_imports():
                     context['imports'][typeID]['numOrders'] = destoPrices[typeID]['sell']['numOrders']
                     context['imports'][typeID]['remainingVolume'] = destoPrices[typeID]['sell']['remainingVolume']
             else:
-                print('dang')
+                if typeID in sourcePrices.keys():
+                    context['imports'][typeID]['sourcePrice'] = float(sourcePrices[str(typeID)]['sell']['min'])
+                else:
+                    context['imports'][typeID]['sourcePrice'] = 0
+                context['imports'][typeID]['destoPrice'] = 0
+                context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
+                context['imports'][typeID]['m3'] = invTypes[typeID]['volume']
+                context['imports'][typeID]['numOrders'] = 0
+                context['imports'][typeID]['remainingVolume'] = 0
+                print(invTypes[typeID]['typeName'], ' NOT IN DESTO PRICES')
         destoRegion = eveme.helper.getRegionFromStructure(destination, headers=headers)
-        print(len(context['imports'].keys()))
 
-        # TODO: Make this more efficient. Maybe download historical data and save to static file?
-        # Let user select what market groups they want.
-        # That then queries our historical data static file instead of querying API
-
+        # TODO: Make this more efficient. Maybe download historical data and save to static file? Cache this
         # TODO: Make so user selects karkinos routes instead of systems.
         for typeID in groupTypes:
             item_time = time.time()
@@ -130,6 +134,8 @@ def show_imports():
                 totalVol = float(totalVol)
                 dailyVolAverage = totalVol / len(slicedHistData)
                 context['imports'][typeID]['aggPeriodAvg'] = aggregatePeriod * dailyVolAverage
+            else:
+                context['imports'][typeID]['aggPeriodAvg'] = 1
             print("--- item " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
 
         # TODO: Make this variable dependent on user input
