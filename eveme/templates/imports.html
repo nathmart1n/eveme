@@ -4,11 +4,12 @@ Imports
 {% endblock %}
 {% block content %}
 <script>
-    
     $(document).ready( function () {
         $('#imports').DataTable();
     });
 </script>
+<script src="../static/js/jstree.js"></script>
+<script src="../static/js/jstreeBehavior.js"></script>
 
 <div class="container-fluid mt-3">
     {% if not context.isPost%}
@@ -61,61 +62,54 @@ Imports
         </div>
 
         <h5>Select items to be queried</h5>
-        <div class="col-2 mb-3">
-            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                Select Items
-            </button>
-        </div>
-        <div class="collapse" id="collapseExample">
-            <div class="card card-body">
-                <div id="jstreeDiv">
-                    <ul class="collapsibleList">
-                        {% for key, value in context.marketGroups.items() %}
-                            {% if key != 'id' %}
-                            <li style="margin-right:5px;">{{key}}
-                                <ul class="collapsibleList">
-                                    {% for key2, value2 in value.items() %}
-                                        {% if key2 != 'id' and key2 != '-1' %}
-                                            {% if 'id' in value2.keys() %}
-                                            <li style="margin-right:5px;">{{key2}}
-                                                <ul>
-                                                    {% for key3, value3 in value2.items() %}
-                                                        {% if key3 != 'id' and key3 != '-1' %}
-                                                            {% if 'id' in value3.keys() %}
-                                                            <li style="margin-right:5px;" id="{{value3['id']}}">{{key3}}
-                                                            </li>
-                                                            {% else %}
-                                                            <li style="margin-right:5px;" id="{{value3['-1']}}">{{key3}}
-                                                            </li>
-                                                            {% endif %}
-                                                        {% endif %}
-                                                    {% endfor %}
-                                                </ul>
-                                            </li>
-                                            {% else %}
-                                            <li style="margin-right:5px;">{{key2}}
-                                                <ul>
-                                                    {% for key3, value3 in value2.items() %}
-                                                        {% if key3 != '-1' %}
-                                                        <li style="margin-right:5px;" id="{{key3}}">{{value3}}
-                                                        </li>
-                                                        {% endif %}
-                                                    {% endfor %}
-                                                </ul>
-                                            </li>
-                                            {% endif %}
-                                        {% endif %}
-                                    {% endfor %}
-                                </ul>
-                            </li>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
+        <div class="col-2 mb-2" id="jstreeDiv">
+            <ul class="collapsibleList">
+                {% for key, value in context.marketGroups.items() %}
+                    {% if key != 'id' %}
+                    <li style="margin-right:5px;">{{key}}
+                        <ul class="collapsibleList">
+                            {% for key2, value2 in value.items() %}
+                                {% if key2 != 'id' and key2 != '-1' %}
+                                    {% if 'id' in value2.keys() %}
+                                    <li style="margin-right:5px;">{{key2}}
+                                        <ul>
+                                            {% for key3, value3 in value2.items() %}
+                                                {% if key3 != 'id' and key3 != '-1' %}
+                                                    {% if 'id' in value3.keys() %}
+                                                    <li style="margin-right:5px;" id="{{value3['id']}}">{{key3}}
+                                                    </li>
+                                                    {% else %}
+                                                    <li style="margin-right:5px;" id="{{value3['-1']}}">{{key3}}
+                                                    </li>
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                    {% else %}
+                                    <li style="margin-right:5px;">{{key2}}
+                                        <ul>
+                                            {% for key3, value3 in value2.items() %}
+                                                {% if key3 != '-1' %}
+                                                <li style="margin-right:5px;" id="{{key3}}">{{value3}}
+                                                </li>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         </div>
         <input type="hidden" name="jsfields" id="jsfields" value="" />
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="col-2 mb-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
     </form>
     {% else %}
     <div>
@@ -161,6 +155,4 @@ Imports
     </table>
     {% endif %}
 </div>
-<script src="../static/js/jstree.js"></script>
-<script src="../static/js/jstreeBehavior.js"></script>
 {% endblock %}
