@@ -20,11 +20,24 @@ Settings
         </div>
 
         <div class="row justify-content-md-left">
-            <div class="col-sm-1 mb-2">
+            {% if context.brokerFee %}
+            <p class="mb-1">Current Broker's Fee: {{context.brokerFee}}%</p>
+            {% else %}
+            <p class="mb-1">Current Broker's Fee: Not Set</p>
+            {% endif %}
+            {% if context.transactionTax %}
+            <p class="mb-1">Current Sales Tax: {{context.transactionTax}}%</p>
+            {% else %}
+            <p class="mb-1">Current Sales Tax: Not Set</p>
+            {% endif %}
+        </div>
+
+        <div class="d-flex flex-row mb-2 align-items-center flex-gap">
+            <div class="p-0">
                 <input type="text" class="form-control" name="brokerFee" placeholder="Broker Fee %" aria-label="Broker Fee %">
             </div>
-            <div class="col-sm-1 mb-2">
-                <input type="text" class="form-control" name="transactionTax" placeholder="Transaction Tax %" aria-label="Transaction Tax %">
+            <div class="">
+                <input type="text" class="form-control" name="transactionTax" placeholder="Sales Tax %" aria-label="Sales Tax %">
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Update</button>

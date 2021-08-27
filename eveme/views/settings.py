@@ -36,6 +36,14 @@ def show_settings():
             ref.update({
                 'transactionTax': float(flask.request.form['transactionTax'])
             })
-        return flask.render_template("settings.html")
+    
+    # Get user's broker fee and transaction tax if exist
+    user_ref = db.reference('users/' + current_user.id)
 
-    return flask.render_template("settings.html")
+    if (user_ref.child('brokerFee').get()):
+        context['brokerFee'] = user_ref.child('brokerFee').get()
+
+    if (user_ref.child('transactionTax').get()):
+        context['transactionTax'] = user_ref.child('transactionTax').get()
+
+    return flask.render_template("settings.html", context=context)

@@ -6,3 +6,12 @@
     border-top-color:#888 !important;
     border-bottom-color:#888 !important;
 }
+
+.flex-gap {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+  
+.flex-gap > div {
+    margin-right: 6px;
+}
