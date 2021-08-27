@@ -69,17 +69,47 @@ Imports
                     <li style="margin-right:5px;">{{key}}
                         <ul class="collapsibleList">
                             {% for key2, value2 in value.items() %}
-                                {% if key2 != 'id' and key2 != '-1' %}
+                                {% if key2 != 'id' %}
                                     {% if 'id' in value2.keys() %}
                                     <li style="margin-right:5px;">{{key2}}
-                                        <ul>
+                                        <ul class="collapsibleList">
                                             {% for key3, value3 in value2.items() %}
-                                                {% if key3 != 'id' and key3 != '-1' %}
+                                                {% if key3 != 'id' %}
                                                     {% if 'id' in value3.keys() %}
-                                                    <li style="margin-right:5px;" id="{{value3['id']}}">{{key3}}
+                                                    <li style="margin-right:5px;">{{key3}}
+                                                        <ul class="collapsibleList">
+                                                            {% for key4, value4 in value3.items() %}
+                                                                {% if key4 != 'id' %}
+                                                                    {% if 'id' in value4.keys() %}
+                                                                        <li style="margin-right:5px;">{{key4}}
+                                                                            BRUHH
+                                                                        </li>
+                                                                    {% else %}
+                                                                        <li style="margin-right:5px;">{{key4}}
+                                                                            <ul class="collapsibleList">
+                                                                                {% for key5, value5 in value4.items() %}
+                                                                                    {% if key5 != '-1' %}
+                                                                                        <li style="margin-right:5px;" id="{{key5}}">{{value5}}
+                                                                                        </li>
+                                                                                    {% endif %}
+                                                                                {% endfor %}
+                                                                            </ul>
+                                                                        </li>
+                                                                    {% endif %}
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </ul>
                                                     </li>
                                                     {% else %}
-                                                    <li style="margin-right:5px;" id="{{value3['-1']}}">{{key3}}
+                                                    <li style="margin-right:5px;">{{key3}}
+                                                        <ul class="collapsibleList">
+                                                            {% for key4, value4 in value3.items() %}
+                                                                {% if key4 != '-1' %}
+                                                                    <li style="margin-right:5px;" id="{{key4}}">{{value4}}
+                                                                    </li>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </ul>
                                                     </li>
                                                     {% endif %}
                                                 {% endif %}

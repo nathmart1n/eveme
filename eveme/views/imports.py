@@ -119,11 +119,12 @@ def show_imports():
 
         # TODO: Make this more efficient. Maybe download historical data and save to static file? Cache this
         # TODO: Make so user selects karkinos routes instead of systems.
+        # TODO: Make this so it only pulls typeIDs that are present at desto
         for typeID in groupTypes:
             item_time = time.time()
             historicalData = requests.get("https://esi.evetech.net/latest/markets/{}/"
                                           "history/?datasource=tranquility&type_id={}".format(int(destoRegion), int(typeID))).json()
-            # print("--- API for " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
+            print("--- API for " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
             # Slice historical data to match analysis period
             slicedHistData = historicalData[-analysisPeriod:]
             if slicedHistData:
