@@ -159,7 +159,8 @@ Imports
                 <th>M3</th>
                 <th>Shipping Price</th>
                 <th>Profit Percentage</th>
-                <th>Profit after Fees</th>
+                <th>Profit after Fees per unit</th>
+                <th>Profit to be made</th>
             </tr>
         </thead>
         <tbody>
@@ -181,6 +182,7 @@ Imports
                 <td>{{((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage)) | numberFormat}}</td>
                 <td>{{((((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee - context.transactionTax) / 100)) / value.destoPrice * 100)|round(1)|float}}</td>
                 <td>{{(((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee - context.transactionTax) / 100)) | numberFormat}}</td>
+                <td>{{((((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee - context.transactionTax) / 100)) * (value.aggPeriodAvg * value.remainingVolume)) | numberFormat}}</td>
             </tr>
         {% endfor %}
         </tbody>

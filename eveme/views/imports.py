@@ -126,18 +126,23 @@ def show_imports():
         for typeID in groupTypes:
             item_time = time.time()
             if typeID in typeIdsWithData:
-                historicalData = requests.get("https://esi.evetech.net/latest/markets/{}/"
-                                              "history/?datasource=tranquility&type_id={}".format(int(destoRegion), int(typeID))).json()
-                print("--- API for " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
-                # Slice historical data to match analysis period
-                slicedHistData = historicalData[-analysisPeriod:]
-                if slicedHistData:
-                    totalVol = 0
-                    for day in slicedHistData:
-                        totalVol += day['volume']
-                    totalVol = float(totalVol)
-                    dailyVolAverage = totalVol / len(slicedHistData)
-                    context['imports'][typeID]['aggPeriodAvg'] = aggregatePeriod * dailyVolAverage
+                dataResponse = requests.get("https://esi.evetech.net/latest/markets/{}/"
+                                            "history/?datasource=tranquility&type_id={}".format(int(destoRegion), int(typeID)))
+                dataResponse.raise_for_status()
+                if dataResponse.status_code != 204:
+                    historicalData = dataResponse.json()
+                    print("--- API for " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
+                    # Slice historical data to match analysis period
+                    slicedHistData = historicalData[-analysisPeriod:]
+                    if slicedHistData:
+                        totalVol = 0
+                        for day in slicedHistData:
+                            totalVol += day['volume']
+                        totalVol = float(totalVol)
+                        dailyVolAverage = totalVol / len(slicedHistData)
+                        context['imports'][typeID]['aggPeriodAvg'] = aggregatePeriod * dailyVolAverage
+                    else:
+                        context['imports'][typeID]['aggPeriodAvg'] = 1
                 else:
                     context['imports'][typeID]['aggPeriodAvg'] = 1
             else:
