@@ -93,6 +93,8 @@ def show_imports():
         destoPrices = prices_ref.child(destination).get()
         sourcePrices = prices_ref.child(source).get()
 
+        typeIdsWithData = []
+
         for typeID in groupTypes:
             # TODO: Fix handling for item not existing in source and/or desto
             context['imports'][typeID] = {}
@@ -104,6 +106,7 @@ def show_imports():
                 context['imports'][typeID]['sourcePrice'] = float(sourcePrices[str(typeID)]['sell']['min'])
                 context['imports'][typeID]['numOrders'] = destoPrices[typeID]['sell']['numOrders']
                 context['imports'][typeID]['remainingVolume'] = destoPrices[typeID]['sell']['remainingVolume']
+                typeIdsWithData.append(typeID)
             else:
                 if typeID in sourcePrices.keys():
                     context['imports'][typeID]['sourcePrice'] = float(sourcePrices[str(typeID)]['sell']['min'])
@@ -122,19 +125,21 @@ def show_imports():
         # TODO: Make this so it only pulls typeIDs that are present at desto
         for typeID in groupTypes:
             item_time = time.time()
-            historicalData = requests.get("https://esi.evetech.net/latest/markets/{}/"
-                                          "history/?datasource=tranquility&type_id={}".format(int(destoRegion), int(typeID))).json()
-            print("--- API for " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
-            # Slice historical data to match analysis period
-            slicedHistData = historicalData[-analysisPeriod:]
-            if slicedHistData:
-                totalVol = 0
-
-                for day in slicedHistData:
-                    totalVol += day['volume']
-                totalVol = float(totalVol)
-                dailyVolAverage = totalVol / len(slicedHistData)
-                context['imports'][typeID]['aggPeriodAvg'] = aggregatePeriod * dailyVolAverage
+            if typeID in typeIdsWithData:
+                historicalData = requests.get("https://esi.evetech.net/latest/markets/{}/"
+                                              "history/?datasource=tranquility&type_id={}".format(int(destoRegion), int(typeID))).json()
+                print("--- API for " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
+                # Slice historical data to match analysis period
+                slicedHistData = historicalData[-analysisPeriod:]
+                if slicedHistData:
+                    totalVol = 0
+                    for day in slicedHistData:
+                        totalVol += day['volume']
+                    totalVol = float(totalVol)
+                    dailyVolAverage = totalVol / len(slicedHistData)
+                    context['imports'][typeID]['aggPeriodAvg'] = aggregatePeriod * dailyVolAverage
+                else:
+                    context['imports'][typeID]['aggPeriodAvg'] = 1
             else:
                 context['imports'][typeID]['aggPeriodAvg'] = 1
             print("--- item " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
