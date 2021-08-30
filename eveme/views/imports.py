@@ -12,6 +12,7 @@ import os
 import pathlib
 import json
 import time
+import datetime
 from flask_login import current_user
 from firebase_admin import db
 
@@ -123,6 +124,8 @@ def show_imports():
         # TODO: Make this more efficient. Maybe download historical data and save to static file? Cache this
         # TODO: Make so user selects karkinos routes instead of systems.
         # TODO: Make this so it only pulls typeIDs that are present at desto
+        datfmt = "%Y-%m-%d"
+        analysisSeconds = analysisPeriod * 86400
         for typeID in groupTypes:
             item_time = time.time()
             if typeID in typeIdsWithData:
@@ -130,16 +133,22 @@ def show_imports():
                                             "history/?datasource=tranquility&type_id={}".format(int(destoRegion), int(typeID)))
                 dataResponse.raise_for_status()
                 if dataResponse.status_code != 204:
+                    slicedHistData = []
                     historicalData = dataResponse.json()
                     print("--- API for " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
                     # Slice historical data to match analysis period
-                    slicedHistData = historicalData[-analysisPeriod:]
+                    for data in historicalData:
+                        d = datetime.datetime.strptime(data['date'], datfmt).timestamp()
+                        if (d + analysisSeconds > int(time.time())):
+                            slicedHistData.append(data)
                     if slicedHistData:
                         totalVol = 0
                         for day in slicedHistData:
                             totalVol += day['volume']
                         totalVol = float(totalVol)
-                        dailyVolAverage = totalVol / len(slicedHistData)
+                        dailyVolAverage = totalVol / analysisPeriod
+                        if typeID == 40567:
+                            print('mantis average:', dailyVolAverage)
                         context['imports'][typeID]['aggPeriodAvg'] = aggregatePeriod * dailyVolAverage
                     else:
                         context['imports'][typeID]['aggPeriodAvg'] = 1

@@ -182,7 +182,11 @@ Imports
                 <td>{{((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage)) | numberFormat}}</td>
                 <td>{{((((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee - context.transactionTax) / 100)) / value.destoPrice * 100)|round(1)|float}}</td>
                 <td>{{(((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee - context.transactionTax) / 100)) | numberFormat}}</td>
-                <td>{{((((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee - context.transactionTax) / 100)) * (value.aggPeriodAvg * value.remainingVolume)) | numberFormat}}</td>
+                {% if value.remainingVolume < value.aggPeriodAvg %}
+                <td>{{((((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee - context.transactionTax) / 100)) * (value.aggPeriodAvg - value.remainingVolume)) | numberFormat}}</td>
+                {% else %}
+                <td>{{0}}</td>
+                {% endif %}
             </tr>
         {% endfor %}
         </tbody>
