@@ -3,47 +3,84 @@
 Settings
 {% endblock %}
 {% block content %}
-<div class="container-fluid">
-    <h3>Update Data</h3>
-    <form action="{{ url_for('show_settings') }}" method="POST">
-        <div class="form-check mb-1">
-            <input class="form-check-input" type="checkbox" name="priceData" value="" id="priceData">
-            <label class="form-check-label" for="priceData">Price Data (price of best orders in stations)</label>
+<div class="mb-2 container">
+    
+    <div class="d-flex flex-column mb-2 text-center">
+        <div class="text-center">
+            <h3>Update User Data</h3>
         </div>
-        <div class="form-check mb-1">
-            <input class="form-check-input" type="checkbox" name="userOrders" value ="" id="userOrders">
-            <label class="form-check-label" for="userOrders">User Orders (quantity, location, price)</label>
-        </div>
-        <div class="form-check mb-1">
-            <input class="form-check-input" type="checkbox" name="userData" value="" id="userData">
-            <label class="form-check-label" for="userData">User Data (profile pic, name, corp, alliance)</label>
-        </div>
+        <div>
+            <form class="form-center" action="{{ url_for('show_settings') }}" method="POST">
+                <div class="form-group row justify-content-md-left" style="display: inline-block; text-align: left;">
+                    <div class="checkbox-group">
+                        <div class="mb-1">
+                            <input class="form-check-input" type="checkbox" name="priceData" value="" id="priceData">
+                            <label class="form-check-label" for="priceData">Price Data (price of best orders in stations)</label>
+                        </div>
+                        <div class="mr-1 mb-1">
+                            <input class="form-check-input" type="checkbox" name="userOrders" value ="" id="userOrders">
+                            <label class="form-check-label" for="userOrders">User Orders (quantity, location, price)</label>
+                        </div>
+                        <div class="mb-1">
+                            <input class="form-check-input" type="checkbox" name="userData" value="" id="userData">
+                            <label class="form-check-label" for="userData">User Data (profile pic, name, corp, alliance)</label>
+                        </div>
+                    </div>
 
-        <div class="row justify-content-md-left">
-            {% if context.brokerFee %}
-            <p class="mb-1">Current Broker's Fee: {{context.brokerFee}}%</p>
-            {% else %}
-            <p class="mb-1">Current Broker's Fee: Not Set</p>
-            {% endif %}
-            {% if context.transactionTax %}
-            <p class="mb-1">Current Sales Tax: {{context.transactionTax}}%</p>
-            {% else %}
-            <p class="mb-1">Current Sales Tax: Not Set</p>
-            {% endif %}
+                    <div class="d-flex flex-row mb-2 flex-gap justify-content-center">
+                        <div class="p-0">
+                            {% if context.brokerFee %}
+                            <p class="mb-1">Current Broker's Fee: {{context.brokerFee}}%</p>
+                            {% else %}
+                            <p class="mb-1">Current Broker's Fee: Not Set</p>
+                            {% endif %}
+                            <input type="text" class="form-control" name="brokerFee" placeholder="Broker Fee %" aria-label="Broker Fee %">
+                        </div>
+                        <div class="">
+                            {% if context.transactionTax %}
+                            <p class="mb-1">Current Sales Tax: {{context.transactionTax}}%</p>
+                            {% else %}
+                            <p class="mb-1">Current Sales Tax: Not Set</p>
+                            {% endif %}
+                            <input type="text" class="form-control" name="transactionTax" placeholder="Sales Tax %" aria-label="Sales Tax %">
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary"> Update </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
-
-        <div class="d-flex flex-row mb-2 align-items-center flex-gap">
-            <div class="p-0">
-                <input type="text" class="form-control" name="brokerFee" placeholder="Broker Fee %" aria-label="Broker Fee %">
-            </div>
-            <div class="">
-                <input type="text" class="form-control" name="transactionTax" placeholder="Sales Tax %" aria-label="Sales Tax %">
-            </div>
+    </div>
+    
+    <div class="d-flex flex-column mb-2 justify-content-center">
+        <div class="text-center">
+            <h3>Update Trade Routes</h3>
         </div>
+        <div class="justify-content-center">
+            <form action="{{ url_for('show_settings') }}" method="POST">
+                <div class="form-group row justify-content-center">
+                    <div class="col-sm-6">
+                        <select class="form-select" id="tradeRoute" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+<<<<<<< HEAD
 
 
 
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
+=======
+    </div>
+>>>>>>> 54719e43db7f1fe14e566c1aa08d1374015b9232
 </div>
 {% endblock %}
