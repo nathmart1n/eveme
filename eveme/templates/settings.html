@@ -4,17 +4,17 @@ Settings
 {% endblock %}
 {% block content %}
 <div class="container-fluid">
-    <h3>Refresh Data</h3>
+    <h3>Update Data</h3>
     <form action="{{ url_for('show_settings') }}" method="POST">
-        <div class="form-check">
+        <div class="form-check mb-1">
             <input class="form-check-input" type="checkbox" name="priceData" value="" id="priceData">
             <label class="form-check-label" for="priceData">Price Data (price of best orders in stations)</label>
         </div>
-        <div class="form-check">
+        <div class="form-check mb-1">
             <input class="form-check-input" type="checkbox" name="userOrders" value ="" id="userOrders">
             <label class="form-check-label" for="userOrders">User Orders (quantity, location, price)</label>
         </div>
-        <div class="form-check">
+        <div class="form-check mb-1">
             <input class="form-check-input" type="checkbox" name="userData" value="" id="userData">
             <label class="form-check-label" for="userData">User Data (profile pic, name, corp, alliance)</label>
         </div>
@@ -40,6 +40,9 @@ Settings
                 <input type="text" class="form-control" name="transactionTax" placeholder="Sales Tax %" aria-label="Sales Tax %">
             </div>
         </div>
+
+
+
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </div>
