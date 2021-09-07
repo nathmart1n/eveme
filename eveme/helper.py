@@ -195,12 +195,15 @@ def updatePriceData(structureID=None):
     """Queries ESI data for structures user has orders in and updates max/min prices."""
     start_time = time.time()
     ref = db.reference('prices')
+    # Check if structureID passed in, if not we need to pull all from DB
     if structureID:
         structures = [structureID]
     else:
         structures = db.reference('users/'+current_user.id+'/structureAccess').get()
+    # Generate headers
     headers = createHeaders(current_user.accessToken)
     for selectedID in structures:
+        # If structure is less than 100000000 its a station, greater its a player structure
         if int(selectedID) < 100000000:
             region = getRegionFromStructure(selectedID)
             regionOrdersQuery = ("https://esi.evetech.net/latest/markets/{}/orders".format(region))
@@ -240,7 +243,7 @@ def updatePriceData(structureID=None):
                 structureOrders.extend(res.json())
 
         prices = {}
-        # print(structureOrders)
+        # Update price format to match that of fuzzwork jita prices
         for order in structureOrders:
             if order['type_id'] in prices.keys():
                 if order['is_buy_order']:
