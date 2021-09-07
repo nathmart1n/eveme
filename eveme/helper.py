@@ -170,6 +170,7 @@ def updateUserOrders():
                 validStructs[structureID] = structuresChecked[structureID]
         user_info['structureAccess'] = validStructs
     else:
+        # If there are no orders pop these fields so we dont have errors with Jinja
         user_info.pop('buyOrders')
         user_info.pop('sellOrders')
         user_info.pop('structureAccess')
