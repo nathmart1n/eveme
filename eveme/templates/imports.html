@@ -20,8 +20,8 @@ Imports
         </div>
         <div>
             <form onsubmit="return submitMe()" action="{{ url_for('show_imports') }}" method="POST">
-                <div class="row justify-content-center mb-3">
-                    <div class="col-2">
+                <div class="row justify-content-center mb-2">
+                    <div class="col col-md-4">
                         <select name='source' class="form-select form-select-md" aria-label=".form-select-lg example">
                             <option selected>Source</option>
                             <option value="jita">Jita IV - Moon 4 - Caldari Navy Assembly Plant</option>
@@ -30,7 +30,7 @@ Imports
                             {% endfor %}
                         </select>
                     </div>
-                    <div class="col-2">
+                    <div class="col col-md-4">
                         <select name='destination' class="form-select form-select-md" aria-label=".form-select-lg example">
                             <option selected>Desination</option>
                             <option value="jita">Jita IV - Moon 4 - Caldari Navy Assembly Plant</option>
@@ -41,102 +41,102 @@ Imports
                     </div>
                 </div>
         
-                <div class="row justify-content-center mb-3">
-                    <div class="col-2">
+                <div class="row justify-content-center mb-2">
+                    <div class="col col-md-4">
                         <input type="text" class="form-control" name="analysisPeriod" placeholder="Analysis Period (days)" aria-label="Analysis Period (days)">
                     </div>
-                    <div class="col-2">
+                    <div class="col col-md-4">
                         <input type="text" class="form-control" name="aggregatePeriod" placeholder="Aggregate Over (days)" aria-label="Aggregate Over (days)">
                     </div>
                 </div>
-                <div class="row justify-content-center mb-3">
-                    <div class="col-2">
-                        <div class="form-check">
-                            <input class="form-check-input checkbox-gap" type="checkbox" name="updatePrices" id="updatePrices">
-                            <label class="form-check-label" for="updatePrices">
-                                Update Prices
-                            </label>
-                        </div>
+                <div class="mb-2" style="text-align: center;">
+                    <div class="form-check" style="display: inline-block;">
+                        <input class="form-check-input checkbox-gap" type="checkbox" name="updatePrices" id="updatePrices">
+                        <label class="form-check-label" for="updatePrices">
+                            Update Prices
+                        </label>
                     </div>
                 </div>
-        
-                <h5>Select items to be queried</h5>
-                <div class="col-2 mb-2" id="jstreeDiv">
-                    <ul class="collapsibleList">
-                        {% for key, value in context.marketGroups.items() %}
-                            {% if key != 'id' %}
-                            <li style="margin-right:5px;">{{key}}
-                                <ul class="collapsibleList">
-                                    {% for key2, value2 in value.items() %}
-                                        {% if key2 != 'id' %}
-                                            {% if 'id' in value2.keys() %}
-                                            <li style="margin-right:5px;">{{key2}}
-                                                <ul class="collapsibleList">
-                                                    {% for key3, value3 in value2.items() %}
-                                                        {% if key3 != 'id' %}
-                                                            {% if 'id' in value3.keys() %}
-                                                            <li style="margin-right:5px;">{{key3}}
-                                                                <ul class="collapsibleList">
-                                                                    {% for key4, value4 in value3.items() %}
-                                                                        {% if key4 != 'id' %}
-                                                                            {% if 'id' in value4.keys() %}
-                                                                                <li style="margin-right:5px;">{{key4}}
-                                                                                    BRUHH
-                                                                                </li>
-                                                                            {% else %}
-                                                                                <li style="margin-right:5px;">{{key4}}
-                                                                                    <ul class="collapsibleList">
-                                                                                        {% for key5, value5 in value4.items() %}
-                                                                                            {% if key5 != '-1' %}
-                                                                                                <li style="margin-right:5px;" id="{{key5}}">{{value5}}
-                                                                                                </li>
-                                                                                            {% endif %}
-                                                                                        {% endfor %}
-                                                                                    </ul>
+                <div style="text-align: center;">
+                    <h5>Select items to be queried</h5>
+                </div>
+                <div class="col-2 mb-2" id="jstreeDiv" style="margin-left: auto; margin-right: auto; display: table; text-align: left;">
+                        <ul class="collapsibleList">
+                            {% for key, value in context.marketGroups.items() %}
+                                {% if key != 'id' %}
+                                <li style="margin-right:5px;">{{key}}
+                                    <ul class="collapsibleList">
+                                        {% for key2, value2 in value.items() %}
+                                            {% if key2 != 'id' %}
+                                                {% if 'id' in value2.keys() %}
+                                                <li style="margin-right:5px;">{{key2}}
+                                                    <ul class="collapsibleList">
+                                                        {% for key3, value3 in value2.items() %}
+                                                            {% if key3 != 'id' %}
+                                                                {% if 'id' in value3.keys() %}
+                                                                <li style="margin-right:5px;">{{key3}}
+                                                                    <ul class="collapsibleList">
+                                                                        {% for key4, value4 in value3.items() %}
+                                                                            {% if key4 != 'id' %}
+                                                                                {% if 'id' in value4.keys() %}
+                                                                                    <li style="margin-right:5px;">{{key4}}
+                                                                                        BRUHH
+                                                                                    </li>
+                                                                                {% else %}
+                                                                                    <li style="margin-right:5px;">{{key4}}
+                                                                                        <ul class="collapsibleList">
+                                                                                            {% for key5, value5 in value4.items() %}
+                                                                                                {% if key5 != '-1' %}
+                                                                                                    <li style="margin-right:5px;" id="{{key5}}">{{value5}}
+                                                                                                    </li>
+                                                                                                {% endif %}
+                                                                                            {% endfor %}
+                                                                                        </ul>
+                                                                                    </li>
+                                                                                {% endif %}
+                                                                            {% endif %}
+                                                                        {% endfor %}
+                                                                    </ul>
+                                                                </li>
+                                                                {% else %}
+                                                                <li style="margin-right:5px;">{{key3}}
+                                                                    <ul class="collapsibleList">
+                                                                        {% for key4, value4 in value3.items() %}
+                                                                            {% if key4 != '-1' %}
+                                                                                <li style="margin-right:5px;" id="{{key4}}">{{value4}}
                                                                                 </li>
                                                                             {% endif %}
-                                                                        {% endif %}
-                                                                    {% endfor %}
-                                                                </ul>
-                                                            </li>
-                                                            {% else %}
-                                                            <li style="margin-right:5px;">{{key3}}
-                                                                <ul class="collapsibleList">
-                                                                    {% for key4, value4 in value3.items() %}
-                                                                        {% if key4 != '-1' %}
-                                                                            <li style="margin-right:5px;" id="{{key4}}">{{value4}}
-                                                                            </li>
-                                                                        {% endif %}
-                                                                    {% endfor %}
-                                                                </ul>
+                                                                        {% endfor %}
+                                                                    </ul>
+                                                                </li>
+                                                                {% endif %}
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </ul>
+                                                </li>
+                                                {% else %}
+                                                <li style="margin-right:5px;">{{key2}}
+                                                    <ul>
+                                                        {% for key3, value3 in value2.items() %}
+                                                            {% if key3 != '-1' %}
+                                                            <li style="margin-right:5px;" id="{{key3}}">{{value3}}
                                                             </li>
                                                             {% endif %}
-                                                        {% endif %}
-                                                    {% endfor %}
-                                                </ul>
-                                            </li>
-                                            {% else %}
-                                            <li style="margin-right:5px;">{{key2}}
-                                                <ul>
-                                                    {% for key3, value3 in value2.items() %}
-                                                        {% if key3 != '-1' %}
-                                                        <li style="margin-right:5px;" id="{{key3}}">{{value3}}
-                                                        </li>
-                                                        {% endif %}
-                                                    {% endfor %}
-                                                </ul>
-                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </li>
+                                                {% endif %}
                                             {% endif %}
-                                        {% endif %}
-                                    {% endfor %}
-                                </ul>
-                            </li>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
                 </div>
+                
                 <input type="hidden" name="jsfields" id="jsfields" value="" />
-                <div class="col-2 mb-3">
+                <div style="text-align: center;">
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
