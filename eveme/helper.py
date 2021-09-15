@@ -299,7 +299,7 @@ def refreshAuth():
 
         headers = {"Authorization": auth_header}
         res = send_token_request(form_values, add_headers=headers)
-
+        # TODO: Implement handling other than 200 codes
         if res.status_code == 200:
             data = res.json()
             current_user.accessToken = data["access_token"]
