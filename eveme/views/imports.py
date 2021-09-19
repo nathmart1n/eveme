@@ -132,6 +132,7 @@ def show_imports():
                 dataResponse = requests.get("https://esi.evetech.net/latest/markets/{}/"
                                             "history/?datasource=tranquility&type_id={}".format(int(destoRegion), int(typeID)))
                 dataResponse.raise_for_status()
+                # 204 is the code we want not 200 for whatever reason
                 if dataResponse.status_code != 204:
                     slicedHistData = []
                     historicalData = dataResponse.json()
