@@ -22,8 +22,8 @@ Imports
             <form onsubmit="return submitMe()" action="{{ url_for('show_imports') }}" method="POST">
                 <div class="row justify-content-center mb-2">
                     <div class="col col-md-4">
-                        <select name='source' class="form-select form-select-md" aria-label=".form-select-lg example">
-                            <option selected>Source</option>
+                        Source:
+                        <select onchange="updateDesto()" id="source" name='source' class="form-select form-select-md" aria-label=".form-select-lg example">
                             <option value="jita">Jita IV - Moon 4 - Caldari Navy Assembly Plant</option>
                             {% for key, val in context.structures.items() %}
                             <option value="{{key}}">{{val}}</option>
@@ -31,12 +31,12 @@ Imports
                         </select>
                     </div>
                     <div class="col col-md-4">
-                        <select name='destination' class="form-select form-select-md" aria-label=".form-select-lg example">
-                            <option selected>Desination</option>
-                            <option value="jita">Jita IV - Moon 4 - Caldari Navy Assembly Plant</option>
+                        Destination:
+                        <select onchange="updateSource()" id="destination" name='destination' class="form-select form-select-md" aria-label=".form-select-lg example">
                             {% for key, val in context.structures.items() %}
                             <option value="{{key}}">{{val}}</option>
                             {% endfor %}
+                            <option value="jita">Jita IV - Moon 4 - Caldari Navy Assembly Plant</option>
                         </select>
                     </div>
                 </div>

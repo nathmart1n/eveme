@@ -3,6 +3,7 @@ EVEME settings view.
 
 URLs include:
 /settings/
+/structures/
 """
 import flask
 import eveme
@@ -46,4 +47,14 @@ def show_settings():
     if (user_ref.child('transactionTax').get()):
         context['transactionTax'] = user_ref.child('transactionTax').get()
 
+    context['structureAccess'] = user_ref.child('structureAccess').get()
+
     return flask.render_template("settings.html", context=context)
+
+
+@eveme.app.route('/structures/', methods=['POST', 'DELETE'])
+def structure_mod():
+    context = {}
+    if flask.request.method == 'POST':
+        print('dog')
+        return flask.render_template("structures.html", context=context)

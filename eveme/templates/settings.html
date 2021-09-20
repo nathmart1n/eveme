@@ -3,6 +3,7 @@
 Settings
 {% endblock %}
 {% block content %}
+<script src="../static/js/structureModification.js"></script>
 <div class="container-fluid mb-2">
     
     <div class="d-flex flex-column mb-2">
@@ -56,21 +57,31 @@ Settings
     
     <div class="d-flex flex-column mb-2 justify-content-center">
         <div class="text-center">
-            <h3>Update Trade Routes</h3>
+            <h3>Structure Modification</h3>
+            <p>Select "Add Structure" to add a new one, otherwise select your structure below to modify/delete it.</p>
         </div>
         <div class="justify-content-center">
-            <form action="{{ url_for('show_settings') }}" method="POST">
+            <form action="{{ url_for('structure_mod') }}" method="POST">
                 <div class="form-group row justify-content-center">
                     <div class="col-sm-6">
-                        <select class="form-select" id="tradeRoute" aria-label="Default select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select onchange="displayDivDemo(this)" class="form-select" id="tradeRoute" aria-label="Default select example">
+                            <option value="add">Add Structure</option>
+                            {% for key, value in context.structureAccess.items() %}
+                            <option value="{{key}}">{{value}}</option>
+                            {% endfor %}
                         </select>
                     </div>
                 </div>
             </form>
+            <div id="updateOld" style="display: none;" class="row justify-content-center text-center">
+                <p> Add stuff for editting structure here </p>
+            </div>
+            <div id="createNew" class="row mb-2 justify-content-center text-center">
+                <p>Please input the structure ID you would like to add (this can be found by exporting your market orders you have and looking in the .txt file)</p>
+                <div class="col col-md-4">
+                    <input id="structureID" type="text" class="form-control" name="structureID" placeholder="Structure ID" aria-label="Structure ID">
+                </div>
+            </div>
             <div class="row text-center">
                 <div class="col">
                     <button type="submit" class="btn btn-primary"> Update </button>
