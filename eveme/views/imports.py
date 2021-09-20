@@ -133,6 +133,7 @@ def show_imports():
                                             "history/?datasource=tranquility&type_id={}".format(int(destoRegion), int(typeID)))
                 dataResponse.raise_for_status()
                 # 204 is the code we want not 200 for whatever reason
+                # TODO: Find why 204 and not 200 for comment
                 if dataResponse.status_code != 204:
                     slicedHistData = []
                     historicalData = dataResponse.json()
