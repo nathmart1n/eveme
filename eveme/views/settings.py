@@ -54,7 +54,9 @@ def show_settings():
 
 @eveme.app.route('/structures/', methods=['POST', 'DELETE'])
 def structure_mod():
+    """Handle various additions/deletions from a user's structure list."""
     context = {}
+    # 
     if flask.request.method == 'POST':
         print('dog')
         return flask.render_template("structures.html", context=context)
