@@ -139,6 +139,7 @@ def updateUserOrders():
     orders = eveme.helper.esiRequest('charOrders', current_user.id, headers)
 
     structuresChecked = {}
+    # Set empty info struct
     user_info = {
         'buyOrders': {},
         'sellOrders': {},
