@@ -353,7 +353,6 @@ def structNameFromID(structID):
 
     res = requests.get("https://esi.evetech.net/latest/universe/structures/{}/".format(structID))
 
-
     if res.status_code == 200:
         return res.json()['name']
     else:
