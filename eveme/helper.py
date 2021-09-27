@@ -347,11 +347,12 @@ def structNameFromID(structID):
     Args:
         structID: A given structure ID
     Returns:
-        structName: A string containing the structure name, returns none if doesn't exist
+        structName: A string containing the structure name, returns NONE if doesn't exist
     """
     start_time = time.time()
 
     res = requests.get("https://esi.evetech.net/latest/universe/structures/{}/".format(structID))
+
 
     if res.status_code == 200:
         return res.json()['name']
