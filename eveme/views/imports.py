@@ -116,7 +116,7 @@ def show_imports():
                 context['imports'][typeID]['destoPrice'] = 1
                 context['imports'][typeID]['numOrders'] = 0
                 context['imports'][typeID]['remainingVolume'] = 0
-                print(invTypes[typeID]['typeName'], ' NOT IN DESTO PRICES')
+                # print(invTypes[typeID]['typeName'], ' NOT IN DESTO PRICES')
             context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
             context['imports'][typeID]['m3'] = invTypes[typeID]['volume']
         destoRegion = eveme.helper.getRegionFromStructure(destination, headers=headers)

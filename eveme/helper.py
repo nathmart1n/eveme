@@ -139,6 +139,7 @@ def updateUserOrders():
     orders = eveme.helper.esiRequest('charOrders', current_user.id, headers)
 
     structuresChecked = {}
+    # Set empty info struct
     user_info = {
         'buyOrders': {},
         'sellOrders': {},
@@ -338,3 +339,21 @@ def send_token_request(form_values, add_headers={}):
     res.raise_for_status()
     print("--- send_token_request() with took %s seconds ---" % (time.time() - start_time))
     return res
+
+
+def structNameFromID(structID):
+    """Gets structure name given ID.
+
+    Args:
+        structID: A given structure ID
+    Returns:
+        structName: A string containing the structure name, returns NONE if doesn't exist
+    """
+    start_time = time.time()
+
+    res = requests.get("https://esi.evetech.net/latest/universe/structures/{}/".format(structID))
+
+    if res.status_code == 200:
+        return res.json()['name']
+    else:
+        return None

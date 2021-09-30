@@ -33,7 +33,7 @@ Settings
                         {% if context.brokerFee %}
                         <label for="brokerFee" class="mb-1">Current Broker's Fee: {{context.brokerFee}}%</label>
                         {% else %}
-                        <label for="brokerFee" class="mb-1">Current Broker's Fee: Not Set</label>
+                        <label for="brokerFee" class="mb-1">Current Broker's Fee: <span style="color: red;">Not Set</span></label>
                         {% endif %}
                         <input id="brokerFee" type="text" class="form-control" name="brokerFee" placeholder="Broker Fee %" aria-label="Broker Fee %">
                     </div>
@@ -41,7 +41,7 @@ Settings
                         {% if context.transactionTax %}
                         <label for="salesTax" class="mb-1">Current Sales Tax: {{context.transactionTax}}%</label>
                         {% else %}
-                        <label for="salesTax" class="mb-1">Current Sales Tax: Not Set</label>
+                        <label for="salesTax" class="mb-1">Current Sales Tax: <span style="color: red;">Not Set</span></label>
                         {% endif %}
                         <input id="salesTax" type="text" class="form-control" name="transactionTax" placeholder="Sales Tax %" aria-label="Sales Tax %">
                     </div>
@@ -60,8 +60,9 @@ Settings
             <h3>Structure Modification</h3>
             <p>Select "Add Structure" to add a new one, otherwise select your structure below to modify/delete it.</p>
         </div>
-        <div class="justify-content-center">
-            <form action="{{ url_for('structure_mod') }}" method="POST">
+        {% if context.structureAccess %}
+        <div>
+            <form class="form-center" action="{{ url_for('structure_mod') }}" method="POST">
                 <div class="form-group row justify-content-center">
                     <div class="col-sm-6">
                         <select onchange="displayDivDemo(this)" class="form-select" id="tradeRoute" aria-label="Default select example">
@@ -72,22 +73,30 @@ Settings
                         </select>
                     </div>
                 </div>
+                <div id="updateOld" style="display: none;" class="form-group row justify-content-sm-left">
+                    <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" name="deleteStruct" value="DELETE" id="deleteStructure">
+                        <label class="form-check-label" for="deleteStruct">Delete Structure</label>
+                    </div>
+                </div>
+                <div id="createNew" class="row mb-2 justify-content-center text-center">
+                    <p>Please input the structure ID you would like to add (this can be found by exporting your market orders you have and looking in the .txt file)</p>
+                    <div class="col col-md-4">
+                        <input id="structureID" type="text" class="form-control" name="structureID" placeholder="Structure ID" aria-label="Structure ID">
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary"> Update </button>
+                    </div>
+                </div>
             </form>
-            <div id="updateOld" style="display: none;" class="row justify-content-center text-center">
-                <p> Add stuff for editting structure here </p>
-            </div>
-            <div id="createNew" class="row mb-2 justify-content-center text-center">
-                <p>Please input the structure ID you would like to add (this can be found by exporting your market orders you have and looking in the .txt file)</p>
-                <div class="col col-md-4">
-                    <input id="structureID" type="text" class="form-control" name="structureID" placeholder="Structure ID" aria-label="Structure ID">
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col">
-                    <button type="submit" class="btn btn-primary"> Update </button>
-                </div>
-            </div>
         </div>
+        {% else %}
+        <div class="text-center">
+            <p>You have no structures added! Refresh your user orders after putting up at least one market order in a station you have market access.</p>
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

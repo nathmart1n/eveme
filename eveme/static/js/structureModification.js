@@ -5,5 +5,6 @@ function displayDivDemo(elementValue) {
     } else {
         document.getElementById("createNew").style.display = 'none';
         document.getElementById("updateOld").style.display = 'flex';
+        document.getElementById("deleteStructure").value = document.getElementById("tradeRoute").value;
     }
  }
