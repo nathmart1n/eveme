@@ -38,7 +38,7 @@ def show_settings():
                 'transactionTax': float(flask.request.form['transactionTax'])
             })
 
-    # Get user's broker fee and transaction tax if exist
+    # Get user's broker fee and transaction tax if exist, otherwise leave field blank
     user_ref = db.reference('users/' + current_user.id)
 
     if (user_ref.child('brokerFee').get()):
