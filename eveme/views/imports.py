@@ -137,7 +137,7 @@ def show_imports():
                 if dataResponse.status_code != 204:
                     slicedHistData = []
                     historicalData = dataResponse.json()
-                    # print("--- API for " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
+                    print("--- API for " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
                     # Slice historical data to match analysis period
                     for data in historicalData:
                         d = datetime.datetime.strptime(data['date'], datfmt).timestamp()
@@ -161,8 +161,8 @@ def show_imports():
             # print("--- item " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
 
         # TODO: Make this variable dependent on user input
-        context['pricePerM3'] = 820
-        context['collateralPercentage'] = 0.015
+        context['pricePerM3'] = 450
+        context['collateralPercentage'] = 0.007
 
         # Get user defined brokers fee and transaction tax
         user_ref = db.reference('users').child(str(current_user.id))

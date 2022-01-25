@@ -326,7 +326,7 @@ marketGroupID,parentGroupID,marketGroupName,description,iconID,hasTypes
 590,588,Caldari,Blueprints of Caldari battlecruiser designs.,2703,1
 591,588,Gallente,Blueprints of Gallente battlecruiser designs.,2703,1
 592,588,Minmatar,Blueprints of Minmatar battlecruiser designs.,2703,1
-593,11,Mining Crystals,Frequency crystals custom-cut for different ore types,2654,1
+593,11,Mining Crystals,Frequency crystals custom-cut for different ore types,24968,0
 594,480,Projectile Batteries,Projectile turret batteries.,2222,1
 595,480,Hybrid Batteries,Hybrid turret batteries.,2222,1
 596,480,Laser Batteries,Laser turret batteries.,2222,1
@@ -468,7 +468,7 @@ marketGroupID,parentGroupID,marketGroupName,description,iconID,hasTypes
 750,739,Commanders,The identification tags of CONCORD's most wanted.,2319,1
 751,614,Overseer's Personal Effects,Proof that there's one less evil bastard in the world.,2039,1
 752,614,Criminal DNA Patterns,Physical proof of a dastardly villain's demise.,2302,1
-753,211,Mining Crystals,Blueprints of mining crystals.,2703,1
+753,211,Mining Crystals,Blueprints of mining crystals.,2703,0
 754,19,Political Paraphernalia,Political propaganda and those that engage in it,1204,1
 757,657,Target Painters,"Project an electronic signal towards a target, increasing its signature radius.",2983,1
 761,1381,Dreadnoughts,Capital ships created for extended sieges of stationary installations.,1443,0
@@ -703,7 +703,7 @@ Mutaplasmids that permanently alter a module's attributes",2887,0
 1033,533,Ice Products,Ice isotopes harvested from ice asteroids.,2697,1
 1034,533,Reaction Materials,The various types of raw materials harvested from the moons of New Eden.,2567,0
 1035,475,Components,Components are manufactured items used in various industry activities,1436,0
-1037,1713,Gas Cloud Harvesters,Gas cloud harvester designs.,3074,1
+1037,1713,Gas Cloud Scoops,Gas cloud scoops designs.,3074,1
 1038,1713,Ice Harvesters,Ice harvester designs.,2526,1
 1039,1713,Mining Lasers,Mining laser designs.,1061,1
 1040,1713,Strip Miners,Strip miner designs.,2527,1
@@ -1919,3 +1919,13 @@ Mutaplasmids that permanently alter a module's attributes",2887,0
 2790,977,Booster Slot 15,,3215,1
 2791,977,Booster Slot 16,,3215,1
 2792,977,Booster Slot 17,,3215,1
+2795,1713,Gas Cloud Harvesters,,3074,1
+2797,406,Analysis Beacons,Blueprints for Analysis Beacons,2703,1
+2798,404,Analysis Beacons,,16,1
+2799,19,Rogue Drone Data,Data pertaining to Rogue Drones,21785,1
+2800,2436,Drone Mutaplasmids,,24905,1
+2801,19,AEGIS Databases,,10065,1
+2804,593,Asteroid Mining Crystals,Frequency crystals custom-cut for different asteroid ore types,24968,1
+2805,593,Moon Mining Crystals,Frequency crystals custom-cut for different moon ore types,25021,1
+2806,753,Asteroid Mining Crystals,,2703,1
+2807,753,Moon Mining Crystals,,2703,1
