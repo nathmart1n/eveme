@@ -116,16 +116,15 @@ def show_imports():
             # This is sorta expected behavior, but if the item just sold out of everything the user will miss out on a potential opportunity.
             # Generally though, the purpose of this app isn't to capitalize on short-term inventory shortages, but rather long-term price advantages.
             # Basically, not necessary to fix.
-            if typeID in destoPrices.keys() and typeID in sourcePrices.keys():
+            if typeID in destoPrices.keys() and typeID in sourcePrices.keys() and float(destoPrices[typeID]['sell']['orderCount']) > 0:
                 context['imports'][typeID] = {}
-                context['imports'][typeID]['destoPrice'] = destoPrices[typeID]['sell']['min']
-                context['imports'][typeID]['sourcePrice'] = float(sourcePrices[str(typeID)]['sell']['min'])
-                context['imports'][typeID]['orderCount'] = destoPrices[typeID]['sell']['orderCount']
-                context['imports'][typeID]['volume'] = destoPrices[typeID]['sell']['volume']
+                context['imports'][typeID]['destoPrice'] = float(destoPrices[typeID]['sell']['min'])
+                context['imports'][typeID]['sourcePrice'] = float(sourcePrices[typeID]['sell']['min'])
+                context['imports'][typeID]['orderCount'] = float(destoPrices[typeID]['sell']['orderCount'])
+                context['imports'][typeID]['volume'] = float(destoPrices[typeID]['sell']['volume'])
                 typeIdsWithData.append(typeID)
                 context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
                 context['imports'][typeID]['m3'] = invTypes[typeID]['volume']
-            
         # Need this because region checking for Jita vs player structures is different. Need a way to differentiate between stations and player structures
         # Because this will happen for places like Hek, Amarr, etc.
         if destination == '60003760':
@@ -169,8 +168,9 @@ def show_imports():
             # print("--- item " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
 
         # TODO: Make this variable dependent on user input
-        context['pricePerM3'] = 450
-        context['collateralPercentage'] = 0.007
+        context['pricePerM3'] = 700
+        # TODO: Give as decimal not percent, change the variable name
+        context['collateralPercentage'] = 0.01
 
         # Get user defined brokers fee and transaction tax
         user_ref = db.reference('users').child(str(current_user.id))
