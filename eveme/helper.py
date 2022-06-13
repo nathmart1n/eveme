@@ -140,6 +140,7 @@ def updateUserOrders():
 
     structuresChecked = {}
     # Set empty info struct
+    # TODO: Need to make this so we dont clear structure access each timw
     user_info = {
         'buyOrders': {},
         'sellOrders': {},

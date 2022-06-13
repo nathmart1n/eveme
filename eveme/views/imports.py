@@ -162,7 +162,7 @@ def show_imports():
 
         # TODO: Make this variable dependent on user input
         context['pricePerM3'] = 450
-        context['collateralPercentage'] = 0.007
+        context['collateralPercentage'] = 0.001
 
         # Get user defined brokers fee and transaction tax
         user_ref = db.reference('users').child(str(current_user.id))
