@@ -70,9 +70,9 @@ def show_imports():
         # TODO: Add check box for using buy or sell orders in source/desto, for now default to sell in both
 
         if 'updatePrices' in flask.request.form.keys():
-            eveme.helper.updatePriceData(destination)
-
+            # TODO: Can we cut down on this code duplication?
             if source == '60003760':
+                eveme.helper.updatePriceData(destination)
                 destoPrices = prices_ref.child(destination).get()
 
                 destoIDs = list(destoPrices.keys())
@@ -88,8 +88,23 @@ def show_imports():
                     res.raise_for_status()
                     prices.update(res.json())
                 prices_ref.child('60003760').update(prices)
-            else:
+            elif destination == '60003760':
                 eveme.helper.updatePriceData(source)
+                sourcePrices = prices_ref.child(source).get()
+
+                sourceIDs = list(sourcePrices.keys())
+
+                chunks = [sourceIDs[x:x+200] for x in range(0, len(sourceIDs), 200)]
+                chunkStrings = []
+                for chunk in chunks:
+                    chunkStrings.append(','.join(chunk))
+                prices = {}
+                for chunkString in chunkStrings:
+                    priceDataRequest = ("https://market.fuzzwork.co.uk/aggregates/?station=60003760&types={}".format(chunkString))
+                    res = requests.get(priceDataRequest)
+                    res.raise_for_status()
+                    prices.update(res.json())
+                prices_ref.child('60003760').update(prices)
 
         destoPrices = prices_ref.child(destination).get()
         sourcePrices = prices_ref.child(source).get()
@@ -97,63 +112,56 @@ def show_imports():
         typeIdsWithData = []
 
         for typeID in groupTypes:
-            # TODO: Fix handling for item not existing in source and/or desto
-            context['imports'][typeID] = {}
-            if typeID in destoPrices.keys():
-                if destoPrices[typeID]['sell']['min'] < 99999999999999999999:
-                    context['imports'][typeID]['destoPrice'] = destoPrices[typeID]['sell']['min']
-                else:
-                    context['imports'][typeID]['destoPrice'] = 1
-                context['imports'][typeID]['sourcePrice'] = float(sourcePrices[str(typeID)]['sell']['min'])
-                context['imports'][typeID]['numOrders'] = destoPrices[typeID]['sell']['numOrders']
-                context['imports'][typeID]['remainingVolume'] = destoPrices[typeID]['sell']['remainingVolume']
+            # The only issue with this is if the item does not currently exist in either the source or the desto, it will not pull any info.
+            # This is sorta expected behavior, but if the item just sold out of everything the user will miss out on a potential opportunity.
+            # Generally though, the purpose of this app isn't to capitalize on short-term inventory shortages, but rather long-term price advantages.
+            # Basically, not necessary to fix.
+            if typeID in destoPrices.keys() and typeID in sourcePrices.keys() and float(destoPrices[typeID]['sell']['orderCount']) > 0:
+                context['imports'][typeID] = {}
+                context['imports'][typeID]['destoPrice'] = float(destoPrices[typeID]['sell']['min'])
+                context['imports'][typeID]['sourcePrice'] = float(sourcePrices[typeID]['sell']['min'])
+                context['imports'][typeID]['orderCount'] = float(destoPrices[typeID]['sell']['orderCount'])
+                context['imports'][typeID]['volume'] = float(destoPrices[typeID]['sell']['volume'])
                 typeIdsWithData.append(typeID)
-            else:
-                if typeID in sourcePrices.keys():
-                    context['imports'][typeID]['sourcePrice'] = float(sourcePrices[str(typeID)]['sell']['min'])
-                else:
-                    context['imports'][typeID]['sourcePrice'] = 0
-                context['imports'][typeID]['destoPrice'] = 1
-                context['imports'][typeID]['numOrders'] = 0
-                context['imports'][typeID]['remainingVolume'] = 0
-                # print(invTypes[typeID]['typeName'], ' NOT IN DESTO PRICES')
-            context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
-            context['imports'][typeID]['m3'] = invTypes[typeID]['volume']
-        destoRegion = eveme.helper.getRegionFromStructure(destination, headers=headers)
+                context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
+                context['imports'][typeID]['m3'] = invTypes[typeID]['volume']
+        # Need this because region checking for Jita vs player structures is different. 
+        # Need a way to differentiate between stations and player structures
+        # Because this will happen for places like Hek, Amarr, etc.
+        if destination == '60003760':
+            destoRegion = eveme.helper.getRegionFromStructure(destination)
+        else:
+            destoRegion = eveme.helper.getRegionFromStructure(destination, headers=headers)
 
-        # TODO: Make this more efficient. Maybe download historical data and save to static file? Cache this
+        # TODO: Download historical data once a day. Store in database? Similar to eyeonwater/edna data. Look at bottom of updateStaticFiles.py file.
         # TODO: Make so user selects karkinos routes instead of systems.
-        # TODO: Make this so it only pulls typeIDs that are present at desto
         datfmt = "%Y-%m-%d"
         analysisSeconds = analysisPeriod * 86400
-        for typeID in groupTypes:
+        for typeID in typeIdsWithData:
             item_time = time.time()
-            if typeID in typeIdsWithData:
-                dataResponse = requests.get("https://esi.evetech.net/latest/markets/{}/"
-                                            "history/?datasource=tranquility&type_id={}".format(int(destoRegion), int(typeID)))
-                dataResponse.raise_for_status()
-                # 204 is the code we want not 200 for whatever reason
-                # TODO: Find why 204 and not 200 for comment
-                if dataResponse.status_code != 204:
-                    slicedHistData = []
-                    historicalData = dataResponse.json()
-                    print("--- API for " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
-                    # Slice historical data to match analysis period
-                    for data in historicalData:
-                        d = datetime.datetime.strptime(data['date'], datfmt).timestamp()
-                        if (d + analysisSeconds > int(time.time())):
-                            slicedHistData.append(data)
-                    if slicedHistData:
-                        totalVol = 0
-                        for day in slicedHistData:
-                            totalVol += day['volume']
-                        totalVol = float(totalVol)
-                        dailyVolAverage = totalVol / analysisPeriod
-                        if typeID == 40567:
-                            print('mantis average:', dailyVolAverage)
-                        context['imports'][typeID]['aggPeriodAvg'] = aggregatePeriod * dailyVolAverage
-                    else:
-                        context['imports'][typeID]['aggPeriodAvg'] = 1
+            dataResponse = requests.get("https://esi.evetech.net/latest/markets/{}/"
+                                        "history/?datasource=tranquility&type_id={}".format(int(destoRegion), int(typeID)))
+            dataResponse.raise_for_status()
+            # 204 is the code we want not 200 for whatever reason
+            # TODO: Find why 204 and not 200 for comment
+            if dataResponse.status_code != 204:
+                slicedHistData = []
+                historicalData = dataResponse.json()
+                print("--- API for " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
+                # Slice historical data to match analysis period
+                for data in historicalData:
+                    d = datetime.datetime.strptime(data['date'], datfmt).timestamp()
+                    if (d + analysisSeconds > int(time.time())):
+                        slicedHistData.append(data)
+                if slicedHistData:
+                    totalVol = 0
+                    for day in slicedHistData:
+                        totalVol += day['volume']
+                    totalVol = float(totalVol)
+                    dailyVolAverage = totalVol / analysisPeriod
+                    if typeID == 40567:
+                        print('mantis average:', dailyVolAverage)
+                    context['imports'][typeID]['aggPeriodAvg'] = aggregatePeriod * dailyVolAverage
                 else:
                     context['imports'][typeID]['aggPeriodAvg'] = 1
             else:
@@ -161,8 +169,9 @@ def show_imports():
             # print("--- item " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
 
         # TODO: Make this variable dependent on user input
-        context['pricePerM3'] = 450
-        context['collateralPercentage'] = 0.001
+        context['pricePerM3'] = 700
+        # TODO: Give as decimal not percent, change the variable name
+        context['collateralPercentage'] = 0.01
 
         # Get user defined brokers fee and transaction tax
         user_ref = db.reference('users').child(str(current_user.id))

@@ -107,5 +107,13 @@ df_marketGroups = pd.read_csv('temp/marketGroups.csv')
 # Create dict converting marketGroupID to a marketGroupName
 nameToID = pd.Series(df_marketGroups['marketGroupID'].values, index=df_marketGroups['marketGroupName']).to_dict()
 
+# Download and store historical market data. Soon, we can put this in a database and update once per day, for now download and update everything.
+# Basically, we know we will have a few high frequency regions that people query from. For me, it is The Kalevala Expanse and The Forge. Though if public, places like Delve might be more popular.
+# The aggregate stats only update once per day it seems, so we just need to maintain a database with all historical data, then update it once per day with the new line, just like with eyeonwater/edna data
+# For now it might make sense to just save entire JSON files, but eventually we could use some database for that.
+
+# print(invTypes.keys())
+
+
 with open('eveme/static/json/marketGroupsToIDs.json', 'w') as fp:
     json.dump(nameToID, fp, indent=4, sort_keys=True)
