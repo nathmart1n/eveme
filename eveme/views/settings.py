@@ -78,20 +78,28 @@ def structure_mod():
 
     user_ref = db.reference('users/' + current_user.id)
     userStructs = user_ref.child('structureAccess').get()
-    print(userStructs)
+    headers = eveme.helper.createHeaders(current_user.accessToken)
 
     if "deleteStruct" in flask.request.form.keys():
-        structName = eveme.helper.structNameFromID(flask.request.form['structureID'])
+        structId = flask.request.form.get('deleteId')
+        structName = eveme.helper.esiRequest('structNameFromId', structId, headers)['name']
         context['structToDelete'] = structName
-        userStructs.pop(flask.request.form['deleteStruct'])
+        userStructs.pop(structId)
         user_ref.child('structureAccess').set(userStructs)
     else:
-        structName = eveme.helper.structNameFromID(flask.request.form['structureID'])
-        if structName:
-            userStructs[flask.request.form['structureID']] = structName
-            context['newStruct'] = structName
-            user_ref.child('structureAccess').set(userStructs)
+        if flask.request.form['structureID'] == None:
+            if flask.request.form['structureID'] in userStructs.keys():
+                context['error'] = 'REPEAT'
+            else:
+                try:
+                    structName = eveme.helper.esiRequest('structNameFromId', flask.request.form['structureID'], headers)['name']
+                    if structName:
+                        userStructs[flask.request.form['structureID']] = structName
+                        context['newStruct'] = structName
+                        user_ref.child('structureAccess').set(userStructs)
+                except Exception as e:
+                    context['error'] = 'INVALID'
         else:
-            context['newStruct'] = 'NONE'
+            context['error'] = 'NONE'
     print("--- structure_mod() took %s seconds ---" % (time.time() - start_time))
     return flask.render_template("structures.html", context=context)

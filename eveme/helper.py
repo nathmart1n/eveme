@@ -43,6 +43,7 @@ def esiRequest(requestType, variable, charHeaders=None):
         'stationInfo': "https://esi.evetech.net/latest/universe/stations/{}/".format(variable),
         'systemInfo': "https://esi.evetech.net/latest/universe/systems/{}/".format(variable),
         'constellationInfo': "https://esi.evetech.net/latest/universe/constellations/{}/".format(variable),
+        'structNameFromId': "https://esi.evetech.net/latest/universe/structures/{}/".format(variable)
     }
 
     if charHeaders:
@@ -340,21 +341,3 @@ def send_token_request(form_values, add_headers={}):
     res.raise_for_status()
     print("--- send_token_request() with took %s seconds ---" % (time.time() - start_time))
     return res
-
-
-def structNameFromID(structID):
-    """Gets structure name given ID.
-
-    Args:
-        structID: A given structure ID
-    Returns:
-        structName: A string containing the structure name, returns NONE if doesn't exist
-    """
-    start_time = time.time()
-
-    res = requests.get("https://esi.evetech.net/latest/universe/structures/{}/".format(structID))
-
-    if res.status_code == 200:
-        return res.json()['name']
-    else:
-        return None

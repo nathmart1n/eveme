@@ -76,25 +76,19 @@ Settings
     <div class="d-flex flex-column mb-2 justify-content-center">
         <div class="text-center">
             <h3>Structure Modification</h3>
-            <p>Select "Add Structure" to add a new one, otherwise select your structure below to modify/delete it.</p>
+            <p>Select "Add Structure" to add a new one, otherwise select your structure below to delete it.</p>
         </div>
         {% if context.structureAccess %}
         <div>
             <form class="form-center" action="{{ url_for('structure_mod') }}" method="POST">
                 <div class="form-group row justify-content-center">
                     <div class="col-sm-6">
-                        <select onchange="displayDivDemo(this)" class="form-select" id="tradeRoute" aria-label="Default select example">
+                        <select onchange="displayDivDemo(this)" class="form-select" name="deleteId" aria-label="Default select example">
                             <option value="add">Add Structure</option>
                             {% for key, value in context.structureAccess.items() %}
                             <option value="{{key}}">{{value}}</option>
                             {% endfor %}
                         </select>
-                    </div>
-                </div>
-                <div id="updateOld" style="display: none;" class="form-group row justify-content-sm-left">
-                    <div class="mb-1">
-                        <input class="form-check-input" type="checkbox" name="deleteStruct" value="DELETE" id="deleteStructure">
-                        <label class="form-check-label" for="deleteStruct">Delete Structure</label>
                     </div>
                 </div>
                 <div id="createNew" class="row mb-2 justify-content-center text-center">
@@ -103,9 +97,14 @@ Settings
                         <input id="structureID" type="text" class="form-control" name="structureID" placeholder="Structure ID" aria-label="Structure ID">
                     </div>
                 </div>
-                <div class="row text-center">
+                <div id="add" class="row text-center">
                     <div class="col">
-                        <button type="submit" class="btn btn-primary"> Update </button>
+                        <button type="submit" class="btn btn-primary"> Add </button>
+                    </div>
+                </div>
+                <div id="delete" style="display: none;" class="row text-center">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary"> Delete </button>
                     </div>
                 </div>
             </form>

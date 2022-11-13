@@ -4,12 +4,18 @@ Structures
 {% endblock %}
 {% block content %}
 <div class="container-fluid mb-2 mt-2 text-center">
-    {% if context.newStruct == 'NONE' %}
-        <p>Structure not found in your access list! Please double check you input the correct structure ID, if it was correct, you already deleted it!</p>
-    {% elif context.structToDelete %}
-        <p>{{context.structToDelete}}</p>
+    {% if context.structToDelete %}
+        <p>{{context.structToDelete}} deleted.</p>
+    {% elif context.error %}
+        {% if context.error == 'REPEAT' %}
+            <p>This structure already exists.</p>
+        {% elif context.error == 'INVALID' %}
+            <p>Invalid structure ID! Please double check it.</p>
+        {% elif context.error == 'NONE' %}
+            <p>No structure entered!</p>
+        {% endif %}
     {% elif context.newStruct %}
-        <p>{{context.newStruct}}</p>
+        <p>{{context.newStruct}} added.</p>
     {% else %}
         <p>Nothing selected!</p>
     {% endif %}
