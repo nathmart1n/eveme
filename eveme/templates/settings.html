@@ -46,6 +46,24 @@ Settings
                         <input id="salesTax" type="text" class="form-control" name="transactionTax" placeholder="Sales Tax %" aria-label="Sales Tax %">
                     </div>
                 </div>
+                <div class="row mb-2 justify-content-center">
+                    <div class="col col-md-4">
+                        {% if context.iskm3 %}
+                        <label for="iskm3" class="mb-1">Current ISK/m3: {{context.iskm3}}</label>
+                        {% else %}
+                        <label for="iskm3" class="mb-1">Current ISK/m3: <span style="color: red;">Not Set</span></label>
+                        {% endif %}
+                        <input id="iskm3" type="text" class="form-control" name="iskm3" placeholder="ISK/m3" aria-label="ISK/m3">
+                    </div>
+                    <div class="col col-md-4">
+                        {% if context.collateralPercent %}
+                        <label for="collateralPercent" class="mb-1">Current Collateral %: {{context.collateralPercent}}%</label>
+                        {% else %}
+                        <label for="collateralPercent" class="mb-1">Current Collateral %: <span style="color: red;">Not Set</span></label>
+                        {% endif %}
+                        <input id="collateralPercent" type="text" class="form-control" name="collateralPercent" placeholder="Current Collateral %" aria-label="Current Collateral %">
+                    </div>
+                </div>
                 <div class="row text-center">
                     <div class="col">
                         <button type="submit" class="btn btn-primary"> Update </button>

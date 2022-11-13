@@ -40,6 +40,14 @@ def show_settings():
             ref.update({
                 'transactionTax': float(flask.request.form['transactionTax'])
             })
+        if flask.request.form['iskm3'] != '':
+            ref.update({
+                'iskm3': float(flask.request.form['iskm3'])
+            })
+        if flask.request.form['collateralPercent'] != '':
+            ref.update({
+                'collateralPercent': float(flask.request.form['collateralPercent'])
+            })
 
     # Get user's broker fee and transaction tax if exist, otherwise leave field blank
     user_ref = db.reference('users/' + current_user.id)
@@ -49,6 +57,12 @@ def show_settings():
 
     if (user_ref.child('transactionTax').get()):
         context['transactionTax'] = user_ref.child('transactionTax').get()
+
+    if (user_ref.child('iskm3').get()):
+        context['iskm3'] = int(user_ref.child('iskm3').get())
+
+    if (user_ref.child('collateralPercent').get()):
+        context['collateralPercent'] = user_ref.child('collateralPercent').get()
 
     context['structureAccess'] = user_ref.child('structureAccess').get()
 

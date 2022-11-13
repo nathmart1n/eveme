@@ -167,7 +167,7 @@ Imports
         </thead>
         <tbody>
         {% for key, value in context.imports.items() %}
-            {% if (((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee - context.transactionTax) / 100)) < 0 %}
+            {% if (((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - (value.destoPrice * ((context.brokerFee + context.transactionTax) / 100))) < 0 %}
             <tr class="table-warning">
             {% else %}
             <tr>
