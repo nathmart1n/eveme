@@ -144,7 +144,7 @@ def updateUserOrders():
     user_info = {
         'buyOrders': {},
         'sellOrders': {},
-        'structureAccess': [],
+        'structureAccess': db.reference('users/'+current_user.id+'/structureAccess').get(),
     }
 
     if orders:
@@ -168,14 +168,9 @@ def updateUserOrders():
             structureOrdersQuery = ("https://esi.evetech.net/latest/markets/structures"
                                     "/{}/".format(structureID))
             res = requests.get(structureOrdersQuery, headers=headers)
-            if res.status_code == 200:
-                validStructs[structureID] = structuresChecked[structureID]
-        user_info['structureAccess'] = validStructs
-    else:
-        # If there are no orders pop these fields so we dont have errors with Jinja
-        user_info.pop('buyOrders')
-        user_info.pop('sellOrders')
-        user_info.pop('structureAccess')
+            if res.status_code == 200 and structureID not in user_info['structureAccess']:
+                user_info['structureAccess'][structureID] = structuresChecked[structureID]
+        
 
     User.update(user_info, current_user.id)
     print("--- updateUserOrders() took %s seconds ---" % (time.time() - start_time))
@@ -352,8 +347,10 @@ def structNameFromID(structID):
     """
     start_time = time.time()
 
-    res = requests.get("https://esi.evetech.net/latest/universe/structures/{}/".format(structID))
+    headers = createHeaders(current_user.accessToken)
 
+    res = requests.get("https://esi.evetech.net/latest/universe/structures/{}/?datasource=tranquility".format(structID), headers=headers)
+    print(res.content)
     if res.status_code == 200:
         return res.json()['name']
     else:

@@ -94,7 +94,28 @@ Settings
         </div>
         {% else %}
         <div class="text-center">
-            <p>You have no structures added! Refresh your user orders after putting up at least one market order in a station you have market access.</p>
+            <p>You have no structures added! Refresh your user orders after putting up at least one market order in a station you have market access, or add the structure ID below.</p>
+
+            <form class="form-center" action="{{ url_for('structure_mod') }}" method="POST">
+                <div class="form-group row justify-content-center">
+                    <div class="col-sm-6">
+                        <select onchange="displayDivDemo(this)" class="form-select" id="tradeRoute" aria-label="Default select example">
+                            <option value="add">Add Structure</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="createNew" class="row mb-2 justify-content-center text-center">
+                    <p>Please input the structure ID you would like to add (this can be found by exporting your market orders you have and looking in the .txt file)</p>
+                    <div class="col col-md-4">
+                        <input id="structureID" type="text" class="form-control" name="structureID" placeholder="Structure ID" aria-label="Structure ID">
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary"> Update </button>
+                    </div>
+                </div>
+            </form>
         </div>
         {% endif %}
     </div>

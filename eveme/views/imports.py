@@ -169,7 +169,7 @@ def show_imports():
             # print("--- item " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
 
         # TODO: Make this variable dependent on user input
-        context['pricePerM3'] = 700
+        context['pricePerM3'] = 300
         # TODO: Give as decimal not percent, change the variable name
         context['collateralPercentage'] = 0.01
 

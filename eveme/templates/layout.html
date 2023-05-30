@@ -43,6 +43,7 @@
                                 <li><a class="dropdown-item" href="{{ url_for('character', char_id=current_user.id) }}">Profile</a></li>
                                 <li><a class="dropdown-item" href="{{ url_for('show_orders') }}">Market Orders</a></li>
                                 <li><a class="dropdown-item" href="{{ url_for('show_imports') }}">Imports</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for('show_station_trading') }}">Station Trading</a></li>
                                 <li><a class="dropdown-item" href="{{ url_for('show_settings') }}">Settings</a></li>
                             </ul>
                         </li>
@@ -64,7 +65,7 @@
             {% endblock %}
             <hr/>
             <footer>
-                <p>© 2021</p>
+                <p>© 2023</p>
             </footer>
         </div>
         <!-- JavaScript Bundle with Popper -->

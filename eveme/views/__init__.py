@@ -8,3 +8,4 @@ from eveme.views.settings import show_settings, structure_mod
 from eveme.views.orders import show_orders
 from eveme.views.character import character
 from eveme.views.imports import show_imports
+from eveme.views.station_trading import show_station_trading

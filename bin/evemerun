@@ -17,6 +17,7 @@ set -x
 # then ./bin/evemedb create
 # fi ;
 
+python scripts/updateStaticFiles.py 
 
 export FLASK_ENV=development
 export FLASK_APP=eveme

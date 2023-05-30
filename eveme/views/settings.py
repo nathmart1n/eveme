@@ -63,18 +63,20 @@ def structure_mod():
     context = {}
 
     user_ref = db.reference('users/' + current_user.id)
+    inputStructureId = flask.request.form['structureID']
     userStructs = user_ref.child('structureAccess').get()
-    print(userStructs)
+    if userStructs is None:
+        userStructs = {}
 
     if "deleteStruct" in flask.request.form.keys():
-        structName = eveme.helper.structNameFromID(flask.request.form['structureID'])
+        structName = eveme.helper.structNameFromID(inputStructureId)
         context['structToDelete'] = structName
         userStructs.pop(flask.request.form['deleteStruct'])
         user_ref.child('structureAccess').set(userStructs)
     else:
-        structName = eveme.helper.structNameFromID(flask.request.form['structureID'])
+        structName = eveme.helper.structNameFromID(inputStructureId)
         if structName:
-            userStructs[flask.request.form['structureID']] = structName
+            userStructs[inputStructureId] = structName
             context['newStruct'] = structName
             user_ref.child('structureAccess').set(userStructs)
         else:

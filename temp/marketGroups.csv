@@ -4,18 +4,18 @@ marketGroupID,parentGroupID,marketGroupName,description,iconID,hasTypes
 5,1361,Standard Frigates,"Small, fast vessels suited to a variety of purposes.",1443,0
 6,1367,Standard Cruisers,"The middle children of the starship industry, but not to be underestimated.",1443,0
 7,1376,Standard Battleships,The foundations of any respectable fighting force.,1443,0
-8,1382,Standard Industrial Ships,Built for the transportation of vast amounts of cargo.,1443,0
+8,1382,Standard Haulers,Built for the transportation of vast amounts of cargo.,1443,0
 9,None,Ship Equipment,"Equipment modules for spaceships, including many types of weapon, electronic, engineering, armor, shield and propulsion systems",1432,0
 10,9,Turrets & Launchers,Weapon systems to inflict damage on enemy targets,365,0
 11,None,Ammunition & Charges,"Ammunition for turret, missile and bomb systems can be found in this category, together with cap booster charges, mining crystals, probes, nanite repair paste and module scripts",1299,0
-14,9,Hull & Armor ,Modules that strengthen the physical frame of a spaceship against external dangers,68,0
+14,9,Hull & Armor,Modules that strengthen the physical frame of a spaceship against external dangers,68,0
 19,None,Trade Goods,"Many unusual goods are traded by capsuleers, including various tags, chips, tokens, charters and tools that are used in special activities or have exchange value with non-capsuleers",2340,0
 20,19,Industrial Goods,Various products used in a variety of industries,1192,1
 22,19,Radioactive Goods,"Chemicals and waste, pulsing with radiation. Can be bought and sold for profit",29,1
 23,19,Passengers,Ferrying passengers can give a nice profit,2543,1
 24,None,Implants & Boosters,"Capsuleers have several options for modifying their personal capabilities, including cybernetic implants and biochemical boosters",2563,0
 27,24,Implants,Implants improve a pilot's performance in various areas. They cannot be removed once inserted,2062,0
-52,9,Propulsion ,Modules that affect the navigational properties of a spaceship,72,0
+52,9,Propulsion,Modules that affect the navigational properties of a spaceship,72,0
 54,1031,Standard Ores,Chunks of raw material harvested from asteroids.,1277,0
 61,5,Caldari,Caldari frigate designs.,20966,1
 64,5,Minmatar,Minmatar frigate designs.,20968,1
@@ -39,7 +39,7 @@ marketGroupID,parentGroupID,marketGroupName,description,iconID,hasTypes
 88,10,Energy Turrets,Laser turrets are built to house beam and pulse lasers.,352,0
 99,11,Projectile Ammo,"Metal-cased shells, fired by artillery guns and autocannons",1004,0
 100,11,Hybrid Charges,Charges with a plasma core designed for railguns and blasters,1047,0
-101,11,Frequency Crystals,Modulate energy into several different frequencies for beam lasers and pulse lasers ,1131,0
+101,11,Frequency Crystals,Modulate energy into several different frequencies for beam lasers and pulse lasers,1131,0
 102,851,Small,"Small frequency crystals, for use with frigate-sized lasers.",1142,1
 103,851,Medium,"Medium frequency crystals, for use with cruiser-sized lasers.",1142,1
 105,851,Large,"Large frequency crystals, for use with battleship-sized lasers.",1142,1
@@ -74,12 +74,12 @@ marketGroupID,parentGroupID,marketGroupName,description,iconID,hasTypes
 205,204,Frigates,Blueprints of frigate-class vessels.,2703,0
 206,204,Cruisers,Blueprints of cruiser-class vessels.,2703,0
 207,204,Battleships,Blueprints of battleship-class vessels.,2703,0
-208,204,Industrial Ships,Blueprints of industrial-class vessels.,2703,0
+208,204,Haulers,Blueprints of haulers,2703,0
 209,2,Ship Equipment,Blueprints of modules and equipment for capsuleer spaceships,2703,0
 210,209,Turrets & Bays,Blueprints of weapons systems for capsule-fitted vessels.,2703,0
 211,2,Ammunition & Charges,Blueprints of ammunition and charges,2703,0
-214,209,Hull & Armor ,Blueprints of hull and armor systems.,2703,0
-252,209,Propulsion ,Blueprints of propulsion systems.,2703,0
+214,209,Hull & Armor,Blueprints of hull and armor systems.,2703,0
+252,209,Propulsion,Blueprints of propulsion systems.,2703,0
 261,205,Caldari,Blueprints of Caldari frigate designs.,2703,1
 264,205,Minmatar,Blueprints of Minmatar frigate designs.,2703,1
 272,205,Amarr,Blueprints of Amarr frigate designs.,2703,1
@@ -169,7 +169,7 @@ marketGroupID,parentGroupID,marketGroupName,description,iconID,hasTypes
 402,399,Gallente,Gallente interceptor designs.,20967,1
 403,399,Minmatar,Minmatar interceptor designs.,20968,1
 404,477,Deployable Structures,Various structures that can be deployed on behalf of an individual or group of capsuleers,16,0
-405,404,Warp Disruption Fields ,Trap a fly in your web.,16,1
+405,404,Warp Disruption Fields,Trap a fly in your web.,16,1
 406,1338,Deployable Structures,Blueprints of deployable structures.,2703,0
 407,406,Warp Disruption Fields,Blueprints of Warp disruption fields.,2703,1
 408,204,Interceptors,Blueprints of interceptor-class vessels.,2703,0
@@ -240,7 +240,7 @@ marketGroupID,parentGroupID,marketGroupName,description,iconID,hasTypes
 480,1285,Weapon Batteries,Stationary weapon batteries for starbase defense.,2222,0
 481,480,Electronic Warfare Batteries,Batteries providing electronic countermeasures for starbase defense.,2222,1
 482,1285,Reprocessing Arrays,Anchorable reprocessing structures.,2222,1
-483,1285,Silos,"For storing or providing resources, or regulating material flow in industrial processes. ",2222,1
+483,1285,Silos,"For storing or providing resources, or regulating material flow in industrial processes.",2222,1
 484,1285,Ship Maintenance Arrays,Mobile hangar and fitting structures.,2222,1
 485,1285,Shield Hardening Arrays,Anchorable structures for the boosting of a control tower's shield resistances.,2222,1
 488,1285,Moon Harvesting Arrays,Deployable arrays designed to gather minerals from moons.,2222,1
@@ -263,10 +263,8 @@ marketGroupID,parentGroupID,marketGroupName,description,iconID,hasTypes
 515,54,Pyroxeres,Sub-types of Pyroxeres ore.,231,1
 516,54,Plagioclase,Sub-types of plagioclase ore.,230,1
 517,54,Spodumain,Sub-types of spodumain ore.,1274,1
-518,54,Veldspar,"Sub-types of veldspar ore.
- ",232,1
-519,54,Scordite,"Sub-types of scordite ore.
-",1356,1
+518,54,Veldspar,Sub-types of veldspar ore.,232,1
+519,54,Scordite,Sub-types of scordite ore.,1356,1
 521,54,Crokite,Sub-types of crokite ore.,1272,1
 522,54,Dark Ochre,Sub-types of dark ochre ore.,1275,1
 523,54,Kernite,Sub-types of kernite ore.,1270,1
@@ -347,7 +345,7 @@ marketGroupID,parentGroupID,marketGroupName,description,iconID,hasTypes
 612,552,Extra Large,Supercharged shield boosting units for advanced battleship pilots.,84,1
 613,552,Boost Amplifiers,Focus and amplify the efficiency of shield boosting modules.,84,1
 614,19,Criminal Evidence,Proof positive of a bounty hunter's job well done,2302,0
-615,14,Damage Controls,Containment field emitters and redundancy systems for prevention of critical system damage. ,77,1
+615,14,Damage Controls,Containment field emitters and redundancy systems for prevention of critical system damage.,77,1
 616,19,Insignias,"DNA-imprinted personal insignias, used by empire navies. Transport with caution",2552,0
 617,314,XL Torpedoes,Blueprints of XL torpedoes.,2703,1
 618,532,Implant Slot 01,Implants intended for Subcervical Processing Slot 1.,2062,1
@@ -523,7 +521,7 @@ marketGroupID,parentGroupID,marketGroupName,description,iconID,hasTypes
 821,817,Minmatar,Minmatar carrier designs.,20968,1
 822,1375,Command Ships,"Battlecruiser-class vessels, designed to aid their allies on the battlefield.",1443,0
 823,1373,Interdictors,Destroyer-class vessels designed to pull other starships out of warp.,1443,0
-824,1368,Recon Ships,Cruisers specialized in reconaissance operations and electronic warfare.,1443,0
+824,1368,Recon Ships,Cruisers specialized in reconnaissance operations and electronic warfare.,1443,0
 825,822,Amarr,Amarr command ship designs.,20959,1
 826,823,Amarr,Amarr interdictor designs.,20959,1
 827,824,Amarr,Amarr recon ship designs.,20959,1
@@ -684,7 +682,7 @@ Mutaplasmids that permanently alter a module's attributes",2887,0
 1008,406,Cargo Containers,Blueprints of Cargo Containers.,2703,1
 1009,480,Energy Neutralization Batteries,A starbase array designed to neutralize the capacitor of hostile ships in the area.,2222,1
 1010,1285,System Scanning Array,A system-wide intelligence gathering array.,2222,1
-1011,1285,Jump Bridge ,"A bridge of light, spanning the cold and empty void between the stars.",2222,1
+1011,1285,Jump Bridge,"A bridge of light, spanning the cold and empty void between the stars.",2222,1
 1012,1285,Cynosural System Jammer,The lock and key to a system's highway of cynosural passage.,2222,1
 1013,1285,Cynosural Generator Array,"A lighthouse in the sea of nothing, casting its cynosural light out to far-off ships.",2222,1
 1014,10,Bomb Launchers,"Large launchers, designed for stealth bombers for bomb deployment.",2677,1
@@ -712,7 +710,7 @@ Mutaplasmids that permanently alter a module's attributes",2887,0
 1046,1045,ORE,Blueprints of ORE Capital Industrial Ship designs.,2703,1
 1047,1381,Capital Industrial Ships,Capital ships designed to be the industrial backbone of any fleet.,1443,0
 1048,1047,ORE,ORE capital industrial ship designs.,1443,1
-1049,134,Small ,"Armor repair designs, intended for frigate-class vessels.",80,1
+1049,134,Small,"Armor repair designs, intended for frigate-class vessels.",80,1
 1050,134,Medium,"Armor repair designs, intended for cruiser-class vessels.",80,1
 1051,134,Large,"Armor repair designs, intended for battleship-class vessels.",80,1
 1052,134,Capital,"Armor repair designs, intended for capital-class vessels.",80,1
@@ -922,9 +920,9 @@ Mutaplasmids that permanently alter a module's attributes",2887,0
 1379,1378,Navy Faction,Navy faction battleship designs.,1443,1
 1380,1378,Pirate Faction,Pirate faction battleship designs.,1443,1
 1381,4,Capital Ships,Huge spaceships capable of dominating battlefields or industry sectors,1443,0
-1382,4,Industrial Ships,Large transport ships that form the backbone of the economy,1443,0
+1382,4,Haulers and Industrial Ships,Haulers and industrial ships that form the backbone of the economy,1443,0
 1384,4,Mining Barges,Ships specially designed to harvest resources in space,1443,0
-1385,1382,Advanced Industrial Ships,Advanced industrial ships are specially modified for specific purposes.,1443,0
+1385,1382,Advanced Haulers,Advanced haulers are modified for specific purposes.,1443,0
 1389,208,ORE,Blueprints of ORE industrial designs.,2703,1
 1390,8,ORE,ORE industrial designs.,1443,1
 1392,817,Faction Carrier,Faction carrier designs.,1443,1
@@ -933,14 +931,14 @@ Mutaplasmids that permanently alter a module's attributes",2887,0
 1398,1397,Tops,Clothing worn on the torso.,10785,1
 1399,1397,Outerwear,Clothing worn on the outside of other clothing.,10236,1
 1400,1397,Footwear,"Garments worn on the feet, for fashion, protection against the environment, and adornment.",10254,1
-1401,1397,Bottoms,Any of various garments worn below the waist. ,10756,1
+1401,1397,Bottoms,Any of various garments worn below the waist.,10756,1
 1402,1396,Women's Clothing,Clothing for a feminine physique,10830,0
 1403,1402,Bottoms,Any of various garments worn below the waist.,10570,1
 1404,1402,Footwear,"Garments worn on the feet, for fashion, protection against the environment, and adornment.",10624,1
 1405,1402,Outerwear,Clothing worn on the outside of other clothing.,10234,1
 1406,1402,Tops,Clothing worn on the torso.,10684,1
 1407,1396,Accessories,Apparel items that supplement an outfit by adding style and class,10828,0
-1408,1407,Eyewear,Eyewear is almost exclusively used for vanity purposes given advances in modern cyberware that renders externally mounted hardware obsolete.  ,10224,1
+1408,1407,Eyewear,Eyewear is almost exclusively used for vanity purposes given advances in modern cyberware that renders externally mounted hardware obsolete.,10224,1
 1410,1320,Orbital Infrastructure,Gives capsuleers stronger control over a planet's resources,2875,1
 1416,535,Reactive Armor Hardeners,Armor Hardeners that shift resistance based on damaged received.,10933,1
 1426,657,Signature Suppressor,Reduces the ships signature.,10932,1
@@ -1380,7 +1378,7 @@ Mutaplasmids that permanently alter a module's attributes",2887,0
 2003,2001,Caldari,,20966,1
 2004,2001,Gallente,,20967,1
 2005,2001,Minmatar,,20968,1
-2006,1954,Industrial Ships,,21420,0
+2006,1954,Haulers and Industrial Ships,,21420,0
 2007,2085,Amarr,,20959,1
 2008,2085,Caldari,,20966,1
 2009,2085,Gallente,,20967,1
@@ -1458,8 +1456,8 @@ Mutaplasmids that permanently alter a module's attributes",2887,0
 2082,2068,Caldari,,20966,1
 2083,2068,Gallente,,20967,1
 2084,2068,Minmatar,,20968,1
-2085,2006,Standard Industrial Ships,,21420,0
-2086,2006,Advanced Industrial Ships,,21420,0
+2085,2006,Standard Haulers,,21420,0
+2086,2006,Advanced Haulers,,21420,0
 2087,2086,Transport Ships,,21420,0
 2088,2087,Amarr,,20959,1
 2089,2087,Caldari,,20966,1
@@ -1644,7 +1642,7 @@ Mutaplasmids that permanently alter a module's attributes",2887,0
 2285,2283,Capsules,,21420,1
 2286,2283,Special Edition Capsules,,21420,1
 2287,812,Faction Titans,Faction Titan designs.,1443,1
-2288,761,Faction Dreadnoughts,Faction Dreadnought designs.,1443,1
+2288,761,Faction Dreadnoughts,Faction Dreadnought designs.,1443,0
 2290,211,Command Burst Charges,Command Burst Charges,2703,0
 2291,2290,Armor Command Burst Charges,Armor Command Burst Charges,2703,1
 2292,2290,Information Command Burst Charges,Information Command Burst Charges,2703,1
@@ -1679,7 +1677,7 @@ Mutaplasmids that permanently alter a module's attributes",2887,0
 2325,912,ORE,,2934,1
 2327,477,Refineries,,2222,1
 2328,2085,ORE,,1443,1
-2330,2006,Special Edition Industrial Ships,,21420,0
+2330,2006,Special Edition Haulers,,21420,0
 2331,2330,ORE,,None,1
 2332,2210,Engineering Service Modules,,3007,1
 2333,204,Industrial Command Ships,Blueprints of industrial command ships,2703,0
@@ -1871,7 +1869,7 @@ Mutaplasmids that permanently alter a module's attributes",2887,0
 2539,54,Rakovene,Rakovene,24144,1
 2540,54,Talassonite,Talassonite,24136,1
 2658,65,Triglavian,Advanced Components of Triglavian origin.,24135,1
-2690,761,Precursor Dreadnoughts,Triglavian Dreadnoughts,24135,1
+2690,761,Triglavian,Triglavian Dreadnoughts,24135,1
 2691,2432,Extra Large,"Capital ship entropic disintegrators, for use on dreadnoughts and titans.",24237,1
 2692,2463,Extra Large,For use with dreadnought-sized entropic disintegrators.,21918,1
 2693,1883,Triglavian,,24135,1
@@ -1929,3 +1927,27 @@ Mutaplasmids that permanently alter a module's attributes",2887,0
 2805,593,Moon Mining Crystals,Frequency crystals custom-cut for different moon ore types,25021,1
 2806,753,Asteroid Mining Crystals,,2703,1
 2807,753,Moon Mining Crystals,,2703,1
+2814,1032,Compressed Gas,,25169,1
+2815,9,Compressors,,25152,1
+2816,209,Compressor Blueprints,,2703,1
+2819,1612,Special Edition Electronic Attack Frigates,Electronic Attack Frigates which have been offered to capsuleers on occasion for limited periods.,1443,1
+2820,11,Structure Area Denial Ammunition,"Area denial ammunition, fired by structure defense systems.",1004,1
+2821,211,Structure Area Denial Ammunition,Blueprints of area denial ammunition.,2703,1
+3450,404,Mobile Strategic Objectives,,16,1
+3451,406,Mobile Strategic Objectives,Blueprints for Mobile Objectives,2703,0
+3453,1897,Amarr Empire,Materials used in the construction of specific factional equipment.,1436,1
+3454,1897,Minmatar Republic,Materials used in the construction of specific factional equipment.,1436,1
+3455,1897,Caldari State,Materials used in the construction of specific factional equipment.,1436,1
+3456,1897,Gallente Federation,Materials used in the construction of specific factional equipment.,1436,1
+3478,1407,Masks,,24411,1
+3480,1372,Faction Destroyers,Destroyers designed by specific factions.,1443,0
+3481,3480,Navy Faction,Navy faction destroyer designs.,1443,1
+3483,2288,Pirate Faction,Non-Empire faction dreadnought designs.,1443,1
+3484,2288,Navy Faction,Navy faction dreadnought designs.,1443,1
+3487,54,Mordunium,,15,1
+3488,54,Ytirium,,15,1
+3489,54,Eifyrium,,15,1
+3490,54,Ducinium,,15,1
+3495,2378,Navy Faction,,21420,1
+3496,1989,Faction Destroyers,,21420,0
+3497,3496,Navy Faction,,21420,1

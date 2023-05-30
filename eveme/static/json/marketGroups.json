@@ -1405,6 +1405,10 @@
             "45010": "Focused Warp Scrambling Script",
             "47336": "Standup Focused Warp Scrambling Script"
         },
+        "Structure Area Denial Ammunition": {
+            "-1": "2820",
+            "63195": "Standup Flak Round I"
+        },
         "Structure Guided Bombs": {
             "-1": "2198",
             "37849": "Standup Heavy Guided Bomb",
@@ -1488,7 +1492,9 @@
                 "50052": "Women's 'Amaranthine Divide' Facial Augmentation",
                 "52188": "Women's 'Eico Redwire XVI' Facial Augmentation",
                 "52189": "Men's 'Eico Redarc XVI' Facial Augmentation",
+                "53038": "Men's 'SteelKnight TorsoRig' Body Augmentation",
                 "53041": "Men's 'RubySet TorsoRig' Body Augmentation",
+                "53226": "Women's 'SteelKnight TorsoRig' Body Augmentation",
                 "53229": "Women's 'RubySet TorsoRig' Body Augmentation",
                 "53385": "Women's 'Oculina Carmina' Facial Augmentation",
                 "53386": "Women's 'Eico Auroralite' Facial Augmentation",
@@ -1496,10 +1502,6 @@
                 "53394": "Men's 'Oculina Carmina' Facial Augmentation",
                 "54926": "Men's 'Eico BioSec' Facial Augmentation",
                 "54927": "Women's 'Eico BioSec' Facial Augmentation",
-                "55006": "Men's 'Eico BioSec' Facial Augmentation (OLD)",
-                "55007": "Women's 'Eico BioSec' Facial Augmentation (OLD)",
-                "55014": "Men's 'Barbatus Medicus' Facial Augmentation (OLD)",
-                "55015": "Women's 'Purity Vector' Facial Augmentation (OLD)",
                 "55627": "Women's 'Purity Vector' Facial Augmentation",
                 "55636": "Men's 'Barbatus Medicus' Facial Augmentation",
                 "56854": "Women's 'Saikadori' Facial Augmentation",
@@ -1507,7 +1509,9 @@
                 "60163": "Men's 'Barbatus Semiotique' Facial Augmentation",
                 "60164": "Men's 'Semiotique TorsoRig' Body Augmentation",
                 "60169": "Women's 'Oculina Semiotique' Facial Augmentation",
-                "60170": "Women's 'Semiotique TorsoRig' Body Augmentation"
+                "60170": "Women's 'Semiotique TorsoRig' Body Augmentation",
+                "73436": "Men's 'Barbatus Rojo' Facial Augmentation",
+                "73437": "Women's 'Domino Rojo' Facial Augmentation"
             },
             "Eyewear": {
                 "-1": "1408",
@@ -1531,13 +1535,16 @@
                 "45745": "Men's 'Farsight' Augmented Spectacles",
                 "54965": "Women's BioCrystal Protective Glasses",
                 "54966": "Men's BioCrystal Protective Glasses",
-                "55005": "Women's BioCrystal Protective Glasses (OLD)",
                 "60160": "Men's 'Orb Semiotique' Synthetic Eye (right)",
                 "60165": "Men's 'Glass Semiotique' Monocle Interface (right)",
                 "60166": "Women's 'Orb Semiotique' Synthetic Eye (right)",
                 "60171": "Women's 'Glass Semiotique' Monocle Interface (right)",
                 "60639": "Men's Radioactives Reclamation Goggles",
-                "60645": "Women's Radioactives Reclamation Goggles"
+                "60645": "Women's Radioactives Reclamation Goggles",
+                "63058": "Men's 'Semiotique Superluminal' Shades",
+                "63061": "Women's 'Semiotique Superluminal' Shades",
+                "73424": "Women's Desert Nomad Goggles",
+                "73426": "Men's Desert Nomad Goggles"
             },
             "Headwear": {
                 "-1": "1943",
@@ -1609,10 +1616,6 @@
                 "54327": "Men's Capsuleer Day XVII Cap",
                 "54948": "Men's Project Discovery Cytometry Cap",
                 "54949": "Women's Project Discovery Cytometry Cap",
-                "55002": "Women's Biosecurity Response Team Mask (OLD)",
-                "55003": "Men's Biosecurity Response Team Mask (OLD)",
-                "55010": "Men's Project Discovery Cytometry Cap (OLD)",
-                "55011": "Women's Project Discovery Cytometry Cap (OLD)",
                 "55751": "Women's 'Imperial Loyalist' Beret",
                 "55752": "Women's 'State Protector' Beret",
                 "55753": "Women's 'Federal Defender' Beret",
@@ -1630,7 +1633,22 @@
                 "57074": "Men's Yoiul Stormchasers Cap",
                 "57079": "Women's Yoiul Stormchasers Cap",
                 "58767": "Men's Capsuleer Day XVIII Cap",
-                "58769": "Women's Capsuleer Day XVIII Cap"
+                "58769": "Women's Capsuleer Day XVIII Cap",
+                "64201": "Men's Minmatar 'Rebellion' Cap",
+                "64202": "Women's Minmatar 'Rebellion' Cap",
+                "64270": "Men's Minmatar 'Freedom Fighter' Cap",
+                "64271": "Women's Minmatar 'Freedom Fighter' Cap"
+            },
+            "Masks": {
+                "-1": "3478",
+                "54714": "Women's Biosecurity Response Team Mask",
+                "54715": "Women's SOE Enhanced Biosecurity Mask",
+                "54719": "Men's SOE Enhanced Biosecurity Mask",
+                "54830": "Men's Biosecurity Response Team Mask",
+                "63135": "Men's Proven Bioadaptive Mask",
+                "63138": "Women's Proven Bioadaptive Mask",
+                "73423": "Women's Desert Nomad Mask",
+                "73425": "Men's Desert Nomad Mask"
             },
             "Tattoos": {
                 "-1": "1822",
@@ -1678,6 +1696,10 @@
                 "40524": "Men's 'Mirelle' Pants (Upwell)",
                 "44124": "Men's YC119 Yoiul Festival Pants",
                 "54308": "Men's 'Fatal Elite' Combat Pants",
+                "54371": "Men's Obsidian Opulence Pants",
+                "54372": "Men's Azure Abundance Pants",
+                "54373": "Men's Tawny Treasure Pants",
+                "54374": "Men's Silver Supremacy Pants",
                 "54375": "Men's Rubedo Richesse Pants",
                 "54376": "Men's Albedo Affluence Pants",
                 "56849": "Men's Jita 4-4 Crew Pants",
@@ -1691,11 +1713,15 @@
                 "58952": "Men's Imperial Commander's Dress Pants",
                 "58953": "Men's Federation Commander's Dress Pants",
                 "58954": "Men's Republic Commander's Dress Pants",
+                "59179": "Men's 'Republic Valklear' Pants",
                 "59187": "Men's 'Federal Defender' Pants",
                 "59368": "Men's 'Imperial Loyalist' Pants",
                 "59406": "Men's 'State Protector' Pants",
                 "60161": "Men's 'Semiotique Sports' Pants",
-                "60432": "Men's 'Sanguine Harvest' Pants"
+                "60432": "Men's 'Sanguine Harvest' Pants",
+                "63054": "Men's 'Semiotique Superluminal' Pants",
+                "63114": "Men's Ace of Podhunters Pants",
+                "63748": "Men's Kimotoro Eskeitan Commander's Pants"
             },
             "Footwear": {
                 "-1": "1400",
@@ -1736,7 +1762,8 @@
                 "58827": "Men's Federation Stargate Crew Shoes",
                 "58828": "Men's Republic Stargate Crew Shoes",
                 "58829": "Men's 'Sanguine Harvest' Shoes",
-                "60162": "Men's 'Semiotique Sports' Shoes"
+                "60162": "Men's 'Semiotique Sports' Shoes",
+                "63113": "Men's Ace of Podhunters Boots"
             },
             "Outerwear": {
                 "-1": "1399",
@@ -1778,7 +1805,6 @@
                 "34348": "Men's 'Outlaw' Jacket (Sansha's Nation)",
                 "34349": "Men's 'Outlaw' Jacket (Guristas)",
                 "34393": "Men's 'Outlaw' Jacket (Burnt Orange)",
-                "37603": "Women's Sisters of EVE Advanced Combat Suit",
                 "37810": "Men's Genolution Combat Suit",
                 "37815": "Men's Sisters of EVE Advanced Combat Suit",
                 "37817": "Men's 'Curate' Coat (festive)",
@@ -1821,9 +1847,12 @@
                 "53382": "Men's Polar Aurora Exploration Suit",
                 "54177": "Men's DED Cryptologic Technician Coat",
                 "54307": "Men's 'Fatal Elite' Combat Jacket",
+                "54377": "Men's Obsidian Opulence Jacket",
+                "54378": "Men's Azure Abundance Jacket",
+                "54379": "Men's Tawny Treasure Jacket",
+                "54380": "Men's Silver Supremacy Jacket",
                 "54381": "Men's Rubedo Richesse Jacket",
                 "54382": "Men's Albedo Affluence Jacket",
-                "55012": "Men's Virtuality Biotechnician Coat (OLD)",
                 "55857": "Men's 'Proven Kybernaut' Combat Suit",
                 "55858": "Men's Triglavian Survival Suit (Proving Grounds)",
                 "56224": "Men's EDENCOM 'Valiant' Command Jacket",
@@ -1838,10 +1867,32 @@
                 "58934": "Men's Imperial Commander's Dress Jacket",
                 "58935": "Men's Federation Commander's Dress Jacket",
                 "58936": "Men's Republic Commander's Dress Jacket",
+                "59178": "Men's 'Republic Valklear' Jacket",
                 "59185": "Men's 'Federal Defender' Jacket",
                 "59366": "Men's 'Imperial Loyalist' Jacket",
                 "59405": "Men's 'State Protector' Jacket",
-                "60647": "Men's Radioactives Reclamation Suit"
+                "60647": "Men's Radioactives Reclamation Suit",
+                "61536": "Men's Paradoxical Scarf",
+                "61949": "Men's Proper Dapper Outfit",
+                "62750": "Men's AIR Claim Surveyor Suit",
+                "63051": "Men's 'Semiotique Superluminal' Jacket",
+                "63112": "Men's Ace of Podhunters Jacket",
+                "63246": "Men's Capsuleer Day XIX Hoodie",
+                "63253": "Men's Capsuleer Elite XIX Hoodie",
+                "63747": "Men's Kimotoro Eskeitan Commander's Jacket",
+                "63789": "Men's Grand Prix Racing Jacket",
+                "64196": "Men's 'Hyper' Racing Jacket",
+                "64379": "Men's Amarr Devotional Robe",
+                "64380": "Men's Amarr Courtly Robe",
+                "70838": "Men's Caldari Navy Crew Jacket",
+                "70839": "Men's Ishukone Crew Jacket",
+                "70840": "Men's CBD Corporation Crew Jacket",
+                "70841": "Men's Hyasyoda Crew Jacket",
+                "70842": "Men's Kaalakiota Crew Jacket",
+                "70843": "Men's Wiyrkomi Crew Jacket",
+                "70844": "Men's Lai Dai Crew Jacket",
+                "70845": "Men's Sukuuvestaa Crew Jacket",
+                "70846": "Men's Nugoeihuvi Crew Jacket"
             },
             "Tops": {
                 "-1": "1398",
@@ -1906,10 +1957,8 @@
                 "52200": "Men's Capsuleer Day XVI T-Shirt",
                 "53383": "Men's Aurora Universalis T-Shirt",
                 "54194": "Men's Frontier Safeguarder T-Shirt",
-                "54320": "Women's Capsuleer Day XVII T-Shirt",
                 "54328": "Men's Capsuleer Day XVII T-Shirt",
                 "54943": "Men's Project Discovery Cytometry T-Shirt",
-                "55009": "Men's Project Discovery Cytometry T-Shirt (OLD)",
                 "56147": "Men's EDENCOM 'Reliant' T-Shirt",
                 "56212": "Men's 'Kybernaut Clade' T-Shirt",
                 "56639": "Men's 'Crimson Harvest' T-Shirt",
@@ -1920,7 +1969,10 @@
                 "58814": "Men's State Stargate Crew Top",
                 "58815": "Men's Federation Stargate Crew Top",
                 "58816": "Men's Republic Stargate Crew Top",
-                "60435": "Men's 'Sanguine Harvest' T-Shirt"
+                "60435": "Men's 'Sanguine Harvest' T-Shirt",
+                "61533": "Men's Interstellar Convergence T-Shirt",
+                "64204": "Men's Minmatar 'Rebellion' T-Shirt",
+                "64268": "Men's Minmatar 'Freedom Fighter' T-Shirt"
             },
             "id": "1397"
         },
@@ -2006,6 +2058,10 @@
                 "42701": "Women's 'Excursion' Pants (Blood Raider)",
                 "44121": "Women's YC119 Yoiul Festival Pants",
                 "54306": "Women's 'Fatal Elite' Combat Pants",
+                "54365": "Women's Obsidian Opulence Pants",
+                "54366": "Women's Azure Abundance Pants",
+                "54367": "Women's Tawny Treasure Pants",
+                "54368": "Women's Silver Supremacy Pants",
                 "54369": "Women's Rubedo Richesse Pants",
                 "54370": "Women's Albedo Affluence Pants",
                 "56846": "Women's Jita 4-4 Crew Pants",
@@ -2019,11 +2075,15 @@
                 "58947": "Women's Imperial Commander's Dress Pants",
                 "58948": "Women's Federation Commander's Dress Pants",
                 "58949": "Women's Republic Commander's Dress Pants",
+                "59181": "Women's 'Republic Valklear' Pants",
                 "59198": "Women's 'Federal Defender' Pants",
                 "59370": "Women's 'Imperial Loyalist' Pants",
                 "59408": "Women's 'State Protector' Pants",
                 "60167": "Women's 'Semiotique Sports' Pants",
-                "60434": "Women's 'Sanguine Harvest' Pants"
+                "60434": "Women's 'Sanguine Harvest' Pants",
+                "63055": "Women's 'Semiotique Superluminal' Pants",
+                "63124": "Women's Ace of Podhunters Pants",
+                "63750": "Women's Kimotoro Eskeitan Commander's Pants"
             },
             "Bottoms, extras": {
                 "-1": "1944",
@@ -2097,7 +2157,8 @@
                 "58819": "Women's Federation Stargate Crew Shoes",
                 "58820": "Women's Republic Stargate Crew Shoes",
                 "58821": "Women's 'Sanguine Harvest' Shoes",
-                "60168": "Women's 'Semiotique Sports' Shoes"
+                "60168": "Women's 'Semiotique Sports' Shoes",
+                "63123": "Women's Ace of Podhunters Boots"
             },
             "Outerwear": {
                 "-1": "1405",
@@ -2163,6 +2224,7 @@
                 "34394": "Women's 'Outlaw' Coat (Burnt Orange)",
                 "37600": "Women's Genolution Combat Suit",
                 "37601": "Women's CONCORD 'Solitaire' Survival Suit",
+                "37603": "Women's Sisters of EVE Advanced Combat Suit",
                 "37816": "Women's 'Rocket' Dress (festive)",
                 "37863": "Women's Scope Network Special Correspondent Suit",
                 "40458": "Women's Biosecurity Response Team Coat",
@@ -2202,9 +2264,12 @@
                 "53357": "Women's Polar Aurora Exploration Suit",
                 "54158": "Women's DED Cryptologic Technician Coat",
                 "54299": "Women's 'Fatal Elite' Combat Jacket",
+                "54359": "Women's Obsidian Opulence Jacket",
+                "54360": "Women's Azure Abundance Jacket",
+                "54361": "Women's Tawny Treasure Jacket",
+                "54362": "Women's Silver Supremacy Jacket",
                 "54363": "Women's Rubedo Richesse Jacket",
                 "54364": "Women's Albedo Affluence Jacket",
-                "55013": "Women's Virtuality Biotechnician Coat (OLD)",
                 "55855": "Women's Triglavian Survival Suit (Proving Grounds)",
                 "55856": "Women's 'Proven Kybernaut' Combat Suit",
                 "56223": "Women's EDENCOM 'Valiant' Command Jacket",
@@ -2219,10 +2284,32 @@
                 "58942": "Women's Imperial Commander's Dress Jacket",
                 "58943": "Women's Federation Commander's Dress Jacket",
                 "58944": "Women's Republic Commander's Dress Jacket",
+                "59180": "Women's 'Republic Valklear' Jacket",
                 "59196": "Women's 'Federal Defender' Jacket",
                 "59367": "Women's 'Imperial Loyalist' Jacket",
                 "59407": "Women's 'State Protector' Jacket",
-                "60655": "Women's Radioactives Reclamation Suit"
+                "60655": "Women's Radioactives Reclamation Suit",
+                "61535": "Women's Paradoxical Scarf",
+                "61848": "Women's Proper Dapper Outfit",
+                "63052": "Women's 'Semiotique Superluminal' Jacket",
+                "63056": "Women's AIR Claim Surveyor Suit",
+                "63115": "Women's Ace of Podhunters Jacket",
+                "63257": "Women's Capsuleer Day XIX Hoodie",
+                "63260": "Women's Capsuleer Elite XIX Hoodie",
+                "63749": "Women's Kimotoro Eskeitan Commander's Jacket",
+                "63790": "Women's Grand Prix Racing Jacket",
+                "64195": "Women's 'Hyper' Racing Jacket",
+                "64377": "Women's Amarr Devotional Robe",
+                "64378": "Women's Amarr Courtly Robe",
+                "70847": "Women's Caldari Navy Crew Jacket",
+                "70848": "Women's Ishukone Crew Jacket",
+                "70849": "Women's CBD Corporation Crew Jacket",
+                "70850": "Women's Hyasyoda Crew Jacket",
+                "70851": "Women's Kaalakiota Crew Jacket",
+                "70852": "Women's Wiyrkomi Crew Jacket",
+                "70853": "Women's Lai Dai Crew Jacket",
+                "70854": "Women's Sukuuvestaa Crew Jacket",
+                "70855": "Women's Nugoeihuvi Crew Jacket"
             },
             "Tops": {
                 "-1": "1406",
@@ -2305,8 +2392,8 @@
                 "52198": "Women's Capsuleer Day XVI T-Shirt",
                 "53380": "Women's Aurora Universalis T-Shirt",
                 "54193": "Women's Frontier Safeguarder T-Shirt",
+                "54320": "Women's Capsuleer Day XVII T-Shirt",
                 "54944": "Women's Project Discovery Cytometry T-Shirt",
-                "55008": "Women's Project Discovery Cytometry T-Shirt (OLD)",
                 "56146": "Women's EDENCOM 'Reliant' T-Shirt",
                 "56211": "Women's 'Kybernaut Clade' T-Shirt",
                 "56636": "Women's 'Crimson Harvest' T-Shirt",
@@ -2317,7 +2404,10 @@
                 "58810": "Women's State Stargate Crew Top",
                 "58811": "Women's Federation Stargate Crew Top",
                 "58812": "Women's Republic Stargate Crew Top",
-                "60436": "Women's 'Sanguine Harvest' T-Shirt"
+                "60436": "Women's 'Sanguine Harvest' T-Shirt",
+                "61532": "Women's Interstellar Convergence T-Shirt",
+                "64203": "Women's Minmatar 'Rebellion' T-Shirt",
+                "64269": "Women's Minmatar 'Freedom Fighter' T-Shirt"
             },
             "id": "1402"
         },
@@ -2715,6 +2805,10 @@
                 "45011": "Focused Warp Scrambling Script Blueprint",
                 "47337": "Standup Focused Warp Scrambling Script Blueprint"
             },
+            "Structure Area Denial Ammunition": {
+                "-1": "2821",
+                "63196": "Standup Flak Round Blueprint"
+            },
             "Structure Guided Bombs": {
                 "-1": "2193",
                 "37858": "Standup Heavy Guided Bomb Blueprint",
@@ -2996,7 +3090,7 @@
                     "57519": "Genetic Safeguard Filter Blueprint",
                     "57520": "Neurolink Enhancer Reservoir Blueprint",
                     "57521": "Genetic Structure Repairer Blueprint",
-                    "57522": "Genetic Mutation Inhibiter Blueprint",
+                    "57522": "Genetic Mutation Inhibitor Blueprint",
                     "57523": "Life Support Backup Unit Blueprint"
                 },
                 "R.A.M.": {
@@ -3237,6 +3331,21 @@
             "id": "1849"
         },
         "Ship Equipment": {
+            "Compressor Blueprints": {
+                "-1": "2816",
+                "62652": "Medium Asteroid Ore Compressor I Blueprint",
+                "62669": "Large Asteroid Ore Compressor I Blueprint",
+                "62670": "Capital Asteroid Ore Compressor I Blueprint",
+                "62671": "Large Ice Compressor I Blueprint",
+                "62672": "Capital Ice Compressor I Blueprint",
+                "62673": "Medium Gas Compressor I Blueprint",
+                "62674": "Large Gas Compressor I Blueprint",
+                "62675": "Capital Gas Compressor I Blueprint",
+                "62676": "Large Mercoxit Compressor I Blueprint",
+                "62677": "Capital Mercoxit Compressor I Blueprint",
+                "62678": "Large Moon Ore Compressor I Blueprint",
+                "62679": "Capital Moon Ore Compressor I Blueprint"
+            },
             "Drone Upgrades": {
                 "-1": "939",
                 "4394": "Drone Damage Amplifier I Blueprint",
@@ -3454,7 +3563,8 @@
                 "43547": "Armor Command Burst I Blueprint",
                 "43548": "Information Command Burst I Blueprint",
                 "52695": "Industrial Cynosural Field Generator Blueprint",
-                "56734": "Tactical Capsuleer Recloner Blueprint"
+                "56734": "Tactical Capsuleer Recloner Blueprint",
+                "63164": "Industrial Jump Portal Generator I Blueprint"
             },
             "Harvest Equipment": {
                 "Mining Lasers": {
@@ -3479,7 +3589,7 @@
                 },
                 "id": "1711"
             },
-            "Hull & Armor ": {
+            "Hull & Armor": {
                 "Armor Coatings": {
                     "-1": "1544",
                     "1204": "EM Coating I Blueprint",
@@ -3575,7 +3685,7 @@
                 },
                 "id": "214"
             },
-            "Propulsion ": {
+            "Propulsion": {
                 "Afterburners": {
                     "-1": "1525",
                     "1072": "1MN Afterburner I Blueprint",
@@ -3609,7 +3719,7 @@
                     "11613": "Warp Core Stabilizer I Blueprint",
                     "58955": "Interdiction Nullifier I Blueprint",
                     "58973": "Compact Interdiction Nullifier Blueprint",
-                    "58974": "Restrained Interdiction Nullifier Blueprint",
+                    "58974": "Enduring Interdiction Nullifier Blueprint",
                     "58975": "Interdiction Nullifier II Blueprint"
                 },
                 "id": "252"
@@ -3942,7 +4052,8 @@
                     "48095": "Entropic Radiation Sink I Blueprint",
                     "49971": "ML-EKP 'Polybolos' Ballistic Control System Blueprint",
                     "52245": "Veles Entropic Radiation Sink Blueprint",
-                    "59171": "Large Industrial Core I Blueprint"
+                    "59171": "Large Industrial Core I Blueprint",
+                    "62592": "Medium Industrial Core I Blueprint"
                 },
                 "id": "210"
             },
@@ -4793,6 +4904,37 @@
                 },
                 "id": "205"
             },
+            "Haulers": {
+                "Amarr": {
+                    "-1": "285",
+                    "1945": "Bestower Blueprint",
+                    "19745": "Sigil Blueprint"
+                },
+                "Caldari": {
+                    "-1": "284",
+                    "983": "Badger Blueprint",
+                    "984": "Tayra Blueprint"
+                },
+                "Gallente": {
+                    "-1": "283",
+                    "985": "Nereus Blueprint",
+                    "989": "Kryos Blueprint",
+                    "990": "Epithal Blueprint",
+                    "991": "Miasmos Blueprint",
+                    "992": "Iteron Mark V Blueprint"
+                },
+                "Minmatar": {
+                    "-1": "282",
+                    "986": "Hoarder Blueprint",
+                    "987": "Mammoth Blueprint",
+                    "988": "Wreathe Blueprint"
+                },
+                "ORE": {
+                    "-1": "1389",
+                    "3039": "Noctis Blueprint"
+                },
+                "id": "208"
+            },
             "Heavy Assault Cruisers": {
                 "Amarr": {
                     "-1": "454",
@@ -4823,37 +4965,6 @@
                     "43910": "Porpoise Blueprint"
                 },
                 "id": "2333"
-            },
-            "Industrial Ships": {
-                "Amarr": {
-                    "-1": "285",
-                    "1945": "Bestower Blueprint",
-                    "19745": "Sigil Blueprint"
-                },
-                "Caldari": {
-                    "-1": "284",
-                    "983": "Badger Blueprint",
-                    "984": "Tayra Blueprint"
-                },
-                "Gallente": {
-                    "-1": "283",
-                    "985": "Nereus Blueprint",
-                    "989": "Kryos Blueprint",
-                    "990": "Epithal Blueprint",
-                    "991": "Miasmos Blueprint",
-                    "992": "Iteron Mark V Blueprint"
-                },
-                "Minmatar": {
-                    "-1": "282",
-                    "986": "Hoarder Blueprint",
-                    "987": "Mammoth Blueprint",
-                    "988": "Wreathe Blueprint"
-                },
-                "ORE": {
-                    "-1": "1389",
-                    "3039": "Noctis Blueprint"
-                },
-                "id": "208"
             },
             "Interceptors": {
                 "Amarr": {
@@ -5318,6 +5429,9 @@
                 },
                 "Mobile Siphon Units": {
                     "-1": "1834"
+                },
+                "Mobile Strategic Objectives": {
+                    "-1": "3451"
                 },
                 "Mobile Tractor Units": {
                     "-1": "1830",
@@ -5881,8 +5995,7 @@
                     "46001": "Agency 'Hardshell' TB3 Dose I",
                     "46002": "Agency 'Hardshell' TB5 Dose II",
                     "46003": "Agency 'Hardshell' TB7 Dose III",
-                    "48113": "Agency 'Hardshell' TB9 Dose IV",
-                    "59633": "Strong Veilguard Booster"
+                    "48113": "Agency 'Hardshell' TB9 Dose IV"
                 },
                 "Overclocker": {
                     "-1": "2504",
@@ -5905,33 +6018,144 @@
             },
             "Booster Slot 14": {
                 "-1": "2531",
-                "61086": "Wightstorm Sunyata Booster I",
-                "61087": "Wightstorm Sunyata Booster II",
-                "61090": "Wightstorm Sunyata Booster III"
+                "59633": "Strong Veilguard Booster",
+                "63645": "Expired Hunt Probing Booster I",
+                "63646": "Expired Hunt Probing Booster II",
+                "63647": "Expired Hunt Probing Booster III",
+                "63648": "Expired Hunt Probing Booster IV",
+                "63649": "Expired Hunt Pursuit Booster I",
+                "63650": "Expired Hunt Pursuit Booster II",
+                "63651": "Expired Hunt Pursuit Booster III",
+                "63652": "Expired Hunt Pursuit Booster IV",
+                "76066": "Imperial Electronics Booster I",
+                "76067": "Imperial Electronics Booster II",
+                "76068": "Imperial Electronics Booster III",
+                "76069": "Imperial Electronics Booster IV",
+                "76090": "Republic Electronics Booster I",
+                "76091": "Republic Electronics Booster II",
+                "76092": "Republic Electronics Booster III",
+                "76093": "Republic Electronics Booster IV",
+                "76114": "State Electronics Booster I",
+                "76115": "State Electronics Booster II",
+                "76116": "State Electronics Booster III",
+                "76117": "State Electronics Booster IV",
+                "76138": "Federation Electronics Booster I",
+                "76139": "Federation Electronics Booster II",
+                "76140": "Federation Electronics Booster III",
+                "76141": "Federation Electronics Booster IV"
             },
             "Booster Slot 15": {
                 "-1": "2790",
-                "61091": "Wightstorm Nirvana Booster I",
-                "61093": "Wightstorm Nirvana Booster II",
-                "61096": "Wightstorm Nirvana Booster III",
-                "61097": "Wightstorm Rapture Booster I",
-                "61099": "Wightstorm Rapture Booster II",
-                "61101": "Wightstorm Rapture Booster III"
+                "63653": "Expired Hunt Rapid Repair Booster I",
+                "63654": "Expired Hunt Rapid Repair Booster II",
+                "63655": "Expired Hunt Rapid Repair Booster III",
+                "63656": "Expired Hunt Rapid Repair Booster IV",
+                "63657": "Expired Hunt Resistance Booster I",
+                "63658": "Expired Hunt Resistance Booster II",
+                "63659": "Expired Hunt Resistance Booster III",
+                "63660": "Expired Hunt Resistance Booster IV",
+                "76054": "Imperial Projection Booster I",
+                "76055": "Imperial Projection Booster II",
+                "76056": "Imperial Projection Booster III",
+                "76057": "Imperial Projection Booster IV",
+                "76062": "Imperial Defense Booster I",
+                "76063": "Imperial Defense Booster II",
+                "76064": "Imperial Defense Booster III",
+                "76065": "Imperial Defense Booster IV",
+                "76078": "Republic Projection Booster I",
+                "76079": "Republic Projection Booster II",
+                "76080": "Republic Projection Booster III",
+                "76081": "Republic Projection Booster IV",
+                "76086": "Republic Defense Booster I",
+                "76087": "Republic Defense Booster II",
+                "76088": "Republic Defense Booster III",
+                "76089": "Republic Defense Booster IV",
+                "76102": "State Projection Booster I",
+                "76103": "State Projection Booster II",
+                "76104": "State Projection Booster III",
+                "76105": "State Projection Booster IV",
+                "76110": "State Defense Booster I",
+                "76111": "State Defense Booster II",
+                "76112": "State Defense Booster III",
+                "76113": "State Defense Booster IV",
+                "76126": "Federation Projection Booster I",
+                "76127": "Federation Projection Booster II",
+                "76128": "Federation Projection Booster III",
+                "76129": "Federation Projection Booster IV",
+                "76134": "Federation Defense Booster I",
+                "76135": "Federation Defense Booster II",
+                "76136": "Federation Defense Booster III",
+                "76137": "Federation Defense Booster IV"
             },
             "Booster Slot 16": {
                 "-1": "2791",
-                "61103": "Wightstorm Cetana Booster I",
-                "61105": "Wightstorm Cetana Booster II",
-                "61107": "Wightstorm Cetana Booster III"
+                "63661": "Expired Hunt Drone Precision Booster I",
+                "63662": "Expired Hunt Drone Precision Booster II",
+                "63663": "Expired Hunt Drone Precision Booster III",
+                "63664": "Expired Hunt Drone Precision Booster IV",
+                "63665": "Expired Hunt Missile Velocity Booster I",
+                "63666": "Expired Hunt Missile Velocity Booster II",
+                "63667": "Expired Hunt Missile Velocity Booster III",
+                "63668": "Expired Hunt Missile Velocity Booster IV",
+                "76070": "Imperial Mobility Booster I",
+                "76071": "Imperial Mobility Booster II",
+                "76072": "Imperial Mobility Booster III",
+                "76073": "Imperial Mobility Booster IV",
+                "76094": "Republic Mobility Booster I",
+                "76095": "Republic Mobility Booster II",
+                "76096": "Republic Mobility Booster III",
+                "76097": "Republic Mobility Booster IV",
+                "76118": "State Mobility Booster I",
+                "76119": "State Mobility Booster II",
+                "76120": "State Mobility Booster III",
+                "76121": "State Mobility Booster IV",
+                "76142": "Federation Mobility Booster I",
+                "76143": "Federation Mobility Booster II",
+                "76144": "Federation Mobility Booster III",
+                "76145": "Federation Mobility Booster IV"
             },
             "Booster Slot 17": {
                 "-1": "2792",
-                "61110": "Wightstorm  Vitarka Booster I",
-                "61112": "Wightstorm  Vitarka Booster II",
-                "61114": "Wightstorm  Vitarka Booster III",
-                "61116": "Wightstorm  Manasikara Booster I",
-                "61118": "Wightstorm  Manasikara Booster II",
-                "61119": "Wightstorm  Manasikara Booster III"
+                "63669": "Expired Hunt Drone Damage Booster I",
+                "63670": "Expired Hunt Drone Damage Booster II",
+                "63671": "Expired Hunt Drone Damage Booster III",
+                "63672": "Expired Hunt Drone Damage Booster IV",
+                "63673": "Expired Hunt Missile Damage Booster I",
+                "63674": "Expired Hunt Missile Damage Booster II",
+                "63675": "Expired Hunt Missile Damage Booster III",
+                "63676": "Expired Hunt Missile Damage Booster IV",
+                "76050": "Imperial Damage Booster I",
+                "76051": "Imperial Damage Booster II",
+                "76052": "Imperial Damage Booster III",
+                "76053": "Imperial Damage Booster IV",
+                "76058": "Imperial Application Booster I",
+                "76059": "Imperial Application Booster II",
+                "76060": "Imperial Application Booster III",
+                "76061": "Imperial Application Booster IV",
+                "76074": "Republic Damage Booster I",
+                "76075": "Republic Damage Booster II",
+                "76076": "Republic Damage Booster III",
+                "76077": "Republic Damage Booster IV",
+                "76082": "Republic Application Booster I",
+                "76083": "Republic Application Booster II",
+                "76084": "Republic Application Booster III",
+                "76085": "Republic Application Booster IV",
+                "76098": "State Damage Booster I",
+                "76099": "State Damage Booster II",
+                "76100": "State Damage Booster III",
+                "76101": "State Damage Booster IV",
+                "76106": "State Application Booster I",
+                "76107": "State Application Booster II",
+                "76108": "State Application Booster III",
+                "76109": "State Application Booster IV",
+                "76122": "Federation Damage Booster I",
+                "76123": "Federation Damage Booster II",
+                "76124": "Federation Damage Booster III",
+                "76125": "Federation Damage Booster IV",
+                "76130": "Federation Application Booster I",
+                "76131": "Federation Application Booster II",
+                "76132": "Federation Application Booster III",
+                "76133": "Federation Application Booster IV"
             },
             "Clone Mappers": {
                 "-1": "2761",
@@ -5953,9 +6177,9 @@
             "57433": "Serenity Basic 'Bonding' Cerebral Accelerator",
             "57434": "Serenity Potent 'Bonding' Cerebral Accelerator",
             "57435": "Serenity Extended 'Bonding' Cerebral Accelerator",
-            "61083": "Basic 'Brainfreeze' Cerebral Accelerator",
-            "61084": "Extended 'Brainfreeze' Cerebral Accelerator",
-            "61085": "Potent 'Brainfreeze' Cerebral Accelerator"
+            "63633": "Expired Basic 'Guri Kikhivaa' Cerebral Accelerator",
+            "63634": "Expired Potent 'Guri Kikhivaa' Cerebral Accelerator",
+            "63635": "Expired Extended 'Guri Kikhivaa' Cerebral Accelerator"
         },
         "Implants": {
             "Attribute Enhancers": {
@@ -7173,7 +7397,7 @@
                 "57482": "Genetic Safeguard Filter",
                 "57483": "Neurolink Enhancer Reservoir",
                 "57484": "Genetic Structure Repairer",
-                "57485": "Genetic Mutation Inhibiter",
+                "57485": "Genetic Mutation Inhibitor",
                 "57486": "Life Support Backup Unit"
             },
             "R.A.M.": {
@@ -7230,7 +7454,8 @@
                 "36956": "Structure Electromagnetic Sensor",
                 "36957": "Structure Acceleration Coils",
                 "36958": "Structure Advertisement Nexus",
-                "49720": "Structure EXERT Conduit Coupler"
+                "49720": "Structure EXERT Conduit Coupler",
+                "76375": "Mutadaptive Construction Component"
             },
             "Subsystem Components": {
                 "-1": "1147",
@@ -7264,6 +7489,11 @@
                 "57451": "Enhanced Electro-Neural Signaller"
             },
             "Faction Materials": {
+                "Amarr Empire": {
+                    "-1": "3453",
+                    "73397": "Amarr Decoder Package",
+                    "73401": "Amarr Encoder Splice"
+                },
                 "Angel Cartel": {
                     "-1": "1898",
                     "21592": "Electric Conduit",
@@ -7290,6 +7520,16 @@
                     "23161": "Elemental Crux",
                     "23162": "Analog Panel"
                 },
+                "Caldari State": {
+                    "-1": "3455",
+                    "73399": "Caldari Decoder Package",
+                    "73403": "Caldari Encoder Splice"
+                },
+                "Gallente Federation": {
+                    "-1": "3456",
+                    "73400": "Gallente Decoder Package",
+                    "73404": "Gallente Encoder Splice"
+                },
                 "Guristas": {
                     "-1": "1900",
                     "21587": "Electronic Link",
@@ -7302,6 +7542,11 @@
                     "21726": "Guristas Light Weapon Console",
                     "21727": "Guristas Gravity Focuser",
                     "21728": "Guristas Graviton Hardening"
+                },
+                "Minmatar Republic": {
+                    "-1": "3454",
+                    "73398": "Minmatar Decoder Package",
+                    "73402": "Minmatar Encoder Splice"
                 },
                 "Rogue Drones": {
                     "-1": "1906",
@@ -7421,6 +7666,34 @@
                     "28700": "Vermillion Mykoserocin",
                     "28701": "Viridian Mykoserocin"
                 },
+                "Compressed Gas": {
+                    "-1": "2814",
+                    "62377": "Compressed Amber Mykoserocin",
+                    "62379": "Compressed Azure Mykoserocin",
+                    "62380": "Compressed Celadon Mykoserocin",
+                    "62381": "Compressed Golden Mykoserocin",
+                    "62382": "Compressed Lime Mykoserocin",
+                    "62383": "Compressed Malachite Mykoserocin",
+                    "62384": "Compressed Vermillion Mykoserocin",
+                    "62385": "Compressed Viridian Mykoserocin",
+                    "62386": "Compressed Azure Cytoserocin",
+                    "62387": "Compressed Celadon Cytoserocin",
+                    "62390": "Compressed Golden Cytoserocin",
+                    "62391": "Compressed Lime Cytoserocin",
+                    "62392": "Compressed Malachite Cytoserocin",
+                    "62393": "Compressed Vermillion Cytoserocin",
+                    "62394": "Compressed Viridian Cytoserocin",
+                    "62396": "Compressed Amber Cytoserocin",
+                    "62397": "Compressed Fullerite-C60",
+                    "62398": "Compressed Fullerite-C70",
+                    "62399": "Compressed Fullerite-C50",
+                    "62400": "Compressed Fullerite-C84",
+                    "62402": "Compressed Fullerite-C28",
+                    "62403": "Compressed Fullerite-C72",
+                    "62404": "Compressed Fullerite-C32",
+                    "62405": "Compressed Fullerite-C540",
+                    "62406": "Compressed Fullerite-C320"
+                },
                 "Fullerenes": {
                     "-1": "1859",
                     "30370": "Fullerite-C50",
@@ -7455,7 +7728,8 @@
                 "39": "Zydrine",
                 "40": "Megacyte",
                 "11399": "Morphite",
-                "48927": "Chromodynamic Tricarboxyls"
+                "48927": "Chromodynamic Tricarboxyls",
+                "76374": "Neo-Jadarite"
             },
             "Molecular-Forging Tools": {
                 "-1": "2766",
@@ -7651,7 +7925,19 @@
                         "46292": "Copious Titanite",
                         "46293": "Twinkling Titanite",
                         "46294": "Copious Scheelite",
-                        "46295": "Twinkling Scheelite"
+                        "46295": "Twinkling Scheelite",
+                        "62468": "Compressed Scheelite",
+                        "62469": "Compressed Copious Scheelite",
+                        "62470": "Compressed Twinkling Scheelite",
+                        "62471": "Compressed Euxenite",
+                        "62472": "Compressed Copious Euxenite",
+                        "62473": "Compressed Twinkling Euxenite",
+                        "62474": "Compressed Cobaltite",
+                        "62475": "Compressed Copious Cobaltite",
+                        "62476": "Compressed Twinkling Cobaltite",
+                        "62477": "Compressed Titanite",
+                        "62478": "Compressed Copious Titanite",
+                        "62479": "Compressed Twinkling Titanite"
                     },
                     "Exceptional Moon Ores": {
                         "-1": "2401",
@@ -7666,7 +7952,19 @@
                         "46316": "Bountiful Loparite",
                         "46317": "Shining Loparite",
                         "46318": "Bountiful Ytterbite",
-                        "46319": "Shining Ytterbite"
+                        "46319": "Shining Ytterbite",
+                        "62504": "Compressed Loparite",
+                        "62505": "Compressed Bountiful Loparite",
+                        "62506": "Compressed Shining Loparite",
+                        "62507": "Compressed Monazite",
+                        "62508": "Compressed Bountiful Monazite",
+                        "62509": "Compressed Shining Monazite",
+                        "62510": "Compressed Xenotime",
+                        "62511": "Compressed Bountiful Xenotime",
+                        "62512": "Compressed Shining Xenotime",
+                        "62513": "Compressed Ytterbite",
+                        "62514": "Compressed Bountiful Ytterbite",
+                        "62515": "Compressed Shining Ytterbite"
                     },
                     "Rare Moon Ores": {
                         "-1": "2400",
@@ -7681,7 +7979,19 @@
                         "46308": "Replete Pollucite",
                         "46309": "Glowing Pollucite",
                         "46310": "Replete Cinnabar",
-                        "46311": "Glowing Cinnabar"
+                        "46311": "Glowing Cinnabar",
+                        "62492": "Compressed Carnotite",
+                        "62493": "Compressed Replete Carnotite",
+                        "62494": "Compressed Glowing Carnotite",
+                        "62495": "Compressed Cinnabar",
+                        "62496": "Compressed Replete Cinnabar",
+                        "62497": "Compressed Glowing Cinnabar",
+                        "62498": "Compressed Pollucite",
+                        "62499": "Compressed Replete Pollucite",
+                        "62500": "Compressed Glowing Pollucite",
+                        "62501": "Compressed Zircon",
+                        "62502": "Compressed Replete Zircon",
+                        "62503": "Compressed Glowing Zircon"
                     },
                     "Ubiquitous Moon Ores": {
                         "-1": "2396",
@@ -7696,7 +8006,19 @@
                         "46284": "Brimful Bitumens",
                         "46285": "Glistening Bitumens",
                         "46286": "Brimful Coesite",
-                        "46287": "Glistening Coesite"
+                        "46287": "Glistening Coesite",
+                        "62454": "Compressed Bitumens",
+                        "62455": "Compressed Brimful Bitumens",
+                        "62456": "Compressed Glistening Bitumens",
+                        "62457": "Compressed Coesite",
+                        "62458": "Compressed Brimful Coesite",
+                        "62459": "Compressed Glistening Coesite",
+                        "62460": "Compressed Sylvite",
+                        "62461": "Compressed Brimful Sylvite",
+                        "62463": "Compressed Zeolites",
+                        "62464": "Compressed Brimful Zeolites",
+                        "62466": "Compressed Glistening Sylvite",
+                        "62467": "Compressed Glistening Zeolites"
                     },
                     "Uncommon Moon Ores": {
                         "-1": "2398",
@@ -7711,7 +8033,19 @@
                         "46300": "Lavish Vanadinite",
                         "46301": "Shimmering Vanadinite",
                         "46302": "Lavish Chromite",
-                        "46303": "Shimmering Chromite"
+                        "46303": "Shimmering Chromite",
+                        "62480": "Compressed Chromite",
+                        "62481": "Compressed Lavish Chromite",
+                        "62482": "Compressed Shimmering Chromite",
+                        "62483": "Compressed Otavite",
+                        "62484": "Compressed Lavish Otavite",
+                        "62485": "Compressed Shimmering Otavite",
+                        "62486": "Compressed Sperrylite",
+                        "62487": "Compressed Lavish Sperrylite",
+                        "62488": "Compressed Shimmering Sperrylite",
+                        "62489": "Compressed Vanadinite",
+                        "62490": "Compressed Lavish Vanadinite",
+                        "62491": "Compressed Shimmering Vanadinite"
                     },
                     "id": "2395"
                 },
@@ -7721,193 +8055,311 @@
                         "22": "Arkonor",
                         "17425": "Crimson Arkonor",
                         "17426": "Prime Arkonor",
-                        "28367": "Compressed Arkonor",
-                        "28385": "Compressed Crimson Arkonor",
-                        "28387": "Compressed Prime Arkonor",
+                        "28367": "Batch Compressed Arkonor",
+                        "28385": "Batch Compressed Crimson Arkonor",
+                        "28387": "Batch Compressed Prime Arkonor",
                         "46678": "Flawless Arkonor",
-                        "46691": "Compressed Flawless Arkonor"
+                        "46691": "Batch Compressed Flawless Arkonor",
+                        "62568": "Compressed Arkonor",
+                        "62569": "Compressed Crimson Arkonor",
+                        "62570": "Compressed Prime Arkonor",
+                        "62571": "Compressed Flawless Arkonor"
                     },
                     "Bezdnacine": {
                         "-1": "2538",
                         "52316": "Bezdnacine",
                         "56627": "Abyssal Bezdnacine",
-                        "56628": "Hadal Bezdnacine"
+                        "56628": "Hadal Bezdnacine",
+                        "62576": "Compressed Bezdnacine",
+                        "62577": "Compressed Abyssal Bezdnacine",
+                        "62578": "Compressed Hadal Bezdnacine"
                     },
                     "Bistot": {
                         "-1": "514",
                         "1223": "Bistot",
                         "17428": "Triclinic Bistot",
                         "17429": "Monoclinic Bistot",
-                        "28388": "Compressed Bistot",
-                        "28389": "Compressed Monoclinic Bistot",
-                        "28390": "Compressed Triclinic Bistot",
+                        "28388": "Batch Compressed Bistot",
+                        "28389": "Batch Compressed Monoclinic Bistot",
+                        "28390": "Batch Compressed Triclinic Bistot",
                         "46676": "Cubic Bistot",
-                        "46692": "Compressed Cubic Bistot"
+                        "46692": "Batch Compressed Cubic Bistot",
+                        "62564": "Compressed Bistot",
+                        "62565": "Compressed Triclinic Bistot",
+                        "62566": "Compressed Monoclinic Bistot",
+                        "62567": "Compressed Cubic Bistot"
                     },
                     "Crokite": {
                         "-1": "521",
                         "1225": "Crokite",
                         "17432": "Sharp Crokite",
                         "17433": "Crystalline Crokite",
-                        "28391": "Compressed Crokite",
-                        "28392": "Compressed Crystalline Crokite",
-                        "28393": "Compressed Sharp Crokite",
+                        "28391": "Batch Compressed Crokite",
+                        "28392": "Batch Compressed Crystalline Crokite",
+                        "28393": "Batch Compressed Sharp Crokite",
                         "46677": "Pellucid Crokite",
-                        "46693": "Compressed Pellucid Crokite"
+                        "46693": "Batch Compressed Pellucid Crokite",
+                        "62560": "Compressed Crokite",
+                        "62561": "Compressed Sharp Crokite",
+                        "62562": "Compressed Crystalline Crokite",
+                        "62563": "Compressed Pellucid Crokite"
                     },
                     "Dark Ochre": {
                         "-1": "522",
                         "1232": "Dark Ochre",
                         "17436": "Onyx Ochre",
                         "17437": "Obsidian Ochre",
-                        "28394": "Compressed Dark Ochre",
-                        "28395": "Compressed Obsidian Ochre",
-                        "28396": "Compressed Onyx Ochre",
+                        "28394": "Batch Compressed Dark Ochre",
+                        "28395": "Batch Compressed Obsidian Ochre",
+                        "28396": "Batch Compressed Onyx Ochre",
                         "46675": "Jet Ochre",
-                        "46694": "Compressed Jet Ochre"
+                        "46694": "Batch Compressed Jet Ochre",
+                        "62556": "Compressed Dark Ochre",
+                        "62557": "Compressed Onyx Ochre",
+                        "62558": "Compressed Obsidian Ochre",
+                        "62559": "Compressed Jet Ochre"
+                    },
+                    "Ducinium": {
+                        "-1": "3490",
+                        "74533": "Ducinium",
+                        "74534": "Noble Ducinium",
+                        "74535": "Royal Ducinium",
+                        "74536": "Imperial Ducinium",
+                        "75287": "Compressed Ducinium",
+                        "75288": "Compressed Noble Ducinium",
+                        "75289": "Compressed Royal Ducinium",
+                        "75290": "Compressed Imperial Ducinium"
+                    },
+                    "Eifyrium": {
+                        "-1": "3489",
+                        "74529": "Eifyrium",
+                        "74530": "Doped Eifyrium",
+                        "74531": "Boosted Eifyrium",
+                        "74532": "Augmented Eifyrium",
+                        "75283": "Compressed Eifyrium",
+                        "75284": "Compressed Doped Eifyrium",
+                        "75285": "Compressed Boosted Eifyrium",
+                        "75286": "Compressed Augmented Eifyrium"
                     },
                     "Gneiss": {
                         "-1": "525",
                         "1229": "Gneiss",
                         "17865": "Iridescent Gneiss",
                         "17866": "Prismatic Gneiss",
-                        "28397": "Compressed Gneiss",
-                        "28398": "Compressed Iridescent Gneiss",
-                        "28399": "Compressed Prismatic Gneiss",
+                        "28397": "Batch Compressed Gneiss",
+                        "28398": "Batch Compressed Iridescent Gneiss",
+                        "28399": "Batch Compressed Prismatic Gneiss",
                         "46679": "Brilliant Gneiss",
-                        "46695": "Compressed Brilliant Gneiss"
+                        "46695": "Batch Compressed Brilliant Gneiss",
+                        "62552": "Compressed Gneiss",
+                        "62553": "Compressed Iridescent Gneiss",
+                        "62554": "Compressed Prismatic Gneiss",
+                        "62555": "Compressed Brilliant Gneiss"
                     },
                     "Hedbergite": {
                         "-1": "527",
                         "21": "Hedbergite",
                         "17440": "Vitric Hedbergite",
                         "17441": "Glazed Hedbergite",
-                        "28400": "Compressed Glazed Hedbergite",
-                        "28401": "Compressed Hedbergite",
-                        "28402": "Compressed Vitric Hedbergite",
+                        "28400": "Batch Compressed Glazed Hedbergite",
+                        "28401": "Batch Compressed Hedbergite",
+                        "28402": "Batch Compressed Vitric Hedbergite",
                         "46680": "Lustrous Hedbergite",
-                        "46696": "Compressed Lustrous Hedbergite"
+                        "46696": "Batch Compressed Lustrous Hedbergite",
+                        "62548": "Compressed Hedbergite",
+                        "62549": "Compressed Vitric Hedbergite",
+                        "62550": "Compressed Glazed Hedbergite",
+                        "62551": "Compressed Lustrous Hedbergite"
                     },
                     "Hemorphite": {
                         "-1": "528",
                         "1231": "Hemorphite",
                         "17444": "Vivid Hemorphite",
                         "17445": "Radiant Hemorphite",
-                        "28403": "Compressed Hemorphite",
-                        "28404": "Compressed Radiant Hemorphite",
-                        "28405": "Compressed Vivid Hemorphite",
+                        "28403": "Batch Compressed Hemorphite",
+                        "28404": "Batch Compressed Radiant Hemorphite",
+                        "28405": "Batch Compressed Vivid Hemorphite",
                         "46681": "Scintillating Hemorphite",
-                        "46697": "Compressed Scintillating Hemorphite"
+                        "46697": "Batch Compressed Scintillating Hemorphite",
+                        "62544": "Compressed Hemorphite",
+                        "62545": "Compressed Vivid Hemorphite",
+                        "62546": "Compressed Radiant Hemorphite",
+                        "62547": "Compressed Scintillating Hemorphite"
                     },
                     "Jaspet": {
                         "-1": "529",
                         "1226": "Jaspet",
                         "17448": "Pure Jaspet",
                         "17449": "Pristine Jaspet",
-                        "28406": "Compressed Jaspet",
-                        "28407": "Compressed Pristine Jaspet",
-                        "28408": "Compressed Pure Jaspet",
+                        "28406": "Batch Compressed Jaspet",
+                        "28407": "Batch Compressed Pristine Jaspet",
+                        "28408": "Batch Compressed Pure Jaspet",
                         "46682": "Immaculate Jaspet",
-                        "46698": "Compressed Immaculate Jaspet"
+                        "46698": "Batch Compressed Immaculate Jaspet",
+                        "62540": "Compressed Jaspet",
+                        "62541": "Compressed Pure Jaspet",
+                        "62542": "Compressed Pristine Jaspet",
+                        "62543": "Compressed Immaculate Jaspet"
                     },
                     "Kernite": {
                         "-1": "523",
                         "20": "Kernite",
                         "17452": "Luminous Kernite",
                         "17453": "Fiery Kernite",
-                        "28409": "Compressed Fiery Kernite",
-                        "28410": "Compressed Kernite",
-                        "28411": "Compressed Luminous Kernite",
+                        "28409": "Batch Compressed Fiery Kernite",
+                        "28410": "Batch Compressed Kernite",
+                        "28411": "Batch Compressed Luminous Kernite",
                         "46683": "Resplendant Kernite",
-                        "46699": "Compressed Resplendant Kernite"
+                        "46699": "Batch Compressed Resplendant Kernite",
+                        "62536": "Compressed Kernite",
+                        "62537": "Compressed Luminous Kernite",
+                        "62538": "Compressed Fiery Kernite",
+                        "62539": "Compressed Resplendant Kernite"
                     },
                     "Mercoxit": {
                         "-1": "530",
                         "11396": "Mercoxit",
                         "17869": "Magma Mercoxit",
                         "17870": "Vitreous Mercoxit",
-                        "28412": "Compressed Magma Mercoxit",
-                        "28413": "Compressed Mercoxit",
-                        "28414": "Compressed Vitreous Mercoxit"
+                        "28412": "Batch Compressed Magma Mercoxit",
+                        "28413": "Batch Compressed Mercoxit",
+                        "28414": "Batch Compressed Vitreous Mercoxit",
+                        "62586": "Compressed Mercoxit",
+                        "62587": "Compressed Magma Mercoxit",
+                        "62588": "Compressed Vitreous Mercoxit"
+                    },
+                    "Mordunium": {
+                        "-1": "3487",
+                        "74521": "Mordunium",
+                        "74522": "Plum Mordunium",
+                        "74523": "Prize Mordunium",
+                        "74524": "Plunder Mordunium",
+                        "75275": "Compressed Mordunium",
+                        "75276": "Compressed Plum Mordunium",
+                        "75277": "Compressed Prize Mordunium",
+                        "75278": "Compressed Plunder Mordunium"
                     },
                     "Omber": {
                         "-1": "526",
                         "1227": "Omber",
                         "17867": "Silvery Omber",
                         "17868": "Golden Omber",
-                        "28415": "Compressed Golden Omber",
-                        "28416": "Compressed Omber",
-                        "28417": "Compressed Silvery Omber",
+                        "28415": "Batch Compressed Golden Omber",
+                        "28416": "Batch Compressed Omber",
+                        "28417": "Batch Compressed Silvery Omber",
                         "46684": "Platinoid Omber",
-                        "46700": "Compressed Platinoid Omber"
+                        "46700": "Batch Compressed Platinoid Omber",
+                        "62532": "Compressed Omber",
+                        "62533": "Compressed Silvery Omber",
+                        "62534": "Compressed Golden Omber",
+                        "62535": "Compressed Platinoid Omber"
                     },
                     "Plagioclase": {
                         "-1": "516",
                         "18": "Plagioclase",
                         "17455": "Azure Plagioclase",
                         "17456": "Rich Plagioclase",
-                        "28421": "Compressed Azure Plagioclase",
-                        "28422": "Compressed Plagioclase",
-                        "28423": "Compressed Rich Plagioclase",
+                        "28421": "Batch Compressed Azure Plagioclase",
+                        "28422": "Batch Compressed Plagioclase",
+                        "28423": "Batch Compressed Rich Plagioclase",
                         "46685": "Sparkling Plagioclase",
-                        "46701": "Compressed Sparkling Plagioclase"
+                        "46701": "Batch Compressed Sparkling Plagioclase",
+                        "62528": "Compressed Plagioclase",
+                        "62529": "Compressed Azure Plagioclase",
+                        "62530": "Compressed Rich Plagioclase",
+                        "62531": "Compressed Sparkling Plagioclase"
                     },
                     "Pyroxeres": {
                         "-1": "515",
                         "1224": "Pyroxeres",
                         "17459": "Solid Pyroxeres",
                         "17460": "Viscous Pyroxeres",
-                        "28424": "Compressed Pyroxeres",
-                        "28425": "Compressed Solid Pyroxeres",
-                        "28426": "Compressed Viscous Pyroxeres",
+                        "28424": "Batch Compressed Pyroxeres",
+                        "28425": "Batch Compressed Solid Pyroxeres",
+                        "28426": "Batch Compressed Viscous Pyroxeres",
                         "46686": "Opulent Pyroxeres",
-                        "46702": "Compressed Opulent Pyroxeres"
+                        "46702": "Batch Compressed Opulent Pyroxeres",
+                        "62524": "Compressed Pyroxeres",
+                        "62525": "Compressed Solid Pyroxeres",
+                        "62526": "Compressed Viscous Pyroxeres",
+                        "62527": "Compressed Opulent Pyroxeres"
                     },
                     "Rakovene": {
                         "-1": "2539",
                         "52315": "Rakovene",
                         "56629": "Abyssal Rakovene",
-                        "56630": "Hadal Rakovene"
+                        "56630": "Hadal Rakovene",
+                        "62579": "Compressed Rakovene",
+                        "62580": "Compressed Abyssal Rakovene",
+                        "62581": "Compressed Hadal Rakovene",
+                        "76373": "Nesosilicate Rakovene"
                     },
                     "Scordite": {
                         "-1": "519",
                         "1228": "Scordite",
                         "17463": "Condensed Scordite",
                         "17464": "Massive Scordite",
-                        "28427": "Compressed Condensed Scordite",
-                        "28428": "Compressed Massive Scordite",
-                        "28429": "Compressed Scordite",
+                        "28427": "Batch Compressed Condensed Scordite",
+                        "28428": "Batch Compressed Massive Scordite",
+                        "28429": "Batch Compressed Scordite",
                         "46687": "Glossy Scordite",
-                        "46703": "Compressed Glossy Scordite"
+                        "46703": "Batch Compressed Glossy Scordite",
+                        "62520": "Compressed Scordite",
+                        "62521": "Compressed Condensed Scordite",
+                        "62522": "Compressed Massive Scordite",
+                        "62523": "Compressed Glossy Scordite"
                     },
                     "Spodumain": {
                         "-1": "517",
                         "19": "Spodumain",
                         "17466": "Bright Spodumain",
                         "17467": "Gleaming Spodumain",
-                        "28418": "Compressed Bright Spodumain",
-                        "28419": "Compressed Gleaming Spodumain",
-                        "28420": "Compressed Spodumain",
+                        "28418": "Batch Compressed Bright Spodumain",
+                        "28419": "Batch Compressed Gleaming Spodumain",
+                        "28420": "Batch Compressed Spodumain",
                         "46688": "Dazzling Spodumain",
-                        "46704": "Compressed Dazzling Spodumain"
+                        "46704": "Batch Compressed Dazzling Spodumain",
+                        "62572": "Compressed Spodumain",
+                        "62573": "Compressed Bright Spodumain",
+                        "62574": "Compressed Gleaming Spodumain",
+                        "62575": "Compressed Dazzling Spodumain"
                     },
                     "Talassonite": {
                         "-1": "2540",
                         "52306": "Talassonite",
                         "56625": "Abyssal Talassonite",
-                        "56626": "Hadal Talassonite"
+                        "56626": "Hadal Talassonite",
+                        "62582": "Compressed Talassonite",
+                        "62583": "Compressed Abyssal Talassonite",
+                        "62584": "Compressed Hadal Talassonite"
                     },
                     "Veldspar": {
                         "-1": "518",
                         "1230": "Veldspar",
                         "17470": "Concentrated Veldspar",
                         "17471": "Dense Veldspar",
-                        "28430": "Compressed Concentrated Veldspar",
-                        "28431": "Compressed Dense Veldspar",
-                        "28432": "Compressed Veldspar",
+                        "28430": "Batch Compressed Concentrated Veldspar",
+                        "28431": "Batch Compressed Dense Veldspar",
+                        "28432": "Batch Compressed Veldspar",
                         "46689": "Stable Veldspar",
-                        "46705": "Compressed Stable Veldspar",
-                        "49787": "Hiemal Tricarboxyl Vapor"
+                        "46705": "Batch Compressed Stable Veldspar",
+                        "49787": "Hiemal Tricarboxyl Vapor",
+                        "60771": "Nephrite",
+                        "62516": "Compressed Veldspar",
+                        "62517": "Compressed Concentrated Veldspar",
+                        "62518": "Compressed Dense Veldspar",
+                        "62519": "Compressed Stable Veldspar"
+                    },
+                    "Ytirium": {
+                        "-1": "3488",
+                        "74525": "Ytirium",
+                        "74526": "Bootleg Ytirium",
+                        "74527": "Firewater Ytirium",
+                        "74528": "Moonshine Ytirium",
+                        "75279": "Compressed Ytirium",
+                        "75280": "Compressed Bootleg Ytirium",
+                        "75281": "Compressed Firewater Ytirium",
+                        "75282": "Compressed Moonshine Ytirium"
                     },
                     "id": "54"
                 },
@@ -8255,6 +8707,21 @@
         "id": "1320"
     },
     "Ship Equipment": {
+        "Compressors": {
+            "-1": "2815",
+            "62622": "Medium Asteroid Ore Compressor I",
+            "62624": "Medium Gas Compressor I",
+            "62625": "Large Asteroid Ore Compressor I",
+            "62626": "Large Gas Compressor I",
+            "62628": "Large Ice Compressor I",
+            "62630": "Large Mercoxit Compressor I",
+            "62631": "Large Moon Ore Compressor I",
+            "62632": "Capital Asteroid Ore Compressor I",
+            "62633": "Capital Ice Compressor I",
+            "62634": "Capital Gas Compressor I",
+            "62635": "Capital Mercoxit Compressor I",
+            "62636": "Capital Moon Ore Compressor I"
+        },
         "Drone Upgrades": {
             "-1": "938",
             "4393": "Drone Damage Amplifier I",
@@ -8601,7 +9068,7 @@
             },
             "CPU Upgrades": {
                 "-1": "676",
-                "3469": "Basic Co-Processor",
+                "3469": "'Basic' Co-Processor",
                 "3887": "Co-Processor I",
                 "3888": "Co-Processor II",
                 "8748": "Photonic Upgraded Co-Processor",
@@ -9023,7 +9490,7 @@
             },
             "Reactor Control Units": {
                 "-1": "659",
-                "1351": "Basic Reactor Control Unit",
+                "1351": "'Basic' Reactor Control Unit",
                 "1353": "Reactor Control Unit I",
                 "1355": "Reactor Control Unit II",
                 "8263": "Mark I Compact Reactor Control Unit",
@@ -9130,7 +9597,8 @@
             "Jump Portal Generators": {
                 "-1": "1640",
                 "23953": "Jump Portal Generator I",
-                "28652": "Covert Jump Portal Generator I"
+                "28652": "Covert Jump Portal Generator I",
+                "63140": "Industrial Jump Portal Generator I"
             },
             "id": "779"
         },
@@ -9139,15 +9607,15 @@
                 "-1": "2795",
                 "60313": "Gas Cloud Harvester I",
                 "60314": "Gas Cloud Harvester II",
-                "60315": "Ore Gas Cloud Harvester "
+                "60315": "ORE Gas Cloud Harvester"
             },
             "Gas Cloud Scoops": {
                 "-1": "1037",
                 "25266": "Gas Cloud Scoop I",
-                "25540": "'Crop' Gas Cloud Scoop ",
-                "25542": "'Plow' Gas Cloud Scoop ",
+                "25540": "'Crop' Gas Cloud Scoop",
+                "25542": "'Plow' Gas Cloud Scoop",
                 "25812": "Gas Cloud Scoop II",
-                "28788": "Syndicate Gas Cloud Scoop "
+                "28788": "Syndicate Gas Cloud Scoop"
             },
             "Ice Harvesters": {
                 "-1": "1038",
@@ -9172,6 +9640,7 @@
                 "12108": "Deep Core Mining Laser I",
                 "18068": "Modulated Deep Core Miner II",
                 "21841": "Gallente Mining Laser",
+                "22923": "'Wild' Miner I",
                 "28748": "ORE Deep Core Mining Laser",
                 "28750": "ORE Miner"
             },
@@ -9203,7 +9672,7 @@
             },
             "id": "1713"
         },
-        "Hull & Armor ": {
+        "Hull & Armor": {
             "Armor Hardeners": {
                 "EM Armor Hardeners": {
                     "-1": "1681",
@@ -9532,7 +10001,7 @@
                     "28549": "Khanid Navy Medium Armor Repairer",
                     "33101": "Medium Ancillary Armor Repairer"
                 },
-                "Small ": {
+                "Small": {
                     "-1": "1049",
                     "523": "Small Armor Repairer I",
                     "1183": "Small Armor Repairer II",
@@ -10161,7 +10630,7 @@
             },
             "id": "14"
         },
-        "Propulsion ": {
+        "Propulsion": {
             "Afterburners": {
                 "-1": "542",
                 "438": "1MN Afterburner II",
@@ -10311,7 +10780,7 @@
                     "1403": "Inertial Stabilizers I",
                     "1405": "Inertial Stabilizers II",
                     "5533": "Type-D Restrained Inertial Stabilizers",
-                    "21498": "Synthetic Hull Conversion Inertia Stabilizers",
+                    "21498": "Synthetic Hull Conversion Inertial Stabilizers",
                     "34481": "Domination Inertial Stabilizers",
                     "34483": "Shadow Serpentis Inertial Stabilizers"
                 },
@@ -10319,7 +10788,7 @@
                     "-1": "2783",
                     "58919": "Interdiction Nullifier I",
                     "58966": "Compact Interdiction Nullifier",
-                    "58971": "Restrained Interdiction Nullifier",
+                    "58971": "Enduring Interdiction Nullifier",
                     "58972": "Interdiction Nullifier II"
                 },
                 "Jump Economizers": {
@@ -10686,7 +11155,7 @@
                     "13994": "Domination EM Shield Hardener",
                     "14752": "Kaikka's Modified EM Shield Hardener",
                     "14753": "Thon's Modified EM Shield Hardener",
-                    "14754": "Vepas's Modified EM Shield Hardener",
+                    "14754": "Vepas' Modified EM Shield Hardener",
                     "14755": "Estamel's Modified EM Shield Hardener",
                     "17499": "Caldari Navy EM Shield Hardener",
                     "19263": "Gist C-Type EM Shield Hardener",
@@ -10710,7 +11179,7 @@
                     "13996": "Domination Explosive Shield Hardener",
                     "14756": "Kaikka's Modified Explosive Shield Hardener",
                     "14757": "Thon's Modified Explosive Shield Hardener",
-                    "14758": "Vepas's Modified Explosive Shield Hardener",
+                    "14758": "Vepas' Modified Explosive Shield Hardener",
                     "14759": "Estamel's Modified Explosive Shield Hardener",
                     "17496": "Caldari Navy Explosive Shield Hardener",
                     "19259": "Gist C-Type Explosive Shield Hardener",
@@ -10734,7 +11203,7 @@
                     "13997": "Domination Kinetic Shield Hardener",
                     "14748": "Kaikka's Modified Kinetic Shield Hardener",
                     "14749": "Thon's Modified Kinetic Shield Hardener",
-                    "14750": "Vepas's Modified Kinetic Shield Hardener",
+                    "14750": "Vepas' Modified Kinetic Shield Hardener",
                     "14751": "Estamel's Modified Kinetic Shield Hardener",
                     "17495": "Caldari Navy Kinetic Shield Hardener",
                     "19257": "Gist C-Type Kinetic Shield Hardener",
@@ -10764,7 +11233,7 @@
                     "13998": "Domination Multispectrum Shield Hardener",
                     "14764": "Kaikka's Modified Multispectrum Shield Hardener",
                     "14765": "Thon's Modified Multispectrum Shield Hardener",
-                    "14766": "Vepas's Modified Multispectrum Shield Hardener",
+                    "14766": "Vepas' Modified Multispectrum Shield Hardener",
                     "14767": "Estamel's Modified Multispectrum Shield Hardener",
                     "17498": "Caldari Navy Multispectrum Shield Hardener",
                     "20637": "'Posse' Multispectrum Shield Hardener",
@@ -10788,7 +11257,7 @@
                     "13995": "Domination Thermal Shield Hardener",
                     "14760": "Kaikka's Modified Thermal Shield Hardener",
                     "14761": "Thon's Modified Thermal Shield Hardener",
-                    "14762": "Vepas's Modified Thermal Shield Hardener",
+                    "14762": "Vepas' Modified Thermal Shield Hardener",
                     "14763": "Estamel's Modified Thermal Shield Hardener",
                     "17497": "Caldari Navy Thermal Shield Hardener",
                     "19261": "Gist C-Type Thermal Shield Hardener",
@@ -11705,10 +12174,10 @@
                     "14524": "Mizuro's Modified Torpedo Launcher",
                     "14525": "Hakim's Modified Torpedo Launcher",
                     "14526": "Gotan's Modified Torpedo Launcher",
-                    "14527": "Tobias's Modified Torpedo Launcher",
+                    "14527": "Tobias' Modified Torpedo Launcher",
                     "14680": "Kaikka's Modified Torpedo Launcher",
                     "14681": "Thon's Modified Torpedo Launcher",
-                    "14682": "Vepas's Modified Torpedo Launcher",
+                    "14682": "Vepas' Modified Torpedo Launcher",
                     "14683": "Estamel's Modified Torpedo Launcher",
                     "16067": "Caldari Navy Torpedo Launcher",
                     "17490": "Republic Fleet Torpedo Launcher",
@@ -12156,7 +12625,9 @@
                     "33400": "Bastion Module I",
                     "42890": "Capital Industrial Core II",
                     "58945": "Large Industrial Core I",
-                    "58950": "Large Industrial Core II"
+                    "58950": "Large Industrial Core II",
+                    "62590": "Medium Industrial Core I",
+                    "62591": "Medium Industrial Core II"
                 },
                 "Tracking Computers": {
                     "-1": "706",
@@ -12247,7 +12718,9 @@
                         "53186": "Nighthawk Zento Isideko Combine SKIN",
                         "53187": "Vulture Zento Isideko Combine SKIN",
                         "55559": "Nighthawk Biosecurity Responders SKIN",
-                        "55567": "Vulture Biosecurity Responders SKIN"
+                        "55567": "Vulture Biosecurity Responders SKIN",
+                        "71727": "Nighthawk Union Day Executive SKIN",
+                        "76958": "Vulture Zydrine Burn SKIN"
                     },
                     "Gallente": {
                         "-1": "2106",
@@ -12268,7 +12741,8 @@
                         "52743": "Astarte Inner Zone Vanguard SKIN",
                         "52744": "Eos Inner Zone Vanguard SKIN",
                         "55612": "Astarte Biosecurity Responders SKIN",
-                        "55622": "Eos Biosecurity Responders SKIN"
+                        "55622": "Eos Biosecurity Responders SKIN",
+                        "76953": "Eos Zydrine Burn SKIN"
                     },
                     "Minmatar": {
                         "-1": "2107",
@@ -12347,7 +12821,25 @@
                     "57386": "Harbinger Navy Issue Spirit  SKIN",
                     "57390": "Drake Navy Issue Spirit SKIN",
                     "57395": "Hurricane Fleet Issue Spirit SKIN",
-                    "57731": "Brutix Navy Issue GalNet StreamCast Unit SKIN"
+                    "57731": "Brutix Navy Issue GalNet StreamCast Unit SKIN",
+                    "59825": "Hurricane Fleet Issue Nefantar SKIN",
+                    "59833": "Hurricane Fleet Issue Krusual SKIN",
+                    "59840": "Hurricane Fleet Issue Sebiestor SKIN",
+                    "59849": "Hurricane Fleet Issue Thukker Tribe SKIN",
+                    "59857": "Hurricane Fleet Issue Vherokior SKIN",
+                    "59865": "Hurricane Fleet Issue Starkmanir SKIN",
+                    "59873": "Hurricane Fleet Issue Brutor SKIN",
+                    "61869": "Drake Navy Issue Warp Convergence SKIN",
+                    "61874": "Brutix Navy Issue Warp Convergence SKIN",
+                    "64592": "Hurricane Fleet Issue Chainbreaker Khumaak SKIN",
+                    "73869": "Cyclone Fleet Issue Snowline Bladeracer SKIN",
+                    "73870": "Ferox Navy Issue Steel Cardinal SKIN",
+                    "73871": "Myrmidon Navy Issue Inner Zone Vanguard SKIN",
+                    "73872": "Prophecy Navy Issue Crown and Swords SKIN",
+                    "73874": "Ferox Navy Issue Versus Blueforce SKIN",
+                    "73876": "Prophecy Navy Issue Versus Blueforce SKIN",
+                    "73878": "Myrmidon Navy Issue Versus Redforce SKIN",
+                    "73880": "Cyclone Fleet Issue Versus Redforce SKIN"
                 },
                 "id": "2100"
             },
@@ -12378,7 +12870,9 @@
                     "47654": "Gnosis Capsuleer Networker XV SKIN",
                     "49795": "Gnosis Icecloud Investigators SKIN",
                     "52280": "Gnosis Capsuleer Day XVI SKIN",
-                    "57068": "Gnosis Zakura Shumyu SKIN"
+                    "57068": "Gnosis Zakura Shumyu SKIN",
+                    "74117": "Gnosis Tercio Rojo SKIN",
+                    "76494": "Gnosis GalNet StreamCast Unit SKIN"
                 },
                 "id": "2311"
             },
@@ -12444,7 +12938,10 @@
                     "59215": "Harbinger War Reserves Lieutenant SKIN",
                     "59423": "Prophecy War Reserves Lieutenant SKIN",
                     "60571": "Oracle Deathglow Hunters SKIN",
-                    "61122": "Harbinger Yoiul Star SKIN"
+                    "61122": "Harbinger Yoiul Star SKIN",
+                    "61864": "Prophecy Warp Convergence SKIN",
+                    "63683": "Oracle Capsuleer Elite XIX SKIN",
+                    "73455": "Prophecy Sanguinary Savant SKIN"
                 },
                 "Caldari": {
                     "-1": "1957",
@@ -12508,7 +13005,10 @@
                     "59224": "Drake Military Stockpile Captain SKIN",
                     "59429": "Ferox Military Stockpile Captain SKIN",
                     "60031": "Ferox State Police SKIN",
-                    "61189": "Ferox Scope Syndication YC122 SKIN"
+                    "61189": "Ferox Scope Syndication YC122 SKIN",
+                    "61868": "Drake Warp Convergence SKIN",
+                    "63686": "Naga Capsuleer Elite XIX SKIN",
+                    "71730": "Drake Union Day Executive SKIN"
                 },
                 "Gallente": {
                     "-1": "1958",
@@ -12566,7 +13066,11 @@
                     "58891": "Talos Federation Navy SKIN",
                     "59239": "Brutix Strategic Materiel Defender SKIN",
                     "59426": "Myrmidon Strategic Materiel Defender SKIN",
-                    "60267": "Brutix AIR Laboratories SKIN"
+                    "60267": "Brutix AIR Laboratories SKIN",
+                    "61873": "Brutix Warp Convergence SKIN",
+                    "63689": "Talos Capsuleer Elite XIX SKIN",
+                    "64570": "Brutix Luminaire Rising SKIN",
+                    "76490": "Myrmidon GalNet StreamCast Unit SKIN"
                 },
                 "Minmatar": {
                     "-1": "1959",
@@ -12623,8 +13127,13 @@
                     "58871": "Tornado Republic Fleet SKIN",
                     "59246": "Hurricane Fleet Ordnance Spike SKIN",
                     "59432": "Cyclone Fleet Ordnance Spike SKIN",
+                    "59467": "Cyclone Liberation Games SKIN",
                     "59814": "Cyclone Republic Fleet SKIN",
-                    "60574": "Hurricane Deathglow Hunters SKIN"
+                    "60574": "Hurricane Deathglow Hunters SKIN",
+                    "61878": "Cyclone Warp Convergence SKIN",
+                    "63692": "Tornado Capsuleer Elite XIX SKIN",
+                    "64591": "Hurricane Chainbreaker Khumaak SKIN",
+                    "64593": "Tornado Chainbreaker Khumaak SKIN"
                 },
                 "id": "2101"
             },
@@ -12651,7 +13160,8 @@
                         "55298": "Redeemer Biosecurity Responders SKIN",
                         "58903": "Redeemer Imperial Navy SKIN",
                         "59327": "Redeemer Fireblade Guerilla SKIN",
-                        "59332": "Redeemer Iceblade Guerilla SKIN"
+                        "59332": "Redeemer Iceblade Guerilla SKIN",
+                        "63858": "Redeemer Versus Blueforce SKIN"
                     },
                     "Caldari": {
                         "-1": "2111",
@@ -12667,7 +13177,8 @@
                         "55558": "Widow Biosecurity Responders SKIN",
                         "58883": "Widow Caldari Navy SKIN",
                         "59326": "Widow Fireblade Guerilla SKIN",
-                        "59331": "Widow Iceblade Guerilla SKIN"
+                        "59331": "Widow Iceblade Guerilla SKIN",
+                        "63866": "Widow Versus Redforce SKIN"
                     },
                     "Gallente": {
                         "-1": "2112",
@@ -12684,7 +13195,9 @@
                         "52749": "Sin Inner Zone Vanguard SKIN",
                         "55621": "Sin Biosecurity Responders SKIN",
                         "59328": "Sin Fireblade Guerilla SKIN",
-                        "59333": "Sin Iceblade Guerilla SKIN"
+                        "59333": "Sin Iceblade Guerilla SKIN",
+                        "63862": "Sin Versus Blueforce SKIN",
+                        "76952": "Sin Zydrine Burn SKIN"
                     },
                     "Minmatar": {
                         "-1": "2113",
@@ -12708,7 +13221,8 @@
                         "56905": "Panther Hazard Control SKIN",
                         "59325": "Panther Fireblade Guerilla SKIN",
                         "59330": "Panther Iceblade Guerilla SKIN",
-                        "59817": "Panther Republic Fleet SKIN"
+                        "59817": "Panther Republic Fleet SKIN",
+                        "63870": "Panther Versus Redforce SKIN"
                     },
                     "Special Black Ops": {
                         "-1": "2406",
@@ -12723,7 +13237,8 @@
                         "55294": "Marshal Biosecurity Responders SKIN",
                         "57785": "Marshal BlackIce Derailers SKIN",
                         "59329": "Marshal Fireblade Guerilla SKIN",
-                        "59334": "Marshal Iceblade Guerilla SKIN"
+                        "59334": "Marshal Iceblade Guerilla SKIN",
+                        "75909": "Marshal Red Stargazer SKIN"
                     },
                     "id": "2109"
                 },
@@ -12744,7 +13259,8 @@
                         "53008": "Paladin Malagrin Marshlight SKIN",
                         "53639": "Paladin Oasis of Faith SKIN",
                         "55350": "Paladin Biosecurity Responders SKIN",
-                        "57069": "Paladin Zakura Shumyu SKIN"
+                        "57069": "Paladin Zakura Shumyu SKIN",
+                        "73454": "Paladin Sanguinary Savant SKIN"
                     },
                     "Caldari": {
                         "-1": "2025",
@@ -12767,7 +13283,9 @@
                         "55550": "Golem Biosecurity Responders SKIN",
                         "57070": "Golem Zakura Shumyu SKIN",
                         "57733": "Golem GalNet StreamCast Unit SKIN",
-                        "60032": "Golem State Police SKIN"
+                        "60032": "Golem State Police SKIN",
+                        "64098": "Golem Kimotoro Eskeitan Commander SKIN",
+                        "76956": "Golem Zydrine Burn SKIN"
                     },
                     "Gallente": {
                         "-1": "2026",
@@ -12787,7 +13305,8 @@
                         "55617": "Kronos Biosecurity Responders SKIN",
                         "57071": "Kronos Zakura Shumyu SKIN",
                         "58893": "Kronos Federation Navy SKIN",
-                        "60568": "Kronos Malagrin Marshlight SKIN"
+                        "60568": "Kronos Malagrin Marshlight SKIN",
+                        "76286": "Kronos Heartsurge SKIN"
                     },
                     "Minmatar": {
                         "-1": "2027",
@@ -12808,7 +13327,9 @@
                         "58873": "Vargur Republic Fleet SKIN",
                         "59474": "Vargur Liberation Games SKIN",
                         "61127": "Vargur Yoiul Star SKIN",
-                        "61183": "Vargur Scope Syndication YC122 SKIN"
+                        "61183": "Vargur Scope Syndication YC122 SKIN",
+                        "76281": "Vargur Heartsurge SKIN",
+                        "76488": "Vargur GalNet StreamCast Unit SKIN"
                     },
                     "id": "2023"
                 },
@@ -12896,9 +13417,23 @@
                     "57708": "Thunderchild EDENCOM Victory SKIN",
                     "58862": "Raven Navy Issue Forward 4-4 SKIN",
                     "58863": "Scorpion Navy Issue Forward 4-4 SKIN",
+                    "59826": "Tempest Fleet Issue Nefantar SKIN",
+                    "59834": "Tempest Fleet Issue Krusual SKIN",
+                    "59841": "Tempest Fleet Issue Sebiestor SKIN",
+                    "59850": "Tempest Fleet Issue Thukker Tribe SKIN",
+                    "59858": "Tempest Fleet Issue Vherokior SKIN",
+                    "59866": "Tempest Fleet Issue Starkmanir SKIN",
+                    "59874": "Tempest Fleet Issue Brutor SKIN",
                     "60451": "Typhoon Fleet Issue Cryptic Mimesis SKIN",
                     "60452": "Dominix Navy Issue Cryptic Mimesis SKIN",
-                    "60453": "Raven Navy Issue Cryptic Mimesis SKIN"
+                    "60453": "Raven Navy Issue Cryptic Mimesis SKIN",
+                    "60676": "Apocalypse Navy Issue Ardishapur SKIN",
+                    "63211": "Tempest Fleet Issue Ace of Podhunters SKIN",
+                    "63212": "Typhoon Fleet Issue Ace of Podhunters SKIN",
+                    "64595": "Typhoon Fleet Issue Chainbreaker Khumaak SKIN",
+                    "64597": "Tempest Fleet Issue Chainbreaker Khumaak SKIN",
+                    "64911": "Tempest Fleet Issue Liberation Games SKIN",
+                    "73452": "Apocalypse Navy Issue Sanguinary Savant SKIN"
                 },
                 "Pirate Faction": {
                     "-1": "1963",
@@ -12951,6 +13486,8 @@
                     "56603": "Machariel Malagrin Marshlight SKIN",
                     "56954": "Bhaalgorn Redclaw Sable SKIN",
                     "56957": "Rattlesnake Redclaw Sable SKIN",
+                    "57308": "Vindicator Spirit SKIN",
+                    "57334": "Machariel Serpentis SKIN",
                     "57787": "Barghest Redclaw Sable SKIN",
                     "57809": "Nightmare Ghost's Hex SKIN",
                     "57812": "Barghest Ghost's Hex SKIN",
@@ -12958,8 +13495,25 @@
                     "57818": "Bhaalgorn Vampire's Hex SKIN",
                     "60099": "Nestor Friendship League SKIN",
                     "60158": "Nestor AIR Laboratories SKIN",
+                    "60667": "Bhaalgorn Ironblood SKIN",
                     "60756": "Barghest IGC SKIN",
-                    "60763": "Nightmare Copper Lightning SKIN"
+                    "60763": "Nightmare Copper Lightning SKIN",
+                    "62375": "Barghest Triumphant Elite SKIN",
+                    "62641": "Machariel Versus Redforce SKIN",
+                    "62643": "Vindicator Versus Redforce SKIN",
+                    "62647": "Machariel Versus Blueforce SKIN",
+                    "62649": "Vindicator Versus Blueforce SKIN",
+                    "63644": "Rattlesnake Versus Redforce SKIN",
+                    "75267": "Nightmare Luminae Polaris SKIN",
+                    "75268": "Barghest Luminae Polaris SKIN",
+                    "75272": "Bhaalgorn Luminae Polaris SKIN",
+                    "75898": "Vindicator Red Stargazer SKIN",
+                    "75899": "Bhaalgorn Red Stargazer SKIN",
+                    "75906": "Rattlesnake Red Stargazer SKIN",
+                    "75907": "Machariel Red Stargazer SKIN",
+                    "75908": "Barghest Red Stargazer SKIN",
+                    "75910": "Nightmare Red Stargazer SKIN",
+                    "76486": "Rattlesnake GalNet StreamCast Unit SKIN"
                 },
                 "id": "1961"
             },
@@ -12987,7 +13541,8 @@
                     "49796": "Praxis Icecloud Investigators SKIN",
                     "52278": "Praxis Capsuleer Day XVI SKIN",
                     "58859": "Praxis Versus Redforce SKIN",
-                    "58860": "Praxis Versus Blueforce SKIN"
+                    "58860": "Praxis Versus Blueforce SKIN",
+                    "74115": "Praxis Tercio Rojo SKIN"
                 },
                 "id": "2420"
             },
@@ -13059,7 +13614,11 @@
                     "57059": "Apocalypse Zakura Shumyu SKIN",
                     "58902": "Abaddon Imperial Navy SKIN",
                     "59212": "Armageddon War Reserves Lieutenant SKIN",
-                    "59216": "Apocalypse War Reserves Lieutenant SKIN"
+                    "59216": "Apocalypse War Reserves Lieutenant SKIN",
+                    "60664": "Armageddon Deathglow Remnant SKIN",
+                    "62221": "Abaddon Interstellar Convergence SKIN",
+                    "63684": "Abaddon Capsuleer Elite XIX SKIN",
+                    "73451": "Apocalypse Sanguinary Savant SKIN"
                 },
                 "Caldari": {
                     "-1": "1965",
@@ -13121,7 +13680,13 @@
                     "58882": "Raven Caldari Navy SKIN",
                     "59219": "Scorpion Military Stockpile Captain SKIN",
                     "59225": "Raven Military Stockpile Captain SKIN",
-                    "60566": "Raven Malagrin Marshlight SKIN"
+                    "60566": "Raven Malagrin Marshlight SKIN",
+                    "62224": "Raven Interstellar Convergence SKIN",
+                    "63205": "Rokh Ace of Podhunters SKIN",
+                    "63206": "Raven Ace of Podhunters SKIN",
+                    "63687": "Rokh Capsuleer Elite XIX SKIN",
+                    "71731": "Raven Union Day Executive SKIN",
+                    "72552": "Raven State Police SKIN"
                 },
                 "Gallente": {
                     "-1": "1966",
@@ -13191,7 +13756,12 @@
                     "59236": "Dominix Strategic Materiel Defender SKIN",
                     "59240": "Megathron Strategic Materiel Defender SKIN",
                     "59335": "Dominix Green Demons SKIN",
-                    "59336": "Megathron Green Demons SKIN"
+                    "59336": "Megathron Green Demons SKIN",
+                    "60663": "Megathron Deathglow Remnant SKIN",
+                    "62230": "Dominix Interstellar Convergence SKIN",
+                    "63690": "Hyperion Capsuleer Elite XIX SKIN",
+                    "64401": "Megathron Luminaire Zenith SKIN",
+                    "64571": "Dominix Luminaire Rising SKIN"
                 },
                 "Minmatar": {
                     "-1": "1967",
@@ -13250,10 +13820,19 @@
                     "57025": "Maelstrom Aurora Universalis SKIN",
                     "57067": "Tempest Zakura Shumyu SKIN",
                     "57162": "Typhoon Yoiul Star SKIN",
+                    "57341": "Tempest Amaranthine Mantle SKIN",
+                    "57343": "Maelstrom Spirit SKIN",
+                    "57344": "Typhoon Spirit SKIN",
                     "58872": "Typhoon Republic Fleet SKIN",
                     "59243": "Typhoon Fleet Ordnance Spike SKIN",
                     "59247": "Tempest Fleet Ordnance Spike SKIN",
-                    "59816": "Tempest Republic Fleet SKIN"
+                    "59468": "Tempest Liberation Games SKIN",
+                    "59816": "Tempest Republic Fleet SKIN",
+                    "62227": "Typhoon Interstellar Convergence SKIN",
+                    "63693": "Maelstrom Capsuleer Elite XIX SKIN",
+                    "64594": "Typhoon Chainbreaker Khumaak SKIN",
+                    "64596": "Tempest Chainbreaker Khumaak SKIN",
+                    "64598": "Maelstrom Chainbreaker Khumaak SKIN"
                 },
                 "id": "1962"
             },
@@ -13284,7 +13863,8 @@
                     "56613": "Rorqual Rockbreaker Pioneers SKIN",
                     "58824": "Rorqual Capsuleer Day XVIII SKIN",
                     "60762": "Rorqual Copper Lightning SKIN",
-                    "60954": "Rorqual Radioactives Reclamation SKIN"
+                    "60954": "Rorqual Radioactives Reclamation SKIN",
+                    "63696": "Rorqual Capsuleer Elite XIX SKIN"
                 },
                 "id": "2114"
             },
@@ -13336,7 +13916,8 @@
                         "55316": "Archon Biosecurity Responders SKIN",
                         "56198": "Archon Crown and Swords SKIN",
                         "56199": "Aeon Crown and Swords SKIN",
-                        "58798": "Aeon Ultraviolence Vortex SKIN"
+                        "58798": "Aeon Ultraviolence Vortex SKIN",
+                        "62223": "Aeon Interstellar Convergence SKIN"
                     },
                     "Caldari": {
                         "-1": "1975",
@@ -13369,7 +13950,8 @@
                         "53426": "Chimera Yoiul Star SKIN",
                         "55518": "Chimera Biosecurity Responders SKIN",
                         "55519": "Wyvern Biosecurity Responders SKIN",
-                        "58799": "Wyvern Ultraviolence Vortex SKIN"
+                        "58799": "Wyvern Ultraviolence Vortex SKIN",
+                        "62226": "Wyvern Interstellar Convergence SKIN"
                     },
                     "Gallente": {
                         "-1": "1976",
@@ -13418,7 +14000,11 @@
                         "58800": "Nyx Ultraviolence Vortex SKIN",
                         "59312": "Thanatos Dos Rouvenor's Bequest SKIN",
                         "59337": "Thanatos Green Demons SKIN",
-                        "59338": "Nyx Green Demons SKIN"
+                        "59338": "Nyx Green Demons SKIN",
+                        "62232": "Nyx Interstellar Convergence SKIN",
+                        "63691": "Nyx Capsuleer Elite XIX SKIN",
+                        "64572": "Thanatos Luminaire Rising SKIN",
+                        "64573": "Nyx Luminaire Rising SKIN"
                     },
                     "Minmatar": {
                         "-1": "1977",
@@ -13460,7 +14046,9 @@
                         "55716": "Hel Freedom's Revolution SKIN",
                         "56601": "Nidhoggur Malagrin Marshlight SKIN",
                         "57163": "Hel Yoiul Star SKIN",
-                        "58801": "Hel Ultraviolence Vortex SKIN"
+                        "58801": "Hel Ultraviolence Vortex SKIN",
+                        "62229": "Hel Interstellar Convergence SKIN",
+                        "63694": "Hel Capsuleer Elite XIX SKIN"
                     },
                     "id": "2374"
                 },
@@ -13468,6 +14056,13 @@
             },
             "Dreadnoughts": {
                 "Faction Dreadnoughts": {
+                    "Navy Faction": {
+                        "-1": "3495",
+                        "76285": "Naglfar Fleet Issue Heartsurge SKIN",
+                        "76290": "Moros Navy Issue Heartsurge SKIN",
+                        "76292": "Phoenix Navy Issue Heartsurge SKIN",
+                        "76294": "Revelation Navy Issue Heartsurge SKIN"
+                    },
                     "Pirate Faction": {
                         "-1": "2380",
                         "46043": "Vehement IGC SKIN",
@@ -13505,7 +14100,8 @@
                         "53421": "Revelation Yoiul Star SKIN",
                         "53642": "Revelation Oasis of Faith SKIN",
                         "55314": "Revelation Biosecurity Responders SKIN",
-                        "55721": "Revelation Starline Majestic SKIN"
+                        "55721": "Revelation Starline Majestic SKIN",
+                        "63685": "Revelation Capsuleer Elite XIX SKIN"
                     },
                     "Caldari": {
                         "-1": "1981",
@@ -13526,7 +14122,10 @@
                         "55517": "Phoenix Biosecurity Responders SKIN",
                         "55725": "Phoenix Starline Majestic SKIN",
                         "56595": "Phoenix Malagrin Marshlight SKIN",
-                        "61124": "Phoenix Yoiul Star SKIN"
+                        "61124": "Phoenix Yoiul Star SKIN",
+                        "63688": "Phoenix Capsuleer Elite XIX SKIN",
+                        "71733": "Phoenix Union Day Executive SKIN",
+                        "72557": "Phoenix State Police SKIN"
                     },
                     "Gallente": {
                         "-1": "1982",
@@ -13647,7 +14246,8 @@
                     "52782": "Providence Crown and Swords SKIN",
                     "53650": "Providence Oasis of Faith SKIN",
                     "55321": "Providence Biosecurity Responders SKIN",
-                    "57157": "Providence Yoiul Star SKIN"
+                    "57157": "Providence Yoiul Star SKIN",
+                    "62855": "Providence War Reserves Lieutenant SKIN"
                 },
                 "Caldari": {
                     "-1": "1985",
@@ -13663,7 +14263,8 @@
                     "53204": "Charon Zento Isideko Combine SKIN",
                     "55527": "Charon Biosecurity Responders SKIN",
                     "56594": "Charon Malagrin Marshlight SKIN",
-                    "60761": "Charon Copper Lightning SKIN"
+                    "60761": "Charon Copper Lightning SKIN",
+                    "62856": "Charon Military Stockpile Captain SKIN"
                 },
                 "Gallente": {
                     "-1": "1986",
@@ -13681,7 +14282,8 @@
                     "52764": "Obelisk Inner Zone Vanguard SKIN",
                     "55601": "Obelisk Biosecurity Responders SKIN",
                     "56955": "Obelisk Redclaw Sable SKIN",
-                    "61188": "Obelisk Scope Syndication YC122 SKIN"
+                    "61188": "Obelisk Scope Syndication YC122 SKIN",
+                    "62857": "Obelisk Strategic Materiel Defender SKIN"
                 },
                 "Minmatar": {
                     "-1": "1987",
@@ -13694,7 +14296,8 @@
                     "46926": "Fenrir Glacial Drift SKIN",
                     "52900": "Fenrir Snowline Bladeracer SKIN",
                     "55656": "Fenrir Biosecurity Responders SKIN",
-                    "56936": "Fenrir Hazard Control SKIN"
+                    "56936": "Fenrir Hazard Control SKIN",
+                    "62858": "Fenrir Fleet Ordnance Spike SKIN"
                 },
                 "ORE": {
                     "-1": "2318",
@@ -13806,7 +14409,8 @@
                         "53422": "Avatar Yoiul Star SKIN",
                         "53645": "Avatar Oasis of Faith SKIN",
                         "55313": "Avatar Biosecurity Responders SKIN",
-                        "55722": "Avatar Starline Majestic SKIN"
+                        "55722": "Avatar Starline Majestic SKIN",
+                        "62222": "Avatar Interstellar Convergence SKIN"
                     },
                     "Caldari": {
                         "-1": "2092",
@@ -13827,7 +14431,9 @@
                         "53427": "Leviathan Yoiul Star SKIN",
                         "55520": "Leviathan Biosecurity Responders SKIN",
                         "55726": "Leviathan Starline Majestic SKIN",
-                        "56956": "Leviathan Redclaw Sable SKIN"
+                        "56956": "Leviathan Redclaw Sable SKIN",
+                        "62225": "Leviathan Interstellar Convergence SKIN",
+                        "71734": "Leviathan Union Day Executive SKIN"
                     },
                     "Gallente": {
                         "-1": "1979",
@@ -13850,7 +14456,9 @@
                         "52440": "Erebus Federal Police SKIN",
                         "52756": "Erebus Inner Zone Vanguard SKIN",
                         "53431": "Erebus Yoiul Star SKIN",
-                        "55572": "Erebus Biosecurity Responders SKIN"
+                        "55572": "Erebus Biosecurity Responders SKIN",
+                        "62231": "Erebus Interstellar Convergence SKIN",
+                        "64574": "Erebus Luminaire Rising SKIN"
                     },
                     "Minmatar": {
                         "-1": "2093",
@@ -13867,7 +14475,8 @@
                         "50085": "Ragnarok Eros Blossom SKIN",
                         "52894": "Ragnarok Snowline Bladeracer SKIN",
                         "55638": "Ragnarok Biosecurity Responders SKIN",
-                        "56938": "Ragnarok Hazard Control SKIN"
+                        "56938": "Ragnarok Hazard Control SKIN",
+                        "62228": "Ragnarok Interstellar Convergence SKIN"
                     },
                     "id": "2381"
                 },
@@ -13924,7 +14533,14 @@
                     "-1": "2355",
                     "44160": "Reaper Glacial Drift SKIN",
                     "45932": "Reaper Exoplanets Hunter SKIN",
-                    "55642": "Reaper Biosecurity Responders SKIN"
+                    "55642": "Reaper Biosecurity Responders SKIN",
+                    "59820": "Reaper Nefantar SKIN",
+                    "59828": "Reaper Krusual SKIN",
+                    "59842": "Reaper Sebiestor SKIN",
+                    "59844": "Reaper Thukker Tribe SKIN",
+                    "59851": "Reaper Vherokior SKIN",
+                    "59860": "Reaper Starkmanir SKIN",
+                    "59868": "Reaper Brutor SKIN"
                 },
                 "id": "2307"
             },
@@ -13967,7 +14583,10 @@
                         "55302": "Zealot Biosecurity Responders SKIN",
                         "55346": "Sacrilege Biosecurity Responders SKIN",
                         "56192": "Zealot Crown and Swords SKIN",
-                        "56193": "Sacrilege Crown and Swords SKIN"
+                        "56193": "Sacrilege Crown and Swords SKIN",
+                        "60671": "Zealot Blood Raiders SKIN",
+                        "60680": "Zealot Sarum SKIN",
+                        "63202": "Zealot Ace of Podhunters SKIN"
                     },
                     "Caldari": {
                         "-1": "2070",
@@ -14004,7 +14623,10 @@
                         "54428": "Cerberus Dragon Phoenix SKIN",
                         "55549": "Cerberus Biosecurity Responders SKIN",
                         "55566": "Eagle Biosecurity Responders SKIN",
-                        "60030": "Eagle State Police SKIN"
+                        "60030": "Eagle State Police SKIN",
+                        "63204": "Eagle Ace of Podhunters SKIN",
+                        "71725": "Cerberus Union Day Executive SKIN",
+                        "76955": "Eagle Zydrine Burn SKIN"
                     },
                     "Gallente": {
                         "-1": "2071",
@@ -14041,7 +14663,10 @@
                         "55626": "Ishtar Biosecurity Responders SKIN",
                         "57160": "Deimos Yoiul Star SKIN",
                         "59339": "Deimos Green Demons SKIN",
-                        "59340": "Ishtar Green Demons SKIN"
+                        "59340": "Ishtar Green Demons SKIN",
+                        "63208": "Ishtar Ace of Podhunters SKIN",
+                        "64569": "Ishtar Luminaire Rising SKIN",
+                        "76951": "Ishtar Zydrine Burn SKIN"
                     },
                     "Minmatar": {
                         "-1": "2072",
@@ -14075,7 +14700,10 @@
                         "59314": "Muninn Freedom's Revolution SKIN",
                         "59471": "Vagabond Liberation Games SKIN",
                         "59812": "Vagabond Republic Fleet SKIN",
-                        "60570": "Muninn Malagrin Marshlight SKIN"
+                        "60570": "Muninn Malagrin Marshlight SKIN",
+                        "63210": "Muninn Ace of Podhunters SKIN",
+                        "64590": "Vagabond Chainbreaker Khumaak SKIN",
+                        "76496": "Muninn GalNet StreamCast Unit SKIN"
                     },
                     "id": "2065"
                 },
@@ -14091,7 +14719,8 @@
                         "46789": "Devoter Glacial Drift SKIN",
                         "52772": "Devoter Crown and Swords SKIN",
                         "53622": "Devoter Oasis of Faith SKIN",
-                        "55301": "Devoter Biosecurity Responders SKIN"
+                        "55301": "Devoter Biosecurity Responders SKIN",
+                        "63857": "Devoter Versus Blueforce SKIN"
                     },
                     "Caldari": {
                         "-1": "2074",
@@ -14117,7 +14746,9 @@
                         "46410": "Phobos Kopis Edge SKIN",
                         "46944": "Phobos Glacial Drift SKIN",
                         "52733": "Phobos Inner Zone Vanguard SKIN",
-                        "55633": "Phobos Biosecurity Responders SKIN"
+                        "55633": "Phobos Biosecurity Responders SKIN",
+                        "63861": "Phobos Versus Blueforce SKIN",
+                        "76288": "Phobos Heartsurge SKIN"
                     },
                     "Minmatar": {
                         "-1": "2076",
@@ -14132,7 +14763,8 @@
                         "48507": "Broadsword Dawn of Liberation SKIN",
                         "52871": "Broadsword Snowline Bladeracer SKIN",
                         "55690": "Broadsword Biosecurity Responders SKIN",
-                        "56896": "Broadsword Hazard Control SKIN"
+                        "56896": "Broadsword Hazard Control SKIN",
+                        "76282": "Broadsword Heartsurge SKIN"
                     },
                     "id": "2066"
                 },
@@ -14259,7 +14891,8 @@
                         "54560": "Rook Guristas SKIN",
                         "55563": "Rook Biosecurity Responders SKIN",
                         "55571": "Falcon Biosecurity Responders SKIN",
-                        "58880": "Falcon Caldari Navy SKIN"
+                        "58880": "Falcon Caldari Navy SKIN",
+                        "63865": "Falcon Versus Redforce SKIN"
                     },
                     "Gallente": {
                         "-1": "2083",
@@ -14304,7 +14937,8 @@
                         "55696": "Rapier Biosecurity Responders SKIN",
                         "56897": "Rapier Hazard Control SKIN",
                         "56912": "Huginn Hazard Control SKIN",
-                        "59472": "Rapier Liberation Games SKIN"
+                        "59472": "Rapier Liberation Games SKIN",
+                        "63869": "Rapier Versus Redforce SKIN"
                     },
                     "Special Recon Ships": {
                         "-1": "2362",
@@ -14449,7 +15083,21 @@
                     "57385": "Augoror Navy Issue Spirit  SKIN",
                     "57389": "Caracal Navy Issue Spirit SKIN",
                     "57394": "Stabber Fleet Issue Spirit SKIN",
-                    "57707": "Stormbringer EDENCOM Victory SKIN"
+                    "57707": "Stormbringer EDENCOM Victory SKIN",
+                    "59824": "Stabber Fleet Issue Nefantar SKIN",
+                    "59832": "Stabber Fleet Issue Krusual SKIN",
+                    "59839": "Stabber Fleet Issue Sebiestor SKIN",
+                    "59848": "Stabber Fleet Issue Thukker Tribe SKIN",
+                    "59856": "Stabber Fleet Issue Vherokior SKIN",
+                    "59864": "Stabber Fleet Issue Starkmanir SKIN",
+                    "59872": "Stabber Fleet Issue Brutor SKIN",
+                    "60926": "Stormbringer Aurora Universalis SKIN",
+                    "61863": "Omen Navy Issue Warp Convergence SKIN",
+                    "61872": "Vexor Navy Issue Warp Convergence SKIN",
+                    "61877": "Stabber Fleet Issue Warp Convergence SKIN",
+                    "64097": "Osprey Navy Issue Kimotoro Eskeitan Commander SKIN",
+                    "64910": "Scythe Fleet Issue Liberation Games SKIN",
+                    "71726": "Osprey Navy Issue Union Day Executive SKIN"
                 },
                 "Pirate Faction": {
                     "-1": "2030",
@@ -14501,6 +15149,8 @@
                     "56891": "Gila Scope Syndication YC122 SKIN",
                     "56953": "Phantasm Redclaw Sable SKIN",
                     "56958": "Stratios Redclaw Sable SKIN",
+                    "57307": "Vigilant Spirit SKIN",
+                    "57333": "Cynabal Serpentis SKIN",
                     "57786": "Orthrus Redclaw Sable SKIN",
                     "57808": "Phantasm Ghost's Hex SKIN",
                     "57811": "Orthrus Ghost's Hex SKIN",
@@ -14513,10 +15163,29 @@
                     "60241": "Orthrus Aspirant Soldier SKIN",
                     "60242": "Stratios Aspirant Soldier SKIN",
                     "60243": "Cynabal Aspirant Soldier SKIN",
+                    "60666": "Ashimmu Ironblood SKIN",
                     "60755": "Orthrus IGC SKIN",
                     "60760": "Cynabal Copper Lightning SKIN",
+                    "60909": "Ashimmu Aurora Universalis SKIN",
+                    "60913": "Gila Aurora Universalis SKIN",
+                    "60917": "Vigilant Aurora Universalis SKIN",
+                    "60921": "Phantasm Aurora Universalis SKIN",
+                    "60922": "Cynabal Aurora Universalis SKIN",
+                    "60923": "Stratios Aurora Universalis SKIN",
+                    "60924": "Orthrus Aurora Universalis SKIN",
                     "61185": "Phantasm Scope Syndication YC122 SKIN",
-                    "61186": "Stratios Scope Syndication YC122 SKIN"
+                    "61186": "Stratios Scope Syndication YC122 SKIN",
+                    "61867": "Gila Warp Convergence SKIN",
+                    "62373": "Orthrus Triumphant Elite SKIN",
+                    "62640": "Cynabal Versus Redforce SKIN",
+                    "62642": "Vigilant Versus Redforce SKIN",
+                    "62646": "Cynabal Versus Blueforce SKIN",
+                    "62648": "Vigilant Versus Blueforce SKIN",
+                    "63642": "Gila Versus Blueforce SKIN",
+                    "75266": "Phantasm Luminae Polaris SKIN",
+                    "75269": "Orthrus Luminae Polaris SKIN",
+                    "75271": "Ashimmu Luminae Polaris SKIN",
+                    "76495": "Stratios GalNet StreamCast Unit SKIN"
                 },
                 "id": "2029"
             },
@@ -14545,7 +15214,8 @@
                     "53667": "Ikitursa Blackfire Steel SKIN",
                     "54221": "Ikitursa Metamateria Exotica SKIN",
                     "56890": "Vedmak Scope Syndication YC122 SKIN",
-                    "60758": "Vedmak Copper Lightning SKIN"
+                    "60758": "Vedmak Copper Lightning SKIN",
+                    "60925": "Vedmak Aurora Universalis SKIN"
                 },
                 "id": "2483"
             },
@@ -14576,7 +15246,6 @@
                     "42768": "Maller Cold Iron SKIN",
                     "42769": "Omen Cold Iron SKIN",
                     "43500": "Arbitrator Ironblood SKIN",
-                    "43501": "Augoror Ironblood SKIN",
                     "43502": "Maller Ironblood SKIN",
                     "43503": "Omen Ironblood SKIN",
                     "44142": "Arbitrator Glacial Drift SKIN",
@@ -14616,7 +15285,15 @@
                     "59211": "Maller War Reserves Lieutenant SKIN",
                     "59214": "Omen War Reserves Lieutenant SKIN",
                     "60215": "Omen Semiotique Superluminal SKIN",
-                    "60239": "Omen Aspirant Enforcer SKIN"
+                    "60239": "Omen Aspirant Enforcer SKIN",
+                    "60660": "Omen Deathglow Remnant SKIN",
+                    "60670": "Maller Blood Raiders SKIN",
+                    "60675": "Augoror Navy Issue Ardishapur SKIN",
+                    "60679": "Maller Sarum SKIN",
+                    "60908": "Augoror Aurora Universalis SKIN",
+                    "61862": "Omen Warp Convergence SKIN",
+                    "62011": "Maller Versus Blueforce SKIN",
+                    "63241": "Omen Versus Redforce SKIN"
                 },
                 "Caldari": {
                     "-1": "1991",
@@ -14690,7 +15367,14 @@
                     "59222": "Caracal Military Stockpile Captain SKIN",
                     "60218": "Caracal Semiotique Superluminal SKIN",
                     "60236": "Caracal Aspirant Enforcer SKIN",
-                    "60266": "Osprey AIR Laboratories SKIN"
+                    "60266": "Osprey AIR Laboratories SKIN",
+                    "60661": "Caracal Deathglow Remnant SKIN",
+                    "60912": "Osprey Aurora Universalis SKIN",
+                    "61866": "Moa Warp Convergence SKIN",
+                    "62014": "Moa Versus Blueforce SKIN",
+                    "63244": "Caracal Versus Blueforce SKIN",
+                    "71724": "Caracal Union Day Executive SKIN",
+                    "76484": "Caracal GalNet StreamCast Unit SKIN"
                 },
                 "Gallente": {
                     "-1": "1992",
@@ -14764,7 +15448,15 @@
                     "60221": "Thorax Semiotique Superluminal SKIN",
                     "60237": "Thorax Aspirant Enforcer SKIN",
                     "60260": "Celestis Semiotique Sports SKIN",
-                    "60573": "Vexor Deathglow Hunters SKIN"
+                    "60573": "Vexor Deathglow Hunters SKIN",
+                    "60659": "Vexor Deathglow Remnant SKIN",
+                    "60916": "Exequror Aurora Universalis SKIN",
+                    "61871": "Vexor Warp Convergence SKIN",
+                    "62017": "Vexor Versus Blueforce SKIN",
+                    "63243": "Thorax Versus Redforce SKIN",
+                    "64400": "Exequror Luminaire Zenith SKIN",
+                    "64568": "Vexor Luminaire Rising SKIN",
+                    "76491": "Exequror GalNet StreamCast Unit SKIN"
                 },
                 "Minmatar": {
                     "-1": "1993",
@@ -14830,10 +15522,24 @@
                     "58869": "Bellicose Republic Fleet SKIN",
                     "59242": "Stabber Fleet Ordnance Spike SKIN",
                     "59245": "Rupture Fleet Ordnance Spike SKIN",
+                    "59466": "Scythe Liberation Games SKIN",
                     "59811": "Stabber Republic Fleet SKIN",
+                    "59823": "Rupture Nefantar SKIN",
+                    "59831": "Rupture Krusual SKIN",
+                    "59838": "Rupture Sebiestor SKIN",
+                    "59847": "Rupture Thukker Tribe SKIN",
+                    "59855": "Rupture Vherokior SKIN",
+                    "59863": "Rupture Starkmanir SKIN",
+                    "59871": "Rupture Brutor SKIN",
                     "60224": "Rupture Semiotique Superluminal SKIN",
                     "60238": "Rupture Aspirant Enforcer SKIN",
-                    "60262": "Bellicose Semiotique Sports SKIN"
+                    "60262": "Bellicose Semiotique Sports SKIN",
+                    "60662": "Stabber Deathglow Remnant SKIN",
+                    "60920": "Scythe Aurora Universalis SKIN",
+                    "61876": "Stabber Warp Convergence SKIN",
+                    "62020": "Rupture Versus Blueforce SKIN",
+                    "63245": "Stabber Versus Blueforce SKIN",
+                    "64589": "Rupture Chainbreaker Khumaak SKIN"
                 },
                 "id": "2028"
             },
@@ -14864,7 +15570,9 @@
                         "48728": "Stork Caldari Union Day SKIN",
                         "53167": "Stork Zento Isideko Combine SKIN",
                         "54557": "Stork Guristas SKIN",
-                        "55565": "Stork Biosecurity Responders SKIN"
+                        "55565": "Stork Biosecurity Responders SKIN",
+                        "64096": "Stork Kimotoro Eskeitan Commander SKIN",
+                        "71722": "Stork Union Day Executive SKIN"
                     },
                     "Gallente": {
                         "-1": "2144",
@@ -14905,7 +15613,8 @@
                         "48846": "Heretic Imperial Jubilee SKIN",
                         "53614": "Heretic Oasis of Faith SKIN",
                         "55345": "Heretic Biosecurity Responders SKIN",
-                        "57010": "Heretic Aurora Universalis SKIN"
+                        "57010": "Heretic Aurora Universalis SKIN",
+                        "76487": "Heretic GalNet StreamCast Unit SKIN"
                     },
                     "Caldari": {
                         "-1": "2039",
@@ -14921,7 +15630,8 @@
                         "53168": "Flycatcher Zento Isideko Combine SKIN",
                         "55560": "Flycatcher Biosecurity Responders SKIN",
                         "57012": "Flycatcher Aurora Universalis SKIN",
-                        "60565": "Flycatcher Malagrin Marshlight SKIN"
+                        "60565": "Flycatcher Malagrin Marshlight SKIN",
+                        "72553": "Flycatcher State Police SKIN"
                     },
                     "Gallente": {
                         "-1": "2040",
@@ -14952,7 +15662,8 @@
                         "52863": "Sabre Snowline Bladeracer SKIN",
                         "55694": "Sabre Biosecurity Responders SKIN",
                         "57013": "Sabre Aurora Universalis SKIN",
-                        "57738": "Sabre GalNet StreamCast Unit SKIN"
+                        "57738": "Sabre GalNet StreamCast Unit SKIN",
+                        "64588": "Sabre Chainbreaker Khumaak SKIN"
                     },
                     "id": "2037"
                 },
@@ -14988,7 +15699,9 @@
                         "53169": "Jackdaw Zento Isideko Combine SKIN",
                         "53424": "Jackdaw Yoiul Star SKIN",
                         "53955": "Jackdaw Heartsurge SKIN",
-                        "55531": "Jackdaw Biosecurity Responders SKIN"
+                        "55531": "Jackdaw Biosecurity Responders SKIN",
+                        "71723": "Jackdaw Union Day Executive SKIN",
+                        "76485": "Jackdaw GalNet StreamCast Unit SKIN"
                     },
                     "Gallente": {
                         "-1": "2356",
@@ -15026,6 +15739,16 @@
                 },
                 "id": "2036"
             },
+            "Faction Destroyers": {
+                "Navy Faction": {
+                    "-1": "3497",
+                    "76284": "Thrasher Fleet Issue Heartsurge SKIN",
+                    "76289": "Catalyst Navy Issue Heartsurge SKIN",
+                    "76291": "Cormorant Navy Issue Heartsurge SKIN",
+                    "76293": "Coercer Navy Issue Heartsurge SKIN"
+                },
+                "id": "3496"
+            },
             "Precursor Destroyers": {
                 "Triglavian": {
                     "-1": "2521",
@@ -15059,7 +15782,8 @@
                     "47653": "Sunesis Capsuleer Networker XV SKIN",
                     "49797": "Sunesis Icecloud Investigators SKIN",
                     "52279": "Sunesis Capsuleer Day XVI SKIN",
-                    "52420": "Sunesis Violet Vellication SKIN"
+                    "52420": "Sunesis Violet Vellication SKIN",
+                    "74116": "Sunesis Tercio Rojo SKIN"
                 },
                 "id": "2313"
             },
@@ -15077,6 +15801,7 @@
                     "42561": "Dragoon Purity of the Throne SKIN",
                     "42762": "Coercer Cold Iron SKIN",
                     "42763": "Dragoon Cold Iron SKIN",
+                    "43497": "Dragoon Ironblood SKIN",
                     "44140": "Coercer Glacial Drift SKIN",
                     "44141": "Dragoon Glacial Drift SKIN",
                     "45769": "Coercer Exoplanets Hunter SKIN",
@@ -15097,7 +15822,10 @@
                     "58897": "Coercer Imperial Navy SKIN",
                     "59210": "Coercer War Reserves Lieutenant SKIN",
                     "59422": "Dragoon War Reserves Lieutenant SKIN",
-                    "60214": "Coercer Semiotique Superluminal SKIN"
+                    "60214": "Coercer Semiotique Superluminal SKIN",
+                    "60674": "Dragoon Ardishapur SKIN",
+                    "63201": "Coercer Ace of Podhunters SKIN",
+                    "73453": "Dragoon Sanguinary Savant SKIN"
                 },
                 "Caldari": {
                     "-1": "1995",
@@ -15142,7 +15870,10 @@
                     "60208": "Corax Semiotique Sports SKIN",
                     "60217": "Cormorant Semiotique Superluminal SKIN",
                     "60264": "Cormorant AIR Laboratories SKIN",
-                    "60572": "Cormorant Deathglow Hunters SKIN"
+                    "60572": "Cormorant Deathglow Hunters SKIN",
+                    "63203": "Cormorant Ace of Podhunters SKIN",
+                    "71721": "Corax Union Day Executive SKIN",
+                    "72554": "Cormorant State Police SKIN"
                 },
                 "Gallente": {
                     "-1": "1996",
@@ -15188,7 +15919,8 @@
                     "59425": "Algos Strategic Materiel Defender SKIN",
                     "60220": "Catalyst Semiotique Superluminal SKIN",
                     "61126": "Algos Yoiul Star SKIN",
-                    "61191": "Catalyst Scope Syndication YC122 SKIN"
+                    "61191": "Catalyst Scope Syndication YC122 SKIN",
+                    "63207": "Catalyst Ace of Podhunters SKIN"
                 },
                 "Minmatar": {
                     "-1": "1997",
@@ -15222,9 +15954,11 @@
                     "58867": "Talwar Republic Fleet SKIN",
                     "59241": "Thrasher Fleet Ordnance Spike SKIN",
                     "59431": "Talwar Fleet Ordnance Spike SKIN",
+                    "59465": "Talwar Liberation Games SKIN",
                     "59810": "Thrasher Republic Fleet SKIN",
                     "60210": "Talwar Semiotique Sports SKIN",
-                    "60223": "Thrasher Semiotique Superluminal SKIN"
+                    "60223": "Thrasher Semiotique Superluminal SKIN",
+                    "63209": "Thrasher Ace of Podhunters SKIN"
                 },
                 "id": "2035"
             },
@@ -15256,7 +15990,8 @@
                         "56190": "Vengeance Crown and Swords SKIN",
                         "57156": "Retribution Yoiul Star SKIN",
                         "57736": "Retribution GalNet StreamCast Unit SKIN",
-                        "60563": "Retribution Malagrin Marshlight SKIN"
+                        "60563": "Retribution Malagrin Marshlight SKIN",
+                        "73457": "Retribution Sanguinary Savant SKIN"
                     },
                     "Caldari": {
                         "-1": "2048",
@@ -15283,7 +16018,9 @@
                         "55552": "Hawk Biosecurity Responders SKIN",
                         "55569": "Harpy Biosecurity Responders SKIN",
                         "57734": "Harpy GalNet StreamCast Unit SKIN",
-                        "60028": "Hawk State Police SKIN"
+                        "60028": "Hawk State Police SKIN",
+                        "72556": "Harpy State Police SKIN",
+                        "76957": "Hawk Zydrine Burn SKIN"
                     },
                     "Gallente": {
                         "-1": "2049",
@@ -15307,7 +16044,8 @@
                         "52713": "Ishkur Inner Zone Vanguard SKIN",
                         "55623": "Ishkur Biosecurity Responders SKIN",
                         "55630": "Enyo Biosecurity Responders SKIN",
-                        "57729": "Ishkur GalNet StreamCast Unit SKIN"
+                        "57729": "Ishkur GalNet StreamCast Unit SKIN",
+                        "76954": "Ishkur Zydrine Burn SKIN"
                     },
                     "Minmatar": {
                         "-1": "2050",
@@ -15364,7 +16102,12 @@
                         "56191": "Anathema Crown and Swords SKIN",
                         "57735": "Anathema GalNet StreamCast Unit SKIN",
                         "60564": "Purifier Malagrin Marshlight SKIN",
-                        "61194": "Purifier Scope Syndication YC122 SKIN"
+                        "60669": "Purifier Blood Raiders SKIN",
+                        "60678": "Purifier Sarum SKIN",
+                        "60906": "Purifier Aurora Universalis SKIN",
+                        "61194": "Purifier Scope Syndication YC122 SKIN",
+                        "62012": "Anathema Versus Redforce SKIN",
+                        "64406": "Anathema Luminaire Rising SKIN"
                     },
                     "Caldari": {
                         "-1": "2052",
@@ -15392,7 +16135,11 @@
                         "57158": "Buzzard Yoiul Star SKIN",
                         "58876": "Buzzard Caldari Navy SKIN",
                         "60029": "Manticore State Police SKIN",
-                        "61187": "Buzzard Scope Syndication YC122 SKIN"
+                        "60910": "Manticore Aurora Universalis SKIN",
+                        "61187": "Buzzard Scope Syndication YC122 SKIN",
+                        "62015": "Buzzard Versus Redforce SKIN",
+                        "63863": "Buzzard Versus Blueforce SKIN",
+                        "64408": "Buzzard Luminaire Rising SKIN"
                     },
                     "Gallente": {
                         "-1": "2053",
@@ -15417,7 +16164,10 @@
                         "52715": "Nemesis Inner Zone Vanguard SKIN",
                         "55615": "Nemesis Biosecurity Responders SKIN",
                         "55624": "Helios Biosecurity Responders SKIN",
-                        "60567": "Nemesis Malagrin Marshlight SKIN"
+                        "60567": "Nemesis Malagrin Marshlight SKIN",
+                        "60914": "Nemesis Aurora Universalis SKIN",
+                        "62018": "Helios Versus Redforce SKIN",
+                        "64413": "Helios Luminaire Rising SKIN"
                     },
                     "Minmatar": {
                         "-1": "2054",
@@ -15440,7 +16190,11 @@
                         "55677": "Cheetah Biosecurity Responders SKIN",
                         "55684": "Hound Biosecurity Responders SKIN",
                         "56901": "Cheetah Hazard Control SKIN",
-                        "56910": "Hound Hazard Control SKIN"
+                        "56910": "Hound Hazard Control SKIN",
+                        "60918": "Hound Aurora Universalis SKIN",
+                        "62021": "Cheetah Versus Redforce SKIN",
+                        "63867": "Cheetah Versus Blueforce SKIN",
+                        "64411": "Cheetah Luminaire Rising SKIN"
                     },
                     "Special Covert Ops": {
                         "-1": "2361",
@@ -15453,7 +16207,8 @@
                         "48579": "Pacifier DED 'Alpha Plus' Taskforce SKIN",
                         "54216": "Pacifier DED Army Reserve SKIN",
                         "55295": "Pacifier Biosecurity Responders SKIN",
-                        "57783": "Pacifier BlackIce Derailers SKIN"
+                        "57783": "Pacifier BlackIce Derailers SKIN",
+                        "64409": "Pacifier Luminaire Rising SKIN"
                     },
                     "id": "2044"
                 },
@@ -15467,7 +16222,8 @@
                         "45763": "Sentinel Exoplanets Hunter SKIN",
                         "46778": "Sentinel Glacial Drift SKIN",
                         "53605": "Sentinel Oasis of Faith SKIN",
-                        "55297": "Sentinel Biosecurity Responders SKIN"
+                        "55297": "Sentinel Biosecurity Responders SKIN",
+                        "63855": "Sentinel Versus Redforce SKIN"
                     },
                     "Caldari": {
                         "-1": "2056",
@@ -15493,7 +16249,9 @@
                         "46393": "Keres Kopis Edge SKIN",
                         "46933": "Keres Glacial Drift SKIN",
                         "52716": "Keres Inner Zone Vanguard SKIN",
-                        "55614": "Keres Biosecurity Responders SKIN"
+                        "55614": "Keres Biosecurity Responders SKIN",
+                        "63859": "Keres Versus Redforce SKIN",
+                        "76287": "Keres Heartsurge SKIN"
                     },
                     "Minmatar": {
                         "-1": "2058",
@@ -15507,7 +16265,8 @@
                         "52854": "Hyena Snowline Bladeracer SKIN",
                         "55691": "Hyena Biosecurity Responders SKIN",
                         "56895": "Hyena Hazard Control SKIN",
-                        "58866": "Hyena Republic Fleet SKIN"
+                        "58866": "Hyena Republic Fleet SKIN",
+                        "76283": "Hyena Heartsurge SKIN"
                     },
                     "id": "2045"
                 },
@@ -15565,7 +16324,9 @@
                         "55344": "Malediction Biosecurity Responders SKIN",
                         "55351": "Crusader Biosecurity Responders SKIN",
                         "57005": "Crusader Aurora Universalis SKIN",
-                        "58896": "Crusader Imperial Navy SKIN"
+                        "58896": "Crusader Imperial Navy SKIN",
+                        "64395": "Malediction Luminaire Zenith SKIN",
+                        "64405": "Malediction Luminaire Rising SKIN"
                     },
                     "Caldari": {
                         "-1": "2060",
@@ -15591,7 +16352,10 @@
                         "55555": "Raptor Biosecurity Responders SKIN",
                         "55562": "Crow Biosecurity Responders SKIN",
                         "57006": "Raptor Aurora Universalis SKIN",
-                        "60027": "Crow State Police SKIN"
+                        "60027": "Crow State Police SKIN",
+                        "64396": "Crow Luminaire Zenith SKIN",
+                        "64407": "Crow Luminaire Rising SKIN",
+                        "72555": "Raptor State Police SKIN"
                     },
                     "Gallente": {
                         "-1": "2061",
@@ -15614,7 +16378,9 @@
                         "55613": "Taranis Biosecurity Responders SKIN",
                         "55631": "Ares Biosecurity Responders SKIN",
                         "57008": "Taranis Aurora Universalis SKIN",
-                        "58886": "Taranis Federation Navy SKIN"
+                        "58886": "Taranis Federation Navy SKIN",
+                        "64397": "Ares Luminaire Zenith SKIN",
+                        "64412": "Ares Luminaire Rising SKIN"
                     },
                     "Minmatar": {
                         "-1": "2062",
@@ -15639,7 +16405,11 @@
                         "55692": "Stiletto Biosecurity Responders SKIN",
                         "56894": "Stiletto Hazard Control SKIN",
                         "56908": "Claw Hazard Control SKIN",
-                        "57009": "Claw Aurora Universalis SKIN"
+                        "57009": "Claw Aurora Universalis SKIN",
+                        "59469": "Claw Liberation Games SKIN",
+                        "64402": "Stiletto Luminaire Zenith SKIN",
+                        "64410": "Claw Luminaire Rising SKIN",
+                        "76489": "Stiletto GalNet StreamCast Unit SKIN"
                     },
                     "id": "2046"
                 },
@@ -15766,8 +16536,24 @@
                     "58861": "Griffin Navy Issue Forward 4-4 SKIN",
                     "59316": "Republic Fleet Firetail Freedom's Revolution SKIN",
                     "59464": "Republic Fleet Firetail Liberation Games SKIN",
+                    "59822": "Republic Fleet Firetail Nefantar SKIN",
+                    "59830": "Republic Fleet Firetail Krusual SKIN",
+                    "59837": "Republic Fleet Firetail Sebiestor SKIN",
                     "59846": "Republic Fleet Firetail Thukker Tribe SKIN",
-                    "60265": "Republic Fleet Firetail AIR Laboratories SKIN"
+                    "59854": "Republic Fleet Firetail Vherokior SKIN",
+                    "59862": "Republic Fleet Firetail Starkmanir SKIN",
+                    "59870": "Republic Fleet Firetail Brutor SKIN",
+                    "60265": "Republic Fleet Firetail AIR Laboratories SKIN",
+                    "60673": "Imperial Navy Slicer Ardishapur SKIN",
+                    "64399": "Federation Navy Comet Luminaire Zenith SKIN",
+                    "73838": "Magnate Navy Issue Semiotique Superluminal SKIN",
+                    "73839": "Heron Navy Issue Semiotique Superluminal SKIN",
+                    "73840": "Imicus Navy Issue Semiotique Superluminal SKIN",
+                    "73841": "Probe Fleet Issue Semiotique Superluminal SKIN",
+                    "73873": "Caldari Navy Hookbill Versus Blueforce SKIN",
+                    "73875": "Imperial Navy Slicer Versus Blueforce SKIN",
+                    "73877": "Federation Navy Comet Versus Redforce SKIN",
+                    "73879": "Republic Fleet Firetail Versus Redforce SKIN"
                 },
                 "Pirate Faction": {
                     "-1": "2031",
@@ -15809,6 +16595,7 @@
                     "54229": "Worm Helmatt's Harriers SKIN",
                     "56880": "Astero Scope Syndication YC122 SKIN",
                     "56952": "Garmur Redclaw Sable SKIN",
+                    "57310": "Daredevil Spirit SKIN",
                     "57807": "Succubus Ghost's Hex SKIN",
                     "57810": "Garmur Ghost's Hex SKIN",
                     "57813": "Worm Vampire's Hex SKIN",
@@ -15817,7 +16604,17 @@
                     "60156": "Astero AIR Laboratories SKIN",
                     "60225": "Astero Semiotique Superluminal SKIN",
                     "60227": "Astero Aspirant Explorer SKIN",
-                    "60754": "Garmur IGC SKIN"
+                    "60665": "Cruor Ironblood SKIN",
+                    "60754": "Garmur IGC SKIN",
+                    "62372": "Garmur Triumphant Elite SKIN",
+                    "62638": "Dramiel Versus Redforce SKIN",
+                    "62639": "Daredevil Versus Redforce SKIN",
+                    "62644": "Dramiel Versus Blueforce SKIN",
+                    "62645": "Daredevil Versus Blueforce SKIN",
+                    "63643": "Worm Versus Redforce SKIN",
+                    "75265": "Succubus Luminae Polaris SKIN",
+                    "75270": "Garmur Luminae Polaris SKIN",
+                    "75273": "Cruor Luminae Polaris SKIN"
                 },
                 "id": "1999"
             },
@@ -15875,10 +16672,10 @@
                     "42749": "Magnate Cold Iron SKIN",
                     "42750": "Punisher Cold Iron SKIN",
                     "42751": "Tormentor Cold Iron SKIN",
+                    "43482": "Crucifier Ironblood SKIN",
                     "43483": "Executioner Ironblood SKIN",
                     "43485": "Magnate Ironblood SKIN",
                     "43486": "Punisher Ironblood SKIN",
-                    "43487": "Tormentor Ironblood SKIN",
                     "44134": "Crucifier Glacial Drift SKIN",
                     "44135": "Executioner Glacial Drift SKIN",
                     "44136": "Inquisitor Glacial Drift SKIN",
@@ -15924,7 +16721,17 @@
                     "59421": "Crucifier War Reserves Lieutenant SKIN",
                     "60197": "Inquisitor Combat Medic Section SKIN",
                     "60213": "Punisher Semiotique Superluminal SKIN",
-                    "60230": "Magnate Aspirant Explorer SKIN"
+                    "60230": "Magnate Aspirant Explorer SKIN",
+                    "60658": "Tormentor Deathglow Remnant SKIN",
+                    "60668": "Punisher Blood Raiders SKIN",
+                    "60672": "Crucifier Ardishapur SKIN",
+                    "60677": "Punisher Sarum SKIN",
+                    "60907": "Punisher Aurora Universalis SKIN",
+                    "61861": "Magnate Warp Convergence SKIN",
+                    "62010": "Magnate Versus Blueforce SKIN",
+                    "63028": "Magnate Semiotique Superluminal SKIN",
+                    "63143": "Executioner Versus Blueforce SKIN",
+                    "73456": "Punisher Sanguinary Savant SKIN"
                 },
                 "Caldari": {
                     "-1": "2003",
@@ -16014,7 +16821,12 @@
                     "60198": "Bantam Combat Medic Section SKIN",
                     "60216": "Merlin Semiotique Superluminal SKIN",
                     "60229": "Heron Aspirant Explorer SKIN",
-                    "61192": "Kestrel Scope Syndication YC122 SKIN"
+                    "60911": "Kestrel Aurora Universalis SKIN",
+                    "61192": "Kestrel Scope Syndication YC122 SKIN",
+                    "61865": "Heron Warp Convergence SKIN",
+                    "62013": "Heron Versus Blueforce SKIN",
+                    "63029": "Heron Semiotique Superluminal SKIN",
+                    "63141": "Condor Versus Redforce SKIN"
                 },
                 "Gallente": {
                     "-1": "2004",
@@ -16100,7 +16912,14 @@
                     "60159": "Incursus AIR Laboratories SKIN",
                     "60199": "Navitas Combat Medic Section SKIN",
                     "60219": "Incursus Semiotique Superluminal SKIN",
-                    "60228": "Imicus Aspirant Explorer SKIN"
+                    "60228": "Imicus Aspirant Explorer SKIN",
+                    "60657": "Incursus Deathglow Remnant SKIN",
+                    "60915": "Tristan Aurora Universalis SKIN",
+                    "61870": "Imicus Warp Convergence SKIN",
+                    "62016": "Imicus Versus Blueforce SKIN",
+                    "63030": "Imicus Semiotique Superluminal SKIN",
+                    "63144": "Atron Versus Blueforce SKIN",
+                    "64398": "Tristan Luminaire Zenith SKIN"
                 },
                 "Minmatar": {
                     "-1": "2005",
@@ -16176,14 +16995,30 @@
                     "57064": "Rifter Zakura Shumyu SKIN",
                     "57108": "Slasher Zakura Hansei SKIN",
                     "57182": "Breacher Zakura Hansei SKIN",
+                    "57342": "Rifter Amaranthine Mantle SKIN",
                     "58864": "Rifter Republic Fleet SKIN",
                     "58865": "Breacher Republic Fleet SKIN",
                     "59244": "Rifter Fleet Ordnance Spike SKIN",
                     "59430": "Vigil Fleet Ordnance Spike SKIN",
+                    "59462": "Rifter Liberation Games SKIN",
+                    "59463": "Probe Liberation Games SKIN",
                     "59808": "Slasher Republic Fleet SKIN",
+                    "59821": "Breacher Nefantar SKIN",
+                    "59829": "Breacher Krusual SKIN",
+                    "59836": "Breacher Sebiestor SKIN",
+                    "59845": "Breacher Thukker Tribe SKIN",
+                    "59853": "Breacher Vherokior SKIN",
+                    "59861": "Breacher Starkmanir SKIN",
+                    "59869": "Breacher Brutor SKIN",
                     "60200": "Burst Combat Medic Section SKIN",
                     "60222": "Rifter Semiotique Superluminal SKIN",
-                    "60231": "Probe Aspirant Explorer SKIN"
+                    "60231": "Probe Aspirant Explorer SKIN",
+                    "60919": "Rifter Aurora Universalis SKIN",
+                    "61875": "Probe Warp Convergence SKIN",
+                    "62019": "Probe Versus Blueforce SKIN",
+                    "63031": "Probe Semiotique Superluminal SKIN",
+                    "63142": "Slasher Versus Redforce SKIN",
+                    "64587": "Rifter Chainbreaker Khumaak SKIN"
                 },
                 "ORE": {
                     "-1": "2321",
@@ -16201,14 +17036,15 @@
                     "46734": "Venture Lodestrike SKIN",
                     "56604": "Venture Rockbreaker Pioneers SKIN",
                     "60944": "Venture Radioactives Reclamation SKIN",
-                    "61184": "Venture Scope Syndication YC122 SKIN"
+                    "61184": "Venture Scope Syndication YC122 SKIN",
+                    "76493": "Venture GalNet StreamCast Unit SKIN"
                 },
                 "id": "2001"
             },
             "id": "1998"
         },
-        "Industrial Ships": {
-            "Advanced Industrial Ships": {
+        "Haulers and Industrial Ships": {
+            "Advanced Haulers": {
                 "Transport Ships": {
                     "Amarr": {
                         "-1": "2088",
@@ -16233,7 +17069,8 @@
                         "53648": "Prorator Oasis of Faith SKIN",
                         "53649": "Impel Oasis of Faith SKIN",
                         "55300": "Prorator Biosecurity Responders SKIN",
-                        "55343": "Impel Biosecurity Responders SKIN"
+                        "55343": "Impel Biosecurity Responders SKIN",
+                        "63856": "Impel Versus Redforce SKIN"
                     },
                     "Caldari": {
                         "-1": "2089",
@@ -16263,7 +17100,10 @@
                         "55551": "Bustard Biosecurity Responders SKIN",
                         "55561": "Crane Biosecurity Responders SKIN",
                         "55724": "Crane Starline Majestic SKIN",
-                        "61123": "Bustard Yoiul Star SKIN"
+                        "61123": "Bustard Yoiul Star SKIN",
+                        "63864": "Crane Versus Blueforce SKIN",
+                        "71728": "Bustard Union Day Executive SKIN",
+                        "71732": "Crane Union Day Executive SKIN"
                     },
                     "Gallente": {
                         "-1": "2090",
@@ -16288,7 +17128,8 @@
                         "52762": "Viator Inner Zone Vanguard SKIN",
                         "52763": "Occator Inner Zone Vanguard SKIN",
                         "55616": "Viator Biosecurity Responders SKIN",
-                        "55632": "Occator Biosecurity Responders SKIN"
+                        "55632": "Occator Biosecurity Responders SKIN",
+                        "63860": "Occator Versus Redforce SKIN"
                     },
                     "Minmatar": {
                         "-1": "2091",
@@ -16313,7 +17154,8 @@
                         "56906": "Mastodon Hazard Control SKIN",
                         "56934": "Prowler Hazard Control SKIN",
                         "57739": "Prowler GalNet StreamCast Unit SKIN",
-                        "61193": "Prowler Scope Syndication YC122 SKIN"
+                        "61193": "Prowler Scope Syndication YC122 SKIN",
+                        "63868": "Prowler Versus Blueforce SKIN"
                     },
                     "id": "2087"
                 },
@@ -16353,11 +17195,13 @@
                     "58822": "Porpoise Capsuleer Day XVIII SKIN",
                     "58823": "Orca Capsuleer Day XVIII SKIN",
                     "60953": "Orca Radioactives Reclamation SKIN",
-                    "60957": "Porpoise Radioactives Reclamation SKIN"
+                    "60957": "Porpoise Radioactives Reclamation SKIN",
+                    "63695": "Orca Capsuleer Elite XIX SKIN",
+                    "63697": "Porpoise Capsuleer Elite XIX SKIN"
                 },
                 "id": "2337"
             },
-            "Special Edition Industrial Ships": {
+            "Special Edition Haulers": {
                 "ORE": {
                     "-1": "2331",
                     "43675": "Primae Rosada Dawn SKIN",
@@ -16367,7 +17211,7 @@
                 },
                 "id": "2330"
             },
-            "Standard Industrial Ships": {
+            "Standard Haulers": {
                 "Amarr": {
                     "-1": "2007",
                     "34752": "Bestower Tash-Murkon SKIN",
@@ -16386,11 +17230,14 @@
                     "53646": "Bestower Oasis of Faith SKIN",
                     "53647": "Sigil Oasis of Faith SKIN",
                     "55312": "Bestower Biosecurity Responders SKIN",
-                    "55322": "Sigil Biosecurity Responders SKIN"
+                    "55322": "Sigil Biosecurity Responders SKIN",
+                    "70798": "Sigil War Reserves Lieutenant SKIN",
+                    "70799": "Bestower War Reserves Lieutenant SKIN"
                 },
                 "Caldari": {
                     "-1": "2008",
                     "34754": "Tayra Wiyrkomi SKIN",
+                    "36333": "Badger Wiyrkomi SKIN",
                     "36673": "Badger Raata Sunset SKIN",
                     "36674": "Tayra Raata Sunset SKIN",
                     "36745": "Badger Blue Tiger SKIN",
@@ -16411,8 +17258,12 @@
                     "53201": "Tayra Zento Isideko Combine SKIN",
                     "55515": "Badger Biosecurity Responders SKIN",
                     "55516": "Tayra Biosecurity Responders SKIN",
+                    "56090": "Badger Sukuuvestaa SKIN",
                     "56866": "Tayra Forward 4-4 SKIN",
-                    "60106": "Badger Wiyrkomi SKIN"
+                    "60106": "Badger Wiyrkomi SKIN",
+                    "70836": "Badger Military Stockpile Captain SKIN",
+                    "70837": "Tayra Military Stockpile Captain SKIN",
+                    "71729": "Tayra Union Day Executive SKIN"
                 },
                 "Gallente": {
                     "-1": "2009",
@@ -16463,7 +17314,12 @@
                     "55588": "Iteron Mark V Biosecurity Responders SKIN",
                     "55589": "Epithal Biosecurity Responders SKIN",
                     "55599": "Miasmos Biosecurity Responders SKIN",
-                    "55600": "Nereus Biosecurity Responders SKIN"
+                    "55600": "Nereus Biosecurity Responders SKIN",
+                    "64390": "Nereus Strategic Materiel Defender SKIN",
+                    "64391": "Kryos Strategic Materiel Defender SKIN",
+                    "64392": "Epithal Strategic Materiel Defender SKIN",
+                    "64393": "Miasmos Strategic Materiel Defender SKIN",
+                    "64394": "Iteron Mark V Strategic Materiel Defender SKIN"
                 },
                 "Minmatar": {
                     "-1": "2010",
@@ -16493,7 +17349,10 @@
                     "55817": "Wreathe Nefantar SKIN",
                     "56929": "Hoarder Hazard Control SKIN",
                     "56930": "Mammoth Hazard Control SKIN",
-                    "56933": "Wreathe Hazard Control SKIN"
+                    "56933": "Wreathe Hazard Control SKIN",
+                    "64907": "Hoarder Fleet Ordnance Spike SKIN",
+                    "64908": "Mammoth Fleet Ordnance Spike SKIN",
+                    "64909": "Wreathe Fleet Ordnance Spike SKIN"
                 },
                 "ORE": {
                     "-1": "2328",
@@ -16565,7 +17424,8 @@
                 "56617": "Hulk Rockbreaker Pioneers SKIN",
                 "60950": "Skiff Radioactives Reclamation SKIN",
                 "60951": "Mackinaw Radioactives Reclamation SKIN",
-                "60952": "Hulk Radioactives Reclamation SKIN"
+                "60952": "Hulk Radioactives Reclamation SKIN",
+                "76492": "Hulk GalNet StreamCast Unit SKIN"
             },
             "Mining Barges": {
                 "-1": "2319",
@@ -16628,7 +17488,8 @@
                 "43935": "Blood Raider Victory SKIN",
                 "45552": "Guristas Victory SKIN",
                 "46582": "Serpentis Victory SKIN",
-                "46584": "Daredevil Serpentis Victory SKIN"
+                "46584": "Daredevil Serpentis Victory SKIN",
+                "75911": "Minmatar Victory SKIN"
             },
             "id": "2119"
         },
@@ -16644,6 +17505,7 @@
                 "45810": "Caldari Shuttle Exoplanets Hunter SKIN",
                 "46827": "Caldari Shuttle Glacial Drift SKIN",
                 "55534": "Caldari Shuttle Biosecurity Responders SKIN",
+                "56089": "Caldari Shuttle Sukuuvestaa SKIN",
                 "60105": "Caldari Shuttle Wiyrkomi SKIN"
             },
             "Gallente": {
@@ -16658,7 +17520,8 @@
                 "45931": "Minmatar Shuttle Exoplanets Hunter SKIN",
                 "46879": "Minmatar Shuttle Glacial Drift SKIN",
                 "55641": "Minmatar Shuttle Biosecurity Responders SKIN",
-                "55816": "Minmatar Shuttle Nefantar SKIN"
+                "55816": "Minmatar Shuttle Nefantar SKIN",
+                "59475": "Minmatar Shuttle Liberation Games SKIN"
             },
             "Special Shuttles": {
                 "-1": "2316",
@@ -16680,7 +17543,9 @@
                 "59852": "Leopard Vherokior SKIN",
                 "59859": "Leopard Starkmanir SKIN",
                 "59867": "Leopard Brutor SKIN",
-                "59875": "Leopard Liberation Games SKIN"
+                "59875": "Leopard Liberation Games SKIN",
+                "64189": "Boobook Versus Redforce SKIN",
+                "64190": "Boobook Versus Blueforce SKIN"
             },
             "id": "2315"
         },
@@ -17946,7 +18811,11 @@
                     "33151": "Brutix Navy Issue",
                     "33153": "Drake Navy Issue",
                     "33155": "Harbinger Navy Issue",
-                    "33157": "Hurricane Fleet Issue"
+                    "33157": "Hurricane Fleet Issue",
+                    "72811": "Cyclone Fleet Issue",
+                    "72812": "Ferox Navy Issue",
+                    "72869": "Myrmidon Navy Issue",
+                    "72872": "Prophecy Navy Issue"
                 },
                 "id": "1703"
             },
@@ -18136,10 +19005,20 @@
                     "19726": "Phoenix"
                 },
                 "Faction Dreadnoughts": {
-                    "-1": "2288",
-                    "42124": "Vehement",
-                    "42243": "Chemosh",
-                    "45647": "Caiman"
+                    "Navy Faction": {
+                        "-1": "3484",
+                        "73787": "Naglfar Fleet Issue",
+                        "73790": "Revelation Navy Issue",
+                        "73792": "Moros Navy Issue",
+                        "73793": "Phoenix Navy Issue"
+                    },
+                    "Pirate Faction": {
+                        "-1": "3483",
+                        "42124": "Vehement",
+                        "42243": "Chemosh",
+                        "45647": "Caiman"
+                    },
+                    "id": "2288"
                 },
                 "Gallente": {
                     "-1": "764",
@@ -18149,7 +19028,7 @@
                     "-1": "765",
                     "19722": "Naglfar"
                 },
-                "Precursor Dreadnoughts": {
+                "Triglavian": {
                     "-1": "2690",
                     "52907": "Zirnitra"
                 },
@@ -18411,8 +19290,7 @@
                     "17722": "Vigilant",
                     "17922": "Ashimmu",
                     "33470": "Stratios",
-                    "33818": "Orthrus",
-                    "60764": "Laelaps"
+                    "33818": "Orthrus"
                 },
                 "id": "1369"
             },
@@ -18522,6 +19400,16 @@
                     "id": "1951"
                 },
                 "id": "1373"
+            },
+            "Faction Destroyers": {
+                "Navy Faction": {
+                    "-1": "3481",
+                    "73789": "Coercer Navy Issue",
+                    "73794": "Thrasher Fleet Issue",
+                    "73795": "Cormorant Navy Issue",
+                    "73796": "Catalyst Navy Issue"
+                },
+                "id": "3480"
             },
             "Precursor Destroyers": {
                 "Triglavian": {
@@ -18687,7 +19575,11 @@
                     "37454": "Vigil Fleet Issue",
                     "37455": "Griffin Navy Issue",
                     "37456": "Maulus Navy Issue",
-                    "54731": "Skybreaker"
+                    "54731": "Skybreaker",
+                    "72903": "Probe Fleet Issue",
+                    "72904": "Heron Navy Issue",
+                    "72907": "Magnate Navy Issue",
+                    "72913": "Imicus Navy Issue"
                 },
                 "Pirate Faction": {
                     "-1": "1365",
@@ -18697,8 +19589,7 @@
                     "17930": "Worm",
                     "17932": "Dramiel",
                     "33468": "Astero",
-                    "33816": "Garmur",
-                    "60765": "Raiju"
+                    "33816": "Garmur"
                 },
                 "id": "1362"
             },
@@ -18755,8 +19646,8 @@
             },
             "id": "1361"
         },
-        "Industrial Ships": {
-            "Advanced Industrial Ships": {
+        "Haulers and Industrial Ships": {
+            "Advanced Haulers": {
                 "Transport Ships": {
                     "Amarr": {
                         "-1": "630",
@@ -18790,7 +19681,7 @@
                 },
                 "id": "2335"
             },
-            "Standard Industrial Ships": {
+            "Standard Haulers": {
                 "Amarr": {
                     "-1": "85",
                     "1944": "Bestower",
@@ -18868,7 +19759,8 @@
                 "2834": "Utu",
                 "3516": "Malice",
                 "32207": "Freki",
-                "32788": "Cambion"
+                "32788": "Cambion",
+                "74141": "Geri"
             },
             "Special Edition Battlecruisers": {
                 "-1": "1698",
@@ -18911,6 +19803,10 @@
                 "-1": "2350",
                 "42685": "Sunesis"
             },
+            "Special Edition Electronic Attack Frigates": {
+                "-1": "2819",
+                "60765": "Raiju"
+            },
             "Special Edition Frigates": {
                 "-1": "1619",
                 "2078": "Zephyr",
@@ -18922,11 +19818,13 @@
                 "-1": "1621",
                 "2836": "Adrestia",
                 "3518": "Vangel",
-                "32209": "Mimir"
+                "32209": "Mimir",
+                "74316": "Bestla"
             },
             "Special Edition Heavy Interdiction Cruisers": {
                 "-1": "2115",
-                "35781": "Fiend"
+                "35781": "Fiend",
+                "60764": "Laelaps"
             },
             "Special Edition Industrial Ships": {
                 "-1": "1614",
@@ -18958,7 +19856,8 @@
                 "29266": "Apotheosis",
                 "30842": "InterBus Shuttle",
                 "33513": "Leopard",
-                "34496": "Council Diplomatic Shuttle"
+                "34496": "Council Diplomatic Shuttle",
+                "64034": "Boobook"
             },
             "id": "1612"
         },
@@ -19199,7 +20098,8 @@
             "25530": "Neurotoxin Recovery",
             "25538": "Neurotoxin Control",
             "33399": "Infomorph Synchronizing",
-            "33407": "Advanced Infomorph Psychology"
+            "33407": "Advanced Infomorph Psychology",
+            "73910": "Elite Infomorph Psychology"
         },
         "Planet Management": {
             "-1": "1823",
@@ -19271,7 +20171,11 @@
             "60378": "Coherent Ore Processing",
             "60379": "Variegated Ore Processing",
             "60380": "Complex Ore Processing",
-            "60381": "Abyssal Ore Processing"
+            "60381": "Abyssal Ore Processing",
+            "62450": "Shipboard Compression Technology",
+            "62451": "Capital Shipboard Compression Technology",
+            "62452": "Gas Decompression Efficiency",
+            "62453": "Fleet Compression Logistics"
         },
         "Rigging": {
             "-1": "372",
@@ -19370,7 +20274,7 @@
         },
         "Spaceship Command": {
             "-1": "377",
-            "3184": "ORE Industrial",
+            "3184": "ORE Hauler",
             "3327": "Spaceship Command",
             "3328": "Gallente Frigate",
             "3329": "Minmatar Frigate",
@@ -19384,10 +20288,10 @@
             "3337": "Minmatar Battleship",
             "3338": "Caldari Battleship",
             "3339": "Amarr Battleship",
-            "3340": "Gallente Industrial",
-            "3341": "Minmatar Industrial",
-            "3342": "Caldari Industrial",
-            "3343": "Amarr Industrial",
+            "3340": "Gallente Hauler",
+            "3341": "Minmatar Hauler",
+            "3342": "Caldari Hauler",
+            "3343": "Amarr Hauler",
             "3344": "Gallente Titan",
             "3345": "Minmatar Titan",
             "3346": "Caldari Titan",
@@ -19516,7 +20420,8 @@
             "18580": "Tycoon",
             "25233": "Corporation Contracting",
             "25235": "Contracting",
-            "33467": "Customs Code Expertise"
+            "33467": "Customs Code Expertise",
+            "73912": "Advanced Contracting"
         },
         "id": "150"
     },
@@ -19578,7 +20483,7 @@
             "33061": "Public Portrait: How To",
             "33065": "Donut Holder",
             "33066": "New Eden Soundbox",
-            "33213": "A piece of Steve",
+            "33213": "A Piece of Steve",
             "33214": "Band of Brothers Director Access Key",
             "33215": "Press pass to Prometheus Station opening",
             "33217": "Lost reminder to pay sov bill",
@@ -19624,7 +20529,7 @@
             "37878": "Sansha Claws Fairytale Book",
             "37879": "Festive Firecrackers",
             "37880": "Max Amarria",
-            "37881": "Grand Teigjon Casino Chip",
+            "37881": "Grand Tiegjon Casino Chip",
             "37882": "YC117 Symposium On Emergent Threats Access Pass",
             "37883": "95th Interstellar Mindclash Championship Tickets",
             "37884": "Feawen's Approval Documentation",
@@ -19794,7 +20699,6 @@
             "49981": "Frostline 'Omnivore' Harvester Upgrade Blueprint Crate",
             "50029": "Basic 'Ardour' Cerebral Accelerator Blueprint Crate",
             "50030": "Standard 'Ardour' Cerebral Accelerator Blueprint Crate",
-            "50036": "Amaranthine Divide Facial Augmentation Package",
             "50039": "YC121 Guardian's Gala Ticket",
             "50040": "Log Fragment 6 (Gala YC121)",
             "50041": "Log Fragment 7 (Gala YC121)",
@@ -19836,22 +20740,12 @@
             "53493": "Festival Facial Augmentation and Snowballs Crate",
             "53494": "Festival Fireworks Crate",
             "53496": "Festival Exploration Suit and Snowballs Crate",
-            "53497": "Festival Skill Points and Snowballs Crate",
             "53498": "Festival Cap and Snowballs Crate",
-            "53499": "Festival Skill Points and Snowballs Crate",
-            "53507": "Festival Skill Points and Snowballs Crate",
             "53508": "Festival HyperCore, Body Augmentation and Snowballs Crate",
             "53509": "Festival Battlecruiser SKINs and Snowballs Crate",
-            "53510": "Festival Skill Points and Snowballs Crate",
             "53512": "Festival HyperCore and Snowballs Crate",
             "53513": "Festival Facial Augmentation and Snowballs Crate",
             "53514": "Festival Battleship SKINs, HyperCore and Snowballs Crate",
-            "53515": "Festival Skill Points and Snowballs Crate",
-            "53517": "Festival Skill Points and Snowballs Crate",
-            "53530": "Coercer Combat Crate",
-            "53531": "Cormorant Combat Crate",
-            "53532": "Catalyst Combat Crate",
-            "53533": "Thrasher Combat Crate",
             "53846": "Templis Dragonaurs Log 1220107-VC47",
             "53851": "Vimoksha Chorus Log 1220108-TD53",
             "54160": "Diamond Ring",
@@ -19891,7 +20785,38 @@
             "56983": "Power-Drainer Display",
             "57166": "Snowstar Crystalburst Fireworks Crate",
             "57168": "Yoiul Stormchasers T-Shirt and Pants Crate",
-            "57170": "Yoiul Stormchasers Suit and Cap Crate"
+            "57170": "Yoiul Stormchasers Suit and Cap Crate",
+            "62046": "Scale Model of a Blue Box",
+            "62047": "Inactive Sonic Multitool",
+            "62048": "Bag of Gelatinized Confectionary",
+            "62049": "Chronologically Curious Blue Diary",
+            "62050": "Fragment Inscribed with Odd Circular Text",
+            "62051": "Snow Globe with Peculiar Architecture",
+            "62052": "Extendable plunger tool",
+            "62053": "Biomechanical Armor Fragment",
+            "62054": "Neutron Flow Polarity Reverser",
+            "62709": "ORE Research Data Fragment",
+            "63698": "Guristas Infiltrator Clone Corpse",
+            "63699": "Classified Caldari Databank",
+            "63704": "Capsule Subsystem Holostorage EH-CN-J44-001",
+            "63705": "Capsule Subsystem Holostorage EH-CN-J44-004",
+            "63706": "Capsule Subsystem Holostorage EH-CN-J44-005",
+            "63707": "Capsule Subsystem Holostorage EH-CN-J44-006",
+            "63708": "Capsule Subsystem Holostorage EH-CN-J44-007",
+            "63709": "Capsule Subsystem Holostorage EH-CN-J44-008",
+            "63710": "Capsule Subsystem Holostorage EH-CN-J44-009",
+            "63711": "Capsule Subsystem Holostorage EH-CN-J44-010",
+            "63712": "Capsule Subsystem Holostorage EH-CN-J44-002",
+            "63713": "Capsule Subsystem Holostorage EH-CN-J44-003",
+            "64033": "Smuggler Lockbox",
+            "76203": "Stellar Transmuter Datacore",
+            "76204": "Transport Relay Datacore",
+            "76207": "Stellar Transmuter Research Index File",
+            "76208": "Stellar Transmuter Research Data Fragment",
+            "76209": "Stellar Transmuter Research Encryption Key",
+            "76210": "Transport Relay Research Index File",
+            "76211": "Transport Relay Research Data Fragment",
+            "76212": "Transport Relay Research Encryption Key"
         },
         "Special Edition Deployable Structures": {
             "-1": "2760",
@@ -19942,15 +20867,22 @@
             "57149": "Snowstar Crystalburst Firework",
             "57150": "Rimefrost Starburst Firework",
             "60905": "Yoiul Spiral Firework",
-            "61130": "DSHR-01H Highsec Ice Storm Filament",
-            "61131": "DNCR-05H Highsec Ice Storm Filament",
-            "61132": "PRNCR-10H Highsec Ice Storm Filament",
-            "61133": "VXN-01N Nullsec Ice Storm Filament",
-            "61134": "CMT-05N Nullsec Ice Storm Filament",
-            "61135": "CPD-10N Nullsec Ice Storm Filament",
-            "61136": "DNNR-01L Lowsec Ice Storm Filament",
-            "61137": "BLTZN-05L Lowsec Ice Storm Filament",
-            "61138": "RDLF-10L Lowsec Ice Storm Filament"
+            "60939": "Paradoxical Nebula Firework",
+            "63165": "Capsuleer Starburst Firework",
+            "71755": "Union of Eight Paths Firework",
+            "73408": "Scarlet Embrace Firework",
+            "74385": "Scarlet Embrace Firework ( copy )",
+            "74386": "Yoiul's Ascent Firework",
+            "74387": "Yoiul's Ascent Firework Crate",
+            "74426": "DNCR-05H Highsec Ice Storm Filament",
+            "74427": "DNNR-01L Lowsec Ice Storm Filament",
+            "74428": "DSHR-01H Highsec Ice Storm Filament",
+            "74429": "PRNCR-10H Highsec Ice Storm Filament",
+            "74430": "RDLF-10L Lowsec Ice Storm Filament",
+            "74431": "VXN-01N Nullsec Ice Storm Filament",
+            "74432": "BLTZN-05L Lowsec Ice Storm Filament",
+            "74433": "CMT-05N Nullsec Ice Storm Filament",
+            "74434": "CPD-10N Nullsec Ice Storm Filament"
         },
         "Special Edition Implants": {
             "-1": "1814",
@@ -20520,13 +21452,24 @@
                 "33581": "Small Mobile 'Hybrid' Siphon Unit",
                 "33583": "Small Mobile 'Rote' Siphon Unit"
             },
+            "Mobile Strategic Objectives": {
+                "-1": "3450",
+                "73225": "Amarr Propaganda Broadcast Structure",
+                "73226": "Minmatar Propaganda Broadcast Structure",
+                "73227": "Caldari Propaganda Broadcast Structure",
+                "73228": "Gallente Propaganda Broadcast Structure",
+                "73270": "Amarr Listening Outpost",
+                "73271": "Minmatar Listening Outpost",
+                "73272": "Caldari Listening Outpost",
+                "73273": "Gallente Listening Outpost"
+            },
             "Mobile Tractor Units": {
                 "-1": "1833",
                 "33475": "Mobile Tractor Unit",
                 "33700": "'Packrat' Mobile Tractor Unit",
                 "33702": "'Magpie' Mobile Tractor Unit"
             },
-            "Warp Disruption Fields ": {
+            "Warp Disruption Fields": {
                 "-1": "405",
                 "4386": "Mobile Large Jump Disruptor I",
                 "12198": "Mobile Small Warp Disruptor I",
@@ -20693,7 +21636,7 @@
                 "-1": "1012",
                 "27674": "Cynosural System Jammer"
             },
-            "Jump Bridge ": {
+            "Jump Bridge": {
                 "-1": "1011",
                 "27897": "Jump Bridge"
             },
@@ -21176,7 +22119,14 @@
                 "47890": "Raging Exotic Filament",
                 "47891": "Chaotic Exotic Filament",
                 "56133": "Tranquil Exotic Filament",
-                "56141": "Cataclysmic Exotic Filament"
+                "56141": "Cataclysmic Exotic Filament",
+                "60633": "Expired Curious Warp Matrix Filament",
+                "61654": "Expired Precarious Warp Matrix Filament",
+                "61655": "Expired Hazardous Warp Matrix Filament",
+                "61656": "Expired Enigmatic Warp Matrix Filament",
+                "62055": "Expired Mysterious Warp Matrix Filament",
+                "62056": "Expired Dangerous Warp Matrix Filament",
+                "62057": "Expired Perilous Warp Matrix Filament"
             },
             "Firestorm Filaments": {
                 "-1": "2459",
@@ -21209,12 +22159,9 @@
             },
             "Proving Ground Filaments": {
                 "-1": "2747",
-                "60078": "Crimson Harvest Destroyer FFA Proving Filament",
-                "60600": "Prophecy FFA Proving Filament",
-                "60601": "Yoiul 2v2 Assault Frigates Proving Filament",
-                "60602": "Yoiul 1v1 Navy Frigates Proving Filament",
-                "60603": "Yoiul T1 Cruiser FFA Proving Filament",
-                "60604": "Yoiul 1v1 Battleships Proving Filament"
+                "72986": "Event 82 Proving Filament",
+                "72987": "Event 83 Proving Filament",
+                "72988": "Event 84 Proving Filament"
             },
             "Triglavian Space Inbound": {
                 "-1": "2757",
@@ -21293,7 +22240,8 @@
             "56713": "Vessel Core Hologram",
             "56714": "Modular Systems Hologram",
             "56715": "Cultural Semiosis Data",
-            "56716": "Protective Equipment Patterns"
+            "56716": "Protective Equipment Patterns",
+            "74001": "Military Navigation Telemetry"
         },
         "Insignias": {
             "Amarr Navy": {
@@ -21489,7 +22437,8 @@
             "17791": "Freedom Fighters",
             "17796": "Elite Slaves",
             "18029": "Freed Slaves",
-            "26902": "Fedo"
+            "26902": "Fedo",
+            "62710": "Kidnapped ORE Researcher"
         },
         "Political Paraphernalia": {
             "-1": "754",
@@ -21500,7 +22449,12 @@
             "19462": "Foiritan Voucher",
             "19463": "Autrech Voucher",
             "32099": "Olfei Medallion",
-            "59752": "Liberation Games Reward Token"
+            "59752": "Liberation Games Reward Token",
+            "72258": "Operation Center Reward Token",
+            "73248": "Caldari Loyalty Token",
+            "73249": "Gallente Loyalty Token",
+            "73250": "Amarr Loyalty Token",
+            "73251": "Minmatar Loyalty Token"
         },
         "Radioactive Goods": {
             "-1": "22",
@@ -21562,7 +22516,25 @@
             "46580": "Guristas Standup Module Blueprint Armored Cache",
             "46601": "Guristas Loggerhead Blueprint Armored Cache",
             "46602": "Guristas Caiman Blueprint Armored Cache",
-            "46603": "Guristas Komodo Blueprint Armored Cache"
+            "46603": "Guristas Komodo Blueprint Armored Cache",
+            "63770": "Explorer - Frigate Skill Crate",
+            "63771": "Explorer - Frigate Crate",
+            "63772": "Industrialist - Frigate Blueprint Crate",
+            "63773": "Industrialist - Destroyer Blueprint Crate",
+            "63774": "Industrialist - Cruiser Blueprint Crate",
+            "63775": "Industrialist - Hauler Blueprint Crate",
+            "63776": "Industrialist -  Hauler Skill Crate",
+            "63777": "Industrialist - Light Combat Drones Crate",
+            "63778": "Enforcer - Destroyer Skill Crate",
+            "63779": "Enforcer - Frigate Skill Crate",
+            "63780": "Enforcer - Frigate Crate",
+            "63781": "Enforcer - Defense System Skill Crate",
+            "63782": "Enforcer - Frigate Crate",
+            "63783": "Soldier of Fortune - Frigate Skill Crate",
+            "63784": "Soldier of Fortune - Combat Frigate Crate",
+            "63785": "Soldier of Fortune - Support Frigate Crate",
+            "63786": "Enforcer - Tranquil Abyssal Filaments Crate",
+            "63787": "Enforcer - Calm Abyssal Filaments Crate"
         },
         "Triglavian Data": {
             "-1": "2480",
@@ -21640,11 +22612,26 @@
             "55904": "EGDLI (2) Boosters Tier 3 (Alpha)",
             "55905": "EGDLI (2) BPC Tier 1 (Alpha)",
             "55906": "EGDLI (2) BPC Tier 2 (Alpha)",
-            "55907": "EGDLI (2) BPC Tier 3 (Alpha) ",
+            "55907": "EGDLI (2) BPC Tier 3 (Alpha)",
             "55908": "EGDLI (2) Skin Tier 1 (Alpha)",
             "55909": "EGDLI (2) Skin Tier 2 (Alpha)",
             "55910": "EGDLI (2) Skin Tier 3 (Alpha)",
-            "55911": "EGDLI (2) Abyssal Tier 4 (Alpha) "
+            "55911": "EGDLI (2) Abyssal Tier 4 (Alpha)",
+            "62031": "Peculiar Data Collection",
+            "62032": "Time Crystal Oscillator",
+            "62033": "Strange Matter Component X-13",
+            "62034": "Strange Matter Component Y-73",
+            "62035": "Strange Matter Component Z-113",
+            "62036": "Strange Matter Component X-17",
+            "62037": "Strange Matter Component Y-79",
+            "62038": "Strange Matter Component Z-149",
+            "62039": "Strange Matter Component X-31",
+            "62040": "Strange Matter Component Y-97",
+            "62041": "Strange Matter Component Z-157",
+            "62042": "Strange Matter Component X-37",
+            "62043": "Strange Matter Component Y-107",
+            "62044": "Strange Matter Component Z-167",
+            "62045": "Strange Matter Component X-71"
         },
         "id": "19"
     },
