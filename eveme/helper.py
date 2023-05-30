@@ -171,7 +171,6 @@ def updateUserOrders():
             res = requests.get(structureOrdersQuery, headers=headers)
             if res.status_code == 200 and structureID not in user_info['structureAccess']:
                 user_info['structureAccess'][structureID] = structuresChecked[structureID]
-        
 
     User.update(user_info, current_user.id)
     print("--- updateUserOrders() took %s seconds ---" % (time.time() - start_time))

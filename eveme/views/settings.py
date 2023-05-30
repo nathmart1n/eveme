@@ -88,7 +88,7 @@ def structure_mod():
         userStructs.pop(structId)
         user_ref.child('structureAccess').set(userStructs)
     else:
-        if flask.request.form['structureID'] == None:
+        if flask.request.form['structureID'] is None:
             if flask.request.form['structureID'] in userStructs.keys():
                 context['error'] = 'REPEAT'
             else:
