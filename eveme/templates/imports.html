@@ -177,7 +177,7 @@ Imports
                 <td>{{value.destoPrice | numberFormat}}</td>
                 <td>{{value.orderCount}}</td>
                 <td>{{value.volume}}</td>
-                <td>{{value.aggPeriodAvg}}</td>
+                <td>{{(value.aggPeriodAvg)|round|int}}</td>
                 <td>{{((value.volume / value.aggPeriodAvg) * 100)|round(1)|float}}</td>
                 <td>{{(value.destoPrice - value.sourcePrice) | numberFormat}}</td>
                 <td>{{value.m3 | numberFormat}}</td>

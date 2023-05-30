@@ -168,13 +168,12 @@ def show_imports():
                 context['imports'][typeID]['aggPeriodAvg'] = 1
             # print("--- item " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
 
+        # Get user defined brokers fee, transaction tax, m3 price for shipping and collat percent for shipping
+        user_ref = db.reference('users').child(str(current_user.id))
         context['pricePerM3'] = user_ref.child('iskm3').get()
         context['collateralPercentage'] = user_ref.child('collateralPercent').get() / 100
-
-        # Get user defined brokers fee and transaction tax
-        user_ref = db.reference('users').child(str(current_user.id))
-        context['brokerFee'] = user_ref.child('brokerFee').get()
-        context['transactionTax'] = user_ref.child('transactionTax').get()
+        context['brokerFee'] = user_ref.child('brokerFee').get() / 100
+        context['transactionTax'] = user_ref.child('transactionTax').get() / 100
         # TODO: Get absolute difference between source and destination prices
         # TODO: Get percent difference between source and destination prices
         print("--- show_imports() showing trades took %s seconds ---" % (time.time() - start_time))
