@@ -43,6 +43,7 @@ def esiRequest(requestType, variable, charHeaders=None):
         'stationInfo': "https://esi.evetech.net/latest/universe/stations/{}/".format(variable),
         'systemInfo': "https://esi.evetech.net/latest/universe/systems/{}/".format(variable),
         'constellationInfo': "https://esi.evetech.net/latest/universe/constellations/{}/".format(variable),
+        'structNameFromId': "https://esi.evetech.net/latest/universe/structures/{}/".format(variable)
     }
 
     if charHeaders:

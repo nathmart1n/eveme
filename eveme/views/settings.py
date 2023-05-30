@@ -40,6 +40,14 @@ def show_settings():
             ref.update({
                 'transactionTax': float(flask.request.form['transactionTax'])
             })
+        if flask.request.form['iskm3'] != '':
+            ref.update({
+                'iskm3': float(flask.request.form['iskm3'])
+            })
+        if flask.request.form['collateralPercent'] != '':
+            ref.update({
+                'collateralPercent': float(flask.request.form['collateralPercent'])
+            })
 
     # Get user's broker fee and transaction tax if exist, otherwise leave field blank
     user_ref = db.reference('users/' + current_user.id)
@@ -49,6 +57,12 @@ def show_settings():
 
     if (user_ref.child('transactionTax').get()):
         context['transactionTax'] = user_ref.child('transactionTax').get()
+
+    if (user_ref.child('iskm3').get()):
+        context['iskm3'] = int(user_ref.child('iskm3').get())
+
+    if (user_ref.child('collateralPercent').get()):
+        context['collateralPercent'] = user_ref.child('collateralPercent').get()
 
     context['structureAccess'] = user_ref.child('structureAccess').get()
 
@@ -65,21 +79,28 @@ def structure_mod():
     user_ref = db.reference('users/' + current_user.id)
     inputStructureId = flask.request.form['structureID']
     userStructs = user_ref.child('structureAccess').get()
-    if userStructs is None:
-        userStructs = {}
+    headers = eveme.helper.createHeaders(current_user.accessToken)
 
     if "deleteStruct" in flask.request.form.keys():
-        structName = eveme.helper.structNameFromID(inputStructureId)
+        structId = flask.request.form.get('deleteId')
+        structName = eveme.helper.esiRequest('structNameFromId', structId, headers)['name']
         context['structToDelete'] = structName
-        userStructs.pop(flask.request.form['deleteStruct'])
+        userStructs.pop(structId)
         user_ref.child('structureAccess').set(userStructs)
     else:
-        structName = eveme.helper.structNameFromID(inputStructureId)
-        if structName:
-            userStructs[inputStructureId] = structName
-            context['newStruct'] = structName
-            user_ref.child('structureAccess').set(userStructs)
+        if flask.request.form['structureID'] == None:
+            if flask.request.form['structureID'] in userStructs.keys():
+                context['error'] = 'REPEAT'
+            else:
+                try:
+                    structName = eveme.helper.esiRequest('structNameFromId', flask.request.form['structureID'], headers)['name']
+                    if structName:
+                        userStructs[flask.request.form['structureID']] = structName
+                        context['newStruct'] = structName
+                        user_ref.child('structureAccess').set(userStructs)
+                except Exception as e:
+                    context['error'] = 'INVALID'
         else:
-            context['newStruct'] = 'NONE'
+            context['error'] = 'NONE'
     print("--- structure_mod() took %s seconds ---" % (time.time() - start_time))
     return flask.render_template("structures.html", context=context)

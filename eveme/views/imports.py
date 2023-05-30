@@ -125,7 +125,7 @@ def show_imports():
                 typeIdsWithData.append(typeID)
                 context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
                 context['imports'][typeID]['m3'] = invTypes[typeID]['volume']
-        # Need this because region checking for Jita vs player structures is different. 
+        # Need this because region checking for Jita vs player structures is different.
         # Need a way to differentiate between stations and player structures
         # Because this will happen for places like Hek, Amarr, etc.
         if destination == '60003760':
@@ -168,10 +168,8 @@ def show_imports():
                 context['imports'][typeID]['aggPeriodAvg'] = 1
             # print("--- item " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
 
-        # TODO: Make this variable dependent on user input
-        context['pricePerM3'] = 300
-        # TODO: Give as decimal not percent, change the variable name
-        context['collateralPercentage'] = 0.01
+        context['pricePerM3'] = user_ref.child('iskm3').get()
+        context['collateralPercentage'] = user_ref.child('collateralPercent').get() / 100
 
         # Get user defined brokers fee and transaction tax
         user_ref = db.reference('users').child(str(current_user.id))
