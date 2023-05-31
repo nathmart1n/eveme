@@ -35,14 +35,14 @@ print('Beginning file download from fuzzwork with requests')
 url = 'https://www.fuzzwork.co.uk/dump/latest/invTypes.csv'
 r = requests.get(url)
 
-# Write to our temp folder
-with open('temp/invTypes.csv', 'wb') as f:
+# Write to our scripts/temp folder
+with open('scripts/temp/invTypes.csv', 'wb') as f:
     f.write(r.content)
 
 url = 'https://www.fuzzwork.co.uk/dump/latest/invMarketGroups.csv'
 r = requests.get(url)
 
-with open('temp/marketGroups.csv', 'wb') as f:
+with open('scripts/temp/marketGroups.csv', 'wb') as f:
     f.write(r.content)
 
 print('Downloaded fuzzwork files')
@@ -50,7 +50,7 @@ print('Downloaded fuzzwork files')
 # Update invTypes.json
 print('Updating invTypes.json')
 # Read in invTypes dataframe
-df = pd.read_csv('temp/invTypes.csv')
+df = pd.read_csv('scripts/temp/invTypes.csv')
 # Dropping description column since it doesn't parse correctly.
 del df['description']
 # Set index as typeID since we want our JSON used as a dict that takes in ID and outputs name
@@ -58,18 +58,18 @@ df = df.set_index('typeID')
 # Setting as a dict allows us to transform to JSON easily
 invTypes = df.to_dict('index')
 # Write invTypes to JSON in static file location
-with open('eveme/static/json/invTypes.json', 'w') as fp:
+with open('services/web/eveme/static/json/invTypes.json', 'w') as fp:
     json.dump(invTypes, fp, indent=4, sort_keys=True)
 print('invTypes.json updated')
 
 # Update marketGroupTypes.json
 print('Updating marketGroupTypes.json')
 # Read in invTypes dataframe
-df = pd.read_csv('temp/invTypes.csv')
+df = pd.read_csv('scripts/temp/invTypes.csv')
 # Grouping by typeID to get list of typeIDs for each marketGroupID that has typeIDs associated with it
 marketGroupTypes = df.groupby('marketGroupID')['typeID'].apply(list).to_dict()
 # Write marketGroupTypes to JSON in static file location
-with open('eveme/static/json/marketGroupTypes.json', 'w') as fp:
+with open('services/web/eveme/static/json/marketGroupTypes.json', 'w') as fp:
     json.dump(marketGroupTypes, fp, indent=4, sort_keys=True)
 print('marketGroupTypes.json updated')
 
@@ -78,7 +78,7 @@ print('Updating marketGroups.json')
 # Load marketGroupTypes and invTypes from JSOn (FIX THIS TO USE LOCAL)
 
 # Read in marketGroups dataframe
-df_marketGroups = pd.read_csv('temp/marketGroups.csv')
+df_marketGroups = pd.read_csv('scripts/temp/marketGroups.csv')
 # Create dict converting marketGroupID to a marketGroupName
 idToName = pd.Series(df_marketGroups['marketGroupName'].values, index=df_marketGroups['marketGroupID']).to_dict()
 idToName = {str(key): value for key, value in idToName.items()}
@@ -95,7 +95,7 @@ zippedGroups = list(zip(parentGroups, marketGroups))
 root_nodes = {x[1] for x in zippedGroups if x[0] == "None"}
 # Execute function
 tree = get_nodes('None')
-with open('eveme/static/json/marketGroups.json', 'w') as fp:
+with open('services/web/eveme/static/json/marketGroups.json', 'w') as fp:
     json.dump(tree, fp, indent=4, sort_keys=True)
 print('marketGroups.json updated')
 
@@ -103,7 +103,7 @@ print('marketGroups.json updated')
 print('Updating marketGroupsToIDs.json')
 
 # Read in marketGroups dataframe
-df_marketGroups = pd.read_csv('temp/marketGroups.csv')
+df_marketGroups = pd.read_csv('scripts/temp/marketGroups.csv')
 # Create dict converting marketGroupID to a marketGroupName
 nameToID = pd.Series(df_marketGroups['marketGroupID'].values, index=df_marketGroups['marketGroupName']).to_dict()
 
@@ -115,5 +115,5 @@ nameToID = pd.Series(df_marketGroups['marketGroupID'].values, index=df_marketGro
 # print(invTypes.keys())
 
 
-with open('eveme/static/json/marketGroupsToIDs.json', 'w') as fp:
+with open('services/web/eveme/static/json/marketGroupsToIDs.json', 'w') as fp:
     json.dump(nameToID, fp, indent=4, sort_keys=True)
