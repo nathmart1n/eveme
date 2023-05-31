@@ -9,16 +9,15 @@
 
 # Stop on errors, print commands
 # See https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
-set -Eeuo pipefail
-set -x
+# set -Eeuo pipefail
+# set -x
 
 # Clean
 # if [[ ! -d "var/uploads" ]]
 # then ./bin/evemedb create
 # fi ;
 
-python scripts/updateStaticFiles.py 
+# python scripts/updateStaticFiles.py 
 
-export FLASK_ENV=development
-export FLASK_APP=eveme
-flask run --host 0.0.0.0
+
+gunicorn --workers 4 --bind 0.0.0.0:5000 eveme:app
