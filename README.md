@@ -12,3 +12,11 @@ This program is still in development. To build it yourself, you need a firebase 
 # ISSUES
 
 If you don't have the fields already created in your firebase DB (like users, prices, etc) you may need to create them beforehand.
+
+# TODO
+
+1. Deploy on Docker locally
+2. Deploy on AWS to use anywhere
+3. Figure out local caching
+4. Figure out if Redis caching is worth it
+5. Decide if we need a different database or if firebase is ok. Perhaps s3 for storing profile pictures and something like postgres for storing price data etc?
