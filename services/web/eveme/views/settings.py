@@ -77,7 +77,6 @@ def structure_mod():
     context = {}
 
     user_ref = db.reference('users/' + current_user.id)
-    inputStructureId = flask.request.form['structureID']
     userStructs = user_ref.child('structureAccess').get()
     headers = eveme.helper.createHeaders(current_user.accessToken)
 
@@ -99,7 +98,7 @@ def structure_mod():
                         context['newStruct'] = structName
                         user_ref.child('structureAccess').set(userStructs)
                 except Exception as e:
-                    context['error'] = 'INVALID'
+                    context['error'] = e
         else:
             context['error'] = 'NONE'
     print("--- structure_mod() took %s seconds ---" % (time.time() - start_time))

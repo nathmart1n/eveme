@@ -77,7 +77,7 @@ def show_imports():
 
                 destoIDs = list(destoPrices.keys())
 
-                chunks = [destoIDs[x:x+200] for x in range(0, len(destoIDs), 200)]
+                chunks = [destoIDs[x:x + 200] for x in range(0, len(destoIDs), 200)]
                 chunkStrings = []
                 for chunk in chunks:
                     chunkStrings.append(','.join(chunk))
@@ -94,7 +94,7 @@ def show_imports():
 
                 sourceIDs = list(sourcePrices.keys())
 
-                chunks = [sourceIDs[x:x+200] for x in range(0, len(sourceIDs), 200)]
+                chunks = [sourceIDs[x:x + 200] for x in range(0, len(sourceIDs), 200)]
                 chunkStrings = []
                 for chunk in chunks:
                     chunkStrings.append(','.join(chunk))
@@ -113,8 +113,10 @@ def show_imports():
 
         for typeID in groupTypes:
             # The only issue with this is if the item does not currently exist in either the source or the desto, it will not pull any info.
-            # This is sorta expected behavior, but if the item just sold out of everything the user will miss out on a potential opportunity.
-            # Generally though, the purpose of this app isn't to capitalize on short-term inventory shortages, but rather long-term price advantages.
+            # This is sorta expected behavior, but if the item just sold out of everything
+            # the user will miss out on a potential opportunity.
+            # Generally though, the purpose of this app isn't to capitalize on short-term inventory shortages,
+            # but rather long-term price advantages.
             # Basically, not necessary to fix.
             if typeID in destoPrices.keys() and typeID in sourcePrices.keys() and float(destoPrices[typeID]['sell']['orderCount']) > 0:
                 context['imports'][typeID] = {}
@@ -133,7 +135,8 @@ def show_imports():
         else:
             destoRegion = eveme.helper.getRegionFromStructure(destination, headers=headers)
 
-        # TODO: Download historical data once a day. Store in database? Similar to eyeonwater/edna data. Look at bottom of updateStaticFiles.py file.
+        # TODO: Download historical data once a day. Store in database? Similar to eyeonwater/edna data.
+        # Look at bottom of updateStaticFiles.py file.
         # TODO: Make so user selects karkinos routes instead of systems.
         datfmt = "%Y-%m-%d"
         analysisSeconds = analysisPeriod * 86400

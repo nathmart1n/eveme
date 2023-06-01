@@ -18,7 +18,7 @@ def get_user(char_id):
     if not (current_user.is_authenticated and char_id == current_user.id):
         return flask.abort(403)
 
-    connection = eveme.model.get_db()
+    # connection = eveme.model.get_db()
 
     if flask.request.method == 'POST':
         print('Post!')

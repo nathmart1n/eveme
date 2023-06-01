@@ -4,9 +4,7 @@ This module contains all shared functions between the two different OAuth 2.0
 flows recommended for web based and mobile/desktop applications. The functions
 found here are used by the OAuth 2.0 examples contained in this project.
 """
-import urllib
 import eveme.helper
-import requests
 import time
 
 from eveme.validate_jwt import validate_eve_jwt
@@ -31,9 +29,6 @@ def handle_sso_token_response(sso_response):
         jwt = validate_eve_jwt(access_token)
         # print(jwt)
         character_id = int(jwt["sub"].split(":")[2])
-        character_name = jwt["name"]
-
-        headers = eveme.helper.createHeaders(access_token)
         data = eveme.helper.esiRequest('charInfo', character_id)
 
         data['access_token'] = access_token

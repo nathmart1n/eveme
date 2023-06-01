@@ -27,7 +27,7 @@ app.config.from_mapping(
     # DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
 )
 
-app.config.from_pyfile('instance/config.py', silent=True)
+app.config.from_pyfile(os.path.join(app.instance_path, 'config.py'), silent=True)
 
 # Tell our app about views and model.  This is dangerously close to a
 # circular import, which is naughty, but Flask was designed that way.

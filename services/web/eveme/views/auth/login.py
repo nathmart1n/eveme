@@ -6,25 +6,17 @@ URLs include:
 /callback/
 """
 from flask import (
-    Flask,
-    config,
     current_app,
     redirect,
-    render_template,
     request,
     url_for,
 )
-from flask_login import login_user, current_user
+from flask_login import login_user
 from eveme.shared_flow import handle_sso_token_response
 from eveme.user import User
-from firebase_admin import db
 import eveme.helper
 import eveme
-import requests
 import base64
-import json
-import os
-import pathlib
 import time
 
 
@@ -33,7 +25,7 @@ def login():
     start_time = time.time()
     """First step in ESI OAuth."""
     request_uri = 'https://login.eveonline.com/v2/oauth/authorize/?response' +\
-                  '_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2F' +\
+                  '_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A1337%2F' +\
                   'callback%2F&client_id=' +\
                   current_app.config['ESI_CLIENT_ID'] +\
                   '&scope=esi-markets.read_character_orders.v1+' +\
@@ -49,9 +41,6 @@ def login():
 @eveme.app.route("/callback/")
 def callback():
     start_time = time.time()
-    context = {}
-    json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "invTypes.json")
-    invTypes = dict(json.load(open(json_url)))
     code = request.args.get('code')
 
     user_pass = "{}:{}".format(current_app.config['ESI_CLIENT_ID'],
@@ -68,7 +57,6 @@ def callback():
     data = handle_sso_token_response(res)
     authTime = time.time()
     char_id = data['id']
-    structuresChecked = {}
     user_info = {
         'accessToken': None,
     }

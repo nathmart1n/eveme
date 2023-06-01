@@ -13,8 +13,8 @@ from eveme.user import User
 
 def createHeaders(access_token):
     return {
-            "Authorization": "Bearer {}".format(access_token)
-           }
+        "Authorization": "Bearer {}".format(access_token)
+    }
 
 
 def getStructures(user_id):
@@ -78,7 +78,6 @@ def updateUserData():
 
     if 'alliance_id' in publicData.keys():
         alliance = eveme.helper.esiRequest('allianceInfo', publicData['alliance_id'])
-        inAlliance = True
         new['alliance'] = alliance['name']
 
     # Adding our new info
@@ -145,7 +144,7 @@ def updateUserOrders():
     user_info = {
         'buyOrders': {},
         'sellOrders': {},
-        'structureAccess': db.reference('users/'+current_user.id+'/structureAccess').get(),
+        'structureAccess': db.reference('users/' + current_user.id + '/structureAccess').get(),
     }
 
     if orders:
@@ -162,8 +161,6 @@ def updateUserOrders():
                 modifyOrder(order, user_info, ref, True, invTypes, structuresChecked)
             else:
                 modifyOrder(order, user_info, ref, False, invTypes, structuresChecked)
-
-        validStructs = {}
 
         for structureID in structuresChecked.keys():
             structureOrdersQuery = ("https://esi.evetech.net/latest/markets/structures"
@@ -196,7 +193,7 @@ def updatePriceData(structureID=None):
     if structureID:
         structures = [structureID]
     else:
-        structures = db.reference('users/'+current_user.id+'/structureAccess').get()
+        structures = db.reference('users/' + current_user.id + '/structureAccess').get()
     # Generate headers
     headers = createHeaders(current_user.accessToken)
     for selectedID in structures:
@@ -284,7 +281,6 @@ def refreshAuth():
     """Refreshes auth token if time greater than 20 mins."""
     start_time = time.time()
     if time.time() - current_user.authTime >= 1200:
-        newAuthTime = time.time()
         user_pass = "{}:{}".format(current_app.config['ESI_CLIENT_ID'],
                                    current_app.config['ESI_SECRET_KEY'])
         basic_auth = base64.urlsafe_b64encode(user_pass.encode('utf-8')).decode()
@@ -345,8 +341,6 @@ def structNameFromID(structID):
     Returns:
         structName: A string containing the structure name, returns NONE if doesn't exist
     """
-    start_time = time.time()
-
     headers = createHeaders(current_user.accessToken)
 
     res = requests.get("https://esi.evetech.net/latest/universe/structures/{}/?datasource=tranquility".format(structID), headers=headers)

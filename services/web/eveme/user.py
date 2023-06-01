@@ -1,7 +1,5 @@
 from flask_login import UserMixin
 from firebase_admin import db, credentials
-import eveme
-import sys
 import firebase_admin
 
 # Fetch the service account key JSON file contents
