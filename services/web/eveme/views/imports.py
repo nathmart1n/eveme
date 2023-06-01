@@ -54,10 +54,7 @@ def show_imports():
             context['sourceDestoSame'] = True
             return flask.render_template("imports.html", context=context)
 
-        # Analysis period represents the number of days back we should use to compute average volume for the given aggregate period
-        # TODO: Add error handling if user doesn't input these values
-        analysisPeriod = int(flask.request.form['analysisPeriod'])
-        aggregatePeriod = int(flask.request.form['aggregatePeriod'])
+        
 
         source = flask.request.form['source']
         destination = flask.request.form['destination']
@@ -136,6 +133,10 @@ def show_imports():
         context['useHistory'] = False
         if 'useHistory' in flask.request.form.keys():
             context['useHistory'] = True
+            # Analysis period represents the number of days back we should use to compute average volume for the given aggregate period
+            # TODO: Add error handling if user doesn't input these values
+            analysisPeriod = int(flask.request.form['analysisPeriod'])
+            aggregatePeriod = int(flask.request.form['aggregatePeriod'])
             # Need this because region checking for Jita vs player structures is different.
             # Need a way to differentiate between stations and player structures
             # Because this will happen for places like Hek, Amarr, etc.
