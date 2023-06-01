@@ -11,11 +11,8 @@ This can be run by doing
 
 and passing in a JWT token that you have retrieved from the EVE SSO.
 """
-import sys
-
 import requests
 from jose import jwt
-from jose.exceptions import ExpiredSignatureError, JWTError, JWTClaimsError
 
 SSO_META_DATA_URL = "https://login.eveonline.com/.well-known/oauth-authorization-server"
 JWK_ALGORITHM = "RS256"

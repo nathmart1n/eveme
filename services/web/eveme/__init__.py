@@ -3,6 +3,7 @@ import os
 from flask import Flask
 from flask_login import LoginManager
 from eveme.user import User
+from instance.config import ProductionConfig, DevelopmentConfig
 
 # app is a single object used by all the code modules in this package
 app = Flask(__name__, instance_relative_config=True)
@@ -26,6 +27,11 @@ def numberFormat(value):
 app.config.from_mapping(
     # DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
 )
+
+if os.getenv('FLASK_DEBUG') == 1:
+    app.config.from_object(ProductionConfig())
+else:
+    app.config.from_object(DevelopmentConfig())
 
 app.config.from_pyfile(os.path.join(app.instance_path, 'config.py'), silent=True)
 

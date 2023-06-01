@@ -33,6 +33,7 @@ def show_imports():
 
         # Load selected groups from form
         groups = json.loads(flask.request.form['jsfields'])
+        print(flask.request.form['jsfields'])
         groups = [str(i) for i in groups]
         # Get group types for selected groups
         groupTypes = []
@@ -54,6 +55,7 @@ def show_imports():
             return flask.render_template("imports.html", context=context)
 
         # Analysis period represents the number of days back we should use to compute average volume for the given aggregate period
+        # TODO: Add error handling if user doesn't input these values
         analysisPeriod = int(flask.request.form['analysisPeriod'])
         aggregatePeriod = int(flask.request.form['aggregatePeriod'])
 
@@ -110,7 +112,6 @@ def show_imports():
         sourcePrices = prices_ref.child(source).get()
 
         typeIdsWithData = []
-
         for typeID in groupTypes:
             # The only issue with this is if the item does not currently exist in either the source or the desto, it will not pull any info.
             # This is sorta expected behavior, but if the item just sold out of everything
@@ -138,6 +139,7 @@ def show_imports():
         # TODO: Download historical data once a day. Store in database? Similar to eyeonwater/edna data.
         # Look at bottom of updateStaticFiles.py file.
         # TODO: Make so user selects karkinos routes instead of systems.
+        # TODO: Have a toggle for including history or not for faster loading.
         datfmt = "%Y-%m-%d"
         analysisSeconds = analysisPeriod * 86400
         for typeID in typeIdsWithData:
@@ -162,8 +164,6 @@ def show_imports():
                         totalVol += day['volume']
                     totalVol = float(totalVol)
                     dailyVolAverage = totalVol / analysisPeriod
-                    if typeID == 40567:
-                        print('mantis average:', dailyVolAverage)
                     context['imports'][typeID]['aggPeriodAvg'] = aggregatePeriod * dailyVolAverage
                 else:
                     context['imports'][typeID]['aggPeriodAvg'] = 1
@@ -184,7 +184,6 @@ def show_imports():
 
     json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "marketGroups.json")
     context['marketGroups'] = dict(json.load(open(json_url)))
-
     context['structures'] = db.reference('users/' + current_user.id + '/structureAccess').get()
 
     if current_user.is_authenticated:

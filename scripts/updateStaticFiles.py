@@ -3,6 +3,7 @@ Helper python file to pull some needed static files.
 """
 import requests
 import pandas as pd
+import numpy as np
 import json
 import os
 import pathlib
@@ -18,6 +19,7 @@ def get_nodes(node):
         d = dict(zip(children, dicts))
         d['id'] = node
     else:
+        node = int(float(node))
         if node in marketGroupTypes.keys():
             for typeID in marketGroupTypes[node]:
                 d[typeID] = invTypes[typeID]['typeName']
@@ -26,6 +28,7 @@ def get_nodes(node):
 
 
 def get_children(node):
+    # print(zippedGroups)
     return [x[1] for x in zippedGroups if x[0] == node]
 
 
@@ -79,6 +82,9 @@ print('Updating marketGroups.json')
 
 # Read in marketGroups dataframe
 df_marketGroups = pd.read_csv('scripts/temp/marketGroups.csv')
+df_marketGroups = df_marketGroups.replace({np.nan: 'None'})
+df_marketGroups.marketGroupID = df_marketGroups.marketGroupID.astype(float)
+print(df_marketGroups)
 # Create dict converting marketGroupID to a marketGroupName
 idToName = pd.Series(df_marketGroups['marketGroupName'].values, index=df_marketGroups['marketGroupID']).to_dict()
 idToName = {str(key): value for key, value in idToName.items()}
@@ -86,6 +92,7 @@ idToName = {str(key): value for key, value in idToName.items()}
 idToName['None'] = 'None'
 # Convert IDs to string because easier
 df_marketGroups['marketGroupID'] = df_marketGroups['marketGroupID'].astype('string')
+df_marketGroups['parentGroupID'] = df_marketGroups['parentGroupID'].astype('string')
 # Get list of both child and parent groups (marketGroups is "child" of parentGroups)
 marketGroups = df_marketGroups['marketGroupID'].tolist()
 parentGroups = df_marketGroups['parentGroupID'].tolist()
