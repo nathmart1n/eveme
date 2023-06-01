@@ -161,14 +161,18 @@ Imports
                 <th>Dst. Price</th>
                 <th>Dst. Order Count</th>
                 <th>Dst. Remaining Volume</th>
+                {% if context.useHistory %}
                 <th>Agg. Average Volume</th>
                 <th>Dst. Percent Agg Vol Remaining</th>
+                {% endif %}
                 <th>Price Difference</th>
                 <th>M3</th>
                 <th>Shipping Price</th>
                 <th>Profit Percentage</th>
                 <th>Profit after Fees per unit</th>
+                {% if context.useHistory %}
                 <th>Profit to be made</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -183,17 +187,21 @@ Imports
                 <td>{{value.destoPrice | numberFormat}}</td>
                 <td>{{value.orderCount}}</td>
                 <td>{{value.volume}}</td>
+                {% if context.useHistory %}
                 <td>{{(value.aggPeriodAvg)|round|int}}</td>
                 <td>{{((value.volume / value.aggPeriodAvg) * 100)|round(1)|float}}</td>
+                {% endif %}
                 <td>{{(value.destoPrice - value.sourcePrice) | numberFormat}}</td>
                 <td>{{value.m3 | numberFormat}}</td>
                 <td>{{((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage)) | numberFormat}}</td>
                 <td>{{((((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee + context.transactionTax))) / value.destoPrice * 100)|round(1)|float}}</td>
                 <td>{{(((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee + context.transactionTax))) | numberFormat}}</td>
+                {% if context.useHistory %}
                 {% if value.volume < value.aggPeriodAvg %}
                 <td>{{((((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee + context.transactionTax))) * (value.aggPeriodAvg - value.volume)) | numberFormat}}</td>
                 {% else %}
                 <td>{{((((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee + context.transactionTax))) * (value.aggPeriodAvg)) | numberFormat}}</td>
+                {% endif %}
                 {% endif %}
             </tr>
         {% endfor %}
