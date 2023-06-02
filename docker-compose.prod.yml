@@ -5,14 +5,21 @@ services:
     build: 
       context: ./services/web
       dockerfile: Dockerfile.prod
-    command: gunicorn --bind 0.0.0.0:5000 manage:app
+    command: gunicorn --bind 0.0.0.0:5000 --timeout 600 manage:app
+    volumes:
+      - static_volume:/home/app/web/eveme/static
     expose:
       - 5000
     env_file:
       - ./.env.prod
   nginx:
     build: ./services/nginx
+    volumes:
+      - static_volume:/home/app/web/eveme/static
     ports:
       - 1337:80
     depends_on:
       - web
+
+volumes:
+  static_volume:
