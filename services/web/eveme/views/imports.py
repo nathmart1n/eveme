@@ -80,16 +80,6 @@ def show_imports():
                 destoIDs = list(destoPrices.keys())
 
                 chunks = [destoIDs[x:x + 200] for x in range(0, len(destoIDs), 200)]
-                chunkStrings = []
-                for chunk in chunks:
-                    chunkStrings.append(','.join(chunk))
-                prices = {}
-                for chunkString in chunkStrings:
-                    priceDataRequest = ("https://market.fuzzwork.co.uk/aggregates/?station=60003760&types={}".format(chunkString))
-                    res = requests.get(priceDataRequest)
-                    res.raise_for_status()
-                    prices.update(res.json())
-                prices_ref.child('60003760').update(prices)
             elif destination == '60003760':
                 eveme.helper.updatePriceData(source)
                 sourcePrices = prices_ref.child(source).get()
@@ -97,16 +87,16 @@ def show_imports():
                 sourceIDs = list(sourcePrices.keys())
 
                 chunks = [sourceIDs[x:x + 200] for x in range(0, len(sourceIDs), 200)]
-                chunkStrings = []
-                for chunk in chunks:
-                    chunkStrings.append(','.join(chunk))
-                prices = {}
-                for chunkString in chunkStrings:
-                    priceDataRequest = ("https://market.fuzzwork.co.uk/aggregates/?station=60003760&types={}".format(chunkString))
-                    res = requests.get(priceDataRequest)
-                    res.raise_for_status()
-                    prices.update(res.json())
-                prices_ref.child('60003760').update(prices)
+            chunkStrings = []
+            for chunk in chunks:
+                chunkStrings.append(','.join(chunk))
+            prices = {}
+            for chunkString in chunkStrings:
+                priceDataRequest = ("https://market.fuzzwork.co.uk/aggregates/?station=60003760&types={}".format(chunkString))
+                res = requests.get(priceDataRequest)
+                res.raise_for_status()
+                prices.update(res.json())
+            prices_ref.child('60003760').update(prices)
 
         destoPrices = prices_ref.child(destination).get()
         sourcePrices = prices_ref.child(source).get()
