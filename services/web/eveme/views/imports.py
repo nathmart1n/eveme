@@ -54,10 +54,7 @@ def show_imports():
             context['sourceDestoSame'] = True
             return flask.render_template("imports.html", context=context)
 
-        # Analysis period represents the number of days back we should use to compute average volume for the given aggregate period
-        # TODO: Add error handling if user doesn't input these values
-        analysisPeriod = int(flask.request.form['analysisPeriod'])
-        aggregatePeriod = int(flask.request.form['aggregatePeriod'])
+        
 
         source = flask.request.form['source']
         destination = flask.request.form['destination']
@@ -128,48 +125,55 @@ def show_imports():
                 typeIdsWithData.append(typeID)
                 context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
                 context['imports'][typeID]['m3'] = invTypes[typeID]['volume']
-        # Need this because region checking for Jita vs player structures is different.
-        # Need a way to differentiate between stations and player structures
-        # Because this will happen for places like Hek, Amarr, etc.
-        if destination == '60003760':
-            destoRegion = eveme.helper.getRegionFromStructure(destination)
-        else:
-            destoRegion = eveme.helper.getRegionFromStructure(destination, headers=headers)
 
         # TODO: Download historical data once a day. Store in database? Similar to eyeonwater/edna data.
         # Look at bottom of updateStaticFiles.py file.
         # TODO: Make so user selects karkinos routes instead of systems.
         # TODO: Have a toggle for including history or not for faster loading.
-        datfmt = "%Y-%m-%d"
-        analysisSeconds = analysisPeriod * 86400
-        for typeID in typeIdsWithData:
-            item_time = time.time()
-            dataResponse = requests.get("https://esi.evetech.net/latest/markets/{}/"
-                                        "history/?datasource=tranquility&type_id={}".format(int(destoRegion), int(typeID)))
-            dataResponse.raise_for_status()
-            # 204 is the code we want not 200 for whatever reason
-            # TODO: Find why 204 and not 200 for comment
-            if dataResponse.status_code != 204:
-                slicedHistData = []
-                historicalData = dataResponse.json()
-                print("--- API for " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
-                # Slice historical data to match analysis period
-                for data in historicalData:
-                    d = datetime.datetime.strptime(data['date'], datfmt).timestamp()
-                    if (d + analysisSeconds > int(time.time())):
-                        slicedHistData.append(data)
-                if slicedHistData:
-                    totalVol = 0
-                    for day in slicedHistData:
-                        totalVol += day['volume']
-                    totalVol = float(totalVol)
-                    dailyVolAverage = totalVol / analysisPeriod
-                    context['imports'][typeID]['aggPeriodAvg'] = aggregatePeriod * dailyVolAverage
+        context['useHistory'] = False
+        if 'useHistory' in flask.request.form.keys():
+            context['useHistory'] = True
+            # Analysis period represents the number of days back we should use to compute average volume for the given aggregate period
+            # TODO: Add error handling if user doesn't input these values
+            analysisPeriod = int(flask.request.form['analysisPeriod'])
+            aggregatePeriod = int(flask.request.form['aggregatePeriod'])
+            # Need this because region checking for Jita vs player structures is different.
+            # Need a way to differentiate between stations and player structures
+            # Because this will happen for places like Hek, Amarr, etc.
+            if destination == '60003760':
+                destoRegion = eveme.helper.getRegionFromStructure(destination)
+            else:
+                destoRegion = eveme.helper.getRegionFromStructure(destination, headers=headers)
+            datfmt = "%Y-%m-%d"
+            analysisSeconds = analysisPeriod * 86400
+            for typeID in typeIdsWithData:
+                item_time = time.time()
+                dataResponse = requests.get("https://esi.evetech.net/latest/markets/{}/"
+                                            "history/?datasource=tranquility&type_id={}".format(int(destoRegion), int(typeID)))
+                dataResponse.raise_for_status()
+                # 204 is the code we want not 200 for whatever reason
+                # TODO: Find why 204 and not 200 for comment
+                if dataResponse.status_code != 204:
+                    slicedHistData = []
+                    historicalData = dataResponse.json()
+                    print("--- API for " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
+                    # Slice historical data to match analysis period
+                    for data in historicalData:
+                        d = datetime.datetime.strptime(data['date'], datfmt).timestamp()
+                        if (d + analysisSeconds > int(time.time())):
+                            slicedHistData.append(data)
+                    if slicedHistData:
+                        totalVol = 0
+                        for day in slicedHistData:
+                            totalVol += day['volume']
+                        totalVol = float(totalVol)
+                        dailyVolAverage = totalVol / analysisPeriod
+                        context['imports'][typeID]['aggPeriodAvg'] = aggregatePeriod * dailyVolAverage
+                    else:
+                        context['imports'][typeID]['aggPeriodAvg'] = 1
                 else:
                     context['imports'][typeID]['aggPeriodAvg'] = 1
-            else:
-                context['imports'][typeID]['aggPeriodAvg'] = 1
-            # print("--- item " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
+                # print("--- item " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
 
         # Get user defined brokers fee, transaction tax, m3 price for shipping and collat percent for shipping
         user_ref = db.reference('users').child(str(current_user.id))
