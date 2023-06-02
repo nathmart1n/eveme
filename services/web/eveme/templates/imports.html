@@ -10,6 +10,8 @@ Imports
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
 <script src="../static/js/jstreeBehavior.js"></script>
+<!-- <script src="{{url_for('static', filename='imports.js')}}"></script> -->
+<script src="../static/js/imports.js"></script>
 
 <div class="container-fluid mt-3">
     {% if not context.isPost%}
@@ -40,15 +42,6 @@ Imports
                         </select>
                     </div>
                 </div>
-        
-                <div class="row justify-content-center mb-2">
-                    <div class="col col-md-4">
-                        <input type="text" class="form-control" name="analysisPeriod" placeholder="Analysis Period (days)" aria-label="Analysis Period (days)">
-                    </div>
-                    <div class="col col-md-4">
-                        <input type="text" class="form-control" name="aggregatePeriod" placeholder="Aggregate Over (days)" aria-label="Aggregate Over (days)">
-                    </div>
-                </div>
                 <div class="mb-2" style="text-align: center;">
                     <div class="form-check" style="display: inline-block;">
                         <input class="form-check-input checkbox-gap" type="checkbox" name="updatePrices" id="updatePrices">
@@ -63,6 +56,15 @@ Imports
                         </label>
                     </div>
                 </div>
+                <div class="row justify-content-center mb-2" id="analysisAggDiv">
+                    <div class="col col-md-4">
+                        <input type="text" class="form-control" name="analysisPeriod" placeholder="Analysis Period (days)" aria-label="Analysis Period (days)">
+                    </div>
+                    <div class="col col-md-4">
+                        <input type="text" class="form-control" name="aggregatePeriod" placeholder="Aggregate Over (days)" aria-label="Aggregate Over (days)">
+                    </div>
+                </div>
+                
                 <div style="text-align: center;">
                     <h5>Select items to be queried</h5>
                 </div>
@@ -209,4 +211,5 @@ Imports
     </table>
     {% endif %}
 </div>
+
 {% endblock %}
