@@ -27,8 +27,18 @@ $ docker-compose up -d --build
 ```
 Test it out at http://localhost:5000. The "web" folder is mounted into the container and your code changes apply automatically.
 
+To take it down run
+```sh
+$ docker-compose down -v
+```
+
 Build the images and run the containers prod:
 ```sh
 $ docker-compose -f docker-compose.prod.yml up -d --build
 ```
 Test it out at http://localhost:1337. No mounted folders. To apply changes, the image must be re-built.
+
+To take it down run
+```sh
+$ docker-compose -f docker-compose.prod.yml down -v
+```
