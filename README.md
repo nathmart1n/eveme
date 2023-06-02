@@ -20,3 +20,13 @@ If you don't have the fields already created in your firebase DB (like users, pr
 3. Figure out local caching
 4. Figure out if Redis caching is worth it
 5. Decide if we need a different database or if firebase is ok. Perhaps s3 for storing profile pictures and something like postgres for storing price data etc?
+
+Build the images and run the containers dev:
+
+$ docker-compose up -d --build
+Test it out at http://localhost:5000. The "web" folder is mounted into the container and your code changes apply automatically.
+
+Build the images and run the containers prod:
+
+$ docker-compose -f docker-compose.prod.yml up -d --build
+Test it out at http://localhost:1337. No mounted folders. To apply changes, the image must be re-built.
