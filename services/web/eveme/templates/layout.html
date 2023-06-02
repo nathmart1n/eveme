@@ -12,6 +12,15 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+        <script>
+            $(document).ready( function () {
+                $('#imports').DataTable();
+            });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+        <script src="../static/js/jstreeBehavior.js"></script>
+        <!-- <script src="{{url_for('static', filename='imports.js')}}"></script> -->
+        <script src="../static/js/imports.js"></script>
     </head>
 
     <body class="bg-light">

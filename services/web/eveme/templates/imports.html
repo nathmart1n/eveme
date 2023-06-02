@@ -3,16 +3,6 @@
 Imports
 {% endblock %}
 {% block content %}
-<script>
-    $(document).ready( function () {
-        $('#imports').DataTable();
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
-<script src="../static/js/jstreeBehavior.js"></script>
-<!-- <script src="{{url_for('static', filename='imports.js')}}"></script> -->
-<script src="../static/js/imports.js"></script>
-
 <div class="container-fluid mt-3">
     {% if not context.isPost%}
 

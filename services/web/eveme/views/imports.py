@@ -14,7 +14,9 @@ import json
 import time
 import datetime
 from flask_login import current_user
+from flask import current_app
 from firebase_admin import db
+from requests_cache import CachedSession
 
 
 @eveme.app.route('/imports/', methods=['GET', 'POST'])
@@ -133,10 +135,12 @@ def show_imports():
                 destoRegion = eveme.helper.getRegionFromStructure(destination, headers=headers)
             datfmt = "%Y-%m-%d"
             analysisSeconds = analysisPeriod * 86400
+            session = CachedSession(backend=current_app.config['CACHE_BACKEND'], expire_after=datetime.timedelta(hours=12))
+            print(typeIdsWithData)
             for typeID in typeIdsWithData:
                 item_time = time.time()
-                dataResponse = requests.get("https://esi.evetech.net/latest/markets/{}/"
-                                            "history/?datasource=tranquility&type_id={}".format(int(destoRegion), int(typeID)))
+                dataResponse = session.get("https://esi.evetech.net/latest/markets/{}/"
+                                           "history/?datasource=tranquility&type_id={}".format(int(destoRegion), int(typeID)))
                 dataResponse.raise_for_status()
                 # 204 is the code we want not 200 for whatever reason
                 # TODO: Find why 204 and not 200 for comment
