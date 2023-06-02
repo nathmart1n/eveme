@@ -4,7 +4,7 @@ EVEME static handling.
 URLs include:
 /static/<path:filename>
 """
-from flask import Flask, current_app, send_from_directory
+from flask import current_app, send_from_directory
 import eveme
 
 

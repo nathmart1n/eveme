@@ -5,8 +5,6 @@ import requests
 import pandas as pd
 import numpy as np
 import json
-import os
-import pathlib
 
 
 # these functions are from stackoverflow, don't really understand but it works

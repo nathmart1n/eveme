@@ -53,9 +53,6 @@ def show_imports():
         if flask.request.form['source'] == flask.request.form['destination']:
             context['sourceDestoSame'] = True
             return flask.render_template("imports.html", context=context)
-
-        
-
         source = flask.request.form['source']
         destination = flask.request.form['destination']
 
