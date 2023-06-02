@@ -172,9 +172,7 @@ Imports
                 <th>Shipping Price</th>
                 <th>Profit Percentage</th>
                 <th>Profit after Fees per unit</th>
-                {% if context.useHistory %}
                 <th>Profit to be made</th>
-                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -204,6 +202,8 @@ Imports
                 {% else %}
                 <td>{{((((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee + context.transactionTax))) * (value.aggPeriodAvg)) | numberFormat}}</td>
                 {% endif %}
+                {% else %}
+                <td>{{(value.sourceVolume * (((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee + context.transactionTax)))) | numberFormat}}</td>
                 {% endif %}
             </tr>
         {% endfor %}

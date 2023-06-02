@@ -109,6 +109,7 @@ def show_imports():
                 context['imports'][typeID]['sourcePrice'] = float(sourcePrices[typeID]['sell']['min'])
                 context['imports'][typeID]['orderCount'] = float(destoPrices[typeID]['sell']['orderCount'])
                 context['imports'][typeID]['volume'] = float(destoPrices[typeID]['sell']['volume'])
+                context['imports'][typeID]['sourceVolume'] = float(sourcePrices[typeID]['sell']['volume'])
                 typeIdsWithData.append(typeID)
                 context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
                 context['imports'][typeID]['m3'] = invTypes[typeID]['volume']
