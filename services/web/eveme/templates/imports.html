@@ -3,15 +3,6 @@
 Imports
 {% endblock %}
 {% block content %}
-<script>
-    $(document).ready( function () {
-        $('#imports').DataTable();
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
-<script src="{{url_for('static', filename='js/jstreeBehavior.js')}}"></script>
-<script src="{{url_for('static', filename='js/imports.js')}}"></script>
-
 <div class="container-fluid mt-3">
     {% if not context.isPost%}
 
@@ -171,9 +162,7 @@ Imports
                 <th>Shipping Price</th>
                 <th>Profit Percentage</th>
                 <th>Profit after Fees per unit</th>
-                {% if context.useHistory %}
                 <th>Profit to be made</th>
-                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -203,6 +192,8 @@ Imports
                 {% else %}
                 <td>{{((((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee + context.transactionTax))) * (value.aggPeriodAvg)) | numberFormat}}</td>
                 {% endif %}
+                {% else %}
+                <td>{{(value.sourceVolume * (((value.destoPrice - value.sourcePrice) - ((value.m3 * context.pricePerM3) + (value.sourcePrice * context.collateralPercentage))) - value.destoPrice * ((context.brokerFee + context.transactionTax)))) | numberFormat}}</td>
                 {% endif %}
             </tr>
         {% endfor %}

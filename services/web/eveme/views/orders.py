@@ -4,7 +4,6 @@ EVEME market orders view.
 URLs include:
 /orders/
 """
-from eveme import user
 import flask
 import eveme
 import time

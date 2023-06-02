@@ -14,7 +14,9 @@ import json
 import time
 import datetime
 from flask_login import current_user
+from flask import current_app
 from firebase_admin import db
+from requests_cache import CachedSession
 
 
 @eveme.app.route('/imports/', methods=['GET', 'POST'])
@@ -33,7 +35,7 @@ def show_imports():
 
         # Load selected groups from form
         groups = json.loads(flask.request.form['jsfields'])
-        print(flask.request.form['jsfields'])
+        print(len(flask.request.form['jsfields']))
         groups = [str(i) for i in groups]
         # Get group types for selected groups
         groupTypes = []
@@ -53,6 +55,7 @@ def show_imports():
         if flask.request.form['source'] == flask.request.form['destination']:
             context['sourceDestoSame'] = True
             return flask.render_template("imports.html", context=context)
+
         source = flask.request.form['source']
         destination = flask.request.form['destination']
 
@@ -66,7 +69,6 @@ def show_imports():
         # TODO: Add check box for using buy or sell orders in source/desto, for now default to sell in both
 
         if 'updatePrices' in flask.request.form.keys():
-            # TODO: Can we cut down on this code duplication?
             if source == '60003760':
                 eveme.helper.updatePriceData(destination)
                 destoPrices = prices_ref.child(destination).get()
@@ -74,16 +76,6 @@ def show_imports():
                 destoIDs = list(destoPrices.keys())
 
                 chunks = [destoIDs[x:x + 200] for x in range(0, len(destoIDs), 200)]
-                chunkStrings = []
-                for chunk in chunks:
-                    chunkStrings.append(','.join(chunk))
-                prices = {}
-                for chunkString in chunkStrings:
-                    priceDataRequest = ("https://market.fuzzwork.co.uk/aggregates/?station=60003760&types={}".format(chunkString))
-                    res = requests.get(priceDataRequest)
-                    res.raise_for_status()
-                    prices.update(res.json())
-                prices_ref.child('60003760').update(prices)
             elif destination == '60003760':
                 eveme.helper.updatePriceData(source)
                 sourcePrices = prices_ref.child(source).get()
@@ -91,16 +83,16 @@ def show_imports():
                 sourceIDs = list(sourcePrices.keys())
 
                 chunks = [sourceIDs[x:x + 200] for x in range(0, len(sourceIDs), 200)]
-                chunkStrings = []
-                for chunk in chunks:
-                    chunkStrings.append(','.join(chunk))
-                prices = {}
-                for chunkString in chunkStrings:
-                    priceDataRequest = ("https://market.fuzzwork.co.uk/aggregates/?station=60003760&types={}".format(chunkString))
-                    res = requests.get(priceDataRequest)
-                    res.raise_for_status()
-                    prices.update(res.json())
-                prices_ref.child('60003760').update(prices)
+            chunkStrings = []
+            for chunk in chunks:
+                chunkStrings.append(','.join(chunk))
+            prices = {}
+            for chunkString in chunkStrings:
+                priceDataRequest = ("https://market.fuzzwork.co.uk/aggregates/?station=60003760&types={}".format(chunkString))
+                res = requests.get(priceDataRequest)
+                res.raise_for_status()
+                prices.update(res.json())
+            prices_ref.child('60003760').update(prices)
 
         destoPrices = prices_ref.child(destination).get()
         sourcePrices = prices_ref.child(source).get()
@@ -119,6 +111,7 @@ def show_imports():
                 context['imports'][typeID]['sourcePrice'] = float(sourcePrices[typeID]['sell']['min'])
                 context['imports'][typeID]['orderCount'] = float(destoPrices[typeID]['sell']['orderCount'])
                 context['imports'][typeID]['volume'] = float(destoPrices[typeID]['sell']['volume'])
+                context['imports'][typeID]['sourceVolume'] = float(sourcePrices[typeID]['sell']['volume'])
                 typeIdsWithData.append(typeID)
                 context['imports'][typeID]['itemName'] = invTypes[typeID]['typeName']
                 context['imports'][typeID]['m3'] = invTypes[typeID]['volume']
@@ -126,7 +119,6 @@ def show_imports():
         # TODO: Download historical data once a day. Store in database? Similar to eyeonwater/edna data.
         # Look at bottom of updateStaticFiles.py file.
         # TODO: Make so user selects karkinos routes instead of systems.
-        # TODO: Have a toggle for including history or not for faster loading.
         context['useHistory'] = False
         if 'useHistory' in flask.request.form.keys():
             context['useHistory'] = True
@@ -143,10 +135,12 @@ def show_imports():
                 destoRegion = eveme.helper.getRegionFromStructure(destination, headers=headers)
             datfmt = "%Y-%m-%d"
             analysisSeconds = analysisPeriod * 86400
+            session = CachedSession(backend=current_app.config['CACHE_BACKEND'], expire_after=datetime.timedelta(hours=12))
+            print(typeIdsWithData)
             for typeID in typeIdsWithData:
                 item_time = time.time()
-                dataResponse = requests.get("https://esi.evetech.net/latest/markets/{}/"
-                                            "history/?datasource=tranquility&type_id={}".format(int(destoRegion), int(typeID)))
+                dataResponse = session.get("https://esi.evetech.net/latest/markets/{}/"
+                                           "history/?datasource=tranquility&type_id={}".format(int(destoRegion), int(typeID)))
                 dataResponse.raise_for_status()
                 # 204 is the code we want not 200 for whatever reason
                 # TODO: Find why 204 and not 200 for comment
