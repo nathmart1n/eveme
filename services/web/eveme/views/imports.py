@@ -69,7 +69,6 @@ def show_imports():
         # TODO: Add check box for using buy or sell orders in source/desto, for now default to sell in both
 
         if 'updatePrices' in flask.request.form.keys():
-            # TODO: Can we cut down on this code duplication?
             if source == '60003760':
                 eveme.helper.updatePriceData(destination)
                 destoPrices = prices_ref.child(destination).get()
@@ -119,7 +118,6 @@ def show_imports():
         # TODO: Download historical data once a day. Store in database? Similar to eyeonwater/edna data.
         # Look at bottom of updateStaticFiles.py file.
         # TODO: Make so user selects karkinos routes instead of systems.
-        # TODO: Have a toggle for including history or not for faster loading.
         context['useHistory'] = False
         if 'useHistory' in flask.request.form.keys():
             context['useHistory'] = True
