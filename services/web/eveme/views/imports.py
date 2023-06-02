@@ -33,7 +33,7 @@ def show_imports():
 
         # Load selected groups from form
         groups = json.loads(flask.request.form['jsfields'])
-        print(flask.request.form['jsfields'])
+        print(len(flask.request.form['jsfields']))
         groups = [str(i) for i in groups]
         # Get group types for selected groups
         groupTypes = []
@@ -53,8 +53,6 @@ def show_imports():
         if flask.request.form['source'] == flask.request.form['destination']:
             context['sourceDestoSame'] = True
             return flask.render_template("imports.html", context=context)
-
-        
 
         source = flask.request.form['source']
         destination = flask.request.form['destination']
