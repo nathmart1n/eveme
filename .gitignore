@@ -1,4 +1,3 @@
-.env.prod
 .env.dev
 env/
 instance/
@@ -7,3 +6,4 @@ var/
 .vscode/
 node_modules/
 services/web/http_cache.sqlite
+docker-compose.yml
