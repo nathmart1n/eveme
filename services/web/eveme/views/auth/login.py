@@ -18,14 +18,17 @@ import eveme.helper
 import eveme
 import base64
 import time
+import os
+import os
 
 
 @eveme.app.route("/login/")
 def login():
     start_time = time.time()
     """First step in ESI OAuth."""
+    # TODO: need to set config value for redirect url
     request_uri = 'https://login.eveonline.com/v2/oauth/authorize/?response' +\
-                  '_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A' + str(current_app.config['PORT']) + '%2F' +\
+                  '_type=code&redirect_uri=http%3A%2F%2F' + os.getenv('REDIRECT_URL') + '%3A' + str(current_app.config['PORT']) + '%2F' +\
                   'callback%2F&client_id=' +\
                   current_app.config['ESI_CLIENT_ID'] +\
                   '&scope=esi-markets.read_character_orders.v1+' +\

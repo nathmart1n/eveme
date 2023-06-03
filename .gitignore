@@ -1,7 +1,9 @@
-.env
+.env.prod
+.env.dev
 env/
 instance/
 __pycache__/
 var/
 .vscode/
 node_modules/
+services/web/http_cache.sqlite
