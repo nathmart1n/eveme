@@ -6,4 +6,4 @@ var/
 .vscode/
 node_modules/
 services/web/http_cache.sqlite
-docker-compose.yml
+docker-compose.prod.yml
