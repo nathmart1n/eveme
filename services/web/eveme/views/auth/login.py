@@ -19,7 +19,6 @@ import eveme
 import base64
 import time
 import os
-import os
 
 
 @eveme.app.route("/login/")
