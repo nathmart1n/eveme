@@ -1,4 +1,6 @@
 .env
+.env.prod
+.env.dev
 env/
 instance/
 __pycache__/
