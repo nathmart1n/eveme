@@ -12,6 +12,7 @@ This can be run by doing
 and passing in a JWT token that you have retrieved from the EVE SSO.
 """
 import requests
+import eveme
 from jose import jwt
 
 SSO_META_DATA_URL = "https://login.eveonline.com/.well-known/oauth-authorization-server"
@@ -70,7 +71,7 @@ def main():
     token = input("Enter an access token to validate: ")
     validated_jwt = validate_eve_jwt(token)
 
-    print("\nThe contents of the access token are: {}".format(validated_jwt))
+    eveme.app.logger.info("\nThe contents of the access token are: {}".format(validated_jwt))
 
 
 if __name__ == "__main__":

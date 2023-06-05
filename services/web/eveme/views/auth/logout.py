@@ -16,5 +16,5 @@ def logout():
     """Execute logout if logged in."""
     start_time = time.time()
     logout_user()
-    print("--- logout() took %s seconds ---" % (time.time() - start_time))
+    eveme.app.logger.info("--- logout() took %s seconds ---" % (time.time() - start_time))
     return redirect(url_for("show_index"))

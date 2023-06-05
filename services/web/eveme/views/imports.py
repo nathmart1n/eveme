@@ -35,7 +35,7 @@ def show_imports():
 
         # Load selected groups from form
         groups = json.loads(flask.request.form['jsfields'])
-        print(len(flask.request.form['jsfields']))
+        eveme.app.logger.info(len(flask.request.form['jsfields']))
         groups = [str(i) for i in groups]
         # Get group types for selected groups
         groupTypes = []
@@ -135,8 +135,9 @@ def show_imports():
                 destoRegion = eveme.helper.getRegionFromStructure(destination, headers=headers)
             datfmt = "%Y-%m-%d"
             analysisSeconds = analysisPeriod * 86400
-            session = CachedSession(backend=current_app.config['CACHE_BACKEND'], expire_after=datetime.timedelta(hours=12))
-            print(typeIdsWithData)
+            # session = CachedSession(backend=current_app.config['CACHE_BACKEND'], expire_after=datetime.timedelta(hours=12))
+            session = requests.Session()
+            eveme.app.logger.info(typeIdsWithData)
             for typeID in typeIdsWithData:
                 item_time = time.time()
                 dataResponse = session.get("https://esi.evetech.net/latest/markets/{}/"
@@ -147,7 +148,7 @@ def show_imports():
                 if dataResponse.status_code != 204:
                     slicedHistData = []
                     historicalData = dataResponse.json()
-                    print("--- API for " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
+                    eveme.app.logger.info("--- API for " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
                     # Slice historical data to match analysis period
                     for data in historicalData:
                         d = datetime.datetime.strptime(data['date'], datfmt).timestamp()
@@ -164,7 +165,7 @@ def show_imports():
                         context['imports'][typeID]['aggPeriodAvg'] = 1
                 else:
                     context['imports'][typeID]['aggPeriodAvg'] = 1
-                # print("--- item " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
+                # eveme.app.logger.info("--- item " + typeID + " in imports took %s seconds ---" % (time.time() - item_time))
 
         # Get user defined brokers fee, transaction tax, m3 price for shipping and collat percent for shipping
         user_ref = db.reference('users').child(str(current_user.id))
@@ -174,7 +175,7 @@ def show_imports():
         context['transactionTax'] = user_ref.child('transactionTax').get() / 100
         # TODO: Get absolute difference between source and destination prices
         # TODO: Get percent difference between source and destination prices
-        print("--- show_imports() showing trades took %s seconds ---" % (time.time() - start_time))
+        eveme.app.logger.info("--- show_imports() showing trades took %s seconds ---" % (time.time() - start_time))
         return flask.render_template("imports.html", context=context)
 
     json_url = os.path.join(pathlib.Path().resolve(), "eveme/static/json", "marketGroups.json")
@@ -183,5 +184,5 @@ def show_imports():
 
     if current_user.is_authenticated:
         eveme.helper.refreshAuth()
-    print("--- show_imports() showing form took %s seconds ---" % (time.time() - start_time))
+    eveme.app.logger.info("--- show_imports() showing form took %s seconds ---" % (time.time() - start_time))
     return flask.render_template("imports.html", context=context)
