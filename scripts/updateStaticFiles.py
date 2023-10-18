@@ -38,14 +38,15 @@ print('Beginning file download from fuzzwork with requests')
 url = 'https://www.fuzzwork.co.uk/dump/latest/invTypes.csv'
 r = requests.get(url)
 
+dirname = os.path.dirname(__file__)
 # Write to our scripts/temp folder
-with open('scripts/temp/invTypes.csv', 'wb') as f:
+with open(os.path.join(dirname, 'temp/invTypes.csv'), 'wb') as f:
     f.write(r.content)
 
 url = 'https://www.fuzzwork.co.uk/dump/latest/invMarketGroups.csv'
 r = requests.get(url)
 
-with open('scripts/temp/marketGroups.csv', 'wb') as f:
+with open(os.path.join(dirname, 'temp/marketGroups.csv'), 'wb') as f:
     f.write(r.content)
 
 print('Downloaded fuzzwork files')
