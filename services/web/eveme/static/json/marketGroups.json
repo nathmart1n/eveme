@@ -4032,7 +4032,11 @@
                     "43659": "Amarr Phenomena Generator Blueprint",
                     "43661": "Caldari Phenomena Generator Blueprint",
                     "43663": "Gallente Phenomena Generator Blueprint",
-                    "43665": "Minmatar Phenomena Generator Blueprint"
+                    "43665": "Minmatar Phenomena Generator Blueprint",
+                    "77402": "\u2018Atgeir\u2019 Explosive Disruptive Lance Blueprint",
+                    "77403": "'Azmaru' Electromagnetic Disruptive Lance Blueprint",
+                    "77404": "\u2018Steel Yari\u2019 Kinetic Disruptive Lance Blueprint",
+                    "77405": "\u2018Sarissa\u2019 Thermal Disruptive Lance Blueprint"
                 },
                 "Weapon Upgrades": {
                     "-1": 343,
@@ -6014,7 +6018,10 @@
                 "id": "2502.0"
             },
             "Booster Slot 12": {
-                "-1": 2530
+                "-1": 2530,
+                "76509": "Basic Capsuleer Day XX Glamourex Booster",
+                "76510": "Extended Capsuleer Day XX Glamourex Booster",
+                "76511": "Potent Capsuleer Day XX Glamourex Booster"
             },
             "Booster Slot 14": {
                 "-1": 2531,
@@ -6042,7 +6049,15 @@
                 "76138": "Federation Electronics Booster I",
                 "76139": "Federation Electronics Booster II",
                 "76140": "Federation Electronics Booster III",
-                "76141": "Federation Electronics Booster IV"
+                "76141": "Federation Electronics Booster IV",
+                "76512": "Guri Malakim Observability Booster I",
+                "76513": "Guri Malakim Observability Booster II",
+                "76514": "Guri Malakim Observability Booster III",
+                "76515": "Guri Malakim Observability Booster IV",
+                "76516": "SoCT Scan Booster I",
+                "76517": "SoCT Scan Booster II",
+                "76518": "SoCT Scan Booster III",
+                "76519": "SoCT Scan Booster IV"
             },
             "Booster Slot 15": {
                 "-1": 2790,
@@ -6085,7 +6100,15 @@
                 "76134": "Federation Defense Booster I",
                 "76135": "Federation Defense Booster II",
                 "76136": "Federation Defense Booster III",
-                "76137": "Federation Defense Booster IV"
+                "76137": "Federation Defense Booster IV",
+                "76520": "Guri Malakim Shield Booster I",
+                "76521": "Guri Malakim Shield Booster II",
+                "76522": "Guri Malakim Shield Booster III",
+                "76523": "Guri Malakim Shield Booster IV",
+                "76524": "SoCT Armor Booster I",
+                "76525": "SoCT Armor Booster II",
+                "76526": "SoCT Armor Booster III",
+                "76527": "SoCT Armor Booster IV"
             },
             "Booster Slot 16": {
                 "-1": 2791,
@@ -6155,7 +6178,15 @@
                 "76130": "Federation Application Booster I",
                 "76131": "Federation Application Booster II",
                 "76132": "Federation Application Booster III",
-                "76133": "Federation Application Booster IV"
+                "76133": "Federation Application Booster IV",
+                "76528": "Guri Malakim Turret Booster I",
+                "76529": "Guri Malakim Turret Booster II",
+                "76530": "Guri Malakim Turret Booster III",
+                "76531": "Guri Malakim Turret Booster IV",
+                "76532": "SoCT Agility Booster I",
+                "76533": "SoCT Agility Booster II",
+                "76534": "SoCT Agility Booster III",
+                "76535": "SoCT Agility Booster IV"
             },
             "Clone Mappers": {
                 "-1": 2761,
@@ -6179,7 +6210,10 @@
             "57435": "Serenity Extended 'Bonding' Cerebral Accelerator",
             "63633": "Expired Basic 'Guri Kikhivaa' Cerebral Accelerator",
             "63634": "Expired Potent 'Guri Kikhivaa' Cerebral Accelerator",
-            "63635": "Expired Extended 'Guri Kikhivaa' Cerebral Accelerator"
+            "63635": "Expired Extended 'Guri Kikhivaa' Cerebral Accelerator",
+            "76506": "Potent Capsuleer Day XX Cerebral Accelerator",
+            "76507": "Extended Capsuleer Day XX Cerebral Accelerator",
+            "76508": "Basic Capsuleer Day XX Cerebral Accelerator"
         },
         "Implants": {
             "Attribute Enhancers": {
@@ -7867,7 +7901,15 @@
                 "Abyssal Materials": {
                     "-1": 2479,
                     "47975": "Crystalline Isogen-10",
-                    "48112": "Zero-Point Condensate"
+                    "48112": "Zero-Point Condensate",
+                    "77118": "Amperum Mutanite",
+                    "77418": "Peregrinus Mutanite",
+                    "77419": "Conflagrati Mutanite",
+                    "77420": "Solis Mutanite",
+                    "77421": "Tenebraet Mutanite",
+                    "77524": "Admixti Mutanite",
+                    "77707": "Unaligned Dekaisogen",
+                    "77708": "Fluctuating Entropic Regulator"
                 },
                 "Alloys & Compounds": {
                     "-1": 1856,
@@ -12444,28 +12486,32 @@
                     "24550": "'Judgment' Electromagnetic Doomsday",
                     "40631": "'Holy Destiny' Electromagnetic Lance",
                     "40632": "'Divine Harvest' Electromagnetic Reaper",
-                    "43658": "Amarr Phenomena Generator"
+                    "43658": "Amarr Phenomena Generator",
+                    "77399": "'Azmaru' Electromagnetic Disruptive Lance"
                 },
                 "Caldari": {
                     "-1": 2268,
                     "24552": "'Oblivion' Kinetic Doomsday",
                     "41439": "'Iron Pike' Kinetic Lance",
                     "41442": "'Cold Wind' Kinetic Reaper",
-                    "43660": "Caldari Phenomena Generator"
+                    "43660": "Caldari Phenomena Generator",
+                    "77400": "\u2018Steel Yari\u2019 Kinetic Disruptive Lance"
                 },
                 "Gallente": {
                     "-1": 2269,
                     "24554": "'Aurora Ominae' Thermal Doomsday",
                     "41440": "'Phalarica' Thermal Lance",
                     "41443": "'Guillotine' Thermal Reaper",
-                    "43662": "Gallente Phenomena Generator"
+                    "43662": "Gallente Phenomena Generator",
+                    "77401": "\u2018Sarissa\u2019 Thermal Disruptive Lance"
                 },
                 "Minmatar": {
                     "-1": 2270,
                     "23674": "'Gjallarhorn' Explosive Doomsday",
                     "41441": "'Geiravor' Explosive Lance",
                     "41444": "'Jormungandr' Explosive Reaper",
-                    "43664": "Minmatar Phenomena Generator"
+                    "43664": "Minmatar Phenomena Generator",
+                    "77398": "\u2018Atgeir\u2019 Explosive Disruptive Lance "
                 },
                 "Non-Racial": {
                     "-1": 2276,
@@ -12839,7 +12885,9 @@
                     "73874": "Ferox Navy Issue Versus Blueforce SKIN",
                     "73876": "Prophecy Navy Issue Versus Blueforce SKIN",
                     "73878": "Myrmidon Navy Issue Versus Redforce SKIN",
-                    "73880": "Cyclone Fleet Issue Versus Redforce SKIN"
+                    "73880": "Cyclone Fleet Issue Versus Redforce SKIN",
+                    "77166": "Drake Navy Issue Capsuleer Elite XX SKIN",
+                    "77874": "Brutix Navy Issue Luminaire Rising SKIN"
                 },
                 "id": "2100.0"
             },
@@ -13008,7 +13056,8 @@
                     "61189": "Ferox Scope Syndication YC122 SKIN",
                     "61868": "Drake Warp Convergence SKIN",
                     "63686": "Naga Capsuleer Elite XIX SKIN",
-                    "71730": "Drake Union Day Executive SKIN"
+                    "71730": "Drake Union Day Executive SKIN",
+                    "77173": "Drake Gilded Predator SKIN"
                 },
                 "Gallente": {
                     "-1": 1958,
@@ -13433,7 +13482,12 @@
                     "64595": "Typhoon Fleet Issue Chainbreaker Khumaak SKIN",
                     "64597": "Tempest Fleet Issue Chainbreaker Khumaak SKIN",
                     "64911": "Tempest Fleet Issue Liberation Games SKIN",
-                    "73452": "Apocalypse Navy Issue Sanguinary Savant SKIN"
+                    "73452": "Apocalypse Navy Issue Sanguinary Savant SKIN",
+                    "77165": "Scorpion Navy Issue Capsuleer Elite XX SKIN",
+                    "77167": "Apocalypse Navy Issue Capsuleer Elite XX SKIN",
+                    "77169": "Typhoon Fleet Issue Capsuleer Elite XX SKIN",
+                    "77171": "Megathron Navy Issue Capsuleer Elite XX SKIN",
+                    "77872": "Megathron Navy Issue Luminaire Rising SKIN"
                 },
                 "Pirate Faction": {
                     "-1": 1963,
@@ -13686,7 +13740,8 @@
                     "63206": "Raven Ace of Podhunters SKIN",
                     "63687": "Rokh Capsuleer Elite XIX SKIN",
                     "71731": "Raven Union Day Executive SKIN",
-                    "72552": "Raven State Police SKIN"
+                    "72552": "Raven State Police SKIN",
+                    "77174": "Raven Gilded Predator SKIN"
                 },
                 "Gallente": {
                     "-1": 1966,
@@ -13761,7 +13816,8 @@
                     "62230": "Dominix Interstellar Convergence SKIN",
                     "63690": "Hyperion Capsuleer Elite XIX SKIN",
                     "64401": "Megathron Luminaire Zenith SKIN",
-                    "64571": "Dominix Luminaire Rising SKIN"
+                    "64571": "Dominix Luminaire Rising SKIN",
+                    "77177": "Megathron Gilded Predator SKIN"
                 },
                 "Minmatar": {
                     "-1": 1967,
@@ -14055,6 +14111,16 @@
                 "id": "1970.0"
             },
             "Dreadnoughts": {
+                "Advanced Dreadnoughts": {
+                    "Lancer Dreadnoughts": {
+                        "Gallente": {
+                            "-1": 3521,
+                            "77887": "Hubris Luminaire Rising SKIN"
+                        },
+                        "id": "3520.0"
+                    },
+                    "id": "3519.0"
+                },
                 "Faction Dreadnoughts": {
                     "Navy Faction": {
                         "-1": 3495,
@@ -14160,7 +14226,8 @@
                         "55664": "Naglfar Biosecurity Responders SKIN",
                         "56600": "Naglfar Malagrin Marshlight SKIN",
                         "59315": "Naglfar Freedom's Revolution SKIN",
-                        "61128": "Naglfar Yoiul Star SKIN"
+                        "61128": "Naglfar Yoiul Star SKIN",
+                        "77170": "Naglfar Capsuleer Elite XX SKIN"
                     },
                     "id": "2377.0"
                 },
@@ -14199,7 +14266,8 @@
                     "53206": "Minokawa Zento Isideko Combine SKIN",
                     "54440": "Minokawa Frontier Safeguarder SKIN",
                     "55537": "Minokawa Biosecurity Responders SKIN",
-                    "57159": "Minokawa Yoiul Star SKIN"
+                    "57159": "Minokawa Yoiul Star SKIN",
+                    "77164": "Minokawa Capsuleer Elite XX SKIN"
                 },
                 "Gallente": {
                     "-1": 2280,
@@ -14410,7 +14478,8 @@
                         "53645": "Avatar Oasis of Faith SKIN",
                         "55313": "Avatar Biosecurity Responders SKIN",
                         "55722": "Avatar Starline Majestic SKIN",
-                        "62222": "Avatar Interstellar Convergence SKIN"
+                        "62222": "Avatar Interstellar Convergence SKIN",
+                        "77168": "Avatar Capsuleer Elite XX SKIN"
                     },
                     "Caldari": {
                         "-1": 2092,
@@ -14491,7 +14560,8 @@
                 "41580": "Capsule Palatine SKIN",
                 "45482": "Capsule YC119 Capsuleer Day SKIN",
                 "47651": "Capsule Capsuleer Elite XV SKIN",
-                "57004": "Capsule Aurora Universalis SKIN"
+                "57004": "Capsule Aurora Universalis SKIN",
+                "77172": "Capsule Capsuleer Elite XX SKIN"
             },
             "Special Edition Capsules": {
                 "-1": 2286
@@ -14626,7 +14696,8 @@
                         "60030": "Eagle State Police SKIN",
                         "63204": "Eagle Ace of Podhunters SKIN",
                         "71725": "Cerberus Union Day Executive SKIN",
-                        "76955": "Eagle Zydrine Burn SKIN"
+                        "76955": "Eagle Zydrine Burn SKIN",
+                        "77178": "Eagle Gilded Predator SKIN"
                     },
                     "Gallente": {
                         "-1": 2071,
@@ -14666,7 +14737,8 @@
                         "59340": "Ishtar Green Demons SKIN",
                         "63208": "Ishtar Ace of Podhunters SKIN",
                         "64569": "Ishtar Luminaire Rising SKIN",
-                        "76951": "Ishtar Zydrine Burn SKIN"
+                        "76951": "Ishtar Zydrine Burn SKIN",
+                        "77175": "Ishtar Gilded Predator SKIN"
                     },
                     "Minmatar": {
                         "-1": 2072,
@@ -15185,7 +15257,8 @@
                     "75266": "Phantasm Luminae Polaris SKIN",
                     "75269": "Orthrus Luminae Polaris SKIN",
                     "75271": "Ashimmu Luminae Polaris SKIN",
-                    "76495": "Stratios GalNet StreamCast Unit SKIN"
+                    "76495": "Stratios GalNet StreamCast Unit SKIN",
+                    "77176": "Gila Gilded Predator SKIN"
                 },
                 "id": "2029.0"
             },
@@ -15745,7 +15818,8 @@
                     "76284": "Thrasher Fleet Issue Heartsurge SKIN",
                     "76289": "Catalyst Navy Issue Heartsurge SKIN",
                     "76291": "Cormorant Navy Issue Heartsurge SKIN",
-                    "76293": "Coercer Navy Issue Heartsurge SKIN"
+                    "76293": "Coercer Navy Issue Heartsurge SKIN",
+                    "77886": "Catalyst Navy Issue Luminaire Rising SKIN"
                 },
                 "id": "3496.0"
             },
@@ -15920,7 +15994,8 @@
                     "60220": "Catalyst Semiotique Superluminal SKIN",
                     "61126": "Algos Yoiul Star SKIN",
                     "61191": "Catalyst Scope Syndication YC122 SKIN",
-                    "63207": "Catalyst Ace of Podhunters SKIN"
+                    "63207": "Catalyst Ace of Podhunters SKIN",
+                    "77867": "Catalyst Luminaire Rising SKIN"
                 },
                 "Minmatar": {
                     "-1": 1997,
@@ -16167,7 +16242,8 @@
                         "60567": "Nemesis Malagrin Marshlight SKIN",
                         "60914": "Nemesis Aurora Universalis SKIN",
                         "62018": "Helios Versus Redforce SKIN",
-                        "64413": "Helios Luminaire Rising SKIN"
+                        "64413": "Helios Luminaire Rising SKIN",
+                        "77868": "Nemesis Luminaire Rising SKIN"
                     },
                     "Minmatar": {
                         "-1": 2054,
@@ -16553,7 +16629,8 @@
                     "73873": "Caldari Navy Hookbill Versus Blueforce SKIN",
                     "73875": "Imperial Navy Slicer Versus Blueforce SKIN",
                     "73877": "Federation Navy Comet Versus Redforce SKIN",
-                    "73879": "Republic Fleet Firetail Versus Redforce SKIN"
+                    "73879": "Republic Fleet Firetail Versus Redforce SKIN",
+                    "77873": "Maulus Navy Issue Luminaire Rising SKIN"
                 },
                 "Pirate Faction": {
                     "-1": 2031,
@@ -16919,7 +16996,8 @@
                     "62016": "Imicus Versus Blueforce SKIN",
                     "63030": "Imicus Semiotique Superluminal SKIN",
                     "63144": "Atron Versus Blueforce SKIN",
-                    "64398": "Tristan Luminaire Zenith SKIN"
+                    "64398": "Tristan Luminaire Zenith SKIN",
+                    "77869": "Maulus Luminaire Rising SKIN"
                 },
                 "Minmatar": {
                     "-1": 2005,
@@ -18996,13 +19074,27 @@
                 "id": "817.0"
             },
             "Dreadnoughts": {
-                "Amarr": {
-                    "-1": 762,
-                    "19720": "Revelation"
-                },
-                "Caldari": {
-                    "-1": 763,
-                    "19726": "Phoenix"
+                "Advanced Dreadnoughts": {
+                    "Lancer Dreadnoughts": {
+                        "Amarr": {
+                            "-1": 3512,
+                            "77283": "Bane"
+                        },
+                        "Caldari": {
+                            "-1": 3513,
+                            "77284": "Karura"
+                        },
+                        "Gallente": {
+                            "-1": 3515,
+                            "77281": "Hubris"
+                        },
+                        "Minmatar": {
+                            "-1": 3514,
+                            "77288": "Valravn"
+                        },
+                        "id": "3511.0"
+                    },
+                    "id": "3510.0"
                 },
                 "Faction Dreadnoughts": {
                     "Navy Faction": {
@@ -19020,17 +19112,31 @@
                     },
                     "id": "2288.0"
                 },
-                "Gallente": {
-                    "-1": 764,
-                    "19724": "Moros"
+                "Precursor Dreadnoughts": {
+                    "Triglavian": {
+                        "-1": 2690,
+                        "52907": "Zirnitra"
+                    },
+                    "id": "3508.0"
                 },
-                "Minmatar": {
-                    "-1": 765,
-                    "19722": "Naglfar"
-                },
-                "Triglavian": {
-                    "-1": 2690,
-                    "52907": "Zirnitra"
+                "Standard Dreadnoughts": {
+                    "Amarr": {
+                        "-1": 762,
+                        "19720": "Revelation"
+                    },
+                    "Caldari": {
+                        "-1": 763,
+                        "19726": "Phoenix"
+                    },
+                    "Gallente": {
+                        "-1": 764,
+                        "19724": "Moros"
+                    },
+                    "Minmatar": {
+                        "-1": 765,
+                        "19722": "Naglfar"
+                    },
+                    "id": "3509.0"
                 },
                 "id": "761.0"
             },
@@ -19812,7 +19918,8 @@
                 "2078": "Zephyr",
                 "3532": "Echelon",
                 "11940": "Gold Magnate",
-                "11942": "Silver Magnate"
+                "11942": "Silver Magnate",
+                "77114": "Metamorphosis"
             },
             "Special Edition Heavy Assault Cruisers": {
                 "-1": 1621,
@@ -20042,7 +20149,8 @@
             "55033": "Vorton Projector Operation",
             "55034": "Small Vorton Projector",
             "55035": "Medium Vorton Projector",
-            "55511": "Vorton Arc Extension"
+            "55511": "Vorton Arc Extension",
+            "77739": "Disruptive Lance Operation"
         },
         "Missiles": {
             "-1": 373,
@@ -20122,7 +20230,8 @@
             "22242": "Capital Ship Construction",
             "24268": "Supply Chain Management",
             "24625": "Advanced Mass Production",
-            "26224": "Drug Manufacturing"
+            "26224": "Drug Manufacturing",
+            "77725": "Advanced Capital Ship Construction"
         },
         "Resource Processing": {
             "-1": 1323,
@@ -20364,7 +20473,8 @@
             "54793": "EDENCOM Cruiser (old)",
             "54794": "EDENCOM Battleship",
             "55031": "EDENCOM Frigate",
-            "55032": "EDENCOM Cruiser"
+            "55032": "EDENCOM Cruiser",
+            "77738": "Lancer Dreadnoughts"
         },
         "Structure Management": {
             "-1": 2152,
@@ -20871,7 +20981,6 @@
             "63165": "Capsuleer Starburst Firework",
             "71755": "Union of Eight Paths Firework",
             "73408": "Scarlet Embrace Firework",
-            "74385": "Scarlet Embrace Firework ( copy )",
             "74386": "Yoiul's Ascent Firework",
             "74387": "Yoiul's Ascent Firework Crate",
             "74426": "DNCR-05H Highsec Ice Storm Filament",
@@ -20882,7 +20991,11 @@
             "74431": "VXN-01N Nullsec Ice Storm Filament",
             "74432": "BLTZN-05L Lowsec Ice Storm Filament",
             "74433": "CMT-05N Nullsec Ice Storm Filament",
-            "74434": "CPD-10N Nullsec Ice Storm Filament"
+            "74434": "CPD-10N Nullsec Ice Storm Filament",
+            "76963": " Infinite Celebrations Firework",
+            "76964": "Capsuleer Day XX Fireworks Package",
+            "77055": "Capsuleer Day Glamourex Crate",
+            "77427": "Historic Capsuleer Day Clothing Crate"
         },
         "Special Edition Implants": {
             "-1": 1814,
@@ -22158,10 +22271,7 @@
                 "53987": "Noise-25 'Needlejack' Filament"
             },
             "Proving Ground Filaments": {
-                "-1": 2747,
-                "72986": "Event 82 Proving Filament",
-                "72987": "Event 83 Proving Filament",
-                "72988": "Event 84 Proving Filament"
+                "-1": 2747
             },
             "Triglavian Space Inbound": {
                 "-1": 2757,

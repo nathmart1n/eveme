@@ -470,10 +470,10 @@ marketGroupID,parentGroupID,marketGroupName,description,iconID,hasTypes
 754,19,Political Paraphernalia,Political propaganda and those that engage in it,1204,1
 757,657,Target Painters,"Project an electronic signal towards a target, increasing its signature radius.",2983,1
 761,1381,Dreadnoughts,Capital ships created for extended sieges of stationary installations.,1443,0
-762,761,Amarr,Amarr dreadnought designs.,20959,1
-763,761,Caldari,Caldari dreadnought designs.,20966,1
-764,761,Gallente,Gallente dreadnought designs.,20967,1
-765,761,Minmatar,Minmatar dreadnought designs.,20968,1
+762,3509,Amarr,Amarr dreadnought designs.,20959,1
+763,3509,Caldari,Caldari dreadnought designs.,20966,1
+764,3509,Gallente,Gallente dreadnought designs.,20967,1
+765,3509,Minmatar,Minmatar dreadnought designs.,20968,1
 766,1381,Freighters,"Capital ships, able to transport a world and a half and then some.",1443,0
 767,766,Amarr,Amarr freighter designs.,20959,1
 768,766,Caldari,Caldari freighter designs.,20966,1
@@ -1642,7 +1642,7 @@ Mutaplasmids that permanently alter a module's attributes",2887,0
 2285,2283,Capsules,,21420,1
 2286,2283,Special Edition Capsules,,21420,1
 2287,812,Faction Titans,Faction Titan designs.,1443,1
-2288,761,Faction Dreadnoughts,Faction Dreadnought designs.,1443,0
+2288,761,Faction Dreadnoughts,Faction Dreadnoughts,1443,0
 2290,211,Command Burst Charges,Command Burst Charges,2703,0
 2291,2290,Armor Command Burst Charges,Armor Command Burst Charges,2703,1
 2292,2290,Information Command Burst Charges,Information Command Burst Charges,2703,1
@@ -1869,7 +1869,7 @@ Mutaplasmids that permanently alter a module's attributes",2887,0
 2539,54,Rakovene,Rakovene,24144,1
 2540,54,Talassonite,Talassonite,24136,1
 2658,65,Triglavian,Advanced Components of Triglavian origin.,24135,1
-2690,761,Triglavian,Triglavian Dreadnoughts,24135,1
+2690,3508,Triglavian,Triglavian Dreadnoughts,24135,1
 2691,2432,Extra Large,"Capital ship entropic disintegrators, for use on dreadnoughts and titans.",24237,1
 2692,2463,Extra Large,For use with dreadnought-sized entropic disintegrators.,21918,1
 2693,1883,Triglavian,,24135,1
@@ -1951,3 +1951,14 @@ Mutaplasmids that permanently alter a module's attributes",2887,0
 3495,2378,Navy Faction,,21420,1
 3496,1989,Faction Destroyers,,21420,0
 3497,3496,Navy Faction,,21420,1
+3508,761,Precursor Dreadnoughts,Precursor Dreadnoughts,1443,0
+3509,761,Standard Dreadnoughts,Tech 1 Dreadnoughts,1443,0
+3510,761,Advanced Dreadnoughts,Specialized Tech 2 Dreadnoughts,1443,0
+3511,3510,Lancer Dreadnoughts,Specialized Dreadnoughts capable of operating disruptive lance superweapons,1443,0
+3512,3511,Amarr,Amarr Lancer Dreadnoughts,20959,1
+3513,3511,Caldari,Caldari Lancer Dreadnoughts,20966,1
+3514,3511,Minmatar,Minmatar Lancer Dreadnoughts,20968,1
+3515,3511,Gallente,Gallente Lancer Dreadnoughts,20967,1
+3519,1971,Advanced Dreadnoughts,,21420,0
+3520,3519,Lancer Dreadnoughts,,21420,0
+3521,3520,Gallente,,20967,1
