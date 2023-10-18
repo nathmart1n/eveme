@@ -5,7 +5,6 @@ URLs include:
 /settings/
 /structures/
 """
-from eveme import user
 import flask
 import eveme
 import eveme.helper
@@ -32,7 +31,7 @@ def show_settings():
         if 'userData' in flask.request.form:
             eveme.helper.updateUserData()
         if flask.request.form['brokerFee'] != '':
-            print(flask.request.form['brokerFee'])
+            eveme.app.logger.info(flask.request.form['brokerFee'])
             ref.update({
                 'brokerFee': float(flask.request.form['brokerFee'])
             })
@@ -66,7 +65,7 @@ def show_settings():
 
     context['structureAccess'] = user_ref.child('structureAccess').get()
 
-    print("--- show_settings() took %s seconds ---" % (time.time() - start_time))
+    eveme.app.logger.info("--- show_settings() took %s seconds ---" % (time.time() - start_time))
     return flask.render_template("settings.html", context=context)
 
 
@@ -101,5 +100,5 @@ def structure_mod():
                     context['error'] = e
         else:
             context['error'] = 'NONE'
-    print("--- structure_mod() took %s seconds ---" % (time.time() - start_time))
+    eveme.app.logger.info("--- structure_mod() took %s seconds ---" % (time.time() - start_time))
     return flask.render_template("structures.html", context=context)

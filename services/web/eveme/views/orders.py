@@ -36,5 +36,5 @@ def show_orders():
             output['sellOrders'].append(user_ref['sellOrders'][id])
         output['sellOrders'] = sorted(output['sellOrders'], key=lambda k: k['itemName'])
 
-    print("--- show_orders() with took %s seconds ---" % (time.time() - start_time))
+    eveme.app.logger.info("--- show_orders() with took %s seconds ---" % (time.time() - start_time))
     return flask.render_template("orders.html", context=output)

@@ -24,7 +24,7 @@ def getStructures(user_id):
     structs = ref.get()['structureAccess']
     for structure in structs:
         output.append(structure)
-    eveme.logger.info("--- getStructures() took %s seconds ---" % (time.time() - start_time))
+    eveme.app.logger.info("--- getStructures() took %s seconds ---" % (time.time() - start_time))
     return output
 
 
@@ -51,7 +51,7 @@ def esiRequest(requestType, variable, charHeaders=None):
     else:
         res = requests.get(requestURL[requestType])
 
-    eveme.logger.info("--- esiRequest() with " + requestType + " took %s seconds ---" % (time.time() - start_time))
+    eveme.app.logger.info("--- esiRequest() with " + requestType + " took %s seconds ---" % (time.time() - start_time))
     return res.json()
 
 
@@ -102,7 +102,7 @@ def updateUserData():
             str(charID): new
         })
 
-    eveme.logger.info("--- updateUserData() with took %s seconds ---" % (time.time() - start_time))
+    eveme.app.logger.info("--- updateUserData() with took %s seconds ---" % (time.time() - start_time))
     return None
 
 
@@ -170,7 +170,7 @@ def updateUserOrders():
                 user_info['structureAccess'][structureID] = structuresChecked[structureID]
 
     User.update(user_info, current_user.id)
-    eveme.logger.info("--- updateUserOrders() took %s seconds ---" % (time.time() - start_time))
+    eveme.app.logger.info("--- updateUserOrders() took %s seconds ---" % (time.time() - start_time))
     return None
 
 
@@ -271,9 +271,9 @@ def updatePriceData(structureID=None):
                     prices[order['type_id']]['sell']['min'] = order['price']
                     prices[order['type_id']]['sell']['orderCount'] += 1
                     prices[order['type_id']]['sell']['volume'] += order['volume_remain']
-        # eveme.logger.info(selectedID)
+        # eveme.app.logger.info(selectedID)
         ref.child(selectedID).set(prices)
-    eveme.logger.info("--- updatePriceData() with took %s seconds ---" % (time.time() - start_time))
+    eveme.app.logger.info("--- updatePriceData() with took %s seconds ---" % (time.time() - start_time))
     return None
 
 
@@ -298,8 +298,8 @@ def refreshAuth():
             current_user.accessToken = data["access_token"]
             User.updateAuthToken(data['access_token'], time.time(), current_user.id)
         else:
-            eveme.logger.info('--------WEE WOOO SHIT BROKE WEE WOO REFRESH AUTH BROKE WEE WOO--------')
-    eveme.logger.info("--- refreshAuth() with took %s seconds ---" % (time.time() - start_time))
+            eveme.app.logger.info('--------WEE WOOO SHIT BROKE WEE WOO REFRESH AUTH BROKE WEE WOO--------')
+    eveme.app.logger.info("--- refreshAuth() with took %s seconds ---" % (time.time() - start_time))
     return None
 
 
@@ -329,7 +329,7 @@ def send_token_request(form_values, add_headers={}):
     )
 
     res.raise_for_status()
-    eveme.logger.info("--- send_token_request() with took %s seconds ---" % (time.time() - start_time))
+    eveme.app.logger.info("--- send_token_request() with took %s seconds ---" % (time.time() - start_time))
     return res
 
 
@@ -344,6 +344,7 @@ def structNameFromID(structID):
     headers = createHeaders(current_user.accessToken)
 
     res = requests.get("https://esi.evetech.net/latest/universe/structures/{}/?datasource=tranquility".format(structID), headers=headers)
+    eveme.app.logger.info(res.content)
     if res.status_code == 200:
         return res.json()['name']
     else:

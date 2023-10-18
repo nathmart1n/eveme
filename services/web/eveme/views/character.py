@@ -55,5 +55,5 @@ def character(char_id):
             output['alliance'] = alliance['name']
 
         output['corporation'] = corporation['name']
-    print("--- character() took %s seconds ---" % (time.time() - start_time))
+    eveme.app.logger.info("--- character() took %s seconds ---" % (time.time() - start_time))
     return render_template("character.html", context=output)

@@ -36,7 +36,7 @@ def login():
                   'esi-assets.read_assets.v1+' +\
                   'esi-wallet.read_character_wallet.v1' +\
                   '&state=ohd9912dn102dn012'
-    print("--- login() took %s seconds ---" % (time.time() - start_time))
+    eveme.app.logger.info("--- login() took %s seconds ---" % (time.time() - start_time))
     return redirect(request_uri)
 
 
@@ -82,6 +82,6 @@ def callback():
         eveme.helper.updateUserData()
     User.update(user_info, char_id)
 
-    print("--- callback() took %s seconds ---" % (time.time() - start_time))
+    eveme.app.logger.info("--- callback() took %s seconds ---" % (time.time() - start_time))
 
     return redirect(url_for('character', char_id=char_id))
