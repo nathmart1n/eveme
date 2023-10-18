@@ -15,12 +15,10 @@ If you don't have the fields already created in your firebase DB (like users, pr
 
 # TODO
 
-1. Deploy on AWS to use anywhere
-2. Figure out local caching
-3. Figure out if Redis caching is worth it
-4. Decide if we need a different database or if firebase is ok. Perhaps s3 for storing profile pictures and something like postgres for storing price data etc?
-5. Add feature that lets you paste items and compare total profit if shipped
-6. Set CSS container max-width to 1600px
+1. Figure out SSL certs
+2. Figure out if Redis caching is worth it
+3. Decide if we need a different database or if firebase is ok. Perhaps s3 for storing profile pictures and something like postgres for storing price data etc?
+4. Add feature that lets you paste items and compare total profit if shipped
 
 Build the images and run the containers dev:
 ```sh
