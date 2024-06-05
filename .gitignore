@@ -9,3 +9,4 @@ var/
 node_modules/
 services/web/http_cache.sqlite
 docker-compose.prod.yml
+scripts/temp/
